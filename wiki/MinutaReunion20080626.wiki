@@ -7,6 +7,9 @@
  * *Pagina de Biodata:* Martin pasa la pagina de requerimientos a Leo.
  * *Audiometro Medusa por Soft:* Agu proporcionar codigo de ejemplo.
  * *Bioata Soft:*
-      *Martin detallar requerimientos
-      *Gabi demo con Nhibernate
-      *Gerardo mostrar demo formulario dinamico
+      * Martin detallar requerimientos
+      * Gabi demo con Nhibernate
+      * Gerardo mostrar demo formulario dinamico
+
+==Presentes==
+Gabriel, Agustin, Leo, Martin y Gerardo.
