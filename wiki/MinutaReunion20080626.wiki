@@ -1,14 +1,12 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+=Minuta Reunion 26/06/2008=
 
-Add your content here.
-
-*Minuta Medusa *
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+*Cliente Buenos Aires, Gerardo continuar con las tratativas. Sugerencia: contratar freelance.
+*Pagina Medusa: Leo hacer pagina demo y logo.
+*Pagina de Biodata: Martin pasa la pagina de requerimientos a Leo.
+*Audiometro Medusa por Soft: Agu proporcionar codigo de ejemplo.
+*Bioata Soft:
+      *Martin detallar requerimientos
+      *Gabi demo con Nhibernate
+      *Gerardo mostrar demo formulario dinamico
