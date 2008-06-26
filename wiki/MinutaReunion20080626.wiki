@@ -9,7 +9,7 @@
  * *Bioata Soft:*
       * Martin detallar requerimientos
       * Gabi demo con Nhibernate
-      * Gerardo mostrar demo formulario dinamico
+      * Gerardo mostrar demo formulario dinamico y subir DEMO ABM a google code.
 
 ==Presentes==
 Gabriel, Agustin, Leo, Martin y Gerardo.
