@@ -1,0 +1,10 @@
+D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Business\bin\Debug\Medusa.Biodata.Business.dll
+D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Business\bin\Debug\Medusa.Biodata.Business.pdb
+D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Business\bin\Debug\log4net.dll
+D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Business\bin\Debug\Medusa.Biodata.Core.dll
+D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Business\bin\Debug\Medusa.Biodata.Utils.dll
+D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Business\bin\Debug\Medusa.Biodata.Core.pdb
+D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Business\bin\Debug\Medusa.Biodata.Utils.pdb
+D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Business\obj\Debug\ResolveAssemblyReference.cache
+D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Business\obj\Debug\Medusa.Biodata.Business.dll
+D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Business\obj\Debug\Medusa.Biodata.Business.pdb
