@@ -1,7 +1,0 @@
-D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Core\bin\Debug\Medusa.Biodata.Core.dll
-D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Core\bin\Debug\Medusa.Biodata.Core.pdb
-D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Core\bin\Debug\Medusa.Biodata.Utils.dll
-D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Core\bin\Debug\Medusa.Biodata.Utils.pdb
-D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Core\obj\Debug\ResolveAssemblyReference.cache
-D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Core\obj\Debug\Medusa.Biodata.Core.dll
-D:\Medusa\Biodata\medusa-biodata\Source\Biodata-Gestion\Core\obj\Debug\Medusa.Biodata.Core.pdb
