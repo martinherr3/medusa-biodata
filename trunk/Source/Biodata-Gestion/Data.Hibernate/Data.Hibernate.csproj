@@ -54,17 +54,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DaoHibernate\PacienteDaoHibernate.cs" />
+    <Compile Include="DaoHibernate\AbstractNHibernateDao.cs" />
+    <Compile Include="DaoHibernate\PacienteDao.cs" />
+    <Compile Include="Factory\NHibernateDaoFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session\NHibernateSessionManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{B87B2AFA-B195-4788-A88A-B6C01F189819}</Project>
       <Name>Core</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Factory\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
