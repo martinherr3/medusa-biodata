@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Medusa.Biodata.Entity;
 
-namespace Medusa.Biodata.Dao
+namespace Medusa.Biodata.Data.Interfaces
 {
-    public class IPacienteDao
+    public interface IPacienteDao : IDao<Paciente,long>
     {
     }
 }

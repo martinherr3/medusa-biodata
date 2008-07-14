@@ -36,8 +36,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\IDao.cs" />
+    <Compile Include="Dao\IDaoFactory.cs" />
     <Compile Include="Dao\IPacienteDao.cs" />
-    <Compile Include="Entity\EntityBase.cs" />
+    <Compile Include="Entity\DomainObject.cs" />
+    <Compile Include="Entity\IHasAssignedId.cs" />
     <Compile Include="Entity\Paciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

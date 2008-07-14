@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Medusa.Biodata.Entity
 {
-    public class Paciente : ModelBase
+    public class Paciente : DomainObject<long>
     {
 
     }
