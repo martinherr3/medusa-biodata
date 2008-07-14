@@ -1,2 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   namespace="Medusa.Biodata.Entity"
+                   assembly="Medusa.Biodata.Core">
 
+  <!-- Mappings for class 'Customer' -->
+  <class name="Paciente" table="paciente" lazy="false">
+
+    <!-- Identity mapping -->
+    <id name="Id" column="id" >
+      <generator class="identity"/>
+    </id>
+
+    <!-- Simple mappings -->
+    <property name="Nombre" column="nombre" />
+    <property name="Apellido" column="apellido" />
+
+  </class>
+
+</hibernate-mapping>

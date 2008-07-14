@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using Medusa.Biodata.Data.Interfaces;
+using NHibernate.Expression;
+using NHibernate;
 
 namespace Medusa.Biodata.Data
 {
