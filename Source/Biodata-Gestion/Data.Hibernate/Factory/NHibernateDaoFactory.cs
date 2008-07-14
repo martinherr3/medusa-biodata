@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Medusa.Biodata.Data.Interfaces;
 
 namespace Medusa.Biodata.Data
 {
@@ -26,44 +27,10 @@ namespace Medusa.Biodata.Data
             }
         }
 
-        public ICustomerDao GetCustomerDao()
+        public IPacienteDao GetCustomerDao()
         {
-            return new CustomerDao(sessionFactoryConfigPath);
+            return new PacienteDao();
         }
-
-        public IHistoricalOrderSummaryDao GetHistoricalOrderSummaryDao()
-        {
-            return new HistoricalOrderSummaryDao(sessionFactoryConfigPath);
-        }
-
-        public IOrderDao GetOrderDao()
-        {
-            return new OrderDao(sessionFactoryConfigPath);
-        }
-
-        public ISupplierDao GetSupplierDao()
-        {
-            return new SupplierDao(sessionFactoryConfigPath);
-        }
-
-        #region Inline DAO implementations
-
-        /// <summary>
-        /// Concrete DAO for accessing instances of <see cref="Customer" /> from DB.
-        /// This should be extracted into its own class-file if it needs to extend the
-        /// inherited DAO functionality.
-        /// </summary>
-        public class CustomerDao : AbstractNHibernateDao<Customer, string>, ICustomerDao
-        {
-            public CustomerDao(string sessionFactoryConfigPath) : base(sessionFactoryConfigPath) { }
-        }
-
-        public class SupplierDao : AbstractNHibernateDao<Supplier, long>, ISupplierDao
-        {
-            public SupplierDao(string sessionFactoryConfigPath) : base(sessionFactoryConfigPath) { }
-        }
-
-        #endregion
 
         private string sessionFactoryConfigPath;
     }

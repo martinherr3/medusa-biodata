@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using NHibernate;
+using NHibernate.Cfg;
+using NHibernate.Cache;
+using System.Runtime.Remoting.Messaging;
+using System.Web;
 
 namespace Medusa.Biodata.Data
 {
@@ -95,8 +99,6 @@ namespace Medusa.Biodata.Data
 
                 ContextSession = session;
             }
-
-            Check.Ensure(session != null, "session was null");
 
             return session;
         }

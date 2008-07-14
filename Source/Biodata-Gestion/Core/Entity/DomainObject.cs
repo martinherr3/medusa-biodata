@@ -44,7 +44,6 @@ namespace Medusa.Biodata.Entity
         public abstract override int GetHashCode();
 
         private bool HasSameBusinessSignatureAs(DomainObject<IdT> compareTo) {
-            Check.Require(compareTo != null, "compareTo may not be null");
 
             return GetHashCode().Equals(compareTo.GetHashCode());
         }
@@ -54,7 +53,6 @@ namespace Medusa.Biodata.Entity
         /// and the IDs are not of the default ID value
         /// </summary>
         private bool HasSameNonDefaultIdAs(DomainObject<IdT> compareTo) {
-            Check.Require(compareTo != null, "compareTo may not be null");
 
             return (ID != null && ! ID.Equals(default(IdT))) &&
                    (compareTo.ID != null && ! compareTo.ID.Equals(default(IdT))) &&
@@ -62,6 +60,5 @@ namespace Medusa.Biodata.Entity
         }
 
         private IdT id = default(IdT);
-    }
-    }
-}
+     }
+ }
