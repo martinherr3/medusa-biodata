@@ -1,0 +1,9 @@
+obj\Debug\ResolveAssemblyReference.cache
+bin\Debug\Medusa.Architecture.Transaction.dll.config
+bin\Debug\Medusa.Architecture.Transaction.dll
+bin\Debug\Medusa.Architecture.Transaction.pdb
+obj\Debug\Medusa.Architecture.Transaction.dll
+obj\Debug\Medusa.Architecture.Transaction.pdb
+..\Asemblies\Medusa.Architecture.Transaction.dll.config
+..\Asemblies\Medusa.Architecture.Transaction.dll
+..\Asemblies\Medusa.Architecture.Transaction.pdb
