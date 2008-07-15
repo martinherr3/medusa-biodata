@@ -1,0 +1,5 @@
+E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.Xml.dll
+E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.Xml.pdb
+E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.Xml\obj\Debug\ResolveAssemblyReference.cache
+E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.Xml\obj\Debug\Medusa.Architecture.Xml.dll
+E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.Xml\obj\Debug\Medusa.Architecture.Xml.pdb
