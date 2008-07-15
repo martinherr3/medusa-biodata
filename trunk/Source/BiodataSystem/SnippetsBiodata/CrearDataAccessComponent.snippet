@@ -1,0 +1,108 @@
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>Snippets para crear DataAccessComponent</Title>
+    <Author>Gerardo Medina</Author>
+    <Shortcut>CrearDACBiodata</Shortcut>
+    <Description>Código para crear DataAccessComponent.</Description>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal>
+        <ID>Entidad</ID>
+        <ToolTip>Nombre de la Entidad</ToolTip>
+        <Default>Nombre</Default>
+      </Literal>     
+    </Declarations>
+    <Code Language="csharp">
+        <![CDATA[
+using System;
+using System.Collections.Generic;
+using System.Text;
+using Medusa.Biodata.Common.BusinessEntities;
+using System.Data.Common;
+using System.Data;
+
+namespace Medusa.Biodata.BackEnd.DataAccessComponents
+{
+    /// <summary>
+    /// DAC para $Entidad$.
+    /// </summary>
+    public class $Entidad$DataAccessComponent:BaseDataAccessComponent
+    {
+        /// <summary>
+        /// Búsqueda  de $Entidad$.
+        /// </summary>
+        /// <param name="pBE">Entidad.</param>
+        /// <returns>$Entidad$Entities</returns>
+        public static $Entidad$Entities Search($Entidad$Entity pBE)
+        {
+            try
+            {
+                return $Entidad$TableDataGateway.Search(pBE);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Inserta $Entidad$.
+        /// </summary>
+        /// <param name="pBE">Entidad.</param>
+        /// <returns>Int32</returns>
+        public static Int32 Insert($Entidad$Entity pBE)
+        {
+            try
+            {
+                return $Entidad$TableDataGateway.Insert(pBE);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        /// <summary>
+        /// Borra $Entidad$.
+        /// </summary>
+        /// <param name="pBE">Entidad.</param>
+        /// <returns>Int32</returns>
+        public static Int32 Delete($Entidad$Entity pBE)
+        {
+            try
+            {
+                return $Entidad$TableDataGateway.Delete(pBE);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Actualiza $Entidad$.
+        /// </summary>
+        /// <param name="pBE">Entidad.</param>
+        /// <returns>Int32</returns>
+        public static Int32 Update($Entidad$Entity pBE)
+        {
+            try
+            {
+                return $Entidad$TableDataGateway.Update(pBE);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+    }
+}
+      ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>

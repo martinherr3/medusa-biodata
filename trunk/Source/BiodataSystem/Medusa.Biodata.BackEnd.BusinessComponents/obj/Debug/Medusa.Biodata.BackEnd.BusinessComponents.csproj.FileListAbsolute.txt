@@ -1,0 +1,5 @@
+E:\Proyectos.Net\BioData\BiodataSystem\Asemblies\Medusa.Biodata.BackEnd.BusinessComponents.dll
+E:\Proyectos.Net\BioData\BiodataSystem\Asemblies\Medusa.Biodata.BackEnd.BusinessComponents.pdb
+E:\Proyectos.Net\BioData\BiodataSystem\Medusa.Biodata.BackEnd.BusinessComponents\obj\Debug\ResolveAssemblyReference.cache
+E:\Proyectos.Net\BioData\BiodataSystem\Medusa.Biodata.BackEnd.BusinessComponents\obj\Debug\Medusa.Biodata.BackEnd.BusinessComponents.dll
+E:\Proyectos.Net\BioData\BiodataSystem\Medusa.Biodata.BackEnd.BusinessComponents\obj\Debug\Medusa.Biodata.BackEnd.BusinessComponents.pdb

@@ -1,0 +1,5 @@
+..\Asemblies\Medusa.Biodata.Common.BusinessEntities.dll
+..\Asemblies\Medusa.Biodata.Common.BusinessEntities.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Medusa.Biodata.Common.BusinessEntities.dll
+obj\Debug\Medusa.Biodata.Common.BusinessEntities.pdb

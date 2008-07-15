@@ -1,0 +1,72 @@
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>Snippets para crear las clases Entity y Entities</Title>
+    <Author>Gerardo Medina</Author>
+    <Shortcut>CrearEntityBiodata</Shortcut>
+    <Description>Código para crear las clases Entity y Entities.</Description>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal>
+        <ID>Entidad</ID>
+        <ToolTip>Nombre de la Entidad</ToolTip>
+        <Default>Nombre</Default> 
+      </Literal>     
+    </Declarations>
+    <Code Language="csharp">
+        <![CDATA[
+        using System;
+        using System.Collections.Generic;
+        using System.Text;
+        using System.ComponentModel;
+
+        namespace Medusa.Biodata.Common.BusinessEntities
+        {
+            /// <summary>
+            /// Entidad de Negocios para $Entidad$.
+            /// </summary>
+            [DataObjectAttribute]
+            public class $Entidad$Entity:BaseBusinessEntity
+            {
+            
+                /// <summary>
+                /// Constructor por defecto.
+                /// </summary>
+                public $Entidad$Entity()
+                {
+
+                }
+        
+                 /// <summary>
+                /// Constructor con Parametros.
+                /// </summary>
+                public $Entidad$Entity(Int32 pID)
+                {
+
+                }
+        
+                public override string ToString()
+                {
+                    throw new Exception("Debe implementar el método ToString() de la entidad $Entidad$.");
+                }
+            
+            
+            }
+
+            /// <summary>
+            /// Lista de $Entidad$.
+            /// </summary>
+            [DataObjectAttribute]
+            public class $Entidad$Entities : ListBaseBusinessEntity<$Entidad$Entity>
+            {
+
+            }
+          }
+        
+       ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
