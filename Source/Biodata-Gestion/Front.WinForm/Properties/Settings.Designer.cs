@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Medusa.Biodata.FrontWin.Properties {
+namespace Medusa.Biodata.Util.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

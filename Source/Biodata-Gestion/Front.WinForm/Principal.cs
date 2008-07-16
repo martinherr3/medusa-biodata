@@ -6,13 +6,18 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace FrontEnd.WinForm
+namespace Medusa.Biodata.Util
 {
     public partial class Principal : Form
     {
         public Principal()
         {
             InitializeComponent();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
