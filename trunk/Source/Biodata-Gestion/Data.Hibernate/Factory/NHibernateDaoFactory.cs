@@ -8,7 +8,7 @@ namespace Medusa.Biodata.Data
     /// <summary>
     /// Exposes access to NHibernate DAO classes.
     /// </summary>
-    public class NHibernateDaoFactory
+    public class NHibernateDaoFactory : IDaoFactory
     {
         public NHibernateDaoFactory(string sessionFactoryConfigPath)
         {
@@ -27,9 +27,9 @@ namespace Medusa.Biodata.Data
             }
         }
 
-        public IPacienteDao GetCustomerDao()
+        public IPacienteDao GetPacienteDao()
         {
-            return new PacienteDao();
+            return new PacienteDao(sessionFactoryConfigPath);
         }
 
         private string sessionFactoryConfigPath;
