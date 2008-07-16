@@ -9,8 +9,14 @@ namespace Medusa.Biodata.Data
 {
     public abstract class AbstractNHibernateDao<T, IdT> : IDao<T, IdT>
     {
+        /// <param name="sessionFactoryConfigPath">Fully qualified path of the session factory's config file</param>
+        public AbstractNHibernateDao(string sessionFactoryConfigPath)
+        {
+            SessionFactoryConfigPath = sessionFactoryConfigPath;
+        }
+
         /// <summary>
-        /// Loads an instance of type TypeOfListItem from the DB based on its ID.
+        /// Loads an instance of type T from the DB based on its ID.
         /// </summary>
         public T GetById(IdT id, bool shouldLock)
         {
@@ -102,7 +108,7 @@ namespace Medusa.Biodata.Data
 
         /// <summary>
         /// For entities with automatatically generated IDs, such as identity, SaveOrUpdate may 
-        /// be called when saving a new entity.  SaveOrUpdate can also be called to update any 
+        /// be called when saving a new entity.  SaveOrUpdate can also be called to _update_ any 
         /// entity, even if its ID is assigned.
         /// </summary>
         public T SaveOrUpdate(T entity)
@@ -121,14 +127,14 @@ namespace Medusa.Biodata.Data
         /// </summary>
         public void CommitChanges()
         {
-            if (NHibernateSessionManager.Instance.HasOpenTransaction())
+            if (NHibernateSessionManager.Instance.HasOpenTransactionOn(SessionFactoryConfigPath))
             {
-                NHibernateSessionManager.Instance.CommitTransaction();
+                NHibernateSessionManager.Instance.CommitTransactionOn(SessionFactoryConfigPath);
             }
             else
             {
                 // If there's no transaction, just flush the changes
-                NHibernateSessionManager.Instance.GetSession().Flush();
+                NHibernateSessionManager.Instance.GetSessionFrom(SessionFactoryConfigPath).Flush();
             }
         }
 
@@ -139,10 +145,11 @@ namespace Medusa.Biodata.Data
         {
             get
             {
-                return NHibernateSessionManager.Instance.GetSession();
+                return NHibernateSessionManager.Instance.GetSessionFrom(SessionFactoryConfigPath);
             }
         }
 
         private Type persitentType = typeof(T);
+        protected readonly string SessionFactoryConfigPath;
     }
 }

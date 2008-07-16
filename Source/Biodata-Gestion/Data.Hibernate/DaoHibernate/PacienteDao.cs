@@ -11,6 +11,6 @@ namespace Medusa.Biodata.Data
     /// </summary>
     public class PacienteDao : AbstractNHibernateDao<Paciente, long>, IPacienteDao
     {
-
+        public PacienteDao(string sessionFactoryConfigPath) : base(sessionFactoryConfigPath) { }
     }
 }

@@ -6,6 +6,7 @@ using NHibernate.Cfg;
 using NHibernate.Cache;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
+using System.Collections;
 
 namespace Medusa.Biodata.Data
 {
@@ -32,12 +33,9 @@ namespace Medusa.Biodata.Data
         }
 
         /// <summary>
-        /// Initializes the NHibernate session factory upon instantiation.
+        /// Private constructor to enforce singleton
         /// </summary>
-        private NHibernateSessionManager()
-        {
-            InitSessionFactory();
-        }
+        private NHibernateSessionManager() { }
 
         /// <summary>
         /// Assists with ensuring thread-safe, lazy singleton
@@ -51,9 +49,38 @@ namespace Medusa.Biodata.Data
 
         #endregion
 
-        private void InitSessionFactory()
+        /// <summary>
+        /// This method attempts to find a session factory stored in <see cref="sessionFactories" />
+        /// via its name; if it can't be found it creates a new one and adds it the hashtable.
+        /// </summary>
+        /// <param name="sessionFactoryConfigPath">Path location of the factory config</param>
+        private ISessionFactory GetSessionFactoryFor(string sessionFactoryConfigPath)
         {
-            sessionFactory = new Configuration().Configure().BuildSessionFactory();
+            //TODO: chquear que el archivo de configuracion de NHibernate existe
+
+            //  Attempt to retrieve a stored SessionFactory from the hashtable.
+            ISessionFactory sessionFactory = (ISessionFactory)sessionFactories[sessionFactoryConfigPath];
+
+            //  Failed to find a matching SessionFactory so make a new one.
+            if (sessionFactory == null)
+            {
+                //TODO: chquear que el archivo de configuracion de NHibernate existe
+
+                Configuration cfg = new Configuration();
+                cfg.Configure(sessionFactoryConfigPath);
+
+                //  Now that we have our Configuration object, create a new SessionFactory
+                sessionFactory = cfg.BuildSessionFactory();
+
+                if (sessionFactory == null)
+                {
+                    throw new InvalidOperationException("cfg.BuildSessionFactory() returned null.");
+                }
+
+                sessionFactories.Add(sessionFactoryConfigPath, sessionFactory);
+            }
+
+            return sessionFactory;
         }
 
         /// <summary>
@@ -61,44 +88,46 @@ namespace Medusa.Biodata.Data
         /// an open session attached to the HttpContext.  If you have an interceptor to be used, modify
         /// the HttpModule to call this before calling BeginTransaction().
         /// </summary>
-        public void RegisterInterceptor(IInterceptor interceptor)
+        public void RegisterInterceptorOn(string sessionFactoryConfigPath, IInterceptor interceptor)
         {
-            ISession session = ContextSession;
+            ISession session = (ISession)ContextSessions[sessionFactoryConfigPath];
 
             if (session != null && session.IsOpen)
             {
                 throw new CacheException("You cannot register an interceptor once a session has already been opened");
             }
 
-            GetSession(interceptor);
+            GetSessionFrom(sessionFactoryConfigPath, interceptor);
         }
 
-        public ISession GetSession()
+        public ISession GetSessionFrom(string sessionFactoryConfigPath)
         {
-            return GetSession(null);
+            return GetSessionFrom(sessionFactoryConfigPath, null);
         }
 
         /// <summary>
         /// Gets a session with or without an interceptor.  This method is not called directly; instead,
         /// it gets invoked from other public methods.
         /// </summary>
-        private ISession GetSession(IInterceptor interceptor)
+        private ISession GetSessionFrom(string sessionFactoryConfigPath, IInterceptor interceptor)
         {
-            ISession session = ContextSession;
+            ISession session = (ISession)ContextSessions[sessionFactoryConfigPath];
 
             if (session == null)
             {
                 if (interceptor != null)
                 {
-                    session = sessionFactory.OpenSession(interceptor);
+                    session = GetSessionFactoryFor(sessionFactoryConfigPath).OpenSession(interceptor);
                 }
                 else
                 {
-                    session = sessionFactory.OpenSession();
+                    session = GetSessionFactoryFor(sessionFactoryConfigPath).OpenSession();
                 }
 
-                ContextSession = session;
+                ContextSessions[sessionFactoryConfigPath] = session;
             }
+
+            //TODO: chequear que la session no sea nula
 
             return session;
         }
@@ -106,9 +135,9 @@ namespace Medusa.Biodata.Data
         /// <summary>
         /// Flushes anything left in the session and closes the connection.
         /// </summary>
-        public void CloseSession()
+        public void CloseSessionOn(string sessionFactoryConfigPath)
         {
-            ISession session = ContextSession;
+            ISession session = (ISession)ContextSessions[sessionFactoryConfigPath];
 
             if (session != null && session.IsOpen)
             {
@@ -116,123 +145,119 @@ namespace Medusa.Biodata.Data
                 session.Close();
             }
 
-            ContextSession = null;
+            ContextSessions.Remove(sessionFactoryConfigPath);
         }
 
-        public void BeginTransaction()
+        public ITransaction BeginTransactionOn(string sessionFactoryConfigPath)
         {
-            ITransaction transaction = ContextTransaction;
+            ITransaction transaction = (ITransaction)ContextTransactions[sessionFactoryConfigPath];
 
             if (transaction == null)
             {
-                transaction = GetSession().BeginTransaction();
-                ContextTransaction = transaction;
+                transaction = GetSessionFrom(sessionFactoryConfigPath).BeginTransaction();
+                ContextTransactions.Add(sessionFactoryConfigPath, transaction);
             }
+
+            return transaction;
         }
 
-        public void CommitTransaction()
+        public void CommitTransactionOn(string sessionFactoryConfigPath)
         {
-            ITransaction transaction = ContextTransaction;
+            ITransaction transaction = (ITransaction)ContextTransactions[sessionFactoryConfigPath];
 
             try
             {
-                if (HasOpenTransaction())
+                if (HasOpenTransactionOn(sessionFactoryConfigPath))
                 {
                     transaction.Commit();
-                    ContextTransaction = null;
+                    ContextTransactions.Remove(sessionFactoryConfigPath);
                 }
             }
             catch (HibernateException)
             {
-                RollbackTransaction();
+                RollbackTransactionOn(sessionFactoryConfigPath);
                 throw;
             }
         }
 
-        public bool HasOpenTransaction()
+        public bool HasOpenTransactionOn(string sessionFactoryConfigPath)
         {
-            ITransaction transaction = ContextTransaction;
+            ITransaction transaction = (ITransaction)ContextTransactions[sessionFactoryConfigPath];
 
             return transaction != null && !transaction.WasCommitted && !transaction.WasRolledBack;
         }
 
-        public void RollbackTransaction()
+        public void RollbackTransactionOn(string sessionFactoryConfigPath)
         {
-            ITransaction transaction = ContextTransaction;
+            ITransaction transaction = (ITransaction)ContextTransactions[sessionFactoryConfigPath];
 
             try
             {
-                if (HasOpenTransaction())
+                if (HasOpenTransactionOn(sessionFactoryConfigPath))
                 {
                     transaction.Rollback();
                 }
 
-                ContextTransaction = null;
+                ContextTransactions.Remove(sessionFactoryConfigPath);
             }
             finally
             {
-                CloseSession();
+                CloseSessionOn(sessionFactoryConfigPath);
             }
         }
 
         /// <summary>
-        /// If within a web context, this uses <see cref="HttpContext" /> instead of the WinForms 
-        /// specific <see cref="CallContext" />.  Discussion concerning this found at 
-        /// http://forum.springframework.net/showthread.php?t=572.
+        /// Since multiple databases may be in use, there may be one transaction per database 
+        /// persisted at any one time.  The easiest way to store them is via a hashtable
+        /// with the key being tied to session factory.  If within a web context, this uses
+        /// <see cref="HttpContext" /> instead of the WinForms specific <see cref="CallContext" />.  
+        /// Discussion concerning this found at http://forum.springframework.net/showthread.php?t=572
         /// </summary>
-        private ITransaction ContextTransaction
+        private Hashtable ContextTransactions
         {
             get
             {
                 if (IsInWebContext())
                 {
-                    return (ITransaction)HttpContext.Current.Items[TRANSACTION_KEY];
+                    if (HttpContext.Current.Items[TRANSACTION_KEY] == null)
+                        HttpContext.Current.Items[TRANSACTION_KEY] = new Hashtable();
+
+                    return (Hashtable)HttpContext.Current.Items[TRANSACTION_KEY];
                 }
                 else
                 {
-                    return (ITransaction)CallContext.GetData(TRANSACTION_KEY);
-                }
-            }
-            set
-            {
-                if (IsInWebContext())
-                {
-                    HttpContext.Current.Items[TRANSACTION_KEY] = value;
-                }
-                else
-                {
-                    CallContext.SetData(TRANSACTION_KEY, value);
+                    if (CallContext.GetData(TRANSACTION_KEY) == null)
+                        CallContext.SetData(TRANSACTION_KEY, new Hashtable());
+
+                    return (Hashtable)CallContext.GetData(TRANSACTION_KEY);
                 }
             }
         }
 
         /// <summary>
-        /// If within a web context, this uses <see cref="HttpContext" /> instead of the WinForms 
-        /// specific <see cref="CallContext" />.  Discussion concerning this found at 
-        /// http://forum.springframework.net/showthread.php?t=572.
+        /// Since multiple databases may be in use, there may be one session per database 
+        /// persisted at any one time.  The easiest way to store them is via a hashtable
+        /// with the key being tied to session factory.  If within a web context, this uses
+        /// <see cref="HttpContext" /> instead of the WinForms specific <see cref="CallContext" />.  
+        /// Discussion concerning this found at http://forum.springframework.net/showthread.php?t=572
         /// </summary>
-        private ISession ContextSession
+        private Hashtable ContextSessions
         {
             get
             {
                 if (IsInWebContext())
                 {
-                    return (ISession)HttpContext.Current.Items[SESSION_KEY];
+                    if (HttpContext.Current.Items[SESSION_KEY] == null)
+                        HttpContext.Current.Items[SESSION_KEY] = new Hashtable();
+
+                    return (Hashtable)HttpContext.Current.Items[SESSION_KEY];
                 }
                 else
                 {
-                    return (ISession)CallContext.GetData(SESSION_KEY);
-                }
-            }
-            set
-            {
-                if (IsInWebContext())
-                {
-                    HttpContext.Current.Items[SESSION_KEY] = value;
-                }
-                else
-                {
-                    CallContext.SetData(SESSION_KEY, value);
+                    if (CallContext.GetData(SESSION_KEY) == null)
+                        CallContext.SetData(SESSION_KEY, new Hashtable());
+
+                    return (Hashtable)CallContext.GetData(SESSION_KEY);
                 }
             }
         }
@@ -242,8 +267,8 @@ namespace Medusa.Biodata.Data
             return HttpContext.Current != null;
         }
 
-        private const string TRANSACTION_KEY = "CONTEXT_TRANSACTION";
-        private const string SESSION_KEY = "CONTEXT_SESSION";
-        private ISessionFactory sessionFactory;
+        private Hashtable sessionFactories = new Hashtable();
+        private const string TRANSACTION_KEY = "CONTEXT_TRANSACTIONS";
+        private const string SESSION_KEY = "CONTEXT_SESSIONS";
     }
 }
