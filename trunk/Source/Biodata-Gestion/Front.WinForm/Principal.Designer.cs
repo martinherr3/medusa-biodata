@@ -1,4 +1,4 @@
-﻿namespace FrontEnd.WinForm
+﻿namespace Medusa.Biodata.Util
 {
     partial class Principal
     {
@@ -28,9 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // Principal
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(292, 266);
+            this.IsMdiContainer = true;
+            this.Name = "Principal";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Principal_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
