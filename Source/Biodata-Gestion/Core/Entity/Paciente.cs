@@ -6,11 +6,17 @@ namespace Medusa.Biodata.Entity
 {
     public class Paciente : DomainObject<long>
     {
+        /// <summary>
+        /// NHibernate necesita un contructor por defecto
+        /// </summary>
+        public Paciente() { }
+
 
         #region -[Members]-
         private long _id;
         private string _nombre;
         private string _apellido;
+        private int _edad;
         #endregion
 
 
@@ -31,6 +37,12 @@ namespace Medusa.Biodata.Entity
         {
             get { return _apellido; }
             set { _apellido = value; }
+        }
+
+        public int Edad
+        {
+            get { return _edad; }
+            set { _edad = value; }
         }
         #endregion
 
