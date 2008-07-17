@@ -113,9 +113,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Business\Business.csproj">
+    <ProjectReference Include="..\Business\Services.csproj">
       <Project>{B5AC2949-09FC-48A9-B757-F949129FE42B}</Project>
-      <Name>Business</Name>
+      <Name>Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{B87B2AFA-B195-4788-A88A-B6C01F189819}</Project>
