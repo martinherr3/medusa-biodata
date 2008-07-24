@@ -43,7 +43,7 @@ namespace Medusa.Biodata.Util.Forms
             paciente.Edad = Convert.ToInt32(TxtEdad.Text);
 
             dao.Save(paciente);
-
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

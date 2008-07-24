@@ -117,10 +117,6 @@
       <Project>{B87B2AFA-B195-4788-A88A-B6C01F189819}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Data.Hibernate\Data.Hibernate.csproj">
-      <Project>{C930C814-F995-492B-9A85-F854BAD694CE}</Project>
-      <Name>Data.Hibernate</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Utils\Utils.csproj">
       <Project>{FBE7B29E-B2E1-4EC3-BEDE-E32139E2E002}</Project>
       <Name>Utils</Name>
