@@ -1,0 +1,12 @@
+NHibernate:
+Se esta investigando al respecto. Gabriel subio un ejemplo al repositorio.
+Pendiente, Leer el manual.
+Gabriel va a mandar un diagrama con el esquema de la arquitectura. En cada capa (menos la de servicio), se esta logrando guardar un paciente.
+
+Requerimientos de Negocio - Completarlos. Hacer diagramas que den la base para empezar la tarea de desarrollo.
+
+Proyecto nuevo audiometro: Tener una reunion con el Ing. Carlos Herran para ver cuales van a ser los pasos siguientes con respecto a este desarrollo.
+
+Gerardo, continua trabajando con la arquitectura.
+
+Pagina Web, Medusa y Biodata. Leo esta trabajando en la pagina de Medusa. Se le paso un borrador de requerimientos para la pagina web de biodata, completarlos, documentarlos y subirlos al repositorio.
