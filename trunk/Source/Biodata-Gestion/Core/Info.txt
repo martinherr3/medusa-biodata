@@ -1,0 +1,5 @@
+﻿Este proyecto deberia solamente contener interfaces y objetos del dominio o entidades.
+No debe tener referencia a ninguna libreria de acceso a datos, o sea, debe ser 
+independiente de cualquier plataforma de datos. 
+Las implemetaciones correspondientes seran realizadas en el proyecto Data.Hibernate que
+es el unico que tiene referencia a librerias de acceso a datos, en este caso NHibernate.
