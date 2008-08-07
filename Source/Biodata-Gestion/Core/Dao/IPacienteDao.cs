@@ -7,5 +7,8 @@ namespace Medusa.Biodata.Data.Interfaces
 {
     public interface IPacienteDao : IDao<Paciente,long>
     {
+        void pepe(string x);
+
+        Paciente medina();
     }
 }

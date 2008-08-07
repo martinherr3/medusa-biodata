@@ -7,11 +7,15 @@ using System.Text;
 using System.Windows.Forms;
 using Medusa.Biodata.Data.Interfaces;
 using Medusa.Biodata.Entity;
+using Medusa.Biodata.Service;
 
 namespace Medusa.Biodata.Util.Forms
 {
     public partial class PacienteForm : Form
     {
+
+        PacienteService _pacienteService;
+ 
         public PacienteForm()
         {
             InitializeComponent();
@@ -36,13 +40,14 @@ namespace Medusa.Biodata.Util.Forms
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
-            IPacienteDao dao = DaoFactory.GetPacienteDao();
+
+            _pacienteService = new PacienteService(DaoFactory);
             Paciente paciente = new Paciente();
             paciente.Nombre = TxtNombre.Text;
             paciente.Apellido = TxtApellido.Text;
             paciente.Edad = Convert.ToInt32(TxtEdad.Text);
 
-            dao.Save(paciente);
+            _pacienteService.SavePaciente(paciente);
             
         }
 
