@@ -12,5 +12,24 @@ namespace Medusa.Biodata.Data
     public class PacienteDao : AbstractNHibernateDao<Paciente, long>, IPacienteDao
     {
         public PacienteDao(string sessionFactoryConfigPath) : base(sessionFactoryConfigPath) { }
+
+        #region IPacienteDao Members
+
+        public void pepe(string x)
+        {
+
+        }
+
+        #endregion
+
+        #region IPacienteDao Members
+
+
+        public Paciente medina()
+        {
+            throw new NotImplementedException();
+        }
+
+        #endregion
     }
 }
