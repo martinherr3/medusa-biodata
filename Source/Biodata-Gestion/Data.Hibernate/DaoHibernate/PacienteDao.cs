@@ -1,35 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-using Medusa.Biodata.Entity;
-using Medusa.Biodata.Data.Interfaces;
+using Medusa.Biodata.Core.DataInterfaces;
+using Medusa.Biodata.Domain;
 
 namespace Medusa.Biodata.Data
 {
-    /// <summary>
-    /// Concrete DAO for accessing instances of <see cref="Paciente" /> from DB.
-    /// </summary>
-    public class PacienteDao : AbstractNHibernateDao<Paciente, long>, IPacienteDao
+    public class PacienteDao : AbstractNHibernateDao<Paciente, System.Int32>, IPacienteDao
     {
         public PacienteDao(string sessionFactoryConfigPath) : base(sessionFactoryConfigPath) { }
-
-        #region IPacienteDao Members
-
-        public void pepe(string x)
-        {
-
-        }
-
-        #endregion
-
-        #region IPacienteDao Members
-
-
-        public Paciente medina()
-        {
-            throw new NotImplementedException();
-        }
-
-        #endregion
     }
 }

@@ -5,8 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using Medusa.Biodata.Data.Interfaces;
-using Medusa.Biodata.Entity;
+using Medusa.Biodata.Core.DataInterfaces;
+using Medusa.Biodata.Domain;
 using Medusa.Biodata.Service;
 
 namespace Medusa.Biodata.Util.Forms
@@ -15,6 +15,7 @@ namespace Medusa.Biodata.Util.Forms
     {
 
         PacienteService _pacienteService;
+        ObraSocialService _obraSocialService;
  
         public PacienteForm()
         {
@@ -23,6 +24,14 @@ namespace Medusa.Biodata.Util.Forms
 
         private void Paciente_Load(object sender, EventArgs e)
         {
+            _obraSocialService = new ObraSocialService(DaoFactory);
+            _pacienteService = new PacienteService(DaoFactory);
+
+            IList<ObraSocial> obraSociales = _obraSocialService.GetObrasSociales();
+            foreach (ObraSocial os in obraSociales)
+            {
+                cmbObraSocial.Items.Add(os.RazonSocial);
+            }
             
             
         }
@@ -41,19 +50,15 @@ namespace Medusa.Biodata.Util.Forms
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
 
-            _pacienteService = new PacienteService(DaoFactory);
+           
             Paciente paciente = new Paciente();
             paciente.Nombre = TxtNombre.Text;
             paciente.Apellido = TxtApellido.Text;
-            paciente.Edad = Convert.ToInt32(TxtEdad.Text);
-
+            ObraSocial os = _obraSocialService.GetObraSocial(2);
+            paciente.IdObraSocialLookup = os;
+            paciente.IdObraSocial = 2;
             _pacienteService.SavePaciente(paciente);
             
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
     }

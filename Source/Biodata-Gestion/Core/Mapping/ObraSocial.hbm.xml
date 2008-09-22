@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Medusa.Biodata.Core" namespace="Medusa.Biodata.Domain">
+    <class name="ObraSocial" table="ObraSocial" >
+    <id name="ID" type="System.Int32" column="idObraSocial">
+        <generator class="identity"/>
+    </id>
+    <property name="RazonSocial" column="razonSocial" type="System.String" not-null="false" length="50"/>
+    <property name="Direccion" column="direccion" type="System.String" not-null="false" length="100"/>
+    <property name="Contacto" column="contacto" type="System.String" not-null="false" length="50"/>
+    <bag name="Pacientes" table="Paciente" inverse="true" lazy="true" cascade="delete">
+    <key column="idObraSocial" />
+    <one-to-many class="Paciente"/>
+    </bag>
+ </class>
+</hibernate-mapping>

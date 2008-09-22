@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Medusa.Biodata.Data.Interfaces;
-using Medusa.Biodata.Entity;
+using Medusa.Biodata.Core.DataInterfaces;
+using Medusa.Biodata.Domain;
 
 namespace Medusa.Biodata.Service
 {
@@ -19,8 +19,6 @@ namespace Medusa.Biodata.Service
         {
             IPacienteDao dao = _factory.GetPacienteDao();
             dao.Save(paciente);
-
-            dao.pepe("asdasd");
         }
     }
 }

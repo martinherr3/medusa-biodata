@@ -54,7 +54,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DaoHibernate\AbstractNHibernateDao.cs" />
+    <Compile Include="DaoHibernate\AudifonoDao.cs" />
+    <Compile Include="DaoHibernate\AudifonoPacienteDao.cs" />
+    <Compile Include="DaoHibernate\ConsultaDao.cs" />
+    <Compile Include="DaoHibernate\EstudioDao.cs" />
+    <Compile Include="DaoHibernate\HistoriaClinicaDao.cs" />
+    <Compile Include="DaoHibernate\MoldeDao.cs" />
+    <Compile Include="DaoHibernate\MoldePacienteDao.cs" />
+    <Compile Include="DaoHibernate\ObraSocialDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DaoHibernate\PacienteDao.cs" />
+    <Compile Include="DaoHibernate\TipoEstudioDao.cs" />
     <Compile Include="Factory\NHibernateDaoFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session\NHibernateSessionManager.cs" />

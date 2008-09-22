@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Medusa.Biodata.Data.Interfaces;
+using Medusa.Biodata.Core.DataInterfaces;
 
 namespace Medusa.Biodata.Data
 {
@@ -10,6 +10,8 @@ namespace Medusa.Biodata.Data
     /// </summary>
     public class NHibernateDaoFactory : IDaoFactory
     {
+        private string sessionFactoryConfigPath;
+
         public NHibernateDaoFactory(string sessionFactoryConfigPath)
         {
             SessionFactoryConfigPath = sessionFactoryConfigPath;
@@ -31,7 +33,42 @@ namespace Medusa.Biodata.Data
         {
             return new PacienteDao(sessionFactoryConfigPath);
         }
-
-        private string sessionFactoryConfigPath;
+        public IAudifonoDao GetAudifonoDao()
+        {
+            return new AudifonoDao(sessionFactoryConfigPath);
+        }
+        public IAudifonoPacienteDao GetAudifonoPacienteDao()
+        {
+            return new AudifonoPacienteDao(sessionFactoryConfigPath);
+        }
+        public IConsultaDao GetConsultaDao()
+        {
+            return new ConsultaDao(sessionFactoryConfigPath);
+        }
+        public IEstudioDao GetEstudioDao()
+        {
+            return new EstudioDao(sessionFactoryConfigPath);
+        }
+        public IHistoriaClinicaDao GetHistoriaClinicaDao()
+        {
+            return new HistoriaClinicaDao(sessionFactoryConfigPath);
+        }
+        public IMoldeDao GetMoldeDao()
+        {
+            return new MoldeDao(sessionFactoryConfigPath);
+        }
+        public IMoldePacienteDao GetMoldePacienteDao()
+        {
+            return new MoldePacienteDao(sessionFactoryConfigPath);
+        }
+        public IObraSocialDao GetObraSocialDao()
+        {
+            return new ObraSocialDao(sessionFactoryConfigPath);
+        }
+        public ITipoEstudioDao GetTipoEstudioDao()
+        {
+            return new TipoEstudioDao(sessionFactoryConfigPath);
+        }
+       
     }
 }

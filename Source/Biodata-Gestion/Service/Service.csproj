@@ -8,8 +8,8 @@
     <ProjectGuid>{B5AC2949-09FC-48A9-B757-F949129FE42B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Medusa.Biodata.Business</RootNamespace>
-    <AssemblyName>Medusa.Biodata.Business</AssemblyName>
+    <RootNamespace>Medusa.Biodata.Service</RootNamespace>
+    <AssemblyName>Medusa.Biodata.Service</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ObraSocialService.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PacienteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

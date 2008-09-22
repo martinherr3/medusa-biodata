@@ -33,19 +33,37 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dao\IAudifonoDao.cs" />
+    <Compile Include="Dao\IAudifonoPacienteDao.cs" />
+    <Compile Include="Dao\IConsultaDao.cs" />
     <Compile Include="Dao\IDao.cs" />
     <Compile Include="Dao\IDaoFactory.cs" />
+    <Compile Include="Dao\IEstudioDao.cs" />
+    <Compile Include="Dao\IHistoriaClinicaDao.cs" />
+    <Compile Include="Dao\IMoldeDao.cs" />
+    <Compile Include="Dao\IMoldePacienteDao.cs" />
+    <Compile Include="Dao\IObraSocialDao.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Dao\IPacienteDao.cs" />
+    <Compile Include="Dao\ITipoEstudioDao.cs" />
+    <Compile Include="Entity\Audifono.cs" />
+    <Compile Include="Entity\AudifonoPaciente.cs" />
+    <Compile Include="Entity\Consulta.cs" />
     <Compile Include="Entity\DomainObject.cs" />
+    <Compile Include="Entity\Estudio.cs" />
+    <Compile Include="Entity\HistoriaClinica.cs" />
     <Compile Include="Entity\IHasAssignedId.cs" />
+    <Compile Include="Entity\Molde.cs" />
+    <Compile Include="Entity\MoldePaciente.cs" />
+    <Compile Include="Entity\ObraSocial.cs" />
     <Compile Include="Entity\Paciente.cs" />
+    <Compile Include="Entity\TipoEstudio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Mapping\Paciente.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Utils\Utils.csproj">
@@ -55,6 +73,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Info.txt" />
+    <EmbeddedResource Include="Mapping\Audifono.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AudifonoPaciente.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Consulta.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Estudio.hbm.xml" />
+    <EmbeddedResource Include="Mapping\HistoriaClinica.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Molde.hbm.xml" />
+    <EmbeddedResource Include="Mapping\MoldePaciente.hbm.xml" />
+    <EmbeddedResource Include="Mapping\TipoEstudio.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ObraSocial.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Paciente.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

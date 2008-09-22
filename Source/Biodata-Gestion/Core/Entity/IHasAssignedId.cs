@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Medusa.Biodata.Entity
+namespace Medusa.Biodata.Domain
 {
     public interface IHasAssignedId<IdT>
     {
