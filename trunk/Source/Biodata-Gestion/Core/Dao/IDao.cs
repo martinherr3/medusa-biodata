@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Medusa.Biodata.Data.Interfaces
+namespace Medusa.Biodata.Core.DataInterfaces
 {
     public interface IDao<T, IdT>
     {

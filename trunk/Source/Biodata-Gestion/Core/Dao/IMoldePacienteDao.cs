@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Medusa.Biodata.Domain;
 
@@ -9,7 +9,7 @@ namespace Medusa.Biodata.Core.DataInterfaces
     /// place it in its own file for manageability.  In this way, it can grow further without
     /// cluttering up <see cref="IDaoFactory" />.
     /// </summary>
-    public interface IPacienteDao : IDao<Paciente, System.Int32>
+    public interface IMoldePacienteDao : IDao<MoldePaciente, MoldePaciente.DomainObjectID>
     {
 
     }

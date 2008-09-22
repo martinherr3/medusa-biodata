@@ -1,21 +1,29 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
-                   namespace="Medusa.Biodata.Entity"
-                   assembly="Medusa.Biodata.Core">
-
-  <!-- Mappings for class 'Customer' -->
-  <class name="Paciente" table="paciente" lazy="false">
-
-    <!-- Identity mapping -->
-    <id name="Id" column="id" >
-      <generator class="identity"/>
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Medusa.Biodata.Core" namespace="Medusa.Biodata.Domain">
+    <class name="Paciente" table="Paciente" >
+    <id name="ID" type="System.Int32" column="idPaciente">
+        <generator class="identity"/>
     </id>
-
-    <!-- Simple mappings -->
-    <property name="Nombre" column="nombre" />
-    <property name="Apellido" column="apellido" />
-    <property name="Edad" column="edad" />
-
-  </class>
-
+    <property name="Nombre" column="nombre" type="System.String" not-null="false" length="50"/>
+    <property name="Apellido" column="apellido" type="System.String" not-null="false" length="50"/>
+    <property name="Direccion" column="direccion" type="System.String" not-null="false" length="100"/>
+    <property name="FechaNacimiento" column="fechaNacimiento" type="System.String" not-null="false" length="10"/>
+    <property name="NumDocumento" column="numDocumento" type="System.String" not-null="false" length="10"/>
+    <property name="Sexo" column="sexo" type="System.String" not-null="false" length="1"/>
+    <property name="IdObraSocial" column="idObraSocial" type="System.Int32" not-null="false" />
+    <property name="Comentario" column="comentario" type="System.String" not-null="false" />
+    <many-to-one name="IdObraSocialLookup" column="idObraSocial" class="ObraSocial"  update="0"  insert="0" />
+    <bag name="Audifonos" table="AudifonoPaciente">
+        <key column="idPaciente" />
+        <many-to-many class="Audifono" column="idAudifono" />
+    </bag>
+    <bag name="HistoriaClinicas" table="HistoriaClinica" inverse="true" lazy="true" cascade="delete">
+    <key column="idPaciente" />
+    <one-to-many class="HistoriaClinica"/>
+    </bag>
+    <bag name="Moldes" table="MoldePaciente">
+        <key column="idPaciente" />
+        <many-to-many class="Molde" column="idMolde" />
+    </bag>
+ </class>
 </hibernate-mapping>

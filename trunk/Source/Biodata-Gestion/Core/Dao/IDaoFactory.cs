@@ -1,14 +1,19 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace Medusa.Biodata.Data.Interfaces
+namespace Medusa.Biodata.Core.DataInterfaces
 {
-    /// <summary>
-    /// Provides an interface for retrieving DAO objects
-    /// </summary>
     public interface IDaoFactory
     {
+        IAudifonoDao GetAudifonoDao();
+        IAudifonoPacienteDao GetAudifonoPacienteDao();
+        IConsultaDao GetConsultaDao();
+        IEstudioDao GetEstudioDao();
+        IHistoriaClinicaDao GetHistoriaClinicaDao();
+        IMoldeDao GetMoldeDao();
+        IMoldePacienteDao GetMoldePacienteDao();
+        IObraSocialDao GetObraSocialDao();
         IPacienteDao GetPacienteDao();
+        ITipoEstudioDao GetTipoEstudioDao();
     }
 }
