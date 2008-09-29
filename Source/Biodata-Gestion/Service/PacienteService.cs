@@ -6,19 +6,8 @@ using Medusa.Biodata.Domain;
 
 namespace Medusa.Biodata.Service
 {
-    public class PacienteService
+    public class PacienteService : AbstractService<IPacienteDao, Paciente, System.Int32>
     {
-        IDaoFactory _factory;
-
-        public PacienteService(IDaoFactory factory)
-        {
-            _factory = factory;
-        }
-
-        public void SavePaciente(Paciente paciente)
-        {
-            IPacienteDao dao = _factory.GetPacienteDao();
-            dao.Save(paciente);
-        }
+        public PacienteService(IPacienteDao dao) : base(dao){}
     }
-}
+}	

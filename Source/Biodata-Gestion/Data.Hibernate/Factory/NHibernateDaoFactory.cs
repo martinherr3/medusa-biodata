@@ -19,14 +19,8 @@ namespace Medusa.Biodata.Data
 
         protected string SessionFactoryConfigPath
         {
-            get
-            {
-                return sessionFactoryConfigPath;
-            }
-            set
-            {
-                sessionFactoryConfigPath = value;
-            }
+            get{ return sessionFactoryConfigPath;  }
+            set{ sessionFactoryConfigPath = value; }
         }
 
         public IPacienteDao GetPacienteDao()
