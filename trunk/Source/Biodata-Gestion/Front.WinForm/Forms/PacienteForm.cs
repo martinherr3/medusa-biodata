@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using Medusa.Biodata.Core.DataInterfaces;
 using Medusa.Biodata.Domain;
 using Medusa.Biodata.Service;
+using Medusa.Biodata.Utils;
 
 namespace Medusa.Biodata.Util.Forms
 {
@@ -24,16 +25,14 @@ namespace Medusa.Biodata.Util.Forms
 
         private void Paciente_Load(object sender, EventArgs e)
         {
-            _obraSocialService = new ObraSocialService(DaoFactory);
-            _pacienteService = new PacienteService(DaoFactory);
-
-            IList<ObraSocial> obraSociales = _obraSocialService.GetObrasSociales();
+            _obraSocialService = new ObraSocialService(DaoFactory.GetObraSocialDao());
+            _pacienteService = new PacienteService(DaoFactory.GetPacienteDao());
+            
+            IList<ObraSocial> obraSociales = _obraSocialService.GetAll();
             foreach (ObraSocial os in obraSociales)
             {
                 cmbObraSocial.Items.Add(os.RazonSocial);
-            }
-            
-            
+            }           
         }
 
         /// <summary>
@@ -44,7 +43,7 @@ namespace Medusa.Biodata.Util.Forms
             get
             {
                 return (IDaoFactory)ContainerHelper.WindsorContainer()[typeof(IDaoFactory)];
-            }
+            }   
         }
 
         private void BtnGuardar_Click(object sender, EventArgs e)
@@ -54,10 +53,8 @@ namespace Medusa.Biodata.Util.Forms
             Paciente paciente = new Paciente();
             paciente.Nombre = TxtNombre.Text;
             paciente.Apellido = TxtApellido.Text;
-            ObraSocial os = _obraSocialService.GetObraSocial(2);
-            paciente.IdObraSocialLookup = os;
             paciente.IdObraSocial = 2;
-            _pacienteService.SavePaciente(paciente);
+            _pacienteService.Insert(paciente);
             
         }
 
