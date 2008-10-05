@@ -1,5 +1,0 @@
-..\Asemblies\Medusa.Biodata.BackEnd.DataAccessComponents.dll
-..\Asemblies\Medusa.Biodata.BackEnd.DataAccessComponents.pdb
-obj\Debug\ResolveAssemblyReference.cache
-obj\Debug\Medusa.Biodata.BackEnd.DataAccessComponents.dll
-obj\Debug\Medusa.Biodata.BackEnd.DataAccessComponents.pdb
