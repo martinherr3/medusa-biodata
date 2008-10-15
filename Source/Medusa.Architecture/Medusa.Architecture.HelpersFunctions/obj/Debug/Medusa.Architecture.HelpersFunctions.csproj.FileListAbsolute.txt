@@ -1,5 +1,0 @@
-E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.HelpersFunctions.dll
-E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.HelpersFunctions.pdb
-E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.HelpersFunctions\obj\Debug\ResolveAssemblyReference.cache
-E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.HelpersFunctions\obj\Debug\Medusa.Architecture.HelpersFunctions.dll
-E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.HelpersFunctions\obj\Debug\Medusa.Architecture.HelpersFunctions.pdb

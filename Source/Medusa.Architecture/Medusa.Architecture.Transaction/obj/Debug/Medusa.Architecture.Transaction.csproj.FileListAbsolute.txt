@@ -1,6 +1,0 @@
-E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.Transaction.dll.config
-E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.Transaction.dll
-E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.Transaction.pdb
-E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.Transaction\obj\Debug\ResolveAssemblyReference.cache
-E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.Transaction\obj\Debug\Medusa.Architecture.Transaction.dll
-E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.Transaction\obj\Debug\Medusa.Architecture.Transaction.pdb
