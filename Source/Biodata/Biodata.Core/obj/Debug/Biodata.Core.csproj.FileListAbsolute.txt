@@ -1,0 +1,13 @@
+E:\Medusa\Biodata\Biodata.Core\obj\Debug\ResolveAssemblyReference.cache
+E:\Medusa\Biodata\Biodata.Core\bin\Debug\Biodata.Core.dll
+E:\Medusa\Biodata\Biodata.Core\bin\Debug\Biodata.Core.pdb
+E:\Medusa\Biodata\Biodata.Core\bin\Debug\Biodata.Utils.dll
+E:\Medusa\Biodata\Biodata.Core\bin\Debug\Castle.Windsor.dll
+E:\Medusa\Biodata\Biodata.Core\bin\Debug\Castle.DynamicProxy.dll
+E:\Medusa\Biodata\Biodata.Core\bin\Debug\Castle.Model.dll
+E:\Medusa\Biodata\Biodata.Core\bin\Debug\Castle.MicroKernel.dll
+E:\Medusa\Biodata\Biodata.Core\bin\Debug\Biodata.Utils.pdb
+E:\Medusa\Biodata\Biodata.Core\obj\Debug\Biodata.Core.dll
+E:\Medusa\Biodata\Biodata.Core\obj\Debug\Biodata.Core.pdb
+E:\Medusa\Biodata\Assemblies\Biodata.Core.dll
+E:\Medusa\Biodata\Assemblies\Biodata.Core.pdb

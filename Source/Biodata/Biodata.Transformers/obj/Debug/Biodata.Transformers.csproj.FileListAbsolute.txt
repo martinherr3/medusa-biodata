@@ -1,0 +1,5 @@
+E:\Medusa\Biodata\Assemblies\Biodata.Transformers.dll
+E:\Medusa\Biodata\Assemblies\Biodata.Transformers.pdb
+E:\Medusa\Biodata\Biodata.Transformers\obj\Debug\ResolveAssemblyReference.cache
+E:\Medusa\Biodata\Biodata.Transformers\obj\Debug\Biodata.Transformers.dll
+E:\Medusa\Biodata\Biodata.Transformers\obj\Debug\Biodata.Transformers.pdb
