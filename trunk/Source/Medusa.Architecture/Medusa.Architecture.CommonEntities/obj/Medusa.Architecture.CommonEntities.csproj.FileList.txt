@@ -1,9 +1,0 @@
-bin\Debug\Medusa.Architecture.CommonEntities.dll
-bin\Debug\Medusa.Architecture.CommonEntities.pdb
-bin\Debug\Medusa.Architecture.HelpersFunctions.dll
-bin\Debug\Medusa.Architecture.HelpersFunctions.pdb
-obj\Debug\ResolveAssemblyReference.cache
-obj\Debug\Medusa.Architecture.CommonEntities.dll
-obj\Debug\Medusa.Architecture.CommonEntities.pdb
-..\Asemblies\Medusa.Architecture.CommonEntities.dll
-..\Asemblies\Medusa.Architecture.CommonEntities.pdb
