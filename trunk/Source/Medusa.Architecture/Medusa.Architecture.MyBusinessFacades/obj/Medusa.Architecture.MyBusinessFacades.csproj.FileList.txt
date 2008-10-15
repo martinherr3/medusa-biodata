@@ -1,0 +1,9 @@
+bin\Debug\Medusa.Architecture.MyBusinessFacades.dll
+bin\Debug\Medusa.Architecture.MyBusinessFacades.pdb
+bin\Debug\Medusa.Architecture.HelpersFunctions.dll
+bin\Debug\Medusa.Architecture.HelpersFunctions.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Medusa.Architecture.MyBusinessFacades.dll
+obj\Debug\Medusa.Architecture.MyBusinessFacades.pdb
+..\Asemblies\Medusa.Architecture.MyBusinessFacades.dll
+..\Asemblies\Medusa.Architecture.MyBusinessFacades.pdb

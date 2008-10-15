@@ -1,0 +1,7 @@
+bin\Debug\Medusa.Architecture.Xml.dll
+bin\Debug\Medusa.Architecture.Xml.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Medusa.Architecture.Xml.dll
+obj\Debug\Medusa.Architecture.Xml.pdb
+..\Asemblies\Medusa.Architecture.Xml.dll
+..\Asemblies\Medusa.Architecture.Xml.pdb

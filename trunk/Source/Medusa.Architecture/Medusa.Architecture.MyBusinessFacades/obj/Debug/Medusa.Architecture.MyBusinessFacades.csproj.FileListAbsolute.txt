@@ -1,0 +1,5 @@
+E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.MyBusinessFacades.dll
+E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.MyBusinessFacades.pdb
+E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.MyBusinessFacades\obj\Debug\ResolveAssemblyReference.cache
+E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.MyBusinessFacades\obj\Debug\Medusa.Architecture.MyBusinessFacades.dll
+E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.MyBusinessFacades\obj\Debug\Medusa.Architecture.MyBusinessFacades.pdb

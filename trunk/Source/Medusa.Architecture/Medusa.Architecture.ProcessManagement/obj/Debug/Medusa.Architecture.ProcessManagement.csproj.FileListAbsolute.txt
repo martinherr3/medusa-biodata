@@ -1,0 +1,9 @@
+E:\Proyectos.Net\Medusa.Architecture\Asemblies\Database\BPConfig_Data.MDF
+E:\Proyectos.Net\Medusa.Architecture\Asemblies\Database\BPConfig_Data_log.ldf
+E:\Proyectos.Net\Medusa.Architecture\Asemblies\Database\BPConfig_Log.LDF
+E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.ProcessManagement.dll.config
+E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.ProcessManagement.dll
+E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.ProcessManagement.pdb
+E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.ProcessManagement\obj\Debug\ResolveAssemblyReference.cache
+E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.ProcessManagement\obj\Debug\Medusa.Architecture.ProcessManagement.dll
+E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.ProcessManagement\obj\Debug\Medusa.Architecture.ProcessManagement.pdb
