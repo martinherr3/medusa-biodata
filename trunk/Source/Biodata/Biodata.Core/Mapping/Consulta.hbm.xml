@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Biodata.Core" namespace="Biodata.Domain">
+    <class name="Consulta" table="Consulta" >
+    <id name="ID" type="System.Int32" column="idConsulta">
+        <generator class="assigned"/>
+    </id>
+    <property name="FechaConsulta" column="fechaConsulta" type="System.DateTime" not-null="false" />
+    <property name="Diagnostico" column="diagnostico" type="System.String" not-null="false" />
+    <property name="IdHistoriaClinica" column="idHistoriaClinica" type="System.Int32" not-null="false" />
+    <many-to-one name="IdHistoriaClinicaLookup" column="idHistoriaClinica" class="HistoriaClinica"  update="0"  insert="0" />
+    <bag name="Estudios" table="Estudio" inverse="true" lazy="true" cascade="delete">
+    <key column="idConsulta" />
+    <one-to-many class="Estudio"/>
+    </bag>
+ </class>
+</hibernate-mapping>

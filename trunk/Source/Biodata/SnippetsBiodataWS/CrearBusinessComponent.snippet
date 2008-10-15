@@ -1,0 +1,144 @@
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <Title>Snippets para crear BusinessComponent con llamadas a DAO NHibernate</Title>
+    <Author>Gerardo Medina</Author>
+    <Shortcut>CrearBusinessComponentDAC</Shortcut>
+    <Description>Código para crear BusinessComponent con llamadas a DAO NHibernate.</Description>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+  </Header>
+  <Snippet>
+    <Declarations>
+      <Literal>
+        <ID>Entidad</ID>
+        <ToolTip>Nombre de la Entidad</ToolTip>
+        <Default>Nombre</Default>
+      </Literal>     
+    </Declarations>
+    <Code Language="csharp">
+        <![CDATA[
+using System;
+using System.Collections.Generic;
+using System.Text;
+//using Medusa.Architecture.Bases.BackEnd;
+//using Medusa.HC.Common.BE;
+//using Medusa.HC.BackEnd.DA;
+
+
+namespace Biodata.BusinessComponent
+{
+    /// <summary>
+    /// Componente de negocios para $Entidad$.
+    /// </summary>
+    public class $Entidad$BC:BusinessComponentBase
+    {
+        /// <summary>
+        /// Búsqueda  de $Entidad$.
+        /// </summary>
+        /// <param name="pBE">Entidad.</param>
+        /// <returns>List<$Entidad$></returns>
+        public static List<$Entidad$> GetByEntity($Entidad$ pBE)
+        {
+            try
+            {
+                return $Entidad$DAC.Search(pBE);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
+        /// <summary>
+        /// Búsqueda  de $Entidad$.
+        /// </summary>
+        /// <param name="pBE">Entidad.</param>
+        /// <returns>List<$Entidad$></returns>
+        public static List<$Entidad$> GetById(Int32 pId)
+        {
+            try
+            {
+                return $Entidad$DAC.Search(pId);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        
+        /// <summary>
+        /// Búsqueda  de $Entidad$.
+        /// </summary>
+        /// <param name="pBE">Entidad.</param>
+        /// <returns>List<$Entidad$></returns>
+        public static List<$Entidad$> GetAll()
+        {
+            try
+            {
+                return $Entidad$DAC.Search(pBE);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Inserta $Entidad$.
+        /// </summary>
+        /// <param name="pBE">Entidad.</param>
+        /// <returns>Int32</returns>
+        public static Int32 Save($Entidad$ pBE)
+        {
+            try
+            {
+                return $Entidad$DAC.Insert(pBE);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        /// <summary>
+        /// Borra $Entidad$.
+        /// </summary>
+        /// <param name="pBE">Entidad.</param>
+        /// <returns>Int32</returns>
+        public static Int32 Delete($Entidad$ pBE)
+        {
+            try
+            {
+                return $Entidad$DAC.Delete(pBE);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
+        /// Actualiza $Entidad$.
+        /// </summary>
+        /// <param name="pBE">Entidad.</param>
+        /// <returns>Int32</returns>
+        public static Int32 Update($Entidad$ pBE)
+        {
+            try
+            {
+                return $Entidad$DAC.Update(pBE);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+    
+    }
+}    
+      ]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>

@@ -1,0 +1,5 @@
+E:\Medusa\Biodata\Biodata.Utils\obj\Debug\ResolveAssemblyReference.cache
+E:\Medusa\Biodata\Assemblies\Biodata.Utils.dll
+E:\Medusa\Biodata\Assemblies\Biodata.Utils.pdb
+E:\Medusa\Biodata\Biodata.Utils\obj\Debug\Biodata.Utils.dll
+E:\Medusa\Biodata\Biodata.Utils\obj\Debug\Biodata.Utils.pdb

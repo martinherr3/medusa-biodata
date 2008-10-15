@@ -1,0 +1,5 @@
+E:\Medusa\Biodata\Assemblies\Biodata.BusinessComponent.dll
+E:\Medusa\Biodata\Assemblies\Biodata.BusinessComponent.pdb
+E:\Medusa\Biodata\Biodata.BusinessComponent\obj\Debug\ResolveAssemblyReference.cache
+E:\Medusa\Biodata\Biodata.BusinessComponent\obj\Debug\Biodata.BusinessComponent.dll
+E:\Medusa\Biodata\Biodata.BusinessComponent\obj\Debug\Biodata.BusinessComponent.pdb
