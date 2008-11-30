@@ -1,4 +1,4 @@
-﻿namespace Medusa.Biodata.Util.Forms
+﻿namespace Medusa.Biodata.FrontEnd.Forms
 {
     partial class PacienteForm
     {

@@ -13,7 +13,7 @@ namespace Medusa.Biodata.Service
     /// <typeparam name="idTDomain"></typeparam>
     public abstract class AbstractService<TDao, TDomain, idTDomain> where TDao : IDao<TDomain, idTDomain>
     {
-        private TDao dao;
+        protected TDao dao;
 
         public AbstractService(TDao pdao)
         {

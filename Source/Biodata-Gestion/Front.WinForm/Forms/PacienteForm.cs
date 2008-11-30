@@ -10,9 +10,9 @@ using Medusa.Biodata.Domain;
 using Medusa.Biodata.Service;
 using Medusa.Biodata.Utils;
 
-namespace Medusa.Biodata.Util.Forms
+namespace Medusa.Biodata.FrontEnd.Forms
 {
-    public partial class PacienteForm : Form
+    public partial class PacienteForm : ABMBaseForm
     {
 
         PacienteService _pacienteService;

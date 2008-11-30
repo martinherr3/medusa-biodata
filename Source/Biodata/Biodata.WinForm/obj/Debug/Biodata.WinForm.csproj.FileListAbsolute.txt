@@ -22,3 +22,6 @@ E:\Medusa\Biodata\Biodata.WinForm\bin\Debug\Medusa.Architecture.CommonEntities.p
 E:\Medusa\Biodata\Biodata.WinForm\bin\Debug\Biodata.Utils.pdb
 E:\Medusa\Biodata\Biodata.WinForm\bin\Debug\Biodata.DTO.dll
 E:\Medusa\Biodata\Biodata.WinForm\bin\Debug\Biodata.DTO.pdb
+D:\Medusa\Biodata\medusa-biodata\Source\Biodata\Biodata.WinForm\bin\Debug\Biodata.WinForm.exe.config
+D:\Medusa\Biodata\medusa-biodata\Source\Biodata\Biodata.WinForm\obj\Debug\Biodata.WinForm.exe
+D:\Medusa\Biodata\medusa-biodata\Source\Biodata\Biodata.WinForm\obj\Debug\Biodata.WinForm.pdb

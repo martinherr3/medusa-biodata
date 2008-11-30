@@ -9,5 +9,10 @@ namespace Medusa.Biodata.Service
     public class PacienteService : AbstractService<IPacienteDao, Paciente, System.Int32>
     {
         public PacienteService(IPacienteDao dao) : base(dao){}
+
+        public IList<Paciente> FiltrarPorApellido(string apellido)
+        {
+            return dao.FiltrarPorApellido(apellido);
+        }
     }
 }	

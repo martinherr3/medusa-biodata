@@ -114,12 +114,14 @@ namespace Medusa.Biodata.Data
         public T SaveOrUpdate(T entity)
         {
             NHibernateSession.SaveOrUpdate(entity);
+            NHibernateSession.Flush();
             return entity;
         }
 
         public void Delete(T entity)
         {
             NHibernateSession.Delete(entity);
+            NHibernateSession.Flush();
         }
 
         /// <summary>
@@ -141,7 +143,7 @@ namespace Medusa.Biodata.Data
         /// <summary>
         /// Exposes the ISession used within the DAO.
         /// </summary>
-        private ISession NHibernateSession
+        protected ISession NHibernateSession
         {
             get
             {
