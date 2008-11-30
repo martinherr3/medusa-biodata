@@ -9,8 +9,6 @@ namespace Medusa.Biodata.Domain
     [Serializable]
     public class ObraSocial : DomainObject<System.Int32>
     {
-
-
         private System.String _RazonSocial;
         private System.String _Direccion;
         private System.String _Contacto;

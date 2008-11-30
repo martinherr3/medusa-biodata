@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Medusa.Biodata.Util.Properties {
+namespace Medusa.Biodata.FrontEnd.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Medusa.Biodata.Util.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Medusa.Biodata.Util.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Medusa.Biodata.FrontEnd.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,6 +57,20 @@ namespace Medusa.Biodata.Util.Properties {
             }
             set {
                 resourceCulture = value;
+            }
+        }
+        
+        internal static System.Drawing.Bitmap ajax_loader_4 {
+            get {
+                object obj = ResourceManager.GetObject("ajax_loader_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap emblem_important {
+            get {
+                object obj = ResourceManager.GetObject("emblem_important", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }

@@ -11,6 +11,6 @@ namespace Medusa.Biodata.Core.DataInterfaces
     /// </summary>
     public interface IPacienteDao : IDao<Paciente, System.Int32>
     {
-
+        List<Paciente> FiltrarPorApellido(string apellido);
     }
 }

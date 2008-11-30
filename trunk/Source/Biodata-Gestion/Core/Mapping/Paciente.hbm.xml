@@ -12,7 +12,7 @@
     <property name="Sexo" column="sexo" type="System.String" not-null="false" length="1"/>
     <property name="IdObraSocial" column="idObraSocial" type="System.Int32" not-null="false" />
     <property name="Comentario" column="comentario" type="System.String" not-null="false" />
-    <many-to-one name="IdObraSocialLookup" column="idObraSocial" class="ObraSocial"  update="0"  insert="0" />
+    <many-to-one name="IdObraSocialLookup" column="idObraSocial" class="ObraSocial"  update="false"  insert="false" />
     <bag name="Audifonos" table="AudifonoPaciente">
         <key column="idPaciente" />
         <many-to-many class="Audifono" column="idAudifono" />

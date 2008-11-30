@@ -8,7 +8,7 @@
     <ProjectGuid>{8CA1CAA9-A14D-4C5E-BD67-5079DC021386}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Medusa.Biodata.Util</RootNamespace>
+    <RootNamespace>Medusa.Biodata.FrontEnd</RootNamespace>
     <AssemblyName>Medusa.Biodata.FrontWin</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -57,18 +57,54 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assembler\IAssembler.cs" />
+    <Compile Include="Assembler\PacienteAssembler.cs" />
+    <Compile Include="DTO\AbstractDTO.cs" />
+    <Compile Include="DTO\PacienteDTO.cs" />
+    <Compile Include="Forms\ABMBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ABMBaseForm.designer.cs">
+      <DependentUpon>ABMBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseForm.designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PacienteForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\PacienteForm.Designer.cs">
       <DependentUpon>PacienteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TestBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestBaseForm.Designer.cs">
+      <DependentUpon>TestBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TestForm.Designer.cs">
+      <DependentUpon>TestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrincipalForm.designer.cs">
+      <DependentUpon>PrincipalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHelper.cs" />
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,8 +113,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\ABMBaseForm.resx">
+      <DependentUpon>ABMBaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PacienteForm.resx">
       <DependentUpon>PacienteForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestBaseForm.resx">
+      <DependentUpon>TestBaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TestForm.resx">
+      <DependentUpon>TestForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrincipalForm.resx">
+      <DependentUpon>PrincipalForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
@@ -88,6 +144,30 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ABMControl.resx">
+      <DependentUpon>ABMControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ButtonUC.resx">
+      <DependentUpon>ButtonUC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\GridView.resx">
+      <DependentUpon>GridView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MedusaGrid.resx">
+      <DependentUpon>MedusaGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MedusaStatusBar.resx">
+      <DependentUpon>MedusaStatusBar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\SearchControl.resx">
+      <DependentUpon>SearchControl.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
@@ -102,8 +182,6 @@
     <None Include="Config\CastleComponents.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Properties\DataSources\Medusa.Biodata.Data.ObraSocialDao.datasource" />
-    <None Include="Properties\DataSources\Medusa.Biodata.Service.ObraSocialService.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -112,6 +190,48 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UserControls\ABMControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ABMControl.Designer.cs">
+      <DependentUpon>ABMControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ButtonUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ButtonUC.designer.cs">
+      <DependentUpon>ButtonUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\GridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\GridView.designer.cs">
+      <DependentUpon>GridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MedusaBindingNavigator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\MedusaBindingNavigator.Designer.cs">
+      <DependentUpon>MedusaBindingNavigator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MedusaGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\MedusaGrid.Designer.cs">
+      <DependentUpon>MedusaGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MedusaStatusBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UserControls\MedusaStatusBar.Designer.cs">
+      <DependentUpon>MedusaStatusBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SearchControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\SearchControl.Designer.cs">
+      <DependentUpon>SearchControl.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +251,13 @@
       <Project>{FBE7B29E-B2E1-4EC3-BEDE-E32139E2E002}</Project>
       <Name>Utils</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\loading.gif" />
+    <None Include="Resources\emblem-important.png" />
+    <Content Include="UserControls\Images\ajax-loader_4.gif" />
+    <None Include="Resources\ajax-loader_4.gif" />
+    <None Include="Images\Tango\accessories-text-editor1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

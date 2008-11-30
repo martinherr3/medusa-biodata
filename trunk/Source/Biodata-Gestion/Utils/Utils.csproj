@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BindingHelper.cs" />
     <Compile Include="ContainerHelper.cs" />
     <Compile Include="DesignByContract.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
