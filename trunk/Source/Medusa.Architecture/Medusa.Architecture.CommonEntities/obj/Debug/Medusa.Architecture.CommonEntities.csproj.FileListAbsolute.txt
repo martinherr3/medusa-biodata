@@ -3,3 +3,8 @@ E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.CommonEntitie
 E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.CommonEntities\obj\Debug\ResolveAssemblyReference.cache
 E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.CommonEntities\obj\Debug\Medusa.Architecture.CommonEntities.dll
 E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.CommonEntities\obj\Debug\Medusa.Architecture.CommonEntities.pdb
+E:\Medusa\Medusa.Architecture\Asemblies\Medusa.Architecture.CommonEntities.dll
+E:\Medusa\Medusa.Architecture\Asemblies\Medusa.Architecture.CommonEntities.pdb
+E:\Medusa\Medusa.Architecture\Medusa.Architecture.CommonEntities\obj\Debug\ResolveAssemblyReference.cache
+E:\Medusa\Medusa.Architecture\Medusa.Architecture.CommonEntities\obj\Debug\Medusa.Architecture.CommonEntities.dll
+E:\Medusa\Medusa.Architecture\Medusa.Architecture.CommonEntities\obj\Debug\Medusa.Architecture.CommonEntities.pdb
