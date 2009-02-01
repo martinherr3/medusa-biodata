@@ -7,3 +7,12 @@ E:\Proyectos.Net\Medusa.Architecture\Asemblies\Medusa.Architecture.ProcessManage
 E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.ProcessManagement\obj\Debug\ResolveAssemblyReference.cache
 E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.ProcessManagement\obj\Debug\Medusa.Architecture.ProcessManagement.dll
 E:\Proyectos.Net\Medusa.Architecture\Medusa.Architecture.ProcessManagement\obj\Debug\Medusa.Architecture.ProcessManagement.pdb
+E:\Medusa\Medusa.Architecture\Asemblies\Database\BPConfig_Data.MDF
+E:\Medusa\Medusa.Architecture\Asemblies\Database\BPConfig_Data_log.ldf
+E:\Medusa\Medusa.Architecture\Asemblies\Database\BPConfig_Log.LDF
+E:\Medusa\Medusa.Architecture\Asemblies\Medusa.Architecture.ProcessManagement.dll.config
+E:\Medusa\Medusa.Architecture\Asemblies\Medusa.Architecture.ProcessManagement.dll
+E:\Medusa\Medusa.Architecture\Asemblies\Medusa.Architecture.ProcessManagement.pdb
+E:\Medusa\Medusa.Architecture\Medusa.Architecture.ProcessManagement\obj\Debug\ResolveAssemblyReference.cache
+E:\Medusa\Medusa.Architecture\Medusa.Architecture.ProcessManagement\obj\Debug\Medusa.Architecture.ProcessManagement.dll
+E:\Medusa\Medusa.Architecture\Medusa.Architecture.ProcessManagement\obj\Debug\Medusa.Architecture.ProcessManagement.pdb
