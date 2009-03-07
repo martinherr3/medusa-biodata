@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biodata.Forms", "Biodata.Forms\Biodata.Forms.csproj", "{3633013D-2B10-4362-BC95-B5F14231188D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{345D4EAB-59A9-4499-9DB3-D2F7089A1B51} = {345D4EAB-59A9-4499-9DB3-D2F7089A1B51}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biodata.Data", "Biodata.Data\Biodata.Data.csproj", "{34E491A6-3D02-49C4-A0AB-D0C9495162A4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A1847EB1-7E3D-471F-A896-DDE1A9976F06} = {A1847EB1-7E3D-471F-A896-DDE1A9976F06}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biodata.Core", "Biodata.Core\Biodata.Core.csproj", "{A1847EB1-7E3D-471F-A896-DDE1A9976F06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biodata.Business", "Biodata.Business\Biodata.Business.csproj", "{345D4EAB-59A9-4499-9DB3-D2F7089A1B51}"
+	ProjectSection(ProjectDependencies) = postProject
+		{34E491A6-3D02-49C4-A0AB-D0C9495162A4} = {34E491A6-3D02-49C4-A0AB-D0C9495162A4}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biodata.UserControls", "Biodata.UserControls\Biodata.UserControls.csproj", "{5FB29ADF-3843-4211-865B-E28680C421D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3633013D-2B10-4362-BC95-B5F14231188D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3633013D-2B10-4362-BC95-B5F14231188D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3633013D-2B10-4362-BC95-B5F14231188D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3633013D-2B10-4362-BC95-B5F14231188D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34E491A6-3D02-49C4-A0AB-D0C9495162A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34E491A6-3D02-49C4-A0AB-D0C9495162A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34E491A6-3D02-49C4-A0AB-D0C9495162A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34E491A6-3D02-49C4-A0AB-D0C9495162A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1847EB1-7E3D-471F-A896-DDE1A9976F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1847EB1-7E3D-471F-A896-DDE1A9976F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1847EB1-7E3D-471F-A896-DDE1A9976F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1847EB1-7E3D-471F-A896-DDE1A9976F06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{345D4EAB-59A9-4499-9DB3-D2F7089A1B51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{345D4EAB-59A9-4499-9DB3-D2F7089A1B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{345D4EAB-59A9-4499-9DB3-D2F7089A1B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{345D4EAB-59A9-4499-9DB3-D2F7089A1B51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FB29ADF-3843-4211-865B-E28680C421D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FB29ADF-3843-4211-865B-E28680C421D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FB29ADF-3843-4211-865B-E28680C421D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FB29ADF-3843-4211-865B-E28680C421D6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

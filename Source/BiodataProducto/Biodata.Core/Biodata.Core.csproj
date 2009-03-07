@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A1847EB1-7E3D-471F-A896-DDE1A9976F06}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mds.Biodata.Core</RootNamespace>
+    <AssemblyName>Mds.Biodata.Core</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mds.Architecture.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Q:\Biodata\Mds.Architecture.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Mds.Architecture.Util, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Q:\Biodata\Mds.Architecture.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataInterfaces\IAnamnesiDao.cs" />
+    <Compile Include="DataInterfaces\IAudifonoDao.cs" />
+    <Compile Include="DataInterfaces\IAudifonoPacienteDao.cs" />
+    <Compile Include="DataInterfaces\IAudiometriaDao.cs" />
+    <Compile Include="DataInterfaces\ICiudadDao.cs" />
+    <Compile Include="DataInterfaces\IConjuntoPalabraDao.cs" />
+    <Compile Include="DataInterfaces\IDaoFactory.cs" />
+    <Compile Include="DataInterfaces\IEstudioDao.cs" />
+    <Compile Include="DataInterfaces\IHistoriaClinicaDao.cs" />
+    <Compile Include="DataInterfaces\IImpedanciometriaDinamicaDao.cs" />
+    <Compile Include="DataInterfaces\IImpedanciometriaEstaticaDao.cs" />
+    <Compile Include="DataInterfaces\IListadoPalabraDao.cs" />
+    <Compile Include="DataInterfaces\ILogoAudiometriaDao.cs" />
+    <Compile Include="DataInterfaces\IMoldeAudifonoDao.cs" />
+    <Compile Include="DataInterfaces\IObraSocialDao.cs" />
+    <Compile Include="DataInterfaces\IObraSocialXPacienteDao.cs" />
+    <Compile Include="DataInterfaces\IPacienteDao.cs" />
+    <Compile Include="DataInterfaces\IProvinciaDao.cs" />
+    <Compile Include="DataInterfaces\IRecordatorioDao.cs" />
+    <Compile Include="DataInterfaces\ISeleccionAudifonoDao.cs" />
+    <Compile Include="DataInterfaces\ITimpanometriaDao.cs" />
+    <Compile Include="Domain\Anamnesi.cs" />
+    <Compile Include="Domain\Audifono.cs" />
+    <Compile Include="Domain\AudifonoPaciente.cs" />
+    <Compile Include="Domain\Audiometria.cs" />
+    <Compile Include="Domain\Ciudad.cs" />
+    <Compile Include="Domain\ConjuntoPalabra.cs" />
+    <Compile Include="Domain\DomainObject.cs" />
+    <Compile Include="Domain\Estudio.cs" />
+    <Compile Include="Domain\HistoriaClinica.cs" />
+    <Compile Include="Domain\ImpedanciometriaDinamica.cs" />
+    <Compile Include="Domain\ImpedanciometriaEstatica.cs" />
+    <Compile Include="Domain\ListadoPalabra.cs" />
+    <Compile Include="Domain\LogoAudiometria.cs" />
+    <Compile Include="Domain\MoldeAudifono.cs" />
+    <Compile Include="Domain\ObraSocial.cs" />
+    <Compile Include="Domain\ObraSocialXPaciente.cs" />
+    <Compile Include="Domain\Paciente.cs" />
+    <Compile Include="Domain\Provincia.cs" />
+    <Compile Include="Domain\Recordatorio.cs" />
+    <Compile Include="Domain\SeleccionAudifono.cs" />
+    <Compile Include="Domain\Timpanometria.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\Anamnesi.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Audifono.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AudifonoPaciente.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Audiometria.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Ciudad.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ConjuntoPalabra.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Estudio.hbm.xml" />
+    <EmbeddedResource Include="Mapping\HistoriaClinica.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ImpedanciometriaDinamica.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ImpedanciometriaEstatica.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ListadoPalabra.hbm.xml" />
+    <EmbeddedResource Include="Mapping\LogoAudiometria.hbm.xml" />
+    <EmbeddedResource Include="Mapping\MoldeAudifono.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ObraSocial.hbm.xml" />
+    <EmbeddedResource Include="Mapping\ObraSocialXPaciente.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Paciente.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Provincia.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Recordatorio.hbm.xml" />
+    <EmbeddedResource Include="Mapping\SeleccionAudifono.hbm.xml" />
+    <EmbeddedResource Include="Mapping\Timpanometria.hbm.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
+    <class name="Audiometria" table="Audiometria" >
+    <id name="ID" type="System.Int32" column="IDEstudio">
+        <generator class="assigned"/>
+    </id>
+    <property name="AudiogramaIzquierdo" column="AudiogramaIzquierdo" type="System.String" not-null="false" />
+    <property name="AudiogramaDerecho" column="AudiogramaDerecho" type="System.String" not-null="false" />
+    <many-to-one name="IDEstudioLookup" column="IDEstudio" class="Estudio"  update="0"  insert="0" />
+ </class>
+</hibernate-mapping>

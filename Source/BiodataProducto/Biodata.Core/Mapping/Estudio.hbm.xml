@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
+    <class name="Estudio" table="Estudio" >
+    <id name="ID" type="System.Int32" column="IDEstudio">
+        <generator class="identity"/>
+    </id>
+    <property name="Nombre" column="Nombre" type="System.String" not-null="true" length="100"/>
+    <property name="FechaEstudio" column="FechaEstudio" type="System.DateTime" not-null="true" />
+    <property name="InstrumentosUtilizados" column="InstrumentosUtilizados" type="System.String" not-null="false" length="250"/>
+    <property name="Observaciones" column="Observaciones" type="System.String" not-null="false" length="250"/>
+    <property name="TipoEstudio" column="TipoEstudio" type="System.Int32" not-null="false" />
+    <bag name="Anamnesises" table="Anamnesis" inverse="true" lazy="true" cascade="delete">
+    <key column="IDEstudio" />
+    <one-to-many class="Anamnesi"/>
+    </bag>
+    <bag name="Audiometrias" table="Audiometria" inverse="true" lazy="true" cascade="delete">
+    <key column="IDEstudio" />
+    <one-to-many class="Audiometria"/>
+    </bag>
+    <bag name="ImpedanciometriaDinamicas" table="ImpedanciometriaDinamica" inverse="true" lazy="true" cascade="delete">
+    <key column="IDEstudio" />
+    <one-to-many class="ImpedanciometriaDinamica"/>
+    </bag>
+    <bag name="ImpedanciometriaEstaticas" table="ImpedanciometriaEstatica" inverse="true" lazy="true" cascade="delete">
+    <key column="IDEstudio" />
+    <one-to-many class="ImpedanciometriaEstatica"/>
+    </bag>
+    <bag name="LogoAudiometrias" table="LogoAudiometria" inverse="true" lazy="true" cascade="delete">
+    <key column="IDEstudio" />
+    <one-to-many class="LogoAudiometria"/>
+    </bag>
+    <bag name="Timpanometrias" table="Timpanometria" inverse="true" lazy="true" cascade="delete">
+    <key column="IDEstudio" />
+    <one-to-many class="Timpanometria"/>
+    </bag>
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
+    <class name="ListadoPalabra" table="ListadoPalabra" >
+    <id name="ID" type="System.Int32" column="IDListadoPalabra">
+        <generator class="identity"/>
+    </id>
+    <property name="Descripcion" column="Descripcion" type="System.String" not-null="false" length="200"/>
+    <bag name="ConjuntoPalabras" table="ConjuntoPalabra" inverse="true" lazy="true" cascade="delete">
+    <key column="IDListadoPalabra" />
+    <one-to-many class="ConjuntoPalabra"/>
+    </bag>
+    <bag name="LogoAudiometrias" table="LogoAudiometria" inverse="true" lazy="true" cascade="delete">
+    <key column="IDListadoPalabra" />
+    <one-to-many class="LogoAudiometria"/>
+    </bag>
+ </class>
+</hibernate-mapping>

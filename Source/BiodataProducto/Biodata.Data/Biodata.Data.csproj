@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34E491A6-3D02-49C4-A0AB-D0C9495162A4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mds.Biodata.Data</RootNamespace>
+    <AssemblyName>Mds.Biodata.Data</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mds.Architecture.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Q:\Biodata\Mds.Architecture.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataHibernate\AnamnesiDao.cs" />
+    <Compile Include="DataHibernate\AudifonoDao.cs" />
+    <Compile Include="DataHibernate\AudifonoPacienteDao.cs" />
+    <Compile Include="DataHibernate\AudiometriaDao.cs" />
+    <Compile Include="DataHibernate\CiudadDao.cs" />
+    <Compile Include="DataHibernate\ConjuntoPalabraDao.cs" />
+    <Compile Include="DataHibernate\EstudioDao.cs" />
+    <Compile Include="DataHibernate\HistoriaClinicaDao.cs" />
+    <Compile Include="DataHibernate\ImpedanciometriaDinamicaDao.cs" />
+    <Compile Include="DataHibernate\ImpedanciometriaEstaticaDao.cs" />
+    <Compile Include="DataHibernate\ListadoPalabraDao.cs" />
+    <Compile Include="DataHibernate\LogoAudiometriaDao.cs" />
+    <Compile Include="DataHibernate\MoldeAudifonoDao.cs" />
+    <Compile Include="Factory\NHibernateDaoFactory.cs" />
+    <Compile Include="DataHibernate\ObraSocialDao.cs" />
+    <Compile Include="DataHibernate\ObraSocialXPacienteDao.cs" />
+    <Compile Include="DataHibernate\PacienteDao.cs" />
+    <Compile Include="DataHibernate\ProvinciaDao.cs" />
+    <Compile Include="DataHibernate\RecordatorioDao.cs" />
+    <Compile Include="DataHibernate\SeleccionAudifonoDao.cs" />
+    <Compile Include="DataHibernate\TimpanometriaDao.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Biodata.Core\Biodata.Core.csproj">
+      <Project>{A1847EB1-7E3D-471F-A896-DDE1A9976F06}</Project>
+      <Name>Biodata.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
