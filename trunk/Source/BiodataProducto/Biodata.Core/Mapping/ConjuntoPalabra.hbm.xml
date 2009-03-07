@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
+    <class name="ConjuntoPalabra" table="ConjuntoPalabra" >
+    <id name="ID" type="System.Int32" column="IDConjunto">
+        <generator class="identity"/>
+    </id>
+    <property name="Descripcion" column="Descripcion" type="System.String" not-null="false" length="200"/>
+    <property name="Palabras" column="Palabras" type="System.String" not-null="false" />
+    <property name="IDListadoPalabra" column="IDListadoPalabra" type="System.Int32" not-null="false" />
+    <many-to-one name="IDListadoPalabraLookup" column="IDListadoPalabra" class="ListadoPalabra"  update="0"  insert="0" />
+ </class>
+</hibernate-mapping>

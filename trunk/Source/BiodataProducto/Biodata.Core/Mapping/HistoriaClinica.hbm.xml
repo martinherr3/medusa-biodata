@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
+    <class name="HistoriaClinica" table="HistoriaClinica" >
+    <id name="ID" type="System.Int32" column="IDHistoriaClinica">
+        <generator class="identity"/>
+    </id>
+    <property name="FechaInicioAtencion" column="FechaInicioAtencion" type="System.DateTime" not-null="true" />
+    <property name="Observaciones" column="Observaciones" type="System.String" not-null="false" length="250"/>
+    <property name="AntecedentesHereditarios" column="AntecedentesHereditarios" type="System.String" not-null="false" />
+    <property name="AntecedentesPersonales" column="AntecedentesPersonales" type="System.String" not-null="false" />
+    <property name="EstadoSalud" column="EstadoSalud" type="System.String" not-null="false" length="200"/>
+    <property name="IDPaciente" column="IDPaciente" type="System.Int32" not-null="false" />
+    <many-to-one name="IDPacienteLookup" column="IDPaciente" class="Paciente"  update="0"  insert="0" />
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
+    <class name="Paciente" table="Paciente" >
+    <id name="ID" type="System.Int32" column="IDPaciente">
+        <generator class="identity"/>
+    </id>
+    <property name="Nombre" column="Nombre" type="System.String" not-null="true" length="100"/>
+    <property name="Apellido" column="Apellido" type="System.String" not-null="true" length="100"/>
+    <property name="Direccion" column="Direccion" type="System.String" not-null="false" length="150"/>
+    <property name="TipoDocumento" column="TipoDocumento" type="System.Int32" not-null="true" />
+    <property name="NumeroDocumento" column="NumeroDocumento" type="System.Decimal" not-null="true" />
+    <property name="CorreoElectronico" column="CorreoElectronico" type="System.String" not-null="false" length="100"/>
+    <property name="FechaNacimiento" column="FechaNacimiento" type="System.DateTime" not-null="false" />
+    <property name="Sexo" column="Sexo" type="System.String" not-null="false" length="1"/>
+    <property name="Comentario" column="Comentario" type="System.String" not-null="false" length="250"/>
+    <property name="Telefono" column="Telefono" type="System.String" not-null="false" length="50"/>
+    <property name="Celular" column="Celular" type="System.Int32" not-null="false" />
+    <property name="IDObraSocial" column="IDObraSocial" type="System.Int32" not-null="false" />
+    <property name="IDCiudad" column="IDCiudad" type="System.Int32" not-null="false" />
+    <many-to-one name="IDCiudadLookup" column="IDCiudad" class="Ciudad"  update="0"  insert="0" />
+    <bag name="AudifonoPacientes" table="AudifonoPaciente" inverse="true" lazy="true" cascade="delete">
+    <key column="IDPaciente" />
+    <one-to-many class="AudifonoPaciente"/>
+    </bag>
+    <bag name="HistoriaClinicas" table="HistoriaClinica" inverse="true" lazy="true" cascade="delete">
+    <key column="IDPaciente" />
+    <one-to-many class="HistoriaClinica"/>
+    </bag>
+    <bag name="ObraSocialXPacientes" table="ObraSocialXPaciente" inverse="true" lazy="true" cascade="delete">
+    <key column="IDPaciente" />
+    <one-to-many class="ObraSocialXPaciente"/>
+    </bag>
+ </class>
+</hibernate-mapping>

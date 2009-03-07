@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
+    <class name="ImpedanciometriaDinamica" table="ImpedanciometriaDinamica" >
+    <id name="ID" type="System.Int32" column="IDEstudio">
+        <generator class="assigned"/>
+    </id>
+    <property name="Lado" column="Lado" type="System.Int32" not-null="true" />
+    <property name="Clase" column="Clase" type="System.Int32" not-null="true" />
+    <property name="Tipo" column="Tipo" type="System.Int32" not-null="true" />
+    <property name="U" column="U" type="System.Decimal" not-null="false" />
+    <property name="UR" column="UR" type="System.Decimal" not-null="false" />
+    <property name="ISU" column="ISU" type="System.Decimal" not-null="false" />
+    <many-to-one name="IDEstudioLookup" column="IDEstudio" class="Estudio"  update="0"  insert="0" />
+ </class>
+</hibernate-mapping>

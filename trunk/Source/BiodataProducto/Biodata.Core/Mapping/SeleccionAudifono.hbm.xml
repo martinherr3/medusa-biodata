@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
+    <class name="SeleccionAudifono" table="SeleccionAudifono" >
+    <id name="ID" type="System.Int32" column="IDSeleccionAudifono">
+        <generator class="identity"/>
+    </id>
+    <property name="FechaSeleccion" column="FechaSeleccion" type="System.DateTime" not-null="true" />
+    <property name="InstrumentosUtilizados" column="InstrumentosUtilizados" type="System.String" not-null="false" length="250"/>
+    <property name="Observaciones" column="Observaciones" type="System.String" not-null="false" length="250"/>
+    <property name="LecturaLabial" column="LecturaLabial" type="System.Boolean" not-null="true" />
+    <property name="UsoDeAudifono" column="UsoDeAudifono" type="System.Boolean" not-null="false" />
+    <property name="ProximaVisita" column="ProximaVisita" type="System.DateTime" not-null="true" />
+    <property name="NroSerie" column="NroSerie" type="System.String" not-null="false" length="50"/>
+    <property name="IDAudifono" column="IDAudifono" type="System.Int32" not-null="true" />
+    <property name="IDMolde" column="IDMolde" type="System.Int32" not-null="false" />
+    <many-to-one name="IDAudifonoLookup" column="IDAudifono" class="Audifono"  update="0"  insert="0" />
+    <many-to-one name="IDMoldeLookup" column="IDMolde" class="MoldeAudifono"  update="0"  insert="0" />
+ </class>
+</hibernate-mapping>

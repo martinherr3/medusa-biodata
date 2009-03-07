@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
+    <class name="Provincia" table="Provincia" >
+    <id name="ID" type="System.Int32" column="IDProvincia">
+        <generator class="identity"/>
+    </id>
+    <property name="Descripcion" column="Descripcion" type="System.String" not-null="false" length="100"/>
+    <bag name="Ciudads" table="Ciudad" inverse="true" lazy="true" cascade="delete">
+    <key column="IDProvincia" />
+    <one-to-many class="Ciudad"/>
+    </bag>
+ </class>
+</hibernate-mapping>

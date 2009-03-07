@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
+    <class name="ObraSocial" table="ObraSocial" >
+    <id name="ID" type="System.Int32" column="IDObraSocial">
+        <generator class="identity"/>
+    </id>
+    <property name="RazonSocial" column="RazonSocial" type="System.String" not-null="true" length="100"/>
+    <property name="Direccion" column="Direccion" type="System.String" not-null="false" length="100"/>
+    <property name="Telefono" column="Telefono" type="System.String" not-null="false" length="50"/>
+    <property name="Contacto" column="Contacto" type="System.String" not-null="false" length="100"/>
+    <property name="CUIT" column="CUIT" type="System.String" not-null="false" length="13"/>
+    <property name="CorreoElectronico" column="CorreoElectronico" type="System.String" not-null="false" length="100"/>
+    <property name="PaginaWeb" column="PaginaWeb" type="System.String" not-null="false" length="200"/>
+    <bag name="ObraSocialXPacientes" table="ObraSocialXPaciente" inverse="true" lazy="true" cascade="delete">
+    <key column="IDObraSocial" />
+    <one-to-many class="ObraSocialXPaciente"/>
+    </bag>
+ </class>
+</hibernate-mapping>

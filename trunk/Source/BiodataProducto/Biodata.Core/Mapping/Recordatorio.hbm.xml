@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
+    <class name="Recordatorio" table="Recordatorio" >
+    <id name="ID" type="System.Int32" column="IDRecordatorio">
+        <generator class="identity"/>
+    </id>
+    <property name="FechaRecordatorio" column="FechaRecordatorio" type="System.DateTime" not-null="false" />
+    <property name="Descripcion" column="Descripcion" type="System.String" not-null="false" length="200"/>
+    <property name="IDVinculado" column="IDVinculado" type="System.Int32" not-null="false" />
+    <property name="TipoVinculado" column="TipoVinculado" type="System.Int32" not-null="false" />
+ </class>
+</hibernate-mapping>
