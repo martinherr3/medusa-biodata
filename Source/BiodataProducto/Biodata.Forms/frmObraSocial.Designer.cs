@@ -232,9 +232,9 @@
             this.lblCorreoElectronico.AutoSize = true;
             this.lblCorreoElectronico.Location = new System.Drawing.Point(16, 188);
             this.lblCorreoElectronico.Name = "lblCorreoElectronico";
-            this.lblCorreoElectronico.Size = new System.Drawing.Size(91, 13);
+            this.lblCorreoElectronico.Size = new System.Drawing.Size(94, 13);
             this.lblCorreoElectronico.TabIndex = 19;
-            this.lblCorreoElectronico.Text = "CorreoElectronico";
+            this.lblCorreoElectronico.Text = "Correo Electronico";
             // 
             // frmObraSocial
             // 
@@ -242,7 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 573);
             this.Name = "frmObraSocial";
-            this.Text = "frmObraSocial";
+            this.Text = "Obra Social";
             this.Load += new System.EventHandler(this.frmObraSocial_Load);
             this.pnlList.ResumeLayout(false);
             this.pnlDetails.ResumeLayout(false);
