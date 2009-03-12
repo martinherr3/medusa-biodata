@@ -134,6 +134,7 @@ namespace Mds.Biodata.Forms
             LoadList();
         }
 
+        
         private void bgwLoad_DoWork(object sender, DoWorkEventArgs e)
         {
             _ObrasSocialesEntities = _ObraSocialBP.GetAll();
