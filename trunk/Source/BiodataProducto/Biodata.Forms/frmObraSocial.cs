@@ -118,6 +118,11 @@ namespace Mds.Biodata.Forms
         /// <returns></returns>
         private Boolean ValidData()
         {
+            if (txtRazonSocial.Text == "" || txtRazonSocial.Text == null)
+            {
+                ProcesarAdvertencia("Debe ingresar Razón Social");
+                return false;
+            }
             return true;
         }
         #endregion

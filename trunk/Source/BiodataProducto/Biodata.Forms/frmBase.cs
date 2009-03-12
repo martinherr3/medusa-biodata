@@ -52,7 +52,26 @@ namespace Mds.Biodata.Forms
         protected void ProcesarExcepcion(Exception ex, MessageBoxIcon pIcon)
         {
             MessageBox.Show(ex.Message, "Atencion", MessageBoxButtons.OK, pIcon);
-        } 
+        }
 
+        protected void ProcesarMensaje(String message)
+        {
+            ProcesarMensaje(message, "Mensaje");
+        }
+
+        protected void ProcesarMensaje(String message, String Title)
+        {
+            MessageBox.Show(message, Title);
+        }
+
+        protected void ProcesarAdvertencia(String message)
+        {
+            ProcesarAdvertencia(message, "Mensaje");
+        }
+
+        protected void ProcesarAdvertencia(String message, String Title)
+        {
+            MessageBox.Show(message, Title);
+        }
     }
 }

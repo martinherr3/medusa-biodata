@@ -14,7 +14,7 @@ namespace Mds.Biodata.Forms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmObraSocial());
+            Application.Run(new frmPrincipal());
         }
     }
 }
