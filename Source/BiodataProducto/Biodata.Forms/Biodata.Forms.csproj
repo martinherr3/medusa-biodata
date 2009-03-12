@@ -102,6 +102,12 @@
     <Compile Include="frmPrincipal.designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRecordatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecordatorio.Designer.cs">
+      <DependentUpon>frmRecordatorio.cs</DependentUpon>
+    </Compile>
     <Compile Include="GereralFunctions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -123,6 +129,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecordatorio.resx">
+      <DependentUpon>frmRecordatorio.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
