@@ -240,13 +240,13 @@ namespace Mds.Biodata.Forms
         {
             if (pValor)
             {
-                //this.pnlList.Size = new Size(this.pnlList.Size.Width, this.Parent.Height - 50);
+                this.pnlList.Size = new Size(this.pnlList.Size.Width, this.Parent.Height - 50);
             }
             else
             {
-                //this.pnlList.Size = new Size(this.pnlList.Size.Width, this.Parent.Height - 150 - this.pnlDetails.Height);
+                this.pnlList.Size = new Size(this.pnlList.Size.Width, this.Parent.Height - 150 - this.pnlDetails.Height);
             }
-            //this.ptbProgress.Location = new System.Drawing.Point(Convert.ToInt32((this.dgvList.Size.Width - 36) / 2), Convert.ToInt32((this.dgvList.Size.Height - 32) / 2));
+            this.ptbProgress.Location = new System.Drawing.Point(Convert.ToInt32((this.dgvList.Size.Width - 36) / 2), Convert.ToInt32((this.dgvList.Size.Height - 32) / 2));
         }
 
         private bool ExistenciaRegistros()
