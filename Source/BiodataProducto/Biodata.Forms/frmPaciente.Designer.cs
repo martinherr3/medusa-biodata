@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -54,8 +55,10 @@
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblCelular = new System.Windows.Forms.Label();
             this.lblCiudad = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlList.SuspendLayout();
             this.pnlDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblDeleteItem
@@ -128,6 +131,7 @@
             // btnAccept
             // 
             this.btnAccept.Location = new System.Drawing.Point(289, 445);
+            this.btnAccept.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnAccept_Click);
             // 
             // bgwLoad
             // 
@@ -347,6 +351,10 @@
             this.lblCiudad.TabIndex = 26;
             this.lblCiudad.Text = "Ciudad";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -358,6 +366,7 @@
             this.pnlList.ResumeLayout(false);
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -390,5 +399,6 @@
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

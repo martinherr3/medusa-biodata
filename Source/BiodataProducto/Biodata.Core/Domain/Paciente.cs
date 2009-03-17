@@ -22,8 +22,7 @@ namespace Mds.Biodata.Domain
         private System.String _Sexo;
         private System.String _Comentario;
         private System.String _Telefono;
-        private System.Int32? _Celular;
-        private System.Int32? _IDObraSocial;
+        private System.String _Celular;
         private System.Int32? _IDCiudad;
         private Ciudad _IDCiudadLookup;
         private IList<AudifonoPaciente> _AudifonoPacientes = new List<AudifonoPaciente>();
@@ -89,14 +88,9 @@ namespace Mds.Biodata.Domain
              set { _Telefono = value;}
          }
 
-         public virtual System.Int32? Celular {
+         public virtual System.String Celular {
              get { return _Celular; }
              set { _Celular = value;}
-         }
-
-         public virtual System.Int32? IDObraSocial {
-             get { return _IDObraSocial; }
-             set { _IDObraSocial = value;}
          }
 
          public virtual System.Int32? IDCiudad {

@@ -14,8 +14,7 @@
     <property name="Sexo" column="Sexo" type="System.String" not-null="false" length="1"/>
     <property name="Comentario" column="Comentario" type="System.String" not-null="false" length="250"/>
     <property name="Telefono" column="Telefono" type="System.String" not-null="false" length="50"/>
-    <property name="Celular" column="Celular" type="System.Int32" not-null="false" />
-    <property name="IDObraSocial" column="IDObraSocial" type="System.Int32" not-null="false" />
+    <property name="Celular" column="Celular" type="System.String" not-null="false" />
     <property name="IDCiudad" column="IDCiudad" type="System.Int32" not-null="false" />
     <many-to-one name="IDCiudadLookup" column="IDCiudad" class="Ciudad"  update="0"  insert="0" />
     <bag name="AudifonoPacientes" table="AudifonoPaciente" inverse="true" lazy="true" cascade="delete">
