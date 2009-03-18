@@ -9,6 +9,8 @@ using Mds.Architecture.Utils;
 using Mds.Biodata.Core.DataInterfaces;
 using Mds.Biodata.Business;
 using Mds.Biodata.Domain;
+using ObjectViews;
+using System.Collections;
 
 namespace Mds.Biodata.Forms
 {
@@ -40,6 +42,22 @@ namespace Mds.Biodata.Forms
             set {_RecordatorioEntity = value;}
         }
 
+        private ObjectView _RecordatorioObjectView;
+
+        public ObjectView RecordatorioObjectView
+        {
+            get { return _RecordatorioObjectView; }
+            set { _RecordatorioObjectView = value; }
+        }
+        private BindingManagerBase _RecordatorioCurrencyManager;
+
+        public BindingManagerBase RecordatorioCurrencyManager
+        {
+            get { return _RecordatorioCurrencyManager; }
+            set { _RecordatorioCurrencyManager = value; }
+        }
+
+
         #endregion
 
 
@@ -50,36 +68,48 @@ namespace Mds.Biodata.Forms
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Da formato a la grilla.
-        /// </summary>
-        private void BuildColumns()
+        ///// <summary>
+        ///// Da formato a la grilla.
+        ///// </summary>
+        //private void BuildColumns()
+        //{
+        //    try
+        //    {
+        //        dgvList.AutoGenerateColumns = false;
+        //        dgvList.Columns.Clear();
+        //        dgvList.Columns.Add("IDRecordatorio", "IDRecordatorio");
+        //        dgvList.Columns[0].DataPropertyName= "IDRecordatorio";
+        //        dgvList.Columns.Add("Descripcion", "Descripcion");
+        //        dgvList.Columns[1].DataPropertyName ="Descripcion";
+        //        dgvList.Columns.Add("FechaRecordatorio", "FechaRecordatorio");
+        //        dgvList.Columns[2].DataPropertyName= "FechaRecordatorio";
+        //        dgvList.Columns.Add("IDVinculado", "IDVinculado");
+        //        dgvList.Columns[3].DataPropertyName= "IDVinculado";
+        //        dgvList.Columns[3].Visible= false;
+        //        dgvList.Columns.Add("TipoVinculado", "TipoVinculado");
+        //        dgvList.Columns[4].DataPropertyName= "TipoVinculado";
+
+
+        //    }
+        //    catch(Exception e)
+        //    {
+        //        ProcesarExcepcion(e);
+        //    }
+
+        //}
+
+        private void InitializeObjectView()
         {
-            try
-            {
-                dgvList.AutoGenerateColumns = false;
-                dgvList.Columns.Clear();
-                dgvList.Columns.Add("IDRecordatorio", "IDRecordatorio");
-                dgvList.Columns[0].DataPropertyName= "IDRecordatorio";
-                dgvList.Columns.Add("Descripcion", "Descripcion");
-                dgvList.Columns[1].DataPropertyName ="Descripcion";
-                dgvList.Columns.Add("FechaRecordatorio", "FechaRecordatorio");
-                dgvList.Columns[2].DataPropertyName= "FechaRecordatorio";
-                dgvList.Columns.Add("IDVinculado", "IDVinculado");
-                dgvList.Columns[3].DataPropertyName= "IDVinculado";
-                dgvList.Columns[3].Visible= false;
-                dgvList.Columns.Add("TipoVinculado", "TipoVinculado");
-                dgvList.Columns[4].DataPropertyName= "TipoVinculado";
-
-
-            }
-            catch(Exception e)
-            {
-                ProcesarExcepcion(e);
-            }
-
+            this.RecordatorioObjectView = new ObjectView(typeof(Recordatorio));
+            this.RecordatorioObjectView.AllowRemove = false;
+            this.RecordatorioObjectView.Columns.Add("ID", "ID Recordatorio");
+            this.RecordatorioObjectView.Columns.Add("Descripcion", "Descripcion");
+            this.RecordatorioObjectView.Columns.Add("FechaRecordatorio", "Fecha Recordatorio");
+            this.RecordatorioObjectView.Columns.Add("TipoVinculadoString", "TipoVinculado");
+            this.RecordatorioCurrencyManager = this.dgvList.BindingContext[this.RecordatorioObjectView];
         }
 
+        
         /// <summary>
         /// Carga la grilla con los registros de la DB
         /// </summary>
@@ -88,7 +118,8 @@ namespace Mds.Biodata.Forms
             try
             {
                 ptbProgress.Visible = true;
-                BuildColumns();
+                //BuildColumns();
+                InitializeObjectView();
                 dgvList.DataSource = null;
                 Habilitar(false);
                 btnClose.Enabled = true;
@@ -102,15 +133,42 @@ namespace Mds.Biodata.Forms
 
         private void LoadData()
         {
-            RecordatorioEntity = RecordatorioBP.GetById(((Recordatorio)dgvList.CurrentRow.DataBoundItem).ID);
+            ObjectViews.ObjectViewRow RowSelected = (ObjectViewRow)dgvList.CurrentRow.DataBoundItem;
+            RecordatorioEntity = RecordatorioBP.GetById(((Recordatorio)RowSelected.InnerObject).ID);
+
+            //RecordatorioEntity = RecordatorioBP.GetById(((Recordatorio)dgvList.CurrentRow.DataBoundItem).ID);
 
             txtIDRecordatorio.Text = RecordatorioEntity.ID.ToString();
             txtDescripcion.Text = RecordatorioEntity.Descripcion.ToString();
             dtpFechaRecordatorio.Value = (DateTime)RecordatorioEntity.FechaRecordatorio;
             txtIDVinculado.Text= RecordatorioEntity.IDVinculado.ToString();
-            txtTipoVinculado.Text= RecordatorioEntity.TipoVinculado.ToString();
+            cmbTipoVinculado.SelectedItem = (Enumeraciones.TipoRecordatorioVinculado)RecordatorioEntity.TipoVinculado;
+            //txtTipoVinculado.Text= RecordatorioEntity.TipoVinculado.ToString();
 
         }
+
+
+        /// <summary>
+        /// Carga los combos de Tipo Vinculado del recordatorio
+        /// </summary>
+        private void LoadCombos()
+        {
+            //Tipo Vinculado
+            cmbTipoVinculado.DataSource = Enum.GetValues(typeof(Enumeraciones.TipoRecordatorioVinculado));
+            ////Sexo
+            //cmbSexo.DataSource = Enum.GetValues(typeof(Enumeraciones.Sexo));
+            ////Ciudad
+            //CiudadBusiness CiudadBP = new CiudadBusiness(DaoFactory.GetCiudadDao());
+            //List<Ciudad> wCiudadEntities = CiudadBP.GetAll();
+            //cmbCiudad.DataSource = wCiudadEntities;
+
+            //cmbCiudad.ValueMember = "ID";
+            //cmbCiudad.DisplayMember = "Descripcion";
+
+        }
+
+
+
 
         /// <summary>
         /// Valida datos basicos antes de enviar la entidad
@@ -118,6 +176,12 @@ namespace Mds.Biodata.Forms
         /// <returns></returns>
         private Boolean ValidData()
         {
+            if (txtDescripcion.Text == "" || txtDescripcion.Text == null)
+            {
+                ProcesarAdvertencia("Debe ingresar una descripción para el recordatorio");
+                return false;
+            }
+         
             return true;
         }
 
@@ -128,6 +192,9 @@ namespace Mds.Biodata.Forms
         private void frmRecordatorio_Load(object sender, EventArgs e)
         {
             _RecordatorioBP = new RecordatorioBusiness(DaoFactory.GetRecordatorioDao());
+            LoadCombos();
+            this.dtpFechaRecordatorio.CustomFormat = "dd/MM/yy : hh:mm";
+            this.dtpFechaRecordatorio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             LoadList();
         }
 
@@ -138,7 +205,11 @@ namespace Mds.Biodata.Forms
 
           private void bgwLoad_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            dgvList.DataSource = _RecordatorioEntities;
+            //dgvList.DataSource = _RecordatorioEntities;
+              ///////////////
+            this.RecordatorioObjectView.DataSource = (IList)this._RecordatorioEntities;
+            this.dgvList.DataSource = this.RecordatorioObjectView;
+             //////////////
             ptbProgress.Visible = false;
             Habilitar(true);
         }
@@ -158,7 +229,8 @@ namespace Mds.Biodata.Forms
                         dtpFechaRecordatorio.Value = DateTime.Now;
                         txtIDVinculado.Text = string.Empty;
                         txtIDVinculado.Enabled = false;
-                        txtTipoVinculado.Text = string.Empty;
+                        cmbTipoVinculado.SelectedItem = Enumeraciones.TipoRecordatorioVinculado.Personal;
+                        cmbTipoVinculado.Enabled = false;
 
                         txtDescripcion.Focus();
                         RecordatorioEntity = new Recordatorio();
@@ -200,7 +272,9 @@ namespace Mds.Biodata.Forms
 
                     RecordatorioEntity.Descripcion = txtDescripcion.Text;
                     RecordatorioEntity.FechaRecordatorio = dtpFechaRecordatorio.Value;
-                    RecordatorioEntity.TipoVinculado = Convert.ToInt32(txtTipoVinculado.Text);
+                    RecordatorioEntity.TipoVinculado = (Int32)cmbTipoVinculado.SelectedItem;
+
+                    //RecordatorioEntity.TipoVinculado = Convert.ToInt32(txtTipoVinculado.Text);
                     //RecordatorioEntity.IDVinculado = Convert.ToInt32(txtIDVinculado.Text);
                                        
                     switch (Estado)

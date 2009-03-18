@@ -40,6 +40,8 @@
             this.spcRight = new System.Windows.Forms.SplitContainer();
             this.splitLeft = new System.Windows.Forms.SplitContainer();
             this.tbcPrincipal = new System.Windows.Forms.TabControl();
+            this.tsmRecordatorio = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmGestionRecordatorio = new System.Windows.Forms.ToolStripMenuItem();
             this.tosPrincipal.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.spcRight.Panel1.SuspendLayout();
@@ -64,7 +66,7 @@
             // 
             this.tsbUsuarioLogueado.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tsbUsuarioLogueado.Name = "tsbUsuarioLogueado";
-            this.tsbUsuarioLogueado.Size = new System.Drawing.Size(50, 52);
+            this.tsbUsuarioLogueado.Size = new System.Drawing.Size(53, 52);
             this.tsbUsuarioLogueado.Text = "Usuario: ";
             // 
             // toolStripButton1
@@ -80,7 +82,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmObraSocial,
-            this.tsmPaciente});
+            this.tsmPaciente,
+            this.tsmRecordatorio});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(936, 24);
@@ -92,7 +95,7 @@
             this.tsmObraSocial.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmGestionObraSocial});
             this.tsmObraSocial.Name = "tsmObraSocial";
-            this.tsmObraSocial.Size = new System.Drawing.Size(73, 20);
+            this.tsmObraSocial.Size = new System.Drawing.Size(79, 20);
             this.tsmObraSocial.Text = "Obra Social";
             // 
             // tsmGestionObraSocial
@@ -107,13 +110,13 @@
             this.tsmPaciente.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmGestionPaciente});
             this.tsmPaciente.Name = "tsmPaciente";
-            this.tsmPaciente.Size = new System.Drawing.Size(65, 20);
+            this.tsmPaciente.Size = new System.Drawing.Size(69, 20);
             this.tsmPaciente.Text = "Pacientes";
             // 
             // tsmGestionPaciente
             // 
             this.tsmGestionPaciente.Name = "tsmGestionPaciente";
-            this.tsmGestionPaciente.Size = new System.Drawing.Size(185, 22);
+            this.tsmGestionPaciente.Size = new System.Drawing.Size(183, 22);
             this.tsmGestionPaciente.Text = "Gestión de Pacientes";
             this.tsmGestionPaciente.Click += new System.EventHandler(this.tsmGestionPaciente_Click);
             // 
@@ -152,6 +155,21 @@
             this.tbcPrincipal.SelectedIndex = 0;
             this.tbcPrincipal.Size = new System.Drawing.Size(753, 462);
             this.tbcPrincipal.TabIndex = 0;
+            // 
+            // tsmRecordatorio
+            // 
+            this.tsmRecordatorio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmGestionRecordatorio});
+            this.tsmRecordatorio.Name = "tsmRecordatorio";
+            this.tsmRecordatorio.Size = new System.Drawing.Size(92, 20);
+            this.tsmRecordatorio.Text = "Recordatorios";
+            // 
+            // tsmGestionRecordatorio
+            // 
+            this.tsmGestionRecordatorio.Name = "tsmGestionRecordatorio";
+            this.tsmGestionRecordatorio.Size = new System.Drawing.Size(206, 22);
+            this.tsmGestionRecordatorio.Text = "Gestion de Recordatorios";
+            this.tsmGestionRecordatorio.Click += new System.EventHandler(this.tsmGestionRecordatorio_Click);
             // 
             // frmPrincipal
             // 
@@ -192,5 +210,7 @@
         internal System.Windows.Forms.TabControl tbcPrincipal;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripMenuItem tsmGestionObraSocial;
+        private System.Windows.Forms.ToolStripMenuItem tsmRecordatorio;
+        private System.Windows.Forms.ToolStripMenuItem tsmGestionRecordatorio;
     }
 }

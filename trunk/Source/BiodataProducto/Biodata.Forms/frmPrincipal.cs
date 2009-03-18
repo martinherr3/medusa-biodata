@@ -64,6 +64,27 @@ namespace Mds.Biodata.Forms
         }
         #endregion
 
+        private void tsmGestionRecordatorio_Click(object sender, EventArgs e)
+        {
+            OpenGestionRecordatorio();
+
+        }
+
+        private void OpenGestionRecordatorio()
+        {
+            try
+            {
+                GereralFunctions.AbrirFormulario(new frmRecordatorio(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Recordatorios", DockStyle.Fill);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+
+
+        
         
     }
 }

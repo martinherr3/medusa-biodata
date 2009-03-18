@@ -19,6 +19,13 @@ namespace Mds.Biodata.Forms
             F
         }
 
+        public enum TipoRecordatorioVinculado
+        {
+            Personal,
+            ProximaLimpieza,
+            ProximoService
+        }
+
 
 
     }
