@@ -36,34 +36,34 @@
             this.txtIDRecordatorio = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtIDVinculado = new System.Windows.Forms.TextBox();
-            this.txtTipoVinculado = new System.Windows.Forms.TextBox();
             this.dtpFechaRecordatorio = new System.Windows.Forms.DateTimePicker();
+            this.cmbTipoVinculado = new System.Windows.Forms.ComboBox();
             this.pnlList.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDetails
             // 
-            this.pnlDetails.Controls.Add(this.dtpFechaRecordatorio);
-            this.pnlDetails.Controls.Add(this.txtTipoVinculado);
+            this.pnlDetails.Controls.Add(this.cmbTipoVinculado);
             this.pnlDetails.Controls.Add(this.lblTipoVinculado);
             this.pnlDetails.Controls.Add(this.lbl);
+            this.pnlDetails.Controls.Add(this.dtpFechaRecordatorio);
             this.pnlDetails.Controls.Add(this.txtDescripcion);
-            this.pnlDetails.Controls.Add(this.lblFecha);
             this.pnlDetails.Controls.Add(this.txtIDRecordatorio);
             this.pnlDetails.Controls.Add(this.lblID);
             this.pnlDetails.Controls.Add(this.txtIDVinculado);
+            this.pnlDetails.Controls.Add(this.lblFecha);
             this.pnlDetails.Controls.Add(this.lblDescripcion);
             this.pnlDetails.Controls.SetChildIndex(this.lblDescripcion, 0);
+            this.pnlDetails.Controls.SetChildIndex(this.lblFecha, 0);
             this.pnlDetails.Controls.SetChildIndex(this.txtIDVinculado, 0);
             this.pnlDetails.Controls.SetChildIndex(this.lblID, 0);
             this.pnlDetails.Controls.SetChildIndex(this.txtIDRecordatorio, 0);
-            this.pnlDetails.Controls.SetChildIndex(this.lblFecha, 0);
             this.pnlDetails.Controls.SetChildIndex(this.txtDescripcion, 0);
+            this.pnlDetails.Controls.SetChildIndex(this.dtpFechaRecordatorio, 0);
             this.pnlDetails.Controls.SetChildIndex(this.lbl, 0);
             this.pnlDetails.Controls.SetChildIndex(this.lblTipoVinculado, 0);
-            this.pnlDetails.Controls.SetChildIndex(this.txtTipoVinculado, 0);
-            this.pnlDetails.Controls.SetChildIndex(this.dtpFechaRecordatorio, 0);
+            this.pnlDetails.Controls.SetChildIndex(this.cmbTipoVinculado, 0);
             this.pnlDetails.Controls.SetChildIndex(this.btnAccept, 0);
             this.pnlDetails.Controls.SetChildIndex(this.btnCancel, 0);
             this.pnlDetails.Controls.SetChildIndex(this.lblDeleteItem, 0);
@@ -89,7 +89,7 @@
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(49, 62);
+            this.lblFecha.Location = new System.Drawing.Point(49, 125);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(37, 13);
             this.lblFecha.TabIndex = 6;
@@ -98,7 +98,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(49, 92);
+            this.lblDescripcion.Location = new System.Drawing.Point(49, 62);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 7;
@@ -131,7 +131,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(147, 85);
+            this.txtDescripcion.Location = new System.Drawing.Point(147, 55);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(211, 50);
@@ -144,20 +144,21 @@
             this.txtIDVinculado.Size = new System.Drawing.Size(57, 20);
             this.txtIDVinculado.TabIndex = 12;
             // 
-            // txtTipoVinculado
-            // 
-            this.txtTipoVinculado.Location = new System.Drawing.Point(147, 175);
-            this.txtTipoVinculado.Name = "txtTipoVinculado";
-            this.txtTipoVinculado.Size = new System.Drawing.Size(100, 20);
-            this.txtTipoVinculado.TabIndex = 14;
-            // 
             // dtpFechaRecordatorio
             // 
             this.dtpFechaRecordatorio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaRecordatorio.Location = new System.Drawing.Point(147, 54);
+            this.dtpFechaRecordatorio.Location = new System.Drawing.Point(147, 117);
             this.dtpFechaRecordatorio.Name = "dtpFechaRecordatorio";
             this.dtpFechaRecordatorio.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaRecordatorio.TabIndex = 15;
+            // 
+            // cmbTipoVinculado
+            // 
+            this.cmbTipoVinculado.FormattingEnabled = true;
+            this.cmbTipoVinculado.Location = new System.Drawing.Point(147, 177);
+            this.cmbTipoVinculado.Name = "cmbTipoVinculado";
+            this.cmbTipoVinculado.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoVinculado.TabIndex = 16;
             // 
             // frmRecordatorio
             // 
@@ -184,7 +185,7 @@
         private System.Windows.Forms.TextBox txtIDVinculado;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtIDRecordatorio;
-        private System.Windows.Forms.TextBox txtTipoVinculado;
         private System.Windows.Forms.DateTimePicker dtpFechaRecordatorio;
+        private System.Windows.Forms.ComboBox cmbTipoVinculado;
     }
 }
