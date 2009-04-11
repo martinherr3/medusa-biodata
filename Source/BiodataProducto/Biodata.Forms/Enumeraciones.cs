@@ -19,7 +19,7 @@ namespace Mds.Biodata.Forms
             F
         }
 
-        public enum TipoRecordatorioVinculado
+ 		public enum TipoRecordatorioVinculado
         {
             Personal,
             ProximaLimpieza,
@@ -27,6 +27,22 @@ namespace Mds.Biodata.Forms
         }
 
 
+ 		//Esta enum indica a que formulario llamo para realizar una "Seleccion"
+        public enum SeleccionDestino
+        {
+            CiudadSeleccion,        //frmCiudad
+            ObraSocialSeleccion     //frmObraSocial
+        }
+
+        public enum TipoEstudio
+        {
+            Anamnesis,
+            Audiometria,
+            ImpedanciometriaEstatica, 
+            ImpedanciometriaDinamica,
+            LogoAudiometria,
+            Timpanometria
+        }
 
     }
 
