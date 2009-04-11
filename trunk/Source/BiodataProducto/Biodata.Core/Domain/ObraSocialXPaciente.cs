@@ -69,6 +69,7 @@ namespace Mds.Biodata.Domain
 
         public ObraSocialXPaciente()
         {
+            base.ID = new DomainObjectID();
         }
 
         public ObraSocialXPaciente(DomainObjectID id)
@@ -78,10 +79,12 @@ namespace Mds.Biodata.Domain
 
          public virtual System.Int32 IDPaciente {
              get { return base.id.IDPaciente; }
+             set { base.ID.IDPaciente = value; }
          }
 
          public virtual System.Int32 IDObraSocial {
              get { return base.id.IDObraSocial; }
+             set { base.ID.IDObraSocial = value; }
          }
 
          public virtual System.String NumeroAfiliado {

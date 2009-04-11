@@ -21,13 +21,17 @@
     <key column="IDPaciente" />
     <one-to-many class="AudifonoPaciente"/>
     </bag>
-    <bag name="HistoriaClinicas" table="HistoriaClinica" inverse="true" lazy="true" cascade="delete">
+    <bag name="HistoriaClinicas" table="HistoriaClinica" inverse="true" lazy="true" cascade="all-delete-orphan">
     <key column="IDPaciente" />
     <one-to-many class="HistoriaClinica"/>
     </bag>
-    <bag name="ObraSocialXPacientes" table="ObraSocialXPaciente" inverse="true" lazy="true" cascade="delete">
+    <bag name="ObraSocialXPacientes" table="ObraSocialXPaciente" inverse="true" lazy="true" cascade="all-delete-orphan">
     <key column="IDPaciente" />
     <one-to-many class="ObraSocialXPaciente"/>
     </bag>
+    <!--<bag name="ObraSocialXPacientes" table="ObraSocialXPaciente" lazy="false" cascade="delete">
+      <key column="IDPaciente" />
+      <many-to-many class="ObraSocial" column="IDObraSocial"/>
+    </bag>-->
  </class>
 </hibernate-mapping>

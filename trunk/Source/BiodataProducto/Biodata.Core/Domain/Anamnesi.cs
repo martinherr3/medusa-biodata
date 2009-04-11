@@ -8,13 +8,13 @@ namespace Mds.Biodata.Domain
     /// Anamnesi object for NHibernate mapped table Anamnesis.
     /// </summary>
     [Serializable]
-    public class Anamnesi : DomainObject<System.Int32>
+    public class Anamnesi : Estudio//DomainObject<System.Int32>
     {
 
 
         private System.String _Pregunta;
         private System.String _Respuesta;
-        private Estudio _IDEstudioLookup;
+        //private Estudio _IDEstudioLookup;
 
         public Anamnesi()
         {
@@ -35,10 +35,10 @@ namespace Mds.Biodata.Domain
              set { _Respuesta = value;}
          }
 
-         public virtual Estudio IDEstudioLookup{
-             get { return _IDEstudioLookup; }
-             set { _IDEstudioLookup = value;}
-         }
+         //public virtual Estudio IDEstudioLookup{
+         //    get { return _IDEstudioLookup; }
+         //    set { _IDEstudioLookup = value;}
+         //}
 
 
         public override int GetHashCode()

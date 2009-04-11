@@ -51,6 +51,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Q:\Biodata\Iesi.Collections.dll</HintPath>
     </Reference>
+    <Reference Include="Liner, Version=1.0.3373.39649, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Q:\Biodata\Liner.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Q:\Biodata\log4net.dll</HintPath>
@@ -96,6 +100,12 @@
     <Compile Include="frmBase.Designer.cs">
       <DependentUpon>frmBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCiudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCiudad.Designer.cs">
+      <DependentUpon>frmCiudad.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEstudio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +137,7 @@
       <DependentUpon>frmRecordatorio.cs</DependentUpon>
     </Compile>
     <Compile Include="GereralFunctions.cs" />
+    <Compile Include="InputBox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmABMBase.resx">
@@ -135,6 +146,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBase.resx">
       <DependentUpon>frmBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCiudad.resx">
+      <DependentUpon>frmCiudad.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEstudio.resx">
@@ -162,6 +177,18 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uscAudiometria.resx">
+      <DependentUpon>uscAudiometria.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uscBase.resx">
+      <DependentUpon>uscBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uscTimpanometria.resx">
+      <DependentUpon>uscTimpanometria.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -182,6 +209,48 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UserControls\uscAnamnesis.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uscAnamnesis.Designer.cs">
+      <DependentUpon>uscAnamnesis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uscAudiometria.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uscAudiometria.Designer.cs">
+      <DependentUpon>uscAudiometria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uscBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uscBase.Designer.cs">
+      <DependentUpon>uscBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uscImpedanciometriaDinamica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uscImpedanciometriaDinamica.Designer.cs">
+      <DependentUpon>uscImpedanciometriaDinamica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uscImpedanciometriaEstatica.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uscImpedanciometriaEstatica.Designer.cs">
+      <DependentUpon>uscImpedanciometriaEstatica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uscLogoAudiometria.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uscLogoAudiometria.Designer.cs">
+      <DependentUpon>uscLogoAudiometria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uscTimpanometria.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uscTimpanometria.Designer.cs">
+      <DependentUpon>uscTimpanometria.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

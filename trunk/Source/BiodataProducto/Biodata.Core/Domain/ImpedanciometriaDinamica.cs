@@ -8,7 +8,7 @@ namespace Mds.Biodata.Domain
     /// ImpedanciometriaDinamica object for NHibernate mapped table ImpedanciometriaDinamica.
     /// </summary>
     [Serializable]
-    public class ImpedanciometriaDinamica : DomainObject<System.Int32>
+    public class ImpedanciometriaDinamica : Estudio//DomainObject<System.Int32>
     {
 
 
@@ -18,7 +18,7 @@ namespace Mds.Biodata.Domain
         private System.Decimal? _U;
         private System.Decimal? _UR;
         private System.Decimal? _ISU;
-        private Estudio _IDEstudioLookup;
+        //private Estudio _IDEstudioLookup;
 
         public ImpedanciometriaDinamica()
         {
@@ -59,10 +59,10 @@ namespace Mds.Biodata.Domain
              set { _ISU = value;}
          }
 
-         public virtual Estudio IDEstudioLookup{
-             get { return _IDEstudioLookup; }
-             set { _IDEstudioLookup = value;}
-         }
+         //public virtual Estudio IDEstudioLookup{
+         //    get { return _IDEstudioLookup; }
+         //    set { _IDEstudioLookup = value;}
+         //}
 
 
         public override int GetHashCode()

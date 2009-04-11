@@ -89,26 +89,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Mapping\Anamnesi.hbm.xml" />
     <EmbeddedResource Include="Mapping\Audifono.hbm.xml" />
     <EmbeddedResource Include="Mapping\AudifonoPaciente.hbm.xml" />
-    <EmbeddedResource Include="Mapping\Audiometria.hbm.xml" />
     <EmbeddedResource Include="Mapping\Ciudad.hbm.xml" />
     <EmbeddedResource Include="Mapping\ConjuntoPalabra.hbm.xml" />
     <EmbeddedResource Include="Mapping\Estudio.hbm.xml" />
     <EmbeddedResource Include="Mapping\HistoriaClinica.hbm.xml" />
-    <EmbeddedResource Include="Mapping\ImpedanciometriaDinamica.hbm.xml" />
-    <EmbeddedResource Include="Mapping\ImpedanciometriaEstatica.hbm.xml" />
     <EmbeddedResource Include="Mapping\ListadoPalabra.hbm.xml" />
-    <EmbeddedResource Include="Mapping\LogoAudiometria.hbm.xml" />
     <EmbeddedResource Include="Mapping\MoldeAudifono.hbm.xml" />
     <EmbeddedResource Include="Mapping\ObraSocial.hbm.xml" />
-    <EmbeddedResource Include="Mapping\ObraSocialXPaciente.hbm.xml" />
     <EmbeddedResource Include="Mapping\Paciente.hbm.xml" />
     <EmbeddedResource Include="Mapping\Provincia.hbm.xml" />
     <EmbeddedResource Include="Mapping\Recordatorio.hbm.xml" />
     <EmbeddedResource Include="Mapping\SeleccionAudifono.hbm.xml" />
-    <EmbeddedResource Include="Mapping\Timpanometria.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\ObraSocialXPaciente.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

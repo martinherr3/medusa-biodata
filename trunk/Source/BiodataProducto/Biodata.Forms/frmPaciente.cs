@@ -11,7 +11,7 @@ using Mds.Biodata.Business;
 using Mds.Biodata.Domain;
 using ObjectViews;
 using System.Collections;
-using Mds.Architecture.HelpersFunctions.Validators;
+//using Mds.Architecture.HelpersFunctions.Validators;
 
 namespace Mds.Biodata.Forms
 {
@@ -57,9 +57,17 @@ namespace Mds.Biodata.Forms
             set { _PacienteCurrencyManager = value; }
         }
 
+        private Enumeraciones.SeleccionDestino _SeleccionLlamada;
+
+        public Enumeraciones.SeleccionDestino SeleccionLlamada
+        {
+            get { return _SeleccionLlamada; }
+            set { _SeleccionLlamada = value; }
+        }
+
 
         //private Mds.Architecture.HelpersFunctions.Validators.Winforms.Validation.ViewValidator vvtor;
-        
+
         #endregion
 
         #region "--[Methods]--"
@@ -88,36 +96,13 @@ namespace Mds.Biodata.Forms
         }
 
         /// <summary>
-        /// Da formato a la grilla
+        /// Da formato a la grilla y crea lo necesario para el bindeo
         /// </summary>
-        //private void BuildColumns()
-        //{
-        //    try
-        //    {
-        //        dgvList.AutoGenerateColumns = false;
-        //        dgvList.Columns.Clear();
-        //        dgvList.Columns.Add("Nombre", "Nombre");
-        //        dgvList.Columns[0].DataPropertyName = "Nombre";
-        //        dgvList.Columns.Add("Apellido", "Apellido");
-        //        dgvList.Columns[1].DataPropertyName = "Apellido";
-        //        dgvList.Columns.Add("Direccion", "Direccion");
-        //        dgvList.Columns[2].DataPropertyName = "Direccion";
-        //        dgvList.Columns.Add("Telefono", "Telefono");
-        //        dgvList.Columns[3].DataPropertyName = "Telefono";
-        //        dgvList.Columns.Add("Celular", "Celular");
-        //        dgvList.Columns[4].DataPropertyName = "Celular";
-        //        dgvList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        //    }
-
-        //    catch (Exception ex)
-        //    {
-        //        ProcesarExcepcion(ex);
-        //    }
-        //}
         private void InitializeObjectView()
         {
             this.PacienteObjectView = new ObjectView(typeof(Paciente));
             this.PacienteObjectView.AllowRemove = false;
+            this.PacienteObjectView.Columns.Add("ID", "ID");
             this.PacienteObjectView.Columns.Add("Nombre", "Nombre");
             this.PacienteObjectView.Columns.Add("Apellido", "Apellido");
             this.PacienteObjectView.Columns.Add("Direccion", "Direccion");
@@ -174,8 +159,39 @@ namespace Mds.Biodata.Forms
             txtComentario.Text = PacienteEntity.Comentario;
             txtTelefono.Text = PacienteEntity.Telefono;
             txtCelular.Text = PacienteEntity.Celular.ToString();
-            cmbCiudad.SelectedValue = PacienteEntity.IDCiudad;
+            txtCiudad.Tag = PacienteEntity.IDCiudad;
+            txtCiudad.Text = PacienteEntity.IDCiudadLookup.Descripcion;
+            //Cargar los datos de la historia clinica, El paciente tiene una historia clinica y cada historia clinica pertenece solo a un paciente
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            dtpInicioAtencion.Value = PacienteEntity.HistoriaClinicas[0].FechaInicioAtencion;
+            txtObservaciones.Text = PacienteEntity.HistoriaClinicas[0].Observaciones;
+            txtAntecedentesHereditarios.Text = PacienteEntity.HistoriaClinicas[0].AntecedentesHereditarios;
+            txtAntecedentesPersonales.Text = PacienteEntity.HistoriaClinicas[0].AntecedentesPersonales;
+            txtEstadoSalud.Text = PacienteEntity.HistoriaClinicas[0].EstadoSalud;
+            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            LoadObrasSociales();
+        }
 
+        /// <summary>
+        /// Carga las obras sociales del paciente en cuestión
+        /// </summary>
+        private void LoadObrasSociales()
+        {
+            try
+            {
+                //Construimos la vista para la grilla
+                ObjectView ObrasSocialesObjectView = new ObjectView(typeof(ObraSocialXPaciente));
+                ObrasSocialesObjectView.AllowRemove = false;
+                ObrasSocialesObjectView.Columns.Add("IDObraSocialLookup.RazonSocial", "Obra Social");
+                ObrasSocialesObjectView.Columns.Add("NumeroAfiliado", "Numero de Afiliado");
+                BindingManagerBase ObrasSocialesManager = dgvObrasSociales.BindingContext[ObrasSocialesObjectView];
+                ObrasSocialesObjectView.DataSource = (IList)this.PacienteEntity.ObraSocialXPacientes;
+                dgvObrasSociales.DataSource = ObrasSocialesObjectView;
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
         }
 
         /// <summary>
@@ -199,6 +215,11 @@ namespace Mds.Biodata.Forms
                 ProcesarAdvertencia("Debe ingresar el Numero de Documento del paciente");
                 return false;
             }
+            if (txtCiudad.Text == "" || txtCiudad.Text == null)
+            {
+                ProcesarAdvertencia("Debe seleccionar una ciudad para el paciente");
+                return false;
+            }
             return true;
         }
 
@@ -207,18 +228,58 @@ namespace Mds.Biodata.Forms
         /// </summary>
         private void LoadCombos()
         {
-            //Tipo de Documento
-            cmbTipoDocumento.DataSource = Enum.GetValues(typeof(Enumeraciones.TipoDocumento));
-            //Sexo
-            cmbSexo.DataSource = Enum.GetValues(typeof(Enumeraciones.Sexo));
-            //Ciudad
-            CiudadBusiness CiudadBP = new CiudadBusiness(DaoFactory.GetCiudadDao());
-            List<Ciudad> wCiudadEntities = CiudadBP.GetAll();
-            cmbCiudad.DataSource = wCiudadEntities;
+            try
+            {
+                //Tipo de Documento
+                cmbTipoDocumento.DataSource = Enum.GetValues(typeof(Enumeraciones.TipoDocumento));
+                //Sexo
+                cmbSexo.DataSource = Enum.GetValues(typeof(Enumeraciones.Sexo));
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
 
-            cmbCiudad.ValueMember = "ID";
-            cmbCiudad.DisplayMember = "Descripcion";
+        /// <summary>
+        /// Elimina el registro del paciente para con esa obra social, solo elimina la vinculación, no la obra social en si
+        /// </summary>
+        private void EliminarObraSocial()
+        {
+            try
+            {
+                if (ProcesarMensaje("¿Esta seguro que desea eliminar la Obra Social para este Paciente?", "Eliminación Obra Social", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    ObjectViewRow wObraSocialXPacienteRow = (ObjectViewRow)dgvObrasSociales.CurrentRow.DataBoundItem;
+                    ObraSocialXPaciente wObraSocialXPaciente = (ObraSocialXPaciente)wObraSocialXPacienteRow.InnerObject;
 
+                    PacienteEntity.ObraSocialXPacientes.Remove(wObraSocialXPaciente);
+                    LoadObrasSociales();
+                }
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+        /// <summary>
+        /// Agrega una nueva vinculacion a una obra social pidiendo su numero de afiliado
+        /// </summary>
+        private void AgregarObraSocial()
+        {
+            try
+            {
+                this.SeleccionLlamada = Enumeraciones.SeleccionDestino.ObraSocialSeleccion;
+                frmObraSocial frm = new frmObraSocial();
+                frm.Llamador = this;
+                this.Parent.Enabled = false;
+                GereralFunctions.AbrirFormulario(frm, (TabControl)this.Parent.Parent, "Seleccionar Obra Social", DockStyle.Fill, false, true);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
         }
         #endregion
 
@@ -266,9 +327,19 @@ namespace Mds.Biodata.Forms
                         txtComentario.Text = string.Empty;
                         txtTelefono.Text = string.Empty;
                         txtCelular.Text = string.Empty;
-                        cmbCiudad.SelectedValue = 1;
+                        txtCiudad.Tag = string.Empty;
+                        txtCiudad.Text = string.Empty;
+                        //Limpieza de los controles de Historia Clinica
+                        /////////////////////////////////////////////////////////////////
+                        dtpInicioAtencion.Value = DateTime.Now;
+                        txtObservaciones.Text = string.Empty;
+                        txtAntecedentesHereditarios.Text = string.Empty;
+                        txtAntecedentesPersonales.Text = string.Empty;
+                        txtEstadoSalud.Text = string.Empty;
+                        /////////////////////////////////////////////////////////////////
                         txtNombre.Focus();
                         PacienteEntity = new Paciente();
+                        
                         break;
 
                     case EstadoForm.Editar:
@@ -297,7 +368,6 @@ namespace Mds.Biodata.Forms
                 ProcesarExcepcion(ex);
             }
         }
-        #endregion
 
         private void btnAccept_Click(object sender, EventArgs e)
         {
@@ -323,11 +393,17 @@ namespace Mds.Biodata.Forms
                     PacienteEntity.Comentario = txtComentario.Text;
                     PacienteEntity.Telefono = txtTelefono.Text;
                     PacienteEntity.Celular = txtCelular.Text;
-                    PacienteEntity.IDCiudad = (Int32)cmbCiudad.SelectedValue;
+                    //PacienteEntity.IDCiudad = (Int32)cmbCiudad.SelectedValue;
+                    PacienteEntity.IDCiudad = (Int32)txtCiudad.Tag;
 
                     switch (Estado)
                     {
                         case EstadoForm.Editar:
+                            PacienteEntity.HistoriaClinicas[0].FechaInicioAtencion = dtpInicioAtencion.Value;
+                            PacienteEntity.HistoriaClinicas[0].Observaciones = txtObservaciones.Text;
+                            PacienteEntity.HistoriaClinicas[0].AntecedentesHereditarios = txtAntecedentesHereditarios.Text;
+                            PacienteEntity.HistoriaClinicas[0].AntecedentesPersonales = txtAntecedentesPersonales.Text;
+                            PacienteEntity.HistoriaClinicas[0].EstadoSalud = txtEstadoSalud.Text;
                             PacienteBP.Update(PacienteEntity);
                             PacienteBP.Commit();
                             break;
@@ -337,6 +413,16 @@ namespace Mds.Biodata.Forms
                             break;
                         case EstadoForm.Nuevo:
                             PacienteBP.Insert(PacienteEntity);
+                            HistoriaClinica wHistoria = new HistoriaClinica();
+                            wHistoria.FechaInicioAtencion = dtpInicioAtencion.Value;
+                            wHistoria.Observaciones = txtObservaciones.Text;
+                            wHistoria.AntecedentesHereditarios = txtAntecedentesHereditarios.Text;
+                            wHistoria.AntecedentesPersonales = txtAntecedentesPersonales.Text;
+                            wHistoria.EstadoSalud = txtEstadoSalud.Text;
+                            wHistoria.IDPacienteLookup = PacienteEntity;
+                            wHistoria.IDPaciente = PacienteEntity.ID;
+                            HistoriaClinicaBusiness HistoriaClinicaBP = new HistoriaClinicaBusiness(DaoFactory.GetHistoriaClinicaDao());
+                            HistoriaClinicaBP.Insert(wHistoria);
                             break;
                     }
                     pnlDetails.Visible = false;
@@ -352,5 +438,82 @@ namespace Mds.Biodata.Forms
             }
         }
 
+        private void btnSeleccionarCiudad_Click(object sender, EventArgs e)
+        {
+            SeleccionarCiudad();
+        }
+
+        private void SeleccionarCiudad()
+        {
+            try
+            {
+                txtCiudad.Tag = string.Empty;
+                txtCiudad.Text = string.Empty;
+
+                this.SeleccionLlamada = Enumeraciones.SeleccionDestino.CiudadSeleccion;
+                frmCiudad frm = new frmCiudad();
+                frm.Llamador = this;
+                this.Parent.Enabled = false;
+                GereralFunctions.AbrirFormulario(frm, (TabControl)this.Parent.Parent, "Ciudades", DockStyle.Fill, false, true);
+
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+
+        private void frmPacienteSelecciones_SeleccionCompleja(bool pCerrar)
+        {
+            if (pCerrar)
+            {
+                if ((this.Seleccion != null))
+                {
+                    switch (this.SeleccionLlamada)
+                    {
+                        case Enumeraciones.SeleccionDestino.CiudadSeleccion:
+                            if (((Ciudad)this.Seleccion).ID != null || ((Ciudad)this.Seleccion).ID > 0)
+                            {
+                                txtCiudad.Tag = ((Ciudad)this.Seleccion).ID;
+                                txtCiudad.Text = ((Ciudad)this.Seleccion).Descripcion;
+                            }
+                            else
+                            {
+                                txtCiudad.Tag = string.Empty;
+                                txtCiudad.Text = string.Empty;
+                            }
+                            break;
+                        case Enumeraciones.SeleccionDestino.ObraSocialSeleccion:
+                            if (((ObraSocial)this.Seleccion).ID != null || ((ObraSocial)this.Seleccion).ID > 0)
+                            {
+                                ObraSocialXPaciente wObraSocialXPaciente = new ObraSocialXPaciente();
+
+                                wObraSocialXPaciente.IDObraSocialLookup = (ObraSocial)this.Seleccion;
+                                wObraSocialXPaciente.IDPacienteLookup = PacienteEntity;
+                                wObraSocialXPaciente.IDObraSocial = ((ObraSocial)this.Seleccion).ID;
+                                wObraSocialXPaciente.IDPaciente = PacienteEntity.ID;
+                                String Valor = Inputbox.Show("Ingrese el Número de Afiliado", "Afiliado", FormStartPosition.CenterScreen);
+                                wObraSocialXPaciente.NumeroAfiliado = Valor;
+                                PacienteEntity.ObraSocialXPacientes.Add(wObraSocialXPaciente);
+                                LoadObrasSociales();
+                            }
+                            break;
+                    }
+                }
+                this.Seleccion = null;
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EliminarObraSocial();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            AgregarObraSocial();
+        }
+        #endregion
     }
 }

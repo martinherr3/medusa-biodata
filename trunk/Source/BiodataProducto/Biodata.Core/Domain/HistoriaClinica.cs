@@ -19,6 +19,7 @@ namespace Mds.Biodata.Domain
         private System.String _EstadoSalud;
         private System.Int32? _IDPaciente;
         private Paciente _IDPacienteLookup;
+        private IList<Estudio> _Estudios = new List<Estudio>();
 
         public HistoriaClinica()
         {
@@ -64,6 +65,11 @@ namespace Mds.Biodata.Domain
              set { _IDPacienteLookup = value;}
          }
 
+         public virtual IList<Estudio> Estudios
+         {
+             get { return _Estudios; }
+             set { _Estudios = value; }
+         }
 
         public override int GetHashCode()
         {
