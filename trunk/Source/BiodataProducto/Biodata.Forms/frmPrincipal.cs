@@ -26,29 +26,23 @@ namespace Mds.Biodata.Forms
             GereralFunctions.Principal = this;
         }
         #endregion
-        
 
         #region "--[Llamadas a Ventanas de la aplicación--"
-        private void tsmGestionObraSocial_Click(object sender, EventArgs e)
-        {
-            OpenObraSocial();
-        }
-
-        private void OpenObraSocial()
-        {
-            try
-            {
-                GereralFunctions.AbrirFormulario(new frmObraSocial(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Obras Sociales", DockStyle.Fill);
-            }
-            catch (Exception ex)
-            {
-                ProcesarExcepcion(ex);
-            }
-        }
-
+        
+        #region "--[Paciente]--"
         private void tsmGestionPaciente_Click(object sender, EventArgs e)
         {
             OpenPaciente();
+        }
+
+        private void tsmGestionCiudad_Click(object sender, EventArgs e)
+        {
+            OpenCiudad();
+        }
+
+        private void tsmGestionObraSocial_Click(object sender, EventArgs e)
+        {
+            OpenObraSocial();
         }
 
         private void OpenPaciente()
@@ -62,19 +56,12 @@ namespace Mds.Biodata.Forms
                 ProcesarExcepcion(ex);
             }
         }
-        #endregion
 
-        private void tsmGestionRecordatorio_Click(object sender, EventArgs e)
-        {
-            OpenGestionRecordatorio();
-
-        }
-
-        private void OpenGestionRecordatorio()
+        private void OpenCiudad()
         {
             try
             {
-                GereralFunctions.AbrirFormulario(new frmRecordatorio(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Recordatorios", DockStyle.Fill);
+                GereralFunctions.AbrirFormulario(new frmCiudad(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Ciudades", DockStyle.Fill);
             }
             catch (Exception ex)
             {
@@ -82,9 +69,129 @@ namespace Mds.Biodata.Forms
             }
         }
 
+        private void OpenObraSocial()
+        {
+            try
+            {
+                GereralFunctions.AbrirFormulario(new frmObraSocial(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Obras Sociales", DockStyle.Fill);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+        #endregion
 
+        #region "--[Estudio]--"
+        private void tsmNuevoEstudio_Click(object sender, EventArgs e)
+        {
+            OpenEstudio();
+        }
 
-        
+        private void tsmConsultarEstudio_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void OpenEstudio()
+        {
+            try
+            {
+                GereralFunctions.AbrirFormulario(new frmEstudio(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Estudios", DockStyle.Fill);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+        #endregion
+
+             #region "--[Audifono]--"
+        private void tsmGestionAudifono_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmSeleccionAudifono_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region "--[Agenda]--"
+        private void tsmRecordatorio_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region "--[Reportes]--"
+        private void tsmInformeFichaPaciente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmReportePaciente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmReporteAudifono_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmReporteObraSocial_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmReporteEstudiosPaciente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmReporteRecordatorio_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region "--[Herramientas y Seguridad]--"
+        private void tsmGestionParametrosSistema_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmCambioPasswordUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmBackUpBaseDatos_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #region "--[Ayuda]--"
+        private void tsmManualAyuda_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmAcercaDe_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmSalir_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+        #endregion
         
     }
 }
