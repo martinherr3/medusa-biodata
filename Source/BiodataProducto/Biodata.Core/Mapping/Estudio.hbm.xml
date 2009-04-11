@@ -9,7 +9,50 @@
     <property name="InstrumentosUtilizados" column="InstrumentosUtilizados" type="System.String" not-null="false" length="250"/>
     <property name="Observaciones" column="Observaciones" type="System.String" not-null="false" length="250"/>
     <property name="TipoEstudio" column="TipoEstudio" type="System.Int32" not-null="false" />
-    <bag name="Anamnesises" table="Anamnesis" inverse="true" lazy="true" cascade="delete">
+    <property name="IDHistoriaClinica" column="IDHistoriaClinica" type="System.Int32" not-null="false" />
+    <many-to-one name="IDHistoriaClinicaLookup" column="IDHistoriaClinica" class="HistoriaClinica"  update="0"  insert="0" />
+    <joined-subclass name="Audiometria" table="Audiometria">
+      <key column="IDEstudio"/>
+      <property name="AudiogramaIzquierdo" column="AudiogramaIzquierdo" type="System.String" not-null="false" />
+      <property name="AudiogramaDerecho" column="AudiogramaDerecho" type="System.String" not-null="false" />
+    </joined-subclass>
+    <joined-subclass name="Anamnesi" table="Anamnesis">
+      <key column="IDEstudio"/>
+      <property name="Pregunta" column="Pregunta" type="System.String" not-null="false" length="250"/>
+      <property name="Respuesta" column="Respuesta" type="System.String" not-null="false" length="250"/>
+    </joined-subclass>
+    <joined-subclass name="ImpedanciometriaDinamica" table="ImpedanciometriaDinamica">
+      <key column="IDEstudio"/>
+      <property name="Lado" column="Lado" type="System.Int32" not-null="true" />
+      <property name="Clase" column="Clase" type="System.Int32" not-null="true" />
+      <property name="Tipo" column="Tipo" type="System.Int32" not-null="true" />
+      <property name="U" column="U" type="System.Decimal" not-null="false" />
+      <property name="UR" column="UR" type="System.Decimal" not-null="false" />
+      <property name="ISU" column="ISU" type="System.Decimal" not-null="false" />
+    </joined-subclass>
+    <joined-subclass name="ImpedanciometriaEstatica" table="ImpedanciometriaEstatica">
+      <key column="IDEstudio"/>
+      <property name="Lado" column="Lado" type="System.Int32" not-null="true" />
+      <property name="Presion200" column="Presion200" type="System.Decimal" not-null="false" />
+      <property name="PresionPaciente" column="PresionPaciente" type="System.Decimal" not-null="false" />
+      <property name="Za" column="Za" type="System.Decimal" not-null="false" />
+      <property name="Cm" column="Cm" type="System.Decimal" not-null="false" />
+    </joined-subclass>
+    <joined-subclass name="LogoAudiometria" table="LogoAudiometria">
+      <key column="IDEstudio"/>
+      <property name="CantidadPalabra" column="CantidadPalabra" type="System.Decimal" not-null="false" />
+      <property name="LogoAudiometriaGrafico" column="LogoAudiometriaGrafico" type="System.String" not-null="false" />
+      <property name="CantidadPalabraAcertada" column="CantidadPalabraAcertada" type="System.Decimal" not-null="false" />
+      <property name="IDListadoPalabra" column="IDListadoPalabra" type="System.Int32" not-null="false" />
+      <property name="TipoLogometriaLogoAudiometria" column="TipoLogometriaLogoAudiometria" type="System.Int32" not-null="false" />
+      <!--<many-to-one name="IDEstudioLookup" column="IDEstudio" class="Estudio"  update="0"  insert="0" />-->
+      <many-to-one name="IDListadoPalabraLookup" column="IDListadoPalabra" class="ListadoPalabra"  update="0"  insert="0" />
+    </joined-subclass>
+    <joined-subclass name="Timpanometria" table="Timpanometria">
+      <key column="IDEstudio"/>
+      <property name="TimpanometriaGrafico" column="TimpanometriaGrafico" type="System.String" not-null="false" />
+    </joined-subclass>
+    <!--<bag name="Anamnesises" table="Anamnesis" inverse="true" lazy="true" cascade="delete">
     <key column="IDEstudio" />
     <one-to-many class="Anamnesi"/>
     </bag>
@@ -32,6 +75,6 @@
     <bag name="Timpanometrias" table="Timpanometria" inverse="true" lazy="true" cascade="delete">
     <key column="IDEstudio" />
     <one-to-many class="Timpanometria"/>
-    </bag>
+    </bag>-->
  </class>
 </hibernate-mapping>

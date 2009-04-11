@@ -28,6 +28,7 @@ namespace Mds.Biodata.Domain
         private IList<AudifonoPaciente> _AudifonoPacientes = new List<AudifonoPaciente>();
         private IList<HistoriaClinica> _HistoriaClinicas = new List<HistoriaClinica>();
         private IList<ObraSocialXPaciente> _ObraSocialXPacientes = new List<ObraSocialXPaciente>();
+        //private IList<ObraSocial> _ObraSocialXPacientes = new List<ObraSocial>();
 
         public Paciente()
         {
@@ -120,6 +121,12 @@ namespace Mds.Biodata.Domain
              get { return _ObraSocialXPacientes; }
              set { _ObraSocialXPacientes = value; }
          }
+
+         //public virtual IList<ObraSocial> ObraSocialXPacientes
+         //{
+         //    get { return _ObraSocialXPacientes; }
+         //    set { _ObraSocialXPacientes = value; }
+         //}
 
 
         public override int GetHashCode()

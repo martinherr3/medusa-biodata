@@ -52,6 +52,10 @@
             // 
             this.lblDeleteItem.Location = new System.Drawing.Point(277, 260);
             // 
+            // btnSelect
+            // 
+            this.btnSelect.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnSelect_Click);
+            // 
             // pnlDetails
             // 
             this.pnlDetails.Controls.Add(this.lblPaginaWeb);

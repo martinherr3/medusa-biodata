@@ -59,6 +59,11 @@ namespace Mds.Biodata.Forms
             ProcesarMensaje(message, "Mensaje");
         }
 
+        protected DialogResult ProcesarMensaje(String message, String Title, MessageBoxButtons Buttons)
+        {
+            return MessageBox.Show(message, Title, Buttons);
+        }
+
         protected void ProcesarMensaje(String message, String Title)
         {
             MessageBox.Show(message, Title);

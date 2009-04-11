@@ -8,12 +8,12 @@ namespace Mds.Biodata.Domain
     /// Timpanometria object for NHibernate mapped table Timpanometria.
     /// </summary>
     [Serializable]
-    public class Timpanometria : DomainObject<System.Int32>
+    public class Timpanometria : Estudio//DomainObject<System.Int32>
     {
 
 
         private System.String _TimpanometriaGrafico;
-        private Estudio _IDEstudioLookup;
+        //private Estudio _IDEstudioLookup;
 
         public Timpanometria()
         {
@@ -29,10 +29,10 @@ namespace Mds.Biodata.Domain
              set { _TimpanometriaGrafico = value;}
          }
 
-         public virtual Estudio IDEstudioLookup{
-             get { return _IDEstudioLookup; }
-             set { _IDEstudioLookup = value;}
-         }
+         //public virtual Estudio IDEstudioLookup{
+         //    get { return _IDEstudioLookup; }
+         //    set { _IDEstudioLookup = value;}
+         //}
 
 
         public override int GetHashCode()

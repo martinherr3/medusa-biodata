@@ -5,10 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections;
 using Mds.Biodata.Core.DataInterfaces;
 using Mds.Architecture.Utils;
 using Mds.Biodata.Business;
 using Mds.Biodata.Domain;
+using ObjectViews;
 
 namespace Mds.Biodata.Forms
 {
@@ -38,6 +40,20 @@ namespace Mds.Biodata.Forms
             set { _ObraSocialEntity = value; }
         }
 
+        private ObjectView _ObraSocialObjectView;
+
+        public ObjectView ObraSocialObjectView
+        {
+            get { return _ObraSocialObjectView; }
+            set { _ObraSocialObjectView = value; }
+        }
+        private BindingManagerBase _ObraSocialCurrencyManager;
+
+        public BindingManagerBase ObraSocialCurrencyManager
+        {
+            get { return _ObraSocialCurrencyManager; }
+            set { _ObraSocialCurrencyManager = value; }
+        }
         #endregion
 
         #region "--[Methods]--"
@@ -49,31 +65,42 @@ namespace Mds.Biodata.Forms
         /// <summary>
         /// Da formato a la grilla
         /// </summary>
-        private void BuildColumns()
-        {
-            try
-            {
-                dgvList.AutoGenerateColumns = false;
-                dgvList.Columns.Clear();
-                dgvList.Columns.Add("IDObraSocial", "IDObraSocial");
-                dgvList.Columns[0].DataPropertyName = "IDObraSocial";
-                dgvList.Columns[0].Visible = false;
-                dgvList.Columns.Add("RazonSocial", "RazonSocial");
-                dgvList.Columns[1].DataPropertyName = "RazonSocial";
-                dgvList.Columns.Add("Direccion", "Direccion");
-                dgvList.Columns[2].DataPropertyName = "Direccion";
-                dgvList.Columns.Add("Telefono", "Telefono");
-                dgvList.Columns[3].DataPropertyName = "Telefono";
-                dgvList.Columns.Add("Contacto", "Contacto");
-                dgvList.Columns[4].DataPropertyName = "Contacto";
-                dgvList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            }
+        //private void BuildColumns()
+        //{
+        //    try
+        //    {
+        //        dgvList.AutoGenerateColumns = false;
+        //        dgvList.Columns.Clear();
+        //        dgvList.Columns.Add("IDObraSocial", "IDObraSocial");
+        //        dgvList.Columns[0].DataPropertyName = "IDObraSocial";
+        //        dgvList.Columns[0].Visible = false;
+        //        dgvList.Columns.Add("RazonSocial", "RazonSocial");
+        //        dgvList.Columns[1].DataPropertyName = "RazonSocial";
+        //        dgvList.Columns.Add("Direccion", "Direccion");
+        //        dgvList.Columns[2].DataPropertyName = "Direccion";
+        //        dgvList.Columns.Add("Telefono", "Telefono");
+        //        dgvList.Columns[3].DataPropertyName = "Telefono";
+        //        dgvList.Columns.Add("Contacto", "Contacto");
+        //        dgvList.Columns[4].DataPropertyName = "Contacto";
+        //        dgvList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        //    }
 
-            catch (Exception ex)
-            {
-                ProcesarExcepcion(ex);
-            }
+        //    catch (Exception ex)
+        //    {
+        //        ProcesarExcepcion(ex);
+        //    }
+        //}
+        private void InitializeObjectView()
+        {
+            this.ObraSocialObjectView = new ObjectView(typeof(ObraSocial));
+            this.ObraSocialObjectView.AllowRemove = false;
+            this.ObraSocialObjectView.Columns.Add("RazonSocial", "Razon Social");
+            this.ObraSocialObjectView.Columns.Add("Direccion", "Direccion");
+            this.ObraSocialObjectView.Columns.Add("Telefono", "Telefono");
+            this.ObraSocialObjectView.Columns.Add("Contacto", "Contacto");
+            this.ObraSocialCurrencyManager = this.dgvList.BindingContext[this.ObraSocialObjectView];
         }
+
 
         /// <summary>
         /// Carga la grilla con los registros de la DB
@@ -83,7 +110,8 @@ namespace Mds.Biodata.Forms
             try
             {
                 ptbProgress.Visible = true;
-                BuildColumns();
+                //BuildColumns();
+                InitializeObjectView();
                 dgvList.DataSource = null;
                 Habilitar(false);
                 btnClose.Enabled = true;
@@ -100,7 +128,8 @@ namespace Mds.Biodata.Forms
         /// </summary>
         private void LoadData()
         {
-            ObraSocialEntity = ObraSocialBP.GetById(((ObraSocial)dgvList.CurrentRow.DataBoundItem).ID);
+            ObjectViews.ObjectViewRow RowSelected = (ObjectViewRow)dgvList.CurrentRow.DataBoundItem;
+            ObraSocialEntity = ObraSocialBP.GetById(((ObraSocial)RowSelected.InnerObject).ID);
 
             txtID.Text = ObraSocialEntity.ID.ToString();
             txtRazonSocial.Text = ObraSocialEntity.RazonSocial;
@@ -142,7 +171,9 @@ namespace Mds.Biodata.Forms
 
         private void bgwLoad_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            dgvList.DataSource = _ObrasSocialesEntities;
+            //dgvList.DataSource = _ObrasSocialesEntities;
+            this.ObraSocialObjectView.DataSource = (IList)this._ObrasSocialesEntities;
+            this.dgvList.DataSource = this.ObraSocialObjectView;
             ptbProgress.Visible = false;
             Habilitar(true);
         }
@@ -239,5 +270,32 @@ namespace Mds.Biodata.Forms
             }
         }
         #endregion
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvList.Rows.Count > 0)
+                {
+                    if (dgvList.CurrentRow == null)
+                    {
+                        this.Llamador.Seleccion = this.ObrasSocialesEntities[dgvList.Rows[0].Index];
+                    }
+                    else
+                    {
+                        this.Llamador.Seleccion = this.ObrasSocialesEntities[dgvList.CurrentRow.Index];
+                    }
+                }
+                else
+                {
+                    this.Llamador.Seleccion = null;
+                }
+                Cerrar();
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
     }
 }

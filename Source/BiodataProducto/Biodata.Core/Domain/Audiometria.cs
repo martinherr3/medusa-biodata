@@ -8,13 +8,13 @@ namespace Mds.Biodata.Domain
     /// Audiometria object for NHibernate mapped table Audiometria.
     /// </summary>
     [Serializable]
-    public class Audiometria : DomainObject<System.Int32>
+    public class Audiometria : Estudio//DomainObject<System.Int32>
     {
 
 
         private System.String _AudiogramaIzquierdo;
         private System.String _AudiogramaDerecho;
-        private Estudio _IDEstudioLookup;
+        //private Estudio _IDEstudioLookup;
 
         public Audiometria()
         {
@@ -29,22 +29,20 @@ namespace Mds.Biodata.Domain
              get { return _AudiogramaIzquierdo; }
              set { _AudiogramaIzquierdo = value;}
          }
-
+                 
          public virtual System.String AudiogramaDerecho {
              get { return _AudiogramaDerecho; }
              set { _AudiogramaDerecho = value;}
          }
-
-         public virtual Estudio IDEstudioLookup{
-             get { return _IDEstudioLookup; }
-             set { _IDEstudioLookup = value;}
-         }
-
-
+         
+         //public virtual Estudio IDEstudioLookup{
+         //    get { return _IDEstudioLookup; }
+         //    set { _IDEstudioLookup = value;}
+         //}
+         
         public override int GetHashCode()
         {
             return ID.GetHashCode();
         }
-
      }
 }
