@@ -45,6 +45,11 @@ namespace Mds.Biodata.Forms
             OpenObraSocial();
         }
 
+        private void tsmSeleccionAudifono_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void OpenPaciente()
         {
             try
@@ -106,13 +111,8 @@ namespace Mds.Biodata.Forms
         }
         #endregion
 
-             #region "--[Audifono]--"
+        #region "--[Audifono]--"
         private void tsmGestionAudifono_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tsmSeleccionAudifono_Click(object sender, EventArgs e)
         {
 
         }
@@ -155,6 +155,16 @@ namespace Mds.Biodata.Forms
         {
 
         }
+
+        private void tsmReportePacientesPorAudifono_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmReporteAudifonosPorPaciente_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
 
         #region "--[Herramientas y Seguridad]--"
@@ -190,8 +200,6 @@ namespace Mds.Biodata.Forms
 
         }
         #endregion
-
         #endregion
-        
     }
 }
