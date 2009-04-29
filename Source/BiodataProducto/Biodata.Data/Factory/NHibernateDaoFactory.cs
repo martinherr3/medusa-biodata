@@ -97,5 +97,9 @@ namespace Mds.Biodata.Data
         {
             return new TimpanometriaDao(SessionFactoryConfigPath);
         }
+        public IMarcaAudifonoDao GetMarcaAudifonoDao()
+        {
+            return new MarcaAudifonoDao(SessionFactoryConfigPath);
+        }
     }
 }
