@@ -12,9 +12,10 @@ namespace Mds.Biodata.Domain
     {
 
 
-        private System.String _Pregunta;
-        private System.String _Respuesta;
+        //private System.String _Pregunta;
+        //private System.String _Respuesta;
         //private Estudio _IDEstudioLookup;
+        private IList<AnamnesisPregunta> _AnamnesisPreguntases = new List<AnamnesisPregunta>();
 
         public Anamnesi()
         {
@@ -25,20 +26,26 @@ namespace Mds.Biodata.Domain
             base.ID = id;
         }
 
-         public virtual System.String Pregunta {
-             get { return _Pregunta; }
-             set { _Pregunta = value;}
-         }
+         //public virtual System.String Pregunta {
+         //    get { return _Pregunta; }
+         //    set { _Pregunta = value;}
+         //}
 
-         public virtual System.String Respuesta {
-             get { return _Respuesta; }
-             set { _Respuesta = value;}
-         }
+         //public virtual System.String Respuesta {
+         //    get { return _Respuesta; }
+         //    set { _Respuesta = value;}
+         //}
 
          //public virtual Estudio IDEstudioLookup{
          //    get { return _IDEstudioLookup; }
          //    set { _IDEstudioLookup = value;}
          //}
+
+         public virtual IList<AnamnesisPregunta> AnamnesisPreguntases
+         {
+             get { return _AnamnesisPreguntases; }
+             set { _AnamnesisPreguntases = value; }
+         }
 
 
         public override int GetHashCode()

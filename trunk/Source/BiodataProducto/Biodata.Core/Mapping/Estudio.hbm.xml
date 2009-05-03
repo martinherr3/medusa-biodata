@@ -18,8 +18,12 @@
     </joined-subclass>
     <joined-subclass name="Anamnesi" table="Anamnesis">
       <key column="IDEstudio"/>
-      <property name="Pregunta" column="Pregunta" type="System.String" not-null="false" length="250"/>
-      <property name="Respuesta" column="Respuesta" type="System.String" not-null="false" length="250"/>
+      <bag name="AnamnesisPreguntases" table="AnamnesisPreguntas" inverse="true" lazy="true" cascade="delete">
+        <key column="IDEstudio" />
+        <one-to-many class="AnamnesisPregunta"/>
+      </bag>
+      <!--<property name="Pregunta" column="Pregunta" type="System.String" not-null="false" length="250"/>
+      <property name="Respuesta" column="Respuesta" type="System.String" not-null="false" length="250"/>-->
     </joined-subclass>
     <joined-subclass name="ImpedanciometriaDinamica" table="ImpedanciometriaDinamica">
       <key column="IDEstudio"/>
