@@ -97,6 +97,10 @@ namespace Mds.Biodata.Data
         {
             return new TimpanometriaDao(SessionFactoryConfigPath);
         }
+        public IAnamnesisPreguntaDao GetAnamnesisPreguntaDao()
+        {
+            return new AnamnesisPreguntaDao(SessionFactoryConfigPath);
+        }
         public IMarcaAudifonoDao GetMarcaAudifonoDao()
         {
             return new MarcaAudifonoDao(SessionFactoryConfigPath);
