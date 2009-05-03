@@ -25,6 +25,7 @@ namespace Mds.Biodata.Core.DataInterfaces
         IRecordatorioDao GetRecordatorioDao();
         ISeleccionAudifonoDao GetSeleccionAudifonoDao();
         ITimpanometriaDao GetTimpanometriaDao();
+        IAnamnesisPreguntaDao GetAnamnesisPreguntaDao();
         IMarcaAudifonoDao GetMarcaAudifonoDao();
     }
 }
