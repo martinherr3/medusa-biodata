@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnamnesiBusiness.cs" />
+    <Compile Include="AnamnesisPreguntaBusiness.cs" />
     <Compile Include="AudifonoBusiness.cs" />
     <Compile Include="AudifonoPacienteBusiness.cs" />
     <Compile Include="AudiometriaBusiness.cs" />

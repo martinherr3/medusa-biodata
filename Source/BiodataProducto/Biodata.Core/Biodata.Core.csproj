@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataInterfaces\IAnamnesiDao.cs" />
+    <Compile Include="DataInterfaces\IAnamnesisPreguntaDao.cs" />
     <Compile Include="DataInterfaces\IAudifonoDao.cs" />
     <Compile Include="DataInterfaces\IAudifonoPacienteDao.cs" />
     <Compile Include="DataInterfaces\IAudiometriaDao.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="DataInterfaces\ISeleccionAudifonoDao.cs" />
     <Compile Include="DataInterfaces\ITimpanometriaDao.cs" />
     <Compile Include="Domain\Anamnesi.cs" />
+    <Compile Include="Domain\AnamnesisPregunta.cs" />
     <Compile Include="Domain\Audifono.cs" />
     <Compile Include="Domain\AudifonoPaciente.cs" />
     <Compile Include="Domain\Audiometria.cs" />
@@ -105,6 +107,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Mapping\ObraSocialXPaciente.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Mapping\AnamnesisPregunta.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
