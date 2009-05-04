@@ -19,7 +19,7 @@ namespace Mds.Biodata.Forms
             F
         }
 
- 		public enum TipoRecordatorioVinculado
+        public enum TipoRecordatorioVinculado
         {
             Personal,
             ProximaLimpieza,
@@ -27,7 +27,7 @@ namespace Mds.Biodata.Forms
         }
 
 
- 		//Esta enum indica a que formulario llamo para realizar una "Seleccion"
+        //Esta enum indica a que formulario llamo para realizar una "Seleccion"
         public enum SeleccionDestino
         {
             CiudadSeleccion,        //frmCiudad
@@ -38,7 +38,7 @@ namespace Mds.Biodata.Forms
         {
             Anamnesis,
             Audiometria,
-            ImpedanciometriaEstatica, 
+            ImpedanciometriaEstatica,
             ImpedanciometriaDinamica,
             LogoAudiometria,
             Timpanometria
@@ -52,6 +52,23 @@ namespace Mds.Biodata.Forms
         {
             public const String Masculino = "M";
             public const String Femenino = "F";
+        }
+    }
+
+
+    public class PreguntasAnamnesis
+    {
+        public PreguntasAnamnesis()
+        {
+            _Preguntas = new[]{"¿Usó antes audífono?", "-¿Cómo oye en ambientes ruidosos?", "-¿Entiende lo que le dicen?"};
+        }
+
+        private String[] _Preguntas;
+
+        public String[] Preguntas
+        {
+            get { return _Preguntas; }
+            set { _Preguntas = value; }
         }
     }
 }

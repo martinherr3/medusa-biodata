@@ -101,9 +101,9 @@ namespace Mds.Biodata.Data
         {
             return new AnamnesisPreguntaDao(SessionFactoryConfigPath);
         }
-        public IMarcaAudifonoDao GetMarcaAudifonoDao()
-        {
-            return new MarcaAudifonoDao(SessionFactoryConfigPath);
-        }
+        //public IMarcaAudifonoDao GetMarcaAudifonoDao()
+        //{
+        //    return new MarcaAudifonoDao(SessionFactoryConfigPath);
+        //}
     }
 }
