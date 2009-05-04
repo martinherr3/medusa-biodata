@@ -177,6 +177,14 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uscAnamnesis.resx">
+      <DependentUpon>uscAnamnesis.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uscAnamnesisPregunta.resx">
+      <DependentUpon>uscAnamnesisPregunta.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\uscAudiometria.resx">
       <DependentUpon>uscAudiometria.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -215,6 +223,12 @@
     </Compile>
     <Compile Include="UserControls\uscAnamnesis.Designer.cs">
       <DependentUpon>uscAnamnesis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uscAnamnesisPregunta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uscAnamnesisPregunta.Designer.cs">
+      <DependentUpon>uscAnamnesisPregunta.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\uscAudiometria.cs">
       <SubType>UserControl</SubType>

@@ -25,7 +25,7 @@ namespace Mds.Biodata.Domain
         private System.String _FranjaAdaptacion;
         private System.Decimal? _PresionMaximaSalida;
         private Audifono _IDAudifonoLookup;
-        private MarcaAudifono _IDMarcaAudifonoLookup;
+        //private MarcaAudifono _IDMarcaAudifonoLookup;
         private List<Audifono> _Audifonos = new List<Audifono>();
         private List<AudifonoPaciente> _AudifonoPacientes = new List<AudifonoPaciente>();
         private List<MoldeAudifono> _MoldeAudifonos = new List<MoldeAudifono>();
@@ -84,10 +84,10 @@ namespace Mds.Biodata.Domain
              set { _IDAudifonoLookup = value;}
          }
 
-         public virtual MarcaAudifono IDMarcaAudifonoLookup{
-             get { return _IDMarcaAudifonoLookup; }
-             set { _IDMarcaAudifonoLookup = value;}
-         }
+         //public virtual MarcaAudifono IDMarcaAudifonoLookup{
+         //    get { return _IDMarcaAudifonoLookup; }
+         //    set { _IDMarcaAudifonoLookup = value;}
+         //}
 
          public virtual List<Audifono> Audifonos{
              get { return _Audifonos; }
