@@ -53,6 +53,7 @@
     <Compile Include="ImpedanciometriaEstaticaBusiness.cs" />
     <Compile Include="ListadoPalabraBusiness.cs" />
     <Compile Include="LogoAudiometriaBusiness.cs" />
+    <Compile Include="MarcaAudifonoBusiness.cs" />
     <Compile Include="MoldeAudifonoBusiness.cs" />
     <Compile Include="ObraSocialBusiness.cs" />
     <Compile Include="ObraSocialXPacienteBusiness.cs" />
