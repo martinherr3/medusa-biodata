@@ -54,6 +54,7 @@
     <Compile Include="DataHibernate\ImpedanciometriaEstaticaDao.cs" />
     <Compile Include="DataHibernate\ListadoPalabraDao.cs" />
     <Compile Include="DataHibernate\LogoAudiometriaDao.cs" />
+    <Compile Include="DataHibernate\MarcaAudifonoDao.cs" />
     <Compile Include="DataHibernate\MoldeAudifonoDao.cs" />
     <Compile Include="Factory\NHibernateDaoFactory.cs" />
     <Compile Include="DataHibernate\ObraSocialDao.cs" />

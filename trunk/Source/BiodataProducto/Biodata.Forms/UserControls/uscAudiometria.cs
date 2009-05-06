@@ -44,5 +44,21 @@ namespace Mds.Biodata.Forms.UserControls
             linerRight.XInterval = "250, 8000, 2 , *";
         }
         #endregion
+
+        private void linerLeft_BeforeSeriesCreation(object sender, out Liner.Main.Grid.Args.SeriesConfig pSeriesConfig)
+        {
+            pSeriesConfig = new Liner.Main.Grid.Args.SeriesConfig();
+            pSeriesConfig.LineColor = Color.Blue;
+            pSeriesConfig.LineType = System.Drawing.Drawing2D.DashStyle.DashDot;
+            pSeriesConfig.PointType = Pavr.Main.Base.PointType.X;
+        }
+
+        private void linerRight_BeforeSeriesCreation(object sender, out Liner.Main.Grid.Args.SeriesConfig pSeriesConfig)
+        {
+            pSeriesConfig = new Liner.Main.Grid.Args.SeriesConfig();
+            pSeriesConfig.LineColor = Color.Red;
+            pSeriesConfig.LineType = System.Drawing.Drawing2D.DashStyle.Solid;
+            pSeriesConfig.PointType = Pavr.Main.Base.PointType.O;
+        }
     }
 }

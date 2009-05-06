@@ -58,6 +58,7 @@
     <Compile Include="DataInterfaces\IImpedanciometriaEstaticaDao.cs" />
     <Compile Include="DataInterfaces\IListadoPalabraDao.cs" />
     <Compile Include="DataInterfaces\ILogoAudiometriaDao.cs" />
+    <Compile Include="DataInterfaces\IMarcaAudifonoDao.cs" />
     <Compile Include="DataInterfaces\IMoldeAudifonoDao.cs" />
     <Compile Include="DataInterfaces\IObraSocialDao.cs" />
     <Compile Include="DataInterfaces\IObraSocialXPacienteDao.cs" />
@@ -80,6 +81,7 @@
     <Compile Include="Domain\ImpedanciometriaEstatica.cs" />
     <Compile Include="Domain\ListadoPalabra.cs" />
     <Compile Include="Domain\LogoAudiometria.cs" />
+    <Compile Include="Domain\MarcaAudifono.cs" />
     <Compile Include="Domain\MoldeAudifono.cs" />
     <Compile Include="Domain\ObraSocial.cs" />
     <Compile Include="Domain\ObraSocialXPaciente.cs" />
@@ -109,7 +111,10 @@
     <EmbeddedResource Include="Mapping\ObraSocialXPaciente.hbm.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Mapping\AnamnesisPregunta.hbm.xml" />
+    <EmbeddedResource Include="Mapping\AnamnesisPregunta.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapping\MarcaAudifono.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

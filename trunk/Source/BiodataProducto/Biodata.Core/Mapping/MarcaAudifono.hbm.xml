@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
+    <class name="MarcaAudifono" table="MarcaAudifono" >
+    <id name="ID" type="System.Int32" column="IDMarca">
+        <generator class="assigned"/>
+    </id>
+    <property name="Nombre" column="Nombre" type="System.String" not-null="true" length="20"/>
+    <bag name="Audifonos" table="Audifono" inverse="true" lazy="true" cascade="delete">
+    <key column="IDAudifono" />
+    <one-to-many class="Audifono"/>
+    </bag>
+ </class>
+</hibernate-mapping>
