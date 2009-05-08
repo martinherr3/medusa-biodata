@@ -133,7 +133,7 @@ namespace Mds.Biodata.Forms
 
         private void tsmReportePaciente_Click(object sender, EventArgs e)
         {
-
+            OpenReportePaciente();
         }
 
         private void tsmReporteAudifono_Click(object sender, EventArgs e)
@@ -164,6 +164,18 @@ namespace Mds.Biodata.Forms
         private void tsmReporteAudifonosPorPaciente_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void OpenReportePaciente()
+        {
+            try
+            {
+                GereralFunctions.AbrirFormulario(new Reportes.ReportePacientes(), (TabControl)this.spcRight.Panel2.Controls[0], "Reporte de Pacientes", DockStyle.Fill);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
         }
         #endregion
 
