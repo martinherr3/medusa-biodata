@@ -28,7 +28,10 @@ namespace Mds.Biodata.Forms.UserControls
 
             foreach (String myPregunta in wPreguntas.Preguntas)
             {
-
+                uscAnamnesisPregunta PreguntaControl = new uscAnamnesisPregunta();
+                PreguntaControl.Pregunta = myPregunta;
+                PreguntaControl.Dock = DockStyle.Top;
+                pnlPreguntasRespuestas.Controls.Add(PreguntaControl); 
             }
         }
 
@@ -36,11 +39,15 @@ namespace Mds.Biodata.Forms.UserControls
         {
             Anamnesi wAnamnesis = new Anamnesi();
 
-            //List<Liner.Main.Grid.Args.Line> wLineasEstudio = linerCentral.GenerateLinePointsArgs();
+            foreach (uscAnamnesisPregunta ControlPregunta in pnlPreguntasRespuestas.Controls)
+            {
+                AnamnesisPregunta ContenidoPregunta = new AnamnesisPregunta();
+                ContenidoPregunta.Pregunta = ControlPregunta.Pregunta;
+                ContenidoPregunta.Respuesta = ControlPregunta.Respuesta;
 
-            //String strLineasEstudio = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(wLineasEstudio);
-
-            //wTimpanometria.TimpanometriaGrafico = strLineasEstudio;
+                wAnamnesis.AnamnesisPreguntases.Add(ContenidoPregunta);
+            }
+            
             return (Estudio)wAnamnesis;
         }
         #endregion
@@ -48,8 +55,7 @@ namespace Mds.Biodata.Forms.UserControls
         #region "--[Events]--"
         private void uscAnamnesis_Load(object sender, EventArgs e)
         {
-            //linerCentral.XInterval = "-400, 200, 100 , +";
-            //linerCentral.YInterval = "0, 4, 0,5 , +";
+            CargarPreguntas();
         }
         #endregion
     }

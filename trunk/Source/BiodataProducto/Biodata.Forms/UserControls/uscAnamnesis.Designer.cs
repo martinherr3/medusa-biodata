@@ -29,16 +29,30 @@
         private void InitializeComponent()
         {
             this.gpbAnamnesis = new System.Windows.Forms.GroupBox();
+            this.pnlPreguntasRespuestas = new System.Windows.Forms.Panel();
+            this.gpbAnamnesis.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbAnamnesis
             // 
+            this.gpbAnamnesis.Controls.Add(this.pnlPreguntasRespuestas);
             this.gpbAnamnesis.Location = new System.Drawing.Point(3, 3);
             this.gpbAnamnesis.Name = "gpbAnamnesis";
-            this.gpbAnamnesis.Size = new System.Drawing.Size(695, 395);
+            this.gpbAnamnesis.Size = new System.Drawing.Size(961, 508);
             this.gpbAnamnesis.TabIndex = 0;
             this.gpbAnamnesis.TabStop = false;
             this.gpbAnamnesis.Text = "Preguntas";
+            // 
+            // pnlPreguntasRespuestas
+            // 
+            this.pnlPreguntasRespuestas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pnlPreguntasRespuestas.AutoScroll = true;
+            this.pnlPreguntasRespuestas.Location = new System.Drawing.Point(6, 19);
+            this.pnlPreguntasRespuestas.Name = "pnlPreguntasRespuestas";
+            this.pnlPreguntasRespuestas.Size = new System.Drawing.Size(949, 483);
+            this.pnlPreguntasRespuestas.TabIndex = 0;
             // 
             // uscAnamnesis
             // 
@@ -46,8 +60,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gpbAnamnesis);
             this.Name = "uscAnamnesis";
-            this.Size = new System.Drawing.Size(701, 401);
+            this.Size = new System.Drawing.Size(967, 514);
             this.Load += new System.EventHandler(this.uscAnamnesis_Load);
+            this.gpbAnamnesis.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -55,6 +70,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gpbAnamnesis;
+        private System.Windows.Forms.Panel pnlPreguntasRespuestas;
 
     }
 }
