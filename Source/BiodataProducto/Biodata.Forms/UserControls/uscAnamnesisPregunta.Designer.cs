@@ -38,15 +38,15 @@
             this.txtPregunta.Location = new System.Drawing.Point(3, 3);
             this.txtPregunta.Multiline = true;
             this.txtPregunta.Name = "txtPregunta";
-            this.txtPregunta.Size = new System.Drawing.Size(762, 55);
+            this.txtPregunta.Size = new System.Drawing.Size(857, 39);
             this.txtPregunta.TabIndex = 4;
             // 
             // txtRespuesta
             // 
-            this.txtRespuesta.Location = new System.Drawing.Point(3, 64);
+            this.txtRespuesta.Location = new System.Drawing.Point(3, 48);
             this.txtRespuesta.Multiline = true;
             this.txtRespuesta.Name = "txtRespuesta";
-            this.txtRespuesta.Size = new System.Drawing.Size(762, 61);
+            this.txtRespuesta.Size = new System.Drawing.Size(857, 77);
             this.txtRespuesta.TabIndex = 3;
             // 
             // uscAnamnesisPregunta
@@ -56,7 +56,7 @@
             this.Controls.Add(this.txtPregunta);
             this.Controls.Add(this.txtRespuesta);
             this.Name = "uscAnamnesisPregunta";
-            this.Size = new System.Drawing.Size(772, 131);
+            this.Size = new System.Drawing.Size(863, 131);
             this.ResumeLayout(false);
             this.PerformLayout();
 
