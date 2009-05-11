@@ -311,6 +311,19 @@
       <Name>Biodata.UserControls</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\accept.png" />
+    <Content Include="Imagenes\audioprotesis.gif" />
+    <Content Include="Imagenes\cancel.png" />
+    <Content Include="Imagenes\Estudio.png" />
+    <Content Include="Imagenes\iCal17.png" />
+    <Content Include="Imagenes\note.png" />
+    <Content Include="Imagenes\note_add.png" />
+    <Content Include="Imagenes\note_delete.png" />
+    <Content Include="Imagenes\note_edit.png" />
+    <Content Include="Imagenes\note_go.png" />
+    <Content Include="Imagenes\user-32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

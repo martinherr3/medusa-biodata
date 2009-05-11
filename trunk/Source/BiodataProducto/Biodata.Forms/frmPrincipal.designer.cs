@@ -37,6 +37,7 @@
             this.tsmGestionPaciente = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmGestionCiudad = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmGestionObraSocial = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSeleccionAudifono = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmEstudio = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmNuevoEstudio = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmConsultarEstudio = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +52,8 @@
             this.tsmReporteObraSocial = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReporteEstudiosPaciente = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReporteRecordatorio = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmReportePacientesPorAudifono = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmReporteAudifonosPorPaciente = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmHerramientasSeguridad = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmGestionParametrosSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmCambioPasswordUsuario = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,9 +66,10 @@
             this.spcRight = new System.Windows.Forms.SplitContainer();
             this.splitLeft = new System.Windows.Forms.SplitContainer();
             this.tbcPrincipal = new System.Windows.Forms.TabControl();
-            this.tsmSeleccionAudifono = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmReportePacientesPorAudifono = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmReporteAudifonosPorPaciente = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.tosPrincipal.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.spcRight.Panel1.SuspendLayout();
@@ -76,13 +80,17 @@
             // 
             // tosPrincipal
             // 
-            this.tosPrincipal.ImageScalingSize = new System.Drawing.Size(48, 48);
+            this.tosPrincipal.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.tosPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbUsuarioLogueado,
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.toolStripButton2,
+            this.toolStripSeparator1,
+            this.toolStripButton3,
+            this.toolStripButton4});
             this.tosPrincipal.Location = new System.Drawing.Point(0, 24);
             this.tosPrincipal.Name = "tosPrincipal";
-            this.tosPrincipal.Size = new System.Drawing.Size(936, 55);
+            this.tosPrincipal.Size = new System.Drawing.Size(936, 39);
             this.tosPrincipal.TabIndex = 2;
             this.tosPrincipal.Text = "ToolStrip1";
             // 
@@ -90,7 +98,7 @@
             // 
             this.tsbUsuarioLogueado.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.tsbUsuarioLogueado.Name = "tsbUsuarioLogueado";
-            this.tsbUsuarioLogueado.Size = new System.Drawing.Size(50, 52);
+            this.tsbUsuarioLogueado.Size = new System.Drawing.Size(50, 36);
             this.tsbUsuarioLogueado.Text = "Usuario: ";
             // 
             // toolStripButton1
@@ -99,7 +107,7 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(52, 52);
+            this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
             // menuStrip1
@@ -149,6 +157,13 @@
             this.tsmGestionObraSocial.Size = new System.Drawing.Size(209, 22);
             this.tsmGestionObraSocial.Text = "Gestión de Obras Sociales";
             this.tsmGestionObraSocial.Click += new System.EventHandler(this.tsmGestionObraSocial_Click);
+            // 
+            // tsmSeleccionAudifono
+            // 
+            this.tsmSeleccionAudifono.Name = "tsmSeleccionAudifono";
+            this.tsmSeleccionAudifono.Size = new System.Drawing.Size(209, 22);
+            this.tsmSeleccionAudifono.Text = "Selección de Audífono";
+            this.tsmSeleccionAudifono.Click += new System.EventHandler(this.tsmSeleccionAudifono_Click);
             // 
             // tsmEstudio
             // 
@@ -260,6 +275,20 @@
             this.tsmReporteRecordatorio.Text = "Reporte de Recordatorio";
             this.tsmReporteRecordatorio.Click += new System.EventHandler(this.tsmReporteRecordatorio_Click);
             // 
+            // tsmReportePacientesPorAudifono
+            // 
+            this.tsmReportePacientesPorAudifono.Name = "tsmReportePacientesPorAudifono";
+            this.tsmReportePacientesPorAudifono.Size = new System.Drawing.Size(253, 22);
+            this.tsmReportePacientesPorAudifono.Text = "Reporte de Pacientes por Audífono";
+            this.tsmReportePacientesPorAudifono.Click += new System.EventHandler(this.tsmReportePacientesPorAudifono_Click);
+            // 
+            // tsmReporteAudifonosPorPaciente
+            // 
+            this.tsmReporteAudifonosPorPaciente.Name = "tsmReporteAudifonosPorPaciente";
+            this.tsmReporteAudifonosPorPaciente.Size = new System.Drawing.Size(253, 22);
+            this.tsmReporteAudifonosPorPaciente.Text = "Reporte de Audífonos por paciente";
+            this.tsmReporteAudifonosPorPaciente.Click += new System.EventHandler(this.tsmReporteAudifonosPorPaciente_Click);
+            // 
             // tsmHerramientasSeguridad
             // 
             this.tsmHerramientasSeguridad.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -330,7 +359,7 @@
             // spcRight
             // 
             this.spcRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcRight.Location = new System.Drawing.Point(0, 79);
+            this.spcRight.Location = new System.Drawing.Point(0, 63);
             this.spcRight.Name = "spcRight";
             // 
             // spcRight.Panel1
@@ -340,7 +369,7 @@
             // spcRight.Panel2
             // 
             this.spcRight.Panel2.Controls.Add(this.tbcPrincipal);
-            this.spcRight.Size = new System.Drawing.Size(936, 462);
+            this.spcRight.Size = new System.Drawing.Size(936, 478);
             this.spcRight.SplitterDistance = 179;
             this.spcRight.TabIndex = 4;
             // 
@@ -350,8 +379,8 @@
             this.splitLeft.Location = new System.Drawing.Point(0, 0);
             this.splitLeft.Name = "splitLeft";
             this.splitLeft.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.splitLeft.Size = new System.Drawing.Size(179, 462);
-            this.splitLeft.SplitterDistance = 308;
+            this.splitLeft.Size = new System.Drawing.Size(179, 478);
+            this.splitLeft.SplitterDistance = 318;
             this.splitLeft.TabIndex = 0;
             // 
             // tbcPrincipal
@@ -360,29 +389,40 @@
             this.tbcPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tbcPrincipal.Name = "tbcPrincipal";
             this.tbcPrincipal.SelectedIndex = 0;
-            this.tbcPrincipal.Size = new System.Drawing.Size(753, 462);
+            this.tbcPrincipal.Size = new System.Drawing.Size(753, 478);
             this.tbcPrincipal.TabIndex = 0;
             // 
-            // tsmSeleccionAudifono
+            // toolStripButton2
             // 
-            this.tsmSeleccionAudifono.Name = "tsmSeleccionAudifono";
-            this.tsmSeleccionAudifono.Size = new System.Drawing.Size(209, 22);
-            this.tsmSeleccionAudifono.Text = "Selección de Audífono";
-            this.tsmSeleccionAudifono.Click += new System.EventHandler(this.tsmSeleccionAudifono_Click);
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton2.Text = "toolStripButton2";
             // 
-            // tsmReportePacientesPorAudifono
+            // toolStripSeparator1
             // 
-            this.tsmReportePacientesPorAudifono.Name = "tsmReportePacientesPorAudifono";
-            this.tsmReportePacientesPorAudifono.Size = new System.Drawing.Size(253, 22);
-            this.tsmReportePacientesPorAudifono.Text = "Reporte de Pacientes por Audífono";
-            this.tsmReportePacientesPorAudifono.Click += new System.EventHandler(this.tsmReportePacientesPorAudifono_Click);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
-            // tsmReporteAudifonosPorPaciente
+            // toolStripButton3
             // 
-            this.tsmReporteAudifonosPorPaciente.Name = "tsmReporteAudifonosPorPaciente";
-            this.tsmReporteAudifonosPorPaciente.Size = new System.Drawing.Size(253, 22);
-            this.tsmReporteAudifonosPorPaciente.Text = "Reporte de Audífonos por paciente";
-            this.tsmReporteAudifonosPorPaciente.Click += new System.EventHandler(this.tsmReporteAudifonosPorPaciente_Click);
+            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton3.Text = "toolStripButton3";
+            // 
+            // toolStripButton4
+            // 
+            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
+            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton4.Name = "toolStripButton4";
+            this.toolStripButton4.Size = new System.Drawing.Size(36, 36);
+            this.toolStripButton4.Text = "toolStripButton4";
             // 
             // frmPrincipal
             // 
@@ -449,5 +489,9 @@
         private System.Windows.Forms.ToolStripMenuItem tsmSeleccionAudifono;
         private System.Windows.Forms.ToolStripMenuItem tsmReportePacientesPorAudifono;
         private System.Windows.Forms.ToolStripMenuItem tsmReporteAudifonosPorPaciente;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
+        private System.Windows.Forms.ToolStripButton toolStripButton4;
     }
 }
