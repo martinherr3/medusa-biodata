@@ -244,6 +244,7 @@ namespace Mds.Biodata.Forms
             this.Name = "frmABMBase";
             this.Text = "frmABMBase";
             this.Load += new System.EventHandler(this.frmABMBase_Load);
+            this.BotonClick += new Mds.Biodata.Forms.frmABMBase.BotonClickEventHandler(this.Accion);
             this.pnlList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ptbProgress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();
