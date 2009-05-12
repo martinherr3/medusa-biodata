@@ -31,7 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.tosPrincipal = new System.Windows.Forms.ToolStrip();
             this.tsbUsuarioLogueado = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tsbPaciente = new System.Windows.Forms.ToolStripButton();
+            this.tsbEstudio = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbRecordatorio = new System.Windows.Forms.ToolStripButton();
+            this.tsbAudifono = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbReportePaciente = new System.Windows.Forms.ToolStripButton();
+            this.tsbReporteAudifono = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbAyuda = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tsmPaciente = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmGestionPaciente = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,10 +75,6 @@
             this.spcRight = new System.Windows.Forms.SplitContainer();
             this.splitLeft = new System.Windows.Forms.SplitContainer();
             this.tbcPrincipal = new System.Windows.Forms.TabControl();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.tosPrincipal.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.spcRight.Panel1.SuspendLayout();
@@ -83,11 +88,16 @@
             this.tosPrincipal.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.tosPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbUsuarioLogueado,
-            this.toolStripButton1,
-            this.toolStripButton2,
+            this.tsbPaciente,
+            this.tsbEstudio,
             this.toolStripSeparator1,
-            this.toolStripButton3,
-            this.toolStripButton4});
+            this.tsbRecordatorio,
+            this.tsbAudifono,
+            this.toolStripSeparator2,
+            this.tsbReportePaciente,
+            this.tsbReporteAudifono,
+            this.toolStripSeparator3,
+            this.tsbAyuda});
             this.tosPrincipal.Location = new System.Drawing.Point(0, 24);
             this.tosPrincipal.Name = "tosPrincipal";
             this.tosPrincipal.Size = new System.Drawing.Size(936, 39);
@@ -101,14 +111,83 @@
             this.tsbUsuarioLogueado.Size = new System.Drawing.Size(50, 36);
             this.tsbUsuarioLogueado.Text = "Usuario: ";
             // 
-            // toolStripButton1
+            // tsbPaciente
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.tsbPaciente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbPaciente.Image = ((System.Drawing.Image)(resources.GetObject("tsbPaciente.Image")));
+            this.tsbPaciente.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbPaciente.Name = "tsbPaciente";
+            this.tsbPaciente.Size = new System.Drawing.Size(36, 36);
+            this.tsbPaciente.Text = "Pacientes";
+            // 
+            // tsbEstudio
+            // 
+            this.tsbEstudio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbEstudio.Image = ((System.Drawing.Image)(resources.GetObject("tsbEstudio.Image")));
+            this.tsbEstudio.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbEstudio.Name = "tsbEstudio";
+            this.tsbEstudio.Size = new System.Drawing.Size(36, 36);
+            this.tsbEstudio.Text = "Estudio";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
+            // 
+            // tsbRecordatorio
+            // 
+            this.tsbRecordatorio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbRecordatorio.Image = ((System.Drawing.Image)(resources.GetObject("tsbRecordatorio.Image")));
+            this.tsbRecordatorio.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbRecordatorio.Name = "tsbRecordatorio";
+            this.tsbRecordatorio.Size = new System.Drawing.Size(36, 36);
+            this.tsbRecordatorio.Text = "Recordatorios";
+            // 
+            // tsbAudifono
+            // 
+            this.tsbAudifono.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbAudifono.Image = ((System.Drawing.Image)(resources.GetObject("tsbAudifono.Image")));
+            this.tsbAudifono.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAudifono.Name = "tsbAudifono";
+            this.tsbAudifono.Size = new System.Drawing.Size(36, 36);
+            this.tsbAudifono.Text = "Audifonos";
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
+            // 
+            // tsbReportePaciente
+            // 
+            this.tsbReportePaciente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbReportePaciente.Image = ((System.Drawing.Image)(resources.GetObject("tsbReportePaciente.Image")));
+            this.tsbReportePaciente.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbReportePaciente.Name = "tsbReportePaciente";
+            this.tsbReportePaciente.Size = new System.Drawing.Size(36, 36);
+            this.tsbReportePaciente.Text = "Reporte de Pacientes";
+            // 
+            // tsbReporteAudifono
+            // 
+            this.tsbReporteAudifono.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbReporteAudifono.Image = ((System.Drawing.Image)(resources.GetObject("tsbReporteAudifono.Image")));
+            this.tsbReporteAudifono.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbReporteAudifono.Name = "tsbReporteAudifono";
+            this.tsbReporteAudifono.Size = new System.Drawing.Size(36, 36);
+            this.tsbReporteAudifono.Text = "Reporte de Audifonos";
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
+            // 
+            // tsbAyuda
+            // 
+            this.tsbAyuda.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbAyuda.Image = ((System.Drawing.Image)(resources.GetObject("tsbAyuda.Image")));
+            this.tsbAyuda.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbAyuda.Name = "tsbAyuda";
+            this.tsbAyuda.Size = new System.Drawing.Size(36, 36);
+            this.tsbAyuda.Text = "Ayuda";
             // 
             // menuStrip1
             // 
@@ -392,38 +471,6 @@
             this.tbcPrincipal.Size = new System.Drawing.Size(753, 478);
             this.tbcPrincipal.TabIndex = 0;
             // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton3.Text = "toolStripButton3";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(36, 36);
-            this.toolStripButton4.Text = "toolStripButton4";
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,6 +479,7 @@
             this.Controls.Add(this.spcRight);
             this.Controls.Add(this.tosPrincipal);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.Text = "Audiologia - Gestión";
@@ -461,7 +509,7 @@
         private System.Windows.Forms.SplitContainer spcRight;
         private System.Windows.Forms.SplitContainer splitLeft;
         internal System.Windows.Forms.TabControl tbcPrincipal;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton tsbPaciente;
         private System.Windows.Forms.ToolStripMenuItem tsmGestionCiudad;
         private System.Windows.Forms.ToolStripMenuItem tsmGestionObraSocial;
         private System.Windows.Forms.ToolStripMenuItem tsmEstudio;
@@ -489,9 +537,14 @@
         private System.Windows.Forms.ToolStripMenuItem tsmSeleccionAudifono;
         private System.Windows.Forms.ToolStripMenuItem tsmReportePacientesPorAudifono;
         private System.Windows.Forms.ToolStripMenuItem tsmReporteAudifonosPorPaciente;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton tsbEstudio;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton tsbRecordatorio;
+        private System.Windows.Forms.ToolStripButton tsbAudifono;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton tsbReportePaciente;
+        private System.Windows.Forms.ToolStripButton tsbReporteAudifono;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton tsbAyuda;
     }
 }

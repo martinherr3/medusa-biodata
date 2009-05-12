@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Mds.Biodata.Forms
 {
@@ -12,6 +13,11 @@ namespace Mds.Biodata.Forms
         [STAThread]
         static void Main()
         {
+
+            
+
+            log4net.Config.XmlConfigurator.Configure();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmPrincipal());
