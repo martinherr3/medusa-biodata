@@ -12,6 +12,7 @@
     <AssemblyName>Mds.Biodata.Forms</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>23 JetAudio.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -312,6 +313,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="23 JetAudio.ico" />
     <Content Include="Imagenes\accept.png" />
     <Content Include="Imagenes\audioprotesis.gif" />
     <Content Include="Imagenes\cancel.png" />
