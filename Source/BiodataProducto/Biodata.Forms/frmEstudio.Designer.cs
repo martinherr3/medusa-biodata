@@ -70,7 +70,7 @@
             this.tbcEstudio.Location = new System.Drawing.Point(0, 0);
             this.tbcEstudio.Name = "tbcEstudio";
             this.tbcEstudio.SelectedIndex = 0;
-            this.tbcEstudio.Size = new System.Drawing.Size(997, 600);
+            this.tbcEstudio.Size = new System.Drawing.Size(997, 470);
             this.tbcEstudio.TabIndex = 0;
             // 
             // tbpSeleccionPaciente
@@ -80,7 +80,7 @@
             this.tbpSeleccionPaciente.Location = new System.Drawing.Point(4, 22);
             this.tbpSeleccionPaciente.Name = "tbpSeleccionPaciente";
             this.tbpSeleccionPaciente.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpSeleccionPaciente.Size = new System.Drawing.Size(989, 574);
+            this.tbpSeleccionPaciente.Size = new System.Drawing.Size(989, 444);
             this.tbpSeleccionPaciente.TabIndex = 0;
             this.tbpSeleccionPaciente.Text = "Selección de Paciente";
             this.tbpSeleccionPaciente.UseVisualStyleBackColor = true;
@@ -133,7 +133,7 @@
             this.dgvPacientes.ReadOnly = true;
             this.dgvPacientes.RowHeadersVisible = false;
             this.dgvPacientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPacientes.Size = new System.Drawing.Size(914, 525);
+            this.dgvPacientes.Size = new System.Drawing.Size(914, 404);
             this.dgvPacientes.TabIndex = 0;
             // 
             // tbpAccionARealizar
@@ -151,7 +151,7 @@
             this.tbpAccionARealizar.Location = new System.Drawing.Point(4, 22);
             this.tbpAccionARealizar.Name = "tbpAccionARealizar";
             this.tbpAccionARealizar.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpAccionARealizar.Size = new System.Drawing.Size(989, 574);
+            this.tbpAccionARealizar.Size = new System.Drawing.Size(989, 376);
             this.tbpAccionARealizar.TabIndex = 1;
             this.tbpAccionARealizar.Text = "Acción a realizar";
             this.tbpAccionARealizar.UseVisualStyleBackColor = true;
@@ -245,40 +245,40 @@
             // 
             this.tbpEstudio.Location = new System.Drawing.Point(4, 22);
             this.tbpEstudio.Name = "tbpEstudio";
-            this.tbpEstudio.Size = new System.Drawing.Size(989, 574);
+            this.tbpEstudio.Size = new System.Drawing.Size(989, 376);
             this.tbpEstudio.TabIndex = 2;
             this.tbpEstudio.Text = "Estudio";
             this.tbpEstudio.UseVisualStyleBackColor = true;
             // 
             // btnRegistrarEstudio
             // 
-            this.btnRegistrarEstudio.Image = null;
-            this.btnRegistrarEstudio.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnRegistrarEstudio.Location = new System.Drawing.Point(727, 606);
+            this.btnRegistrarEstudio.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarEstudio.Image")));
+            this.btnRegistrarEstudio.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistrarEstudio.Location = new System.Drawing.Point(699, 489);
             this.btnRegistrarEstudio.Name = "btnRegistrarEstudio";
-            this.btnRegistrarEstudio.Size = new System.Drawing.Size(114, 30);
+            this.btnRegistrarEstudio.Size = new System.Drawing.Size(133, 30);
             this.btnRegistrarEstudio.TabIndex = 4;
             this.btnRegistrarEstudio.Texto = "Registrar Estudio";
             this.btnRegistrarEstudio.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnRegistrarEstudio_Click);
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Image = null;
-            this.btnAnterior.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAnterior.Location = new System.Drawing.Point(487, 606);
+            this.btnAnterior.Image = ((System.Drawing.Image)(resources.GetObject("btnAnterior.Image")));
+            this.btnAnterior.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAnterior.Location = new System.Drawing.Point(381, 489);
             this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(114, 30);
+            this.btnAnterior.Size = new System.Drawing.Size(91, 30);
             this.btnAnterior.TabIndex = 2;
             this.btnAnterior.Texto = "Anterior";
             this.btnAnterior.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnAnterior_Click);
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Image = null;
-            this.btnSiguiente.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnSiguiente.Location = new System.Drawing.Point(607, 606);
+            this.btnSiguiente.Image = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.Image")));
+            this.btnSiguiente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSiguiente.Location = new System.Drawing.Point(478, 489);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(114, 30);
+            this.btnSiguiente.Size = new System.Drawing.Size(93, 30);
             this.btnSiguiente.TabIndex = 1;
             this.btnSiguiente.Texto = "Siguiente";
             this.btnSiguiente.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnSiguiente_Click);
@@ -290,12 +290,11 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnCerrar.Image = null;
-            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCerrar.Location = new System.Drawing.Point(847, 606);
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrar.Location = new System.Drawing.Point(838, 489);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(114, 30);
+            this.btnCerrar.Size = new System.Drawing.Size(123, 30);
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Texto = "Cerrar";
             this.btnCerrar.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnCerrar_Click);
@@ -305,7 +304,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(997, 656);
+            this.ClientSize = new System.Drawing.Size(997, 531);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.btnRegistrarEstudio);

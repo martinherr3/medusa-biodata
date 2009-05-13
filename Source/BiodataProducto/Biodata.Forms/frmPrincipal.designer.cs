@@ -444,12 +444,13 @@
             // spcRight.Panel1
             // 
             this.spcRight.Panel1.Controls.Add(this.splitLeft);
+            this.spcRight.Panel1Collapsed = true;
             // 
             // spcRight.Panel2
             // 
             this.spcRight.Panel2.Controls.Add(this.tbcPrincipal);
             this.spcRight.Size = new System.Drawing.Size(936, 478);
-            this.spcRight.SplitterDistance = 179;
+            this.spcRight.SplitterDistance = 94;
             this.spcRight.TabIndex = 4;
             // 
             // splitLeft
@@ -458,9 +459,10 @@
             this.splitLeft.Location = new System.Drawing.Point(0, 0);
             this.splitLeft.Name = "splitLeft";
             this.splitLeft.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.splitLeft.Size = new System.Drawing.Size(179, 478);
+            this.splitLeft.Size = new System.Drawing.Size(94, 478);
             this.splitLeft.SplitterDistance = 318;
             this.splitLeft.TabIndex = 0;
+            this.splitLeft.Visible = false;
             // 
             // tbcPrincipal
             // 
@@ -468,7 +470,7 @@
             this.tbcPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tbcPrincipal.Name = "tbcPrincipal";
             this.tbcPrincipal.SelectedIndex = 0;
-            this.tbcPrincipal.Size = new System.Drawing.Size(753, 478);
+            this.tbcPrincipal.Size = new System.Drawing.Size(936, 478);
             this.tbcPrincipal.TabIndex = 0;
             // 
             // frmPrincipal
