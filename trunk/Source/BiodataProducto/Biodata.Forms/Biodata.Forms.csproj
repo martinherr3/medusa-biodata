@@ -318,6 +318,7 @@
     <Content Include="Imagenes\audioprotesis.gif" />
     <Content Include="Imagenes\cancel.png" />
     <Content Include="Imagenes\Estudio.png" />
+    <Content Include="Imagenes\EstudioSafe.png" />
     <Content Include="Imagenes\iCal17.png" />
     <Content Include="Imagenes\note.png" />
     <Content Include="Imagenes\note_add.png" />
