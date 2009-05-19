@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
-    <class name="AnamnesisPregunta" table="AnamnesisPreguntas" >
-    <id name="ID" type="System.Int32" column="IDEstudio">
-        <generator class="assigned"/>
+  <class name="AnamnesisPregunta" table="AnamnesisPreguntas" >
+    <id name="ID" type="System.Int32" column="IDAnamnesisPreguntas">
+      <generator class="identity"/>
     </id>
+    <property name="IDEstudio" column="IDEstudio" type="System.Int32" not-null="true" />
     <property name="Pregunta" column="Pregunta" type="System.String" not-null="false" length="250"/>
     <property name="Respuesta" column="Respuesta" type="System.String" not-null="false" length="250"/>
     <many-to-one name="IDEstudioLookup" column="IDEstudio" class="Anamnesi"  update="0"  insert="0" />
- </class>
+  </class>
 </hibernate-mapping>

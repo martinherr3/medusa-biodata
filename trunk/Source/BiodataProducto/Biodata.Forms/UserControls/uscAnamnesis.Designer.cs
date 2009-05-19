@@ -35,6 +35,9 @@
             // 
             // gpbAnamnesis
             // 
+            this.gpbAnamnesis.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.gpbAnamnesis.Controls.Add(this.pnlPreguntasRespuestas);
             this.gpbAnamnesis.Location = new System.Drawing.Point(3, 3);
             this.gpbAnamnesis.Name = "gpbAnamnesis";

@@ -60,7 +60,7 @@ namespace Mds.Biodata.Forms
     {
         public PreguntasAnamnesis()
         {
-            _Preguntas = new[]{"¿Usó antes audífono?", "-¿Cómo oye en ambientes ruidosos?", "-¿Entiende lo que le dicen?"};
+            _Preguntas = new[] { "¿Usó antes audífono?", "-¿Cómo oye en ambientes ruidosos?", "-¿Entiende lo que le dicen?", "-¿Comprende cada palabra?"};
         }
 
         private String[] _Preguntas;
