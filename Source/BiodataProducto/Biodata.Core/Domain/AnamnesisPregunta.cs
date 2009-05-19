@@ -12,6 +12,7 @@ namespace Mds.Biodata.Domain
     {
 
 
+        private System.Int32 _IDEstudio;
         private System.String _Pregunta;
         private System.String _Respuesta;
         private Anamnesi _IDEstudioLookup;
@@ -25,20 +26,29 @@ namespace Mds.Biodata.Domain
             base.ID = id;
         }
 
-         public virtual System.String Pregunta {
-             get { return _Pregunta; }
-             set { _Pregunta = value;}
-         }
+        public virtual System.Int32 IDEstudio
+        {
+            get { return _IDEstudio; }
+            set { _IDEstudio = value; }
+        }
 
-         public virtual System.String Respuesta {
-             get { return _Respuesta; }
-             set { _Respuesta = value;}
-         }
+        public virtual System.String Pregunta
+        {
+            get { return _Pregunta; }
+            set { _Pregunta = value; }
+        }
 
-         public virtual Anamnesi IDEstudioLookup{
-             get { return _IDEstudioLookup; }
-             set { _IDEstudioLookup = value;}
-         }
+        public virtual System.String Respuesta
+        {
+            get { return _Respuesta; }
+            set { _Respuesta = value; }
+        }
+
+        public virtual Anamnesi IDEstudioLookup
+        {
+            get { return _IDEstudioLookup; }
+            set { _IDEstudioLookup = value; }
+        }
 
 
         public override int GetHashCode()

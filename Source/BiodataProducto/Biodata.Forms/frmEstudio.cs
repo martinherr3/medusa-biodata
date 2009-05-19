@@ -57,12 +57,15 @@ namespace Mds.Biodata.Forms
             set { _PacienteCurrencyManager = value; }
         }
 
+        private TabPage TabPageActual;
+
         #endregion
 
         #region "--[Methods]--"
         public frmEstudio()
         {
             InitializeComponent();
+            TabPageActual = tbpSeleccionPaciente;
         }
 
         private void InitializeObjectView()
