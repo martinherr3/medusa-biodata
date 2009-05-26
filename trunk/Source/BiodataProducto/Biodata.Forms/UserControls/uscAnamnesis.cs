@@ -44,6 +44,8 @@ namespace Mds.Biodata.Forms.UserControls
                 AnamnesisPregunta ContenidoPregunta = new AnamnesisPregunta();
                 ContenidoPregunta.Pregunta = ControlPregunta.Pregunta;
                 ContenidoPregunta.Respuesta = ControlPregunta.Respuesta;
+                ContenidoPregunta.IDEstudio = 13;
+                //ContenidoPregunta.IDEstudioLookup = wAnamnesis;
 
                 wAnamnesis.AnamnesisPreguntases.Add(ContenidoPregunta);
             }
