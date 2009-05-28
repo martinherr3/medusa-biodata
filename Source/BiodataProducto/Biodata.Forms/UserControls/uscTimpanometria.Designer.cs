@@ -34,13 +34,13 @@
             // linerCentral
             // 
             this.linerCentral.BackColor = System.Drawing.Color.Transparent;
-            this.linerCentral.ControlBackColor = System.Drawing.Color.Transparent;
+            //this.linerCentral.ControlBackColor = System.Drawing.Color.Transparent;
             this.linerCentral.CreateButtonText = "New Timpanometria";
             this.linerCentral.LegendCaption = "Leyendas";
             this.linerCentral.Location = new System.Drawing.Point(6, 6);
             this.linerCentral.MatrixLinesColor = System.Drawing.Color.LightGray;
             this.linerCentral.Name = "linerCentral";
-            this.linerCentral.PanelBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            //this.linerCentral.PanelBackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.linerCentral.PointColor = System.Drawing.Color.Black;
             this.linerCentral.PointHeight = 5;
             this.linerCentral.PointWidth = 5;

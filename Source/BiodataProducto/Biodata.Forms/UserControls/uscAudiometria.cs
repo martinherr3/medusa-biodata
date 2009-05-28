@@ -45,20 +45,27 @@ namespace Mds.Biodata.Forms.UserControls
         }
         #endregion
 
-        private void linerLeft_BeforeSeriesCreation(object sender, out Liner.Main.Grid.Args.SeriesConfig pSeriesConfig)
+        private void linerLeft_BeforeSeriesCreation(object sender)
         {
-            pSeriesConfig = new Liner.Main.Grid.Args.SeriesConfig();
-            pSeriesConfig.LineColor = Color.Blue;
-            pSeriesConfig.LineType = System.Drawing.Drawing2D.DashStyle.DashDot;
-            pSeriesConfig.PointType = Pavr.Main.Base.PointType.X;
+            //pSeriesConfig = new Liner.Main.Grid.Args.SeriesConfig();
+            //pSeriesConfig.LineColor = Color.Blue;
+            //pSeriesConfig.LineType = System.Drawing.Drawing2D.DashStyle.DashDot;
+            //pSeriesConfig.PointType = Pavr.Main.Base.PointType.X;
+            linerLeft.LineColor = Color.Blue;
+            linerLeft.DashLineType = Pavr.Main.Base.DashLineType.DashDot;
+            linerLeft.PointType = Pavr.Main.Base.PointType.X;
+
         }
 
-        private void linerRight_BeforeSeriesCreation(object sender, out Liner.Main.Grid.Args.SeriesConfig pSeriesConfig)
+        private void linerRight_BeforeSeriesCreation(object sender)
         {
-            pSeriesConfig = new Liner.Main.Grid.Args.SeriesConfig();
-            pSeriesConfig.LineColor = Color.Red;
-            pSeriesConfig.LineType = System.Drawing.Drawing2D.DashStyle.Solid;
-            pSeriesConfig.PointType = Pavr.Main.Base.PointType.O;
+            //pSeriesConfig = new Liner.Main.Grid.Args.SeriesConfig();
+            //pSeriesConfig.LineColor = Color.Red;
+            //pSeriesConfig.LineType = System.Drawing.Drawing2D.DashStyle.Solid;
+            //pSeriesConfig.PointType = Pavr.Main.Base.PointType.O;
+            linerRight.LineColor = Color.Red;
+            linerRight.DashLineType = Pavr.Main.Base.DashLineType.Solid;
+            linerRight.PointType = Pavr.Main.Base.PointType.O;
         }
     }
 }

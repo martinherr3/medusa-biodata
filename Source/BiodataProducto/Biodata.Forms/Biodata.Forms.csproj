@@ -245,6 +245,9 @@
     <Compile Include="Reportes\ReportePacientes.Designer.cs">
       <DependentUpon>ReportePacientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\LabelExtend.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="UserControls\uscAnamnesis.cs">
       <SubType>UserControl</SubType>
     </Compile>
