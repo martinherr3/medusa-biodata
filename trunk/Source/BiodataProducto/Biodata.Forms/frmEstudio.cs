@@ -221,6 +221,24 @@ namespace Mds.Biodata.Forms
                 EstudioBusiness EstudioBP = new EstudioBusiness(DaoFactory.GetEstudioDao());
 
                 EstudioBP.Insert(wEstudio);
+
+                //INSERTA POR SEPARADO CABECERA Y DETALLES EN TODOS LOS CASOS DEJA EN EN LA PROPIEDAD "Cascade" DEL
+                //.hbm COMO "Delete" NADA MAS, DESPUES LE BUSCAMOS UNA SOLUCION
+
+                //ESTO NO DEBERIA ESTAR, ES UNA NEGRADA PERO PARA SALIR DEL PASO NO QUEDA OTRA POR AHORA
+                switch (wEstudio.GetType().Name)
+                {
+                    case "Anamnesi":
+                        AnamnesisPreguntaBusiness wPreguntaRespuestaBP = new AnamnesisPreguntaBusiness(DaoFactory.GetAnamnesisPreguntaDao());
+                        foreach (AnamnesisPregunta wPreguntaRespuesta in ((Anamnesi)wEstudio).AnamnesisPreguntases)
+                        {
+                            wPreguntaRespuesta.IDEstudio = wEstudio.ID;
+                            wPreguntaRespuestaBP.Insert(wPreguntaRespuesta);
+                        }
+
+                        break;
+                }
+                
             }
         }
 

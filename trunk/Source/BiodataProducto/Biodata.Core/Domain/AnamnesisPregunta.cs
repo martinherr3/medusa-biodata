@@ -16,6 +16,7 @@ namespace Mds.Biodata.Domain
         private System.String _Pregunta;
         private System.String _Respuesta;
         private Anamnesi _IDEstudioLookup;
+        //private Estudio _IDEstudioLookup;
 
         public AnamnesisPregunta()
         {
@@ -49,6 +50,12 @@ namespace Mds.Biodata.Domain
             get { return _IDEstudioLookup; }
             set { _IDEstudioLookup = value; }
         }
+
+        //public virtual Estudio IDEstudioLookup
+        //{
+        //    get { return _IDEstudioLookup; }
+        //    set { _IDEstudioLookup = value; }
+        //}
 
 
         public override int GetHashCode()

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
-    <class name="ObraSocialXPaciente" table="ObraSocialXPaciente" >
-    <composite-id name="ID" class="Mds.Biodata.Domain.ObraSocialXPaciente+DomainObjectID">
-        <key-property type="System.Int32" name="IDPaciente" column="IDPaciente" />
-        <key-property type="System.Int32" name="IDObraSocial" column="IDObraSocial" />
-    </composite-id>
+  <class name="ObraSocialXPaciente" table="ObraSocialXPaciente" >
+    <id name="ID" type="System.Int32" column="IDObraSocialXPaciente">
+      <generator class="identity"/>
+    </id>
+    <property name="IDPaciente" column="IDPaciente" type="System.Int32" not-null="true" />
+    <property name="IDObraSocial" column="IDObraSocial" type="System.Int32" not-null="true" />
     <property name="NumeroAfiliado" column="NumeroAfiliado" type="System.String" not-null="false" length="100"/>
     <many-to-one name="IDObraSocialLookup" column="IDObraSocial" class="ObraSocial"  update="0"  insert="0" />
     <many-to-one name="IDPacienteLookup" column="IDPaciente" class="Paciente"  update="0"  insert="0" />
- </class>
+  </class>
 </hibernate-mapping>

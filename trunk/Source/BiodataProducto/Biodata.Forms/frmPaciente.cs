@@ -339,7 +339,7 @@ namespace Mds.Biodata.Forms
                         /////////////////////////////////////////////////////////////////
                         txtNombre.Focus();
                         PacienteEntity = new Paciente();
-                        
+
                         break;
 
                     case EstadoForm.Editar:
@@ -378,7 +378,7 @@ namespace Mds.Biodata.Forms
                     PacienteEntity.Nombre = txtNombre.Text;
                     PacienteEntity.Apellido = txtApellido.Text;
                     PacienteEntity.Direccion = txtDireccion.Text;
-                    PacienteEntity.TipoDocumento = (Int32)cmbTipoDocumento.SelectedItem;
+                    PacienteEntity.TipoDocumento = Convert.ToInt32(cmbTipoDocumento.SelectedItem);
                     PacienteEntity.NumeroDocumento = Convert.ToDecimal(txtNumeroDocumento.Text);
                     PacienteEntity.CorreoElectronico = txtCorreoElectronico.Text;
                     PacienteEntity.FechaNacimiento = dtpFechaNacimiento.Value;
@@ -423,6 +423,14 @@ namespace Mds.Biodata.Forms
                             wHistoria.IDPaciente = PacienteEntity.ID;
                             HistoriaClinicaBusiness HistoriaClinicaBP = new HistoriaClinicaBusiness(DaoFactory.GetHistoriaClinicaDao());
                             HistoriaClinicaBP.Insert(wHistoria);
+                            //ESTO NO DEBERIA ESTAR, ES UNA NEGRADA PERO PARA SALIR DEL PASO NO QUEDA OTRA POR AHORA
+                            ObraSocialXPacienteBusiness wObraSocialXPacienteBP = new ObraSocialXPacienteBusiness(DaoFactory.GetObraSocialXPacienteDao());
+                         
+                            foreach (ObraSocialXPaciente wObraSocialXPaciente in PacienteEntity.ObraSocialXPacientes)
+                            {
+                                wObraSocialXPaciente.IDPaciente = PacienteEntity.ID;
+                                wObraSocialXPacienteBP.Insert(wObraSocialXPaciente);
+                            }
                             break;
                     }
                     pnlDetails.Visible = false;
