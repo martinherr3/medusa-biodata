@@ -6,9 +6,10 @@ using Mds.Architecture.Business;
 
 namespace Mds.Biodata.Business
 {
-    public class ObraSocialXPacienteBusiness : AbstractBusiness<IObraSocialXPacienteDao, ObraSocialXPaciente, ObraSocialXPaciente.DomainObjectID>
+    public class ObraSocialXPacienteBusiness : AbstractBusiness<IObraSocialXPacienteDao, ObraSocialXPaciente, System.Int32>
     {
-        public ObraSocialXPacienteBusiness(IObraSocialXPacienteDao dao) : base(dao)
+        public ObraSocialXPacienteBusiness(IObraSocialXPacienteDao dao)
+            : base(dao)
         {
 
         }

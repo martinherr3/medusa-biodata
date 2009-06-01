@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -67,16 +67,16 @@
             this.tbcDatos = new System.Windows.Forms.TabControl();
             this.tbpDatosPaciente = new System.Windows.Forms.TabPage();
             this.tbpDatosHistorialClinico = new System.Windows.Forms.TabPage();
-            this.txtObservaciones = new System.Windows.Forms.TextBox();
-            this.lblObservaciones = new System.Windows.Forms.Label();
-            this.txtAntecedentesHereditarios = new System.Windows.Forms.TextBox();
-            this.lblAntecedentesHereditarios = new System.Windows.Forms.Label();
-            this.txtAntecedentesPersonales = new System.Windows.Forms.TextBox();
-            this.lblAntecedentesPersonales = new System.Windows.Forms.Label();
+            this.lblInicioAtencion = new System.Windows.Forms.Label();
+            this.dtpInicioAtencion = new System.Windows.Forms.DateTimePicker();
             this.txtEstadoSalud = new System.Windows.Forms.TextBox();
             this.lblEstadoSalud = new System.Windows.Forms.Label();
-            this.dtpInicioAtencion = new System.Windows.Forms.DateTimePicker();
-            this.lblInicioAtencion = new System.Windows.Forms.Label();
+            this.txtAntecedentesPersonales = new System.Windows.Forms.TextBox();
+            this.lblAntecedentesPersonales = new System.Windows.Forms.Label();
+            this.txtAntecedentesHereditarios = new System.Windows.Forms.TextBox();
+            this.lblAntecedentesHereditarios = new System.Windows.Forms.Label();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.lblObservaciones = new System.Windows.Forms.Label();
             this.pnlList.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -118,7 +118,7 @@
             // pnlDetails
             // 
             this.pnlDetails.Controls.Add(this.tbcDatos);
-            this.pnlDetails.Location = new System.Drawing.Point(12, 227);
+            this.pnlDetails.Location = new System.Drawing.Point(12, 159);
             this.pnlDetails.Size = new System.Drawing.Size(797, 520);
             this.pnlDetails.Controls.SetChildIndex(this.btnCancel, 0);
             this.pnlDetails.Controls.SetChildIndex(this.btnAccept, 0);
@@ -141,63 +141,63 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(123, 22);
+            this.txtID.Location = new System.Drawing.Point(137, 22);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(65, 20);
             this.txtID.TabIndex = 5;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(123, 48);
+            this.txtNombre.Location = new System.Drawing.Point(137, 48);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(251, 20);
             this.txtNombre.TabIndex = 6;
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(123, 74);
+            this.txtApellido.Location = new System.Drawing.Point(137, 74);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(251, 20);
             this.txtApellido.TabIndex = 7;
             // 
             // txtCorreoElectronico
             // 
-            this.txtCorreoElectronico.Location = new System.Drawing.Point(123, 179);
+            this.txtCorreoElectronico.Location = new System.Drawing.Point(137, 179);
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
             this.txtCorreoElectronico.Size = new System.Drawing.Size(251, 20);
             this.txtCorreoElectronico.TabIndex = 10;
             // 
             // txtNumeroDocumento
             // 
-            this.txtNumeroDocumento.Location = new System.Drawing.Point(123, 153);
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(137, 153);
             this.txtNumeroDocumento.Name = "txtNumeroDocumento";
             this.txtNumeroDocumento.Size = new System.Drawing.Size(251, 20);
             this.txtNumeroDocumento.TabIndex = 9;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(123, 100);
+            this.txtDireccion.Location = new System.Drawing.Point(137, 100);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(251, 20);
             this.txtDireccion.TabIndex = 8;
             // 
             // txtCelular
             // 
-            this.txtCelular.Location = new System.Drawing.Point(123, 355);
+            this.txtCelular.Location = new System.Drawing.Point(137, 355);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(251, 20);
             this.txtCelular.TabIndex = 13;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(123, 329);
+            this.txtTelefono.Location = new System.Drawing.Point(137, 329);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(251, 20);
             this.txtTelefono.TabIndex = 12;
             // 
             // txtComentario
             // 
-            this.txtComentario.Location = new System.Drawing.Point(123, 255);
+            this.txtComentario.Location = new System.Drawing.Point(137, 255);
             this.txtComentario.Multiline = true;
             this.txtComentario.Name = "txtComentario";
             this.txtComentario.Size = new System.Drawing.Size(251, 68);
@@ -207,7 +207,7 @@
             // 
             this.cmbTipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoDocumento.FormattingEnabled = true;
-            this.cmbTipoDocumento.Location = new System.Drawing.Point(123, 126);
+            this.cmbTipoDocumento.Location = new System.Drawing.Point(137, 126);
             this.cmbTipoDocumento.Name = "cmbTipoDocumento";
             this.cmbTipoDocumento.Size = new System.Drawing.Size(154, 21);
             this.cmbTipoDocumento.TabIndex = 14;
@@ -215,7 +215,7 @@
             // dtpFechaNacimiento
             // 
             this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(123, 205);
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(137, 205);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(154, 20);
             this.dtpFechaNacimiento.TabIndex = 15;
@@ -224,7 +224,7 @@
             // 
             this.cmbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSexo.FormattingEnabled = true;
-            this.cmbSexo.Location = new System.Drawing.Point(123, 231);
+            this.cmbSexo.Location = new System.Drawing.Point(137, 231);
             this.cmbSexo.Name = "cmbSexo";
             this.cmbSexo.Size = new System.Drawing.Size(65, 21);
             this.cmbSexo.TabIndex = 16;
@@ -232,7 +232,7 @@
             // lblID
             // 
             this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(45, 25);
+            this.lblID.Location = new System.Drawing.Point(117, 25);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(18, 13);
             this.lblID.TabIndex = 18;
@@ -241,7 +241,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(45, 51);
+            this.lblNombre.Location = new System.Drawing.Point(91, 51);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(44, 13);
             this.lblNombre.TabIndex = 19;
@@ -250,7 +250,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(45, 77);
+            this.lblApellido.Location = new System.Drawing.Point(91, 77);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(44, 13);
             this.lblApellido.TabIndex = 21;
@@ -259,7 +259,7 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(45, 103);
+            this.lblDireccion.Location = new System.Drawing.Point(83, 103);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(52, 13);
             this.lblDireccion.TabIndex = 20;
@@ -268,43 +268,43 @@
             // lblTipoDocumento
             // 
             this.lblTipoDocumento.AutoSize = true;
-            this.lblTipoDocumento.Location = new System.Drawing.Point(14, 129);
+            this.lblTipoDocumento.Location = new System.Drawing.Point(34, 129);
             this.lblTipoDocumento.Name = "lblTipoDocumento";
-            this.lblTipoDocumento.Size = new System.Drawing.Size(83, 13);
+            this.lblTipoDocumento.Size = new System.Drawing.Size(101, 13);
             this.lblTipoDocumento.TabIndex = 25;
-            this.lblTipoDocumento.Text = "TipoDocumento";
+            this.lblTipoDocumento.Text = "Tipo de Documento";
             // 
             // lblNumeroDocumento
             // 
             this.lblNumeroDocumento.AutoSize = true;
-            this.lblNumeroDocumento.Location = new System.Drawing.Point(-2, 153);
+            this.lblNumeroDocumento.Location = new System.Drawing.Point(18, 153);
             this.lblNumeroDocumento.Name = "lblNumeroDocumento";
-            this.lblNumeroDocumento.Size = new System.Drawing.Size(99, 13);
+            this.lblNumeroDocumento.Size = new System.Drawing.Size(117, 13);
             this.lblNumeroDocumento.TabIndex = 24;
-            this.lblNumeroDocumento.Text = "NumeroDocumento";
+            this.lblNumeroDocumento.Text = "Numero de Documento";
             // 
             // lblCorreoElectronico
             // 
             this.lblCorreoElectronico.AutoSize = true;
-            this.lblCorreoElectronico.Location = new System.Drawing.Point(6, 179);
+            this.lblCorreoElectronico.Location = new System.Drawing.Point(41, 179);
             this.lblCorreoElectronico.Name = "lblCorreoElectronico";
-            this.lblCorreoElectronico.Size = new System.Drawing.Size(91, 13);
+            this.lblCorreoElectronico.Size = new System.Drawing.Size(94, 13);
             this.lblCorreoElectronico.TabIndex = 23;
-            this.lblCorreoElectronico.Text = "CorreoElectronico";
+            this.lblCorreoElectronico.Text = "Correo Electronico";
             // 
             // lblFechaNacimiento
             // 
             this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(7, 205);
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(27, 205);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
-            this.lblFechaNacimiento.Size = new System.Drawing.Size(90, 13);
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(108, 13);
             this.lblFechaNacimiento.TabIndex = 22;
-            this.lblFechaNacimiento.Text = "FechaNacimiento";
+            this.lblFechaNacimiento.Text = "Fecha de Nacimiento";
             // 
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(45, 234);
+            this.lblSexo.Location = new System.Drawing.Point(104, 234);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(31, 13);
             this.lblSexo.TabIndex = 30;
@@ -313,7 +313,7 @@
             // lblComentario
             // 
             this.lblComentario.AutoSize = true;
-            this.lblComentario.Location = new System.Drawing.Point(45, 255);
+            this.lblComentario.Location = new System.Drawing.Point(75, 255);
             this.lblComentario.Name = "lblComentario";
             this.lblComentario.Size = new System.Drawing.Size(60, 13);
             this.lblComentario.TabIndex = 29;
@@ -322,7 +322,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(45, 332);
+            this.lblTelefono.Location = new System.Drawing.Point(86, 332);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
             this.lblTelefono.TabIndex = 28;
@@ -331,7 +331,7 @@
             // lblCelular
             // 
             this.lblCelular.AutoSize = true;
-            this.lblCelular.Location = new System.Drawing.Point(45, 358);
+            this.lblCelular.Location = new System.Drawing.Point(96, 358);
             this.lblCelular.Name = "lblCelular";
             this.lblCelular.Size = new System.Drawing.Size(39, 13);
             this.lblCelular.TabIndex = 27;
@@ -340,7 +340,7 @@
             // lblCiudad
             // 
             this.lblCiudad.AutoSize = true;
-            this.lblCiudad.Location = new System.Drawing.Point(45, 384);
+            this.lblCiudad.Location = new System.Drawing.Point(95, 384);
             this.lblCiudad.Name = "lblCiudad";
             this.lblCiudad.Size = new System.Drawing.Size(40, 13);
             this.lblCiudad.TabIndex = 26;
@@ -353,14 +353,14 @@
             // txtCiudad
             // 
             this.txtCiudad.Enabled = false;
-            this.txtCiudad.Location = new System.Drawing.Point(123, 384);
+            this.txtCiudad.Location = new System.Drawing.Point(137, 384);
             this.txtCiudad.Name = "txtCiudad";
             this.txtCiudad.Size = new System.Drawing.Size(204, 20);
             this.txtCiudad.TabIndex = 31;
             // 
             // btnSeleccionarCiudad
             // 
-            this.btnSeleccionarCiudad.Location = new System.Drawing.Point(333, 383);
+            this.btnSeleccionarCiudad.Location = new System.Drawing.Point(347, 383);
             this.btnSeleccionarCiudad.Name = "btnSeleccionarCiudad";
             this.btnSeleccionarCiudad.Size = new System.Drawing.Size(41, 23);
             this.btnSeleccionarCiudad.TabIndex = 32;
@@ -373,31 +373,31 @@
             this.dgvObrasSociales.AllowUserToAddRows = false;
             this.dgvObrasSociales.AllowUserToDeleteRows = false;
             this.dgvObrasSociales.AllowUserToResizeRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvObrasSociales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvObrasSociales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvObrasSociales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvObrasSociales.BackgroundColor = System.Drawing.Color.White;
             this.dgvObrasSociales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DarkSalmon;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvObrasSociales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkSalmon;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvObrasSociales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvObrasSociales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvObrasSociales.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObrasSociales.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvObrasSociales.EnableHeadersVisualStyles = false;
             this.dgvObrasSociales.GridColor = System.Drawing.Color.Silver;
             this.dgvObrasSociales.Location = new System.Drawing.Point(20, 28);
@@ -504,62 +504,27 @@
             this.tbpDatosHistorialClinico.Location = new System.Drawing.Point(4, 22);
             this.tbpDatosHistorialClinico.Name = "tbpDatosHistorialClinico";
             this.tbpDatosHistorialClinico.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpDatosHistorialClinico.Size = new System.Drawing.Size(786, 419);
+            this.tbpDatosHistorialClinico.Size = new System.Drawing.Size(789, 419);
             this.tbpDatosHistorialClinico.TabIndex = 1;
             this.tbpDatosHistorialClinico.Text = "Historial Clinico";
             this.tbpDatosHistorialClinico.UseVisualStyleBackColor = true;
             // 
-            // txtObservaciones
+            // lblInicioAtencion
             // 
-            this.txtObservaciones.Location = new System.Drawing.Point(144, 82);
-            this.txtObservaciones.MaxLength = 250;
-            this.txtObservaciones.Multiline = true;
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(484, 47);
-            this.txtObservaciones.TabIndex = 20;
+            this.lblInicioAtencion.AutoSize = true;
+            this.lblInicioAtencion.Location = new System.Drawing.Point(46, 47);
+            this.lblInicioAtencion.Name = "lblInicioAtencion";
+            this.lblInicioAtencion.Size = new System.Drawing.Size(92, 13);
+            this.lblInicioAtencion.TabIndex = 29;
+            this.lblInicioAtencion.Text = "Inicio de Atencion";
             // 
-            // lblObservaciones
+            // dtpInicioAtencion
             // 
-            this.lblObservaciones.AutoSize = true;
-            this.lblObservaciones.Location = new System.Drawing.Point(60, 85);
-            this.lblObservaciones.Name = "lblObservaciones";
-            this.lblObservaciones.Size = new System.Drawing.Size(78, 13);
-            this.lblObservaciones.TabIndex = 21;
-            this.lblObservaciones.Text = "Observaciones";
-            // 
-            // txtAntecedentesHereditarios
-            // 
-            this.txtAntecedentesHereditarios.Location = new System.Drawing.Point(144, 135);
-            this.txtAntecedentesHereditarios.Multiline = true;
-            this.txtAntecedentesHereditarios.Name = "txtAntecedentesHereditarios";
-            this.txtAntecedentesHereditarios.Size = new System.Drawing.Size(484, 59);
-            this.txtAntecedentesHereditarios.TabIndex = 22;
-            // 
-            // lblAntecedentesHereditarios
-            // 
-            this.lblAntecedentesHereditarios.AutoSize = true;
-            this.lblAntecedentesHereditarios.Location = new System.Drawing.Point(6, 135);
-            this.lblAntecedentesHereditarios.Name = "lblAntecedentesHereditarios";
-            this.lblAntecedentesHereditarios.Size = new System.Drawing.Size(132, 13);
-            this.lblAntecedentesHereditarios.TabIndex = 23;
-            this.lblAntecedentesHereditarios.Text = "Antecedentes Hereditarios";
-            // 
-            // txtAntecedentesPersonales
-            // 
-            this.txtAntecedentesPersonales.Location = new System.Drawing.Point(144, 200);
-            this.txtAntecedentesPersonales.Multiline = true;
-            this.txtAntecedentesPersonales.Name = "txtAntecedentesPersonales";
-            this.txtAntecedentesPersonales.Size = new System.Drawing.Size(484, 55);
-            this.txtAntecedentesPersonales.TabIndex = 24;
-            // 
-            // lblAntecedentesPersonales
-            // 
-            this.lblAntecedentesPersonales.AutoSize = true;
-            this.lblAntecedentesPersonales.Location = new System.Drawing.Point(10, 200);
-            this.lblAntecedentesPersonales.Name = "lblAntecedentesPersonales";
-            this.lblAntecedentesPersonales.Size = new System.Drawing.Size(128, 13);
-            this.lblAntecedentesPersonales.TabIndex = 25;
-            this.lblAntecedentesPersonales.Text = "Antecedentes Personales";
+            this.dtpInicioAtencion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInicioAtencion.Location = new System.Drawing.Point(144, 47);
+            this.dtpInicioAtencion.Name = "dtpInicioAtencion";
+            this.dtpInicioAtencion.Size = new System.Drawing.Size(144, 20);
+            this.dtpInicioAtencion.TabIndex = 28;
             // 
             // txtEstadoSalud
             // 
@@ -579,28 +544,63 @@
             this.lblEstadoSalud.TabIndex = 27;
             this.lblEstadoSalud.Text = "Estado de Salud";
             // 
-            // dtpInicioAtencion
+            // txtAntecedentesPersonales
             // 
-            this.dtpInicioAtencion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInicioAtencion.Location = new System.Drawing.Point(144, 47);
-            this.dtpInicioAtencion.Name = "dtpInicioAtencion";
-            this.dtpInicioAtencion.Size = new System.Drawing.Size(144, 20);
-            this.dtpInicioAtencion.TabIndex = 28;
+            this.txtAntecedentesPersonales.Location = new System.Drawing.Point(144, 200);
+            this.txtAntecedentesPersonales.Multiline = true;
+            this.txtAntecedentesPersonales.Name = "txtAntecedentesPersonales";
+            this.txtAntecedentesPersonales.Size = new System.Drawing.Size(484, 55);
+            this.txtAntecedentesPersonales.TabIndex = 24;
             // 
-            // lblInicioAtencion
+            // lblAntecedentesPersonales
             // 
-            this.lblInicioAtencion.AutoSize = true;
-            this.lblInicioAtencion.Location = new System.Drawing.Point(46, 47);
-            this.lblInicioAtencion.Name = "lblInicioAtencion";
-            this.lblInicioAtencion.Size = new System.Drawing.Size(92, 13);
-            this.lblInicioAtencion.TabIndex = 29;
-            this.lblInicioAtencion.Text = "Inicio de Atencion";
+            this.lblAntecedentesPersonales.AutoSize = true;
+            this.lblAntecedentesPersonales.Location = new System.Drawing.Point(10, 200);
+            this.lblAntecedentesPersonales.Name = "lblAntecedentesPersonales";
+            this.lblAntecedentesPersonales.Size = new System.Drawing.Size(128, 13);
+            this.lblAntecedentesPersonales.TabIndex = 25;
+            this.lblAntecedentesPersonales.Text = "Antecedentes Personales";
+            // 
+            // txtAntecedentesHereditarios
+            // 
+            this.txtAntecedentesHereditarios.Location = new System.Drawing.Point(144, 135);
+            this.txtAntecedentesHereditarios.Multiline = true;
+            this.txtAntecedentesHereditarios.Name = "txtAntecedentesHereditarios";
+            this.txtAntecedentesHereditarios.Size = new System.Drawing.Size(484, 59);
+            this.txtAntecedentesHereditarios.TabIndex = 22;
+            // 
+            // lblAntecedentesHereditarios
+            // 
+            this.lblAntecedentesHereditarios.AutoSize = true;
+            this.lblAntecedentesHereditarios.Location = new System.Drawing.Point(6, 135);
+            this.lblAntecedentesHereditarios.Name = "lblAntecedentesHereditarios";
+            this.lblAntecedentesHereditarios.Size = new System.Drawing.Size(132, 13);
+            this.lblAntecedentesHereditarios.TabIndex = 23;
+            this.lblAntecedentesHereditarios.Text = "Antecedentes Hereditarios";
+            // 
+            // txtObservaciones
+            // 
+            this.txtObservaciones.Location = new System.Drawing.Point(144, 82);
+            this.txtObservaciones.MaxLength = 250;
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(484, 47);
+            this.txtObservaciones.TabIndex = 20;
+            // 
+            // lblObservaciones
+            // 
+            this.lblObservaciones.AutoSize = true;
+            this.lblObservaciones.Location = new System.Drawing.Point(60, 85);
+            this.lblObservaciones.Name = "lblObservaciones";
+            this.lblObservaciones.Size = new System.Drawing.Size(78, 13);
+            this.lblObservaciones.TabIndex = 21;
+            this.lblObservaciones.Text = "Observaciones";
             // 
             // frmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 766);
+            this.ClientSize = new System.Drawing.Size(824, 698);
             this.Name = "frmPaciente";
             this.Text = "frmPaciente";
             this.Load += new System.EventHandler(this.frmPaciente_Load);

@@ -10,7 +10,7 @@ namespace Mds.Biodata.Business
     {
         public EstudioBusiness(IEstudioDao dao) : base(dao)
         {
-
+            
         }
     }
 }

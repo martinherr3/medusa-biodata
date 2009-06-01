@@ -6,9 +6,10 @@ using Mds.Architecture.Data;
 
 namespace Mds.Biodata.Data
 {
-    public class ObraSocialXPacienteDao : AbstractNHibernateDao<ObraSocialXPaciente, ObraSocialXPaciente.DomainObjectID>, IObraSocialXPacienteDao
+    public class ObraSocialXPacienteDao : AbstractNHibernateDao<ObraSocialXPaciente, System.Int32>, IObraSocialXPacienteDao
     {
-        public ObraSocialXPacienteDao(string sessionFactoryConfigPath) : base(sessionFactoryConfigPath)
+        public ObraSocialXPacienteDao(string sessionFactoryConfigPath)
+            : base(sessionFactoryConfigPath)
         {
 
         }

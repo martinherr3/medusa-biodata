@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Mds.Biodata.Core" namespace="Mds.Biodata.Domain">
-    <class name="Paciente" table="Paciente" >
+  <class name="Paciente" table="Paciente" >
     <id name="ID" type="System.Int32" column="IDPaciente">
-        <generator class="identity"/>
+      <generator class="identity"/>
     </id>
     <property name="Nombre" column="Nombre" type="System.String" not-null="true" length="100"/>
     <property name="Apellido" column="Apellido" type="System.String" not-null="true" length="100"/>
@@ -18,20 +18,20 @@
     <property name="IDCiudad" column="IDCiudad" type="System.Int32" not-null="false" />
     <many-to-one name="IDCiudadLookup" column="IDCiudad" class="Ciudad"  update="0"  insert="0" />
     <bag name="AudifonoPacientes" table="AudifonoPaciente" inverse="true" lazy="true" cascade="delete">
-    <key column="IDPaciente" />
-    <one-to-many class="AudifonoPaciente"/>
+      <key column="IDPaciente" />
+      <one-to-many class="AudifonoPaciente"/>
     </bag>
     <bag name="HistoriaClinicas" table="HistoriaClinica" inverse="true" lazy="true" cascade="all-delete-orphan">
-    <key column="IDPaciente" />
-    <one-to-many class="HistoriaClinica"/>
+      <key column="IDPaciente" />
+      <one-to-many class="HistoriaClinica"/>
     </bag>
-    <bag name="ObraSocialXPacientes" table="ObraSocialXPaciente" inverse="true" lazy="true" cascade="all-delete-orphan">
-    <key column="IDPaciente" />
-    <one-to-many class="ObraSocialXPaciente"/>
+    <bag name="ObraSocialXPacientes" table="ObraSocialXPaciente" inverse="true" lazy="false" cascade="delete">
+      <key column="IDPaciente" />
+      <one-to-many class="ObraSocialXPaciente"/>
     </bag>
     <!--<bag name="ObraSocialXPacientes" table="ObraSocialXPaciente" lazy="false" cascade="delete">
       <key column="IDPaciente" />
       <many-to-many class="ObraSocial" column="IDObraSocial"/>
     </bag>-->
- </class>
+  </class>
 </hibernate-mapping>
