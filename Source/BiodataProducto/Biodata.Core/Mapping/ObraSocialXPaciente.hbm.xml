@@ -4,10 +4,12 @@
     <id name="ID" type="System.Int32" column="IDObraSocialXPaciente">
       <generator class="identity"/>
     </id>
-    <property name="IDPaciente" column="IDPaciente" type="System.Int32" not-null="true" />
-    <property name="IDObraSocial" column="IDObraSocial" type="System.Int32" not-null="true" />
+    <!--<property name="IDPaciente" column="IDPaciente" type="System.Int32" not-null="true" />
+    <property name="IDObraSocial" column="IDObraSocial" type="System.Int32" not-null="true" />-->
     <property name="NumeroAfiliado" column="NumeroAfiliado" type="System.String" not-null="false" length="100"/>
-    <many-to-one name="IDObraSocialLookup" column="IDObraSocial" class="ObraSocial"  update="0"  insert="0" />
-    <many-to-one name="IDPacienteLookup" column="IDPaciente" class="Paciente"  update="0"  insert="0" />
+    <!--<many-to-one name="IDObraSocialLookup" column="IDObraSocial" class="ObraSocial"  update="0"  insert="0" />-->
+    <many-to-one name="IDObraSocialLookup" column="IDObraSocial" class="ObraSocial"/>
+    <!--<many-to-one name="IDPacienteLookup" column="IDPaciente" class="Paciente"  update="0"  insert="0" />-->
+    <many-to-one name="IDPacienteLookup" column="IDPaciente" class="Paciente"/>
   </class>
 </hibernate-mapping>
