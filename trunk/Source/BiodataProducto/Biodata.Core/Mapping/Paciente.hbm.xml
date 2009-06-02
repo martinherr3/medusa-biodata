@@ -16,19 +16,28 @@
     <property name="Telefono" column="Telefono" type="System.String" not-null="false" length="50"/>
     <property name="Celular" column="Celular" type="System.String" not-null="false" />
     <property name="IDCiudad" column="IDCiudad" type="System.Int32" not-null="false" />
-    <many-to-one name="IDCiudadLookup" column="IDCiudad" class="Ciudad"  update="0"  insert="0" />
+    <!--<many-to-one name="IDCiudadLookup" column="IDCiudad" class="Ciudad"  update="0"  insert="0" />-->
+    <many-to-one name="IDCiudadLookup" column="IDCiudad" class="Ciudad"/>
     <bag name="AudifonoPacientes" table="AudifonoPaciente" inverse="true" lazy="true" cascade="delete">
       <key column="IDPaciente" />
       <one-to-many class="AudifonoPaciente"/>
     </bag>
-    <bag name="HistoriaClinicas" table="HistoriaClinica" inverse="true" lazy="true" cascade="all-delete-orphan">
+    <bag name="HistoriaClinicas" cascade="all-delete-orphan">
       <key column="IDPaciente" />
       <one-to-many class="HistoriaClinica"/>
     </bag>
-    <bag name="ObraSocialXPacientes" table="ObraSocialXPaciente" inverse="true" lazy="false" cascade="delete">
+    <!--<bag name="HistoriaClinicas" table="HistoriaClinica" inverse="true" lazy="true" cascade="all-delete-orphan">
+      <key column="IDPaciente" />
+      <one-to-many class="HistoriaClinica"/>
+    </bag>-->
+    <bag name="ObraSocialXPacientes" cascade="all-delete-orphan">
       <key column="IDPaciente" />
       <one-to-many class="ObraSocialXPaciente"/>
     </bag>
+    <!--<bag name="ObraSocialXPacientes" table="ObraSocialXPaciente" inverse="true" lazy="false" cascade="delete">
+      <key column="IDPaciente" />
+      <one-to-many class="ObraSocialXPaciente"/>
+    </bag>-->
     <!--<bag name="ObraSocialXPacientes" table="ObraSocialXPaciente" lazy="false" cascade="delete">
       <key column="IDPaciente" />
       <many-to-many class="ObraSocial" column="IDObraSocial"/>

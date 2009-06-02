@@ -337,6 +337,10 @@ namespace Mds.Biodata.Forms
                         txtAntecedentesPersonales.Text = string.Empty;
                         txtEstadoSalud.Text = string.Empty;
                         /////////////////////////////////////////////////////////////////
+                        //Limpieza de la grilla de obras sociales
+                        /////////////////////////////////////////////////////////////////
+                        dgvObrasSociales.DataSource = null;
+                        /////////////////////////////////////////////////////////////////
                         txtNombre.Focus();
                         PacienteEntity = new Paciente();
 
@@ -406,31 +410,49 @@ namespace Mds.Biodata.Forms
                             PacienteEntity.HistoriaClinicas[0].EstadoSalud = txtEstadoSalud.Text;
                             PacienteBP.Update(PacienteEntity);
                             PacienteBP.Commit();
+                            
+                            //ObraSocialXPacienteBusiness wObraSocialXPacienteBP = new ObraSocialXPacienteBusiness(DaoFactory.GetObraSocialXPacienteDao());
+                            ////Borramos las anteriores
+                            //ObraSocialXPaciente wObraSocialesABorrar = new ObraSocialXPaciente();
+                            //wObraSocialesABorrar.IDPacienteLookup = PacienteEntity;
+                            //wObraSocialesABorrar.IDPaciente = PacienteEntity.ID;
+                            //wObraSocialXPacienteBP.Delete(wObraSocialesABorrar);
+                            //wObraSocialXPacienteBP.Commit();
+                            ////Agregamos las nuevas
+                            //foreach (ObraSocialXPaciente wObraSocialXPaciente in PacienteEntity.ObraSocialXPacientes)
+                            //{
+                            //    wObraSocialXPaciente.IDPaciente = PacienteEntity.ID;
+                            //    wObraSocialXPacienteBP.Insert(wObraSocialXPaciente);
+                            //}
                             break;
                         case EstadoForm.Eliminar:
                             PacienteBP.Delete(PacienteEntity);
                             PacienteBP.Commit();
+                            ////Borra la Historia clinica
+                            //HistoriaClinicaBusiness HistoriaClinicaBP = new HistoriaClinicaBusiness(DaoFactory.GetHistoriaClinicaDao());
+                            //HistoriaClinica wHistoria = new HistoriaClinica();
+                            //wHistoria.ID = PacienteEntity.HistoriaClinicas[0].ID;
+                            //HistoriaClinicaBP.Delete(wHistoria);
+                            //HistoriaClinicaBP.Commit();
+                            ////Borramos las Obras Sociales
+                            //ObraSocialXPaciente wObraSocialesABorrar2 = new ObraSocialXPaciente();
+                            //wObraSocialesABorrar2.IDPacienteLookup = PacienteEntity;
+                            //wObraSocialesABorrar2.IDPaciente = PacienteEntity.ID;
+                            //ObraSocialXPacienteBusiness wObraSocialXPacienteBP2 = new ObraSocialXPacienteBusiness(DaoFactory.GetObraSocialXPacienteDao());
+                            //wObraSocialXPacienteBP2.Delete(wObraSocialesABorrar2);
+                            //wObraSocialXPacienteBP2.Commit();
                             break;
                         case EstadoForm.Nuevo:
+                            
+                            HistoriaClinica wHistoriaNuevo = new HistoriaClinica();
+                            wHistoriaNuevo.FechaInicioAtencion = dtpInicioAtencion.Value;
+                            wHistoriaNuevo.Observaciones = txtObservaciones.Text;
+                            wHistoriaNuevo.AntecedentesHereditarios = txtAntecedentesHereditarios.Text;
+                            wHistoriaNuevo.AntecedentesPersonales = txtAntecedentesPersonales.Text;
+                            wHistoriaNuevo.EstadoSalud = txtEstadoSalud.Text;
+                            wHistoriaNuevo.IDPacienteLookup = PacienteEntity;
+                            PacienteEntity.HistoriaClinicas.Add(wHistoriaNuevo);
                             PacienteBP.Insert(PacienteEntity);
-                            HistoriaClinica wHistoria = new HistoriaClinica();
-                            wHistoria.FechaInicioAtencion = dtpInicioAtencion.Value;
-                            wHistoria.Observaciones = txtObservaciones.Text;
-                            wHistoria.AntecedentesHereditarios = txtAntecedentesHereditarios.Text;
-                            wHistoria.AntecedentesPersonales = txtAntecedentesPersonales.Text;
-                            wHistoria.EstadoSalud = txtEstadoSalud.Text;
-                            wHistoria.IDPacienteLookup = PacienteEntity;
-                            wHistoria.IDPaciente = PacienteEntity.ID;
-                            HistoriaClinicaBusiness HistoriaClinicaBP = new HistoriaClinicaBusiness(DaoFactory.GetHistoriaClinicaDao());
-                            HistoriaClinicaBP.Insert(wHistoria);
-                            //ESTO NO DEBERIA ESTAR, ES UNA NEGRADA PERO PARA SALIR DEL PASO NO QUEDA OTRA POR AHORA
-                            ObraSocialXPacienteBusiness wObraSocialXPacienteBP = new ObraSocialXPacienteBusiness(DaoFactory.GetObraSocialXPacienteDao());
-                         
-                            foreach (ObraSocialXPaciente wObraSocialXPaciente in PacienteEntity.ObraSocialXPacientes)
-                            {
-                                wObraSocialXPaciente.IDPaciente = PacienteEntity.ID;
-                                wObraSocialXPacienteBP.Insert(wObraSocialXPaciente);
-                            }
                             break;
                     }
                     pnlDetails.Visible = false;

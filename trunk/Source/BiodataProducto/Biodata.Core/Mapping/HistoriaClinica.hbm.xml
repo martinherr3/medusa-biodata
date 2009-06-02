@@ -9,8 +9,9 @@
     <property name="AntecedentesHereditarios" column="AntecedentesHereditarios" type="System.String" not-null="false" />
     <property name="AntecedentesPersonales" column="AntecedentesPersonales" type="System.String" not-null="false" />
     <property name="EstadoSalud" column="EstadoSalud" type="System.String" not-null="false" length="200"/>
-    <property name="IDPaciente" column="IDPaciente" type="System.Int32" not-null="false" />
-    <many-to-one name="IDPacienteLookup" column="IDPaciente" class="Paciente"  update="0"  insert="0" />
+    <!--<property name="IDPaciente" column="IDPaciente" type="System.Int32" not-null="false" />-->
+    <many-to-one name="IDPacienteLookup" column="IDPaciente" class="Paciente"/>
+    <!--<many-to-one name="IDPacienteLookup" column="IDPaciente" class="Paciente"  update="0"  insert="0" />-->
     <bag name="Estudios" table="Estudio" inverse="true" lazy="true" cascade="delete">
       <key column="IDHistoriaClinica" />
       <one-to-many class="Estudio"/>
