@@ -52,9 +52,16 @@ namespace Mds.Biodata.Forms.UserControls
             //pSeriesConfig.LineType = System.Drawing.Drawing2D.DashStyle.DashDot;
             //pSeriesConfig.PointType = Pavr.Main.Base.PointType.X;
             linerLeft.LineColor = Color.Blue;
-            linerLeft.DashLineType = Pavr.Main.Base.DashLineType.DashDot;
-            linerLeft.PointType = Pavr.Main.Base.PointType.X;
-
+            if (radAereaIzq.Checked)
+            {
+                linerLeft.DashLineType = Pavr.Main.Base.DashLineType.DashDot;
+                linerLeft.PointType = Pavr.Main.Base.PointType.X;
+            }
+            else
+            {
+                linerLeft.DashLineType = Pavr.Main.Base.DashLineType.Solid;
+                linerLeft.PointType = Pavr.Main.Base.PointType.Greater; 
+            }
         }
 
         private void linerRight_BeforeSeriesCreation(object sender)
@@ -64,8 +71,16 @@ namespace Mds.Biodata.Forms.UserControls
             //pSeriesConfig.LineType = System.Drawing.Drawing2D.DashStyle.Solid;
             //pSeriesConfig.PointType = Pavr.Main.Base.PointType.O;
             linerRight.LineColor = Color.Red;
-            linerRight.DashLineType = Pavr.Main.Base.DashLineType.Solid;
-            linerRight.PointType = Pavr.Main.Base.PointType.O;
+            if (radAereaDer.Checked)
+            {
+                linerRight.DashLineType = Pavr.Main.Base.DashLineType.Solid;
+                linerRight.PointType = Pavr.Main.Base.PointType.O;
+            }
+            else
+            {
+                linerRight.DashLineType = Pavr.Main.Base.DashLineType.Solid;
+                linerRight.PointType = Pavr.Main.Base.PointType.Lower;
+            }
         }
     }
 }

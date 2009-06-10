@@ -201,44 +201,53 @@ namespace Mds.Biodata.Forms
         /// </summary>
         private void RegistrarEstudio()
         {
-            if (ValidData())
+            try
             {
-
-                uscBase UseEstudio = (uscBase)tbpEstudio.Controls[0];
-
-                Estudio wEstudio = UseEstudio.ObtenerDatosEstudio();
-
-                wEstudio.Nombre = txtNombre.Text;
-                wEstudio.FechaEstudio = dtpFechaEstudio.Value;
-                wEstudio.InstrumentosUtilizados = txtInstrumentosUtilizados.Text;
-                wEstudio.Observaciones = txtObservaciones.Text;
-                wEstudio.TipoEstudio = (Int32)cmbTipoEstudio.SelectedItem;
-
-                ObjectViewRow wFila = (ObjectViewRow)dgvPacientes.CurrentRow.DataBoundItem;
-                wEstudio.IDHistoriaClinicaLookup = ((Paciente)wFila.InnerObject).HistoriaClinicas[0];
-                wEstudio.IDHistoriaClinica = wEstudio.IDHistoriaClinicaLookup.ID;
-
-                EstudioBusiness EstudioBP = new EstudioBusiness(DaoFactory.GetEstudioDao());
-
-                EstudioBP.Insert(wEstudio);
-
-                //INSERTA POR SEPARADO CABECERA Y DETALLES EN TODOS LOS CASOS DEJA EN EN LA PROPIEDAD "Cascade" DEL
-                //.hbm COMO "Delete" NADA MAS, DESPUES LE BUSCAMOS UNA SOLUCION
-
-                //ESTO NO DEBERIA ESTAR, ES UNA NEGRADA PERO PARA SALIR DEL PASO NO QUEDA OTRA POR AHORA
-                switch (wEstudio.GetType().Name)
+                if (ValidData())
                 {
-                    case "Anamnesi":
-                        AnamnesisPreguntaBusiness wPreguntaRespuestaBP = new AnamnesisPreguntaBusiness(DaoFactory.GetAnamnesisPreguntaDao());
-                        foreach (AnamnesisPregunta wPreguntaRespuesta in ((Anamnesi)wEstudio).AnamnesisPreguntases)
-                        {
-                            wPreguntaRespuesta.IDEstudio = wEstudio.ID;
-                            wPreguntaRespuestaBP.Insert(wPreguntaRespuesta);
-                        }
 
-                        break;
+                    uscBase UseEstudio = (uscBase)tbpEstudio.Controls[0];
+
+                    Estudio wEstudio = UseEstudio.ObtenerDatosEstudio();
+
+                    wEstudio.Nombre = txtNombre.Text;
+                    wEstudio.FechaEstudio = dtpFechaEstudio.Value;
+                    wEstudio.InstrumentosUtilizados = txtInstrumentosUtilizados.Text;
+                    wEstudio.Observaciones = txtObservaciones.Text;
+                    wEstudio.TipoEstudio = (Int32)cmbTipoEstudio.SelectedItem;
+
+                    ObjectViewRow wFila = (ObjectViewRow)dgvPacientes.CurrentRow.DataBoundItem;
+                    wEstudio.IDHistoriaClinicaLookup = ((Paciente)wFila.InnerObject).HistoriaClinicas[0];
+                    wEstudio.IDHistoriaClinica = wEstudio.IDHistoriaClinicaLookup.ID;
+
+                    EstudioBusiness EstudioBP = new EstudioBusiness(DaoFactory.GetEstudioDao());
+
+                    EstudioBP.Insert(wEstudio);
+
+                    ProcesarMensaje("Se registro el Estudio en forma exitosa");
+
+                    //INSERTA POR SEPARADO CABECERA Y DETALLES EN TODOS LOS CASOS DEJA EN EN LA PROPIEDAD "Cascade" DEL
+                    //.hbm COMO "Delete" NADA MAS, DESPUES LE BUSCAMOS UNA SOLUCION
+
+                    //ESTO NO DEBERIA ESTAR, ES UNA NEGRADA PERO PARA SALIR DEL PASO NO QUEDA OTRA POR AHORA
+                    //switch (wEstudio.GetType().Name)
+                    //{
+                    //    case "Anamnesi":
+                    //        AnamnesisPreguntaBusiness wPreguntaRespuestaBP = new AnamnesisPreguntaBusiness(DaoFactory.GetAnamnesisPreguntaDao());
+                    //        foreach (AnamnesisPregunta wPreguntaRespuesta in ((Anamnesi)wEstudio).AnamnesisPreguntases)
+                    //        {
+                    //            wPreguntaRespuesta.IDEstudio = wEstudio.ID;
+                    //            wPreguntaRespuestaBP.Insert(wPreguntaRespuesta);
+                    //        }
+
+                    //        break;
+                    //}
+
                 }
-                
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
             }
         }
 

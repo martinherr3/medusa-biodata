@@ -12,7 +12,7 @@ namespace Mds.Biodata.Domain
     {
 
 
-        private System.Int32 _IDEstudio;
+        //private System.Int32 _IDEstudio;
         private System.String _Pregunta;
         private System.String _Respuesta;
         private Anamnesi _IDEstudioLookup;
@@ -27,11 +27,11 @@ namespace Mds.Biodata.Domain
             base.ID = id;
         }
 
-        public virtual System.Int32 IDEstudio
-        {
-            get { return _IDEstudio; }
-            set { _IDEstudio = value; }
-        }
+        //public virtual System.Int32 IDEstudio
+        //{
+        //    get { return _IDEstudio; }
+        //    set { _IDEstudio = value; }
+        //}
 
         public virtual System.String Pregunta
         {
