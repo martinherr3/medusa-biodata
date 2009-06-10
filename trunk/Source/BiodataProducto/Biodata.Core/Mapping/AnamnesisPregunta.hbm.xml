@@ -4,10 +4,10 @@
     <id name="ID" type="System.Int32" column="IDAnamnesisPreguntas">
       <generator class="identity"/>
     </id>
-    <property name="IDEstudio" column="IDEstudio" type="System.Int32" not-null="true" />
+    <!--<property name="IDEstudio" column="IDEstudio" type="System.Int32" not-null="true" />-->
     <property name="Pregunta" column="Pregunta" type="System.String" not-null="false" length="250"/>
     <property name="Respuesta" column="Respuesta" type="System.String" not-null="false" length="250"/>
-    <many-to-one name="IDEstudioLookup" column="IDEstudio" class="Anamnesi"  update="0"  insert="0" />
+    <many-to-one name="IDEstudioLookup" column="IDEstudio" class="Anamnesi"/>
     <!--<many-to-one name="IDEstudioLookup" column="IDEstudio" class="Anamnesi"  update="0"  insert="0" />-->
   </class>
 </hibernate-mapping>

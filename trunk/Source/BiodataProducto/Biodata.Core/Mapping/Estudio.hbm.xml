@@ -19,7 +19,7 @@
     <joined-subclass name="Anamnesi" table="Anamnesis">
       <key column="IDEstudio"/>
       <!--<bag name="AnamnesisPreguntases" table="AnamnesisPreguntas" inverse="true" lazy="true" cascade="all-delete-orphan">-->
-      <bag name="AnamnesisPreguntases" table="AnamnesisPreguntas" inverse="true" lazy="true" cascade="delete">
+      <bag name="AnamnesisPreguntases" table="AnamnesisPreguntas" inverse="true" lazy="true" cascade="all-delete-orphan">
         <key column="IDEstudio" />
         <one-to-many class="AnamnesisPregunta"/>
       </bag>

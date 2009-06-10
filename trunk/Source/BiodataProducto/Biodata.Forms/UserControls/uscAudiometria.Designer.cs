@@ -31,35 +31,21 @@
             this.linerRight = new Pavr.Drawing.Liner();
             this.linerLeft = new Pavr.Drawing.Liner();
             this.gpbAudiogramaIzquierdo = new System.Windows.Forms.GroupBox();
-            this.lblFrecuencia = new System.Windows.Forms.Label();
-            this.gpbSimbolos = new System.Windows.Forms.GroupBox();
-            this.chkSimboloCampoAuditivo = new System.Windows.Forms.CheckBox();
-            this.btnSimboloCampoAuditivo = new System.Windows.Forms.Button();
-            this.chkSimboloIncomodidad = new System.Windows.Forms.CheckBox();
-            this.btnSimboloIncomodidad = new System.Windows.Forms.Button();
-            this.chkSimboloComodidad = new System.Windows.Forms.CheckBox();
-            this.btnSimboloComodidad = new System.Windows.Forms.Button();
+            this.lblNivelAuditivoIzq = new System.Windows.Forms.Label();
+            this.lblFrecuenciaIzq = new System.Windows.Forms.Label();
             this.gpbTipoIzq = new System.Windows.Forms.GroupBox();
-            this.radAerea = new System.Windows.Forms.RadioButton();
-            this.radOsea = new System.Windows.Forms.RadioButton();
+            this.radAereaIzq = new System.Windows.Forms.RadioButton();
+            this.radOseaIzq = new System.Windows.Forms.RadioButton();
             this.gpbAudiogramaDerecho = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.orientedTextLabel1 = new Mds.Biodata.Forms.UserControls.OrientedTextLabel();
+            this.lblNivelAuditivoDer = new System.Windows.Forms.Label();
+            this.lblFrecuenciaDer = new System.Windows.Forms.Label();
+            this.gpbTipoDer = new System.Windows.Forms.GroupBox();
+            this.radAereaDer = new System.Windows.Forms.RadioButton();
+            this.radOseaDer = new System.Windows.Forms.RadioButton();
             this.gpbAudiogramaIzquierdo.SuspendLayout();
-            this.gpbSimbolos.SuspendLayout();
             this.gpbTipoIzq.SuspendLayout();
             this.gpbAudiogramaDerecho.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            this.gpbTipoDer.SuspendLayout();
             this.SuspendLayout();
             // 
             // linerRight
@@ -68,7 +54,7 @@
             this.linerRight.CreateButtonText = "Nueva Audiometria";
             this.linerRight.LegendCaption = "Leyendas";
             this.linerRight.LineColor = null;
-            this.linerRight.Location = new System.Drawing.Point(22, 19);
+            this.linerRight.Location = new System.Drawing.Point(25, 29);
             this.linerRight.MatrixLinesColor = System.Drawing.Color.LightGray;
             this.linerRight.Name = "linerRight";
             this.linerRight.PointColor = System.Drawing.Color.Black;
@@ -92,9 +78,8 @@
             // 
             // gpbAudiogramaIzquierdo
             // 
-            this.gpbAudiogramaIzquierdo.Controls.Add(this.orientedTextLabel1);
-            this.gpbAudiogramaIzquierdo.Controls.Add(this.lblFrecuencia);
-            this.gpbAudiogramaIzquierdo.Controls.Add(this.gpbSimbolos);
+            this.gpbAudiogramaIzquierdo.Controls.Add(this.lblNivelAuditivoIzq);
+            this.gpbAudiogramaIzquierdo.Controls.Add(this.lblFrecuenciaIzq);
             this.gpbAudiogramaIzquierdo.Controls.Add(this.gpbTipoIzq);
             this.gpbAudiogramaIzquierdo.Controls.Add(this.linerLeft);
             this.gpbAudiogramaIzquierdo.Location = new System.Drawing.Point(3, 15);
@@ -104,125 +89,66 @@
             this.gpbAudiogramaIzquierdo.TabStop = false;
             this.gpbAudiogramaIzquierdo.Text = "Audiograma Izquierdo";
             // 
-            // lblFrecuencia
+            // lblNivelAuditivoIzq
             // 
-            this.lblFrecuencia.AutoSize = true;
-            this.lblFrecuencia.ForeColor = System.Drawing.Color.Blue;
-            this.lblFrecuencia.Location = new System.Drawing.Point(152, 319);
-            this.lblFrecuencia.Name = "lblFrecuencia";
-            this.lblFrecuencia.Size = new System.Drawing.Size(60, 13);
-            this.lblFrecuencia.TabIndex = 10;
-            this.lblFrecuencia.Text = "Frecuencia";
+            this.lblNivelAuditivoIzq.AutoSize = true;
+            this.lblNivelAuditivoIzq.ForeColor = System.Drawing.Color.Blue;
+            this.lblNivelAuditivoIzq.Location = new System.Drawing.Point(377, 133);
+            this.lblNivelAuditivoIzq.Name = "lblNivelAuditivoIzq";
+            this.lblNivelAuditivoIzq.Size = new System.Drawing.Size(94, 13);
+            this.lblNivelAuditivoIzq.TabIndex = 11;
+            this.lblNivelAuditivoIzq.Text = "Nivel Auditivo (dB)";
             // 
-            // gpbSimbolos
+            // lblFrecuenciaIzq
             // 
-            this.gpbSimbolos.Controls.Add(this.chkSimboloCampoAuditivo);
-            this.gpbSimbolos.Controls.Add(this.btnSimboloCampoAuditivo);
-            this.gpbSimbolos.Controls.Add(this.chkSimboloIncomodidad);
-            this.gpbSimbolos.Controls.Add(this.btnSimboloIncomodidad);
-            this.gpbSimbolos.Controls.Add(this.chkSimboloComodidad);
-            this.gpbSimbolos.Controls.Add(this.btnSimboloComodidad);
-            this.gpbSimbolos.Location = new System.Drawing.Point(32, 391);
-            this.gpbSimbolos.Name = "gpbSimbolos";
-            this.gpbSimbolos.Size = new System.Drawing.Size(318, 111);
-            this.gpbSimbolos.TabIndex = 9;
-            this.gpbSimbolos.TabStop = false;
-            this.gpbSimbolos.Text = "Simbolos";
-            // 
-            // chkSimboloCampoAuditivo
-            // 
-            this.chkSimboloCampoAuditivo.AutoSize = true;
-            this.chkSimboloCampoAuditivo.Location = new System.Drawing.Point(160, 99);
-            this.chkSimboloCampoAuditivo.Name = "chkSimboloCampoAuditivo";
-            this.chkSimboloCampoAuditivo.Size = new System.Drawing.Size(155, 17);
-            this.chkSimboloCampoAuditivo.TabIndex = 5;
-            this.chkSimboloCampoAuditivo.Text = "Simbolo de Campo Auditivo";
-            this.chkSimboloCampoAuditivo.UseVisualStyleBackColor = true;
-            // 
-            // btnSimboloCampoAuditivo
-            // 
-            this.btnSimboloCampoAuditivo.Location = new System.Drawing.Point(6, 93);
-            this.btnSimboloCampoAuditivo.Name = "btnSimboloCampoAuditivo";
-            this.btnSimboloCampoAuditivo.Size = new System.Drawing.Size(138, 26);
-            this.btnSimboloCampoAuditivo.TabIndex = 4;
-            this.btnSimboloCampoAuditivo.Text = "Insertar";
-            this.btnSimboloCampoAuditivo.UseVisualStyleBackColor = true;
-            // 
-            // chkSimboloIncomodidad
-            // 
-            this.chkSimboloIncomodidad.AutoSize = true;
-            this.chkSimboloIncomodidad.Location = new System.Drawing.Point(160, 62);
-            this.chkSimboloIncomodidad.Name = "chkSimboloIncomodidad";
-            this.chkSimboloIncomodidad.Size = new System.Drawing.Size(142, 17);
-            this.chkSimboloIncomodidad.TabIndex = 3;
-            this.chkSimboloIncomodidad.Text = "Simbolo de Incomodidad";
-            this.chkSimboloIncomodidad.UseVisualStyleBackColor = true;
-            // 
-            // btnSimboloIncomodidad
-            // 
-            this.btnSimboloIncomodidad.Location = new System.Drawing.Point(6, 56);
-            this.btnSimboloIncomodidad.Name = "btnSimboloIncomodidad";
-            this.btnSimboloIncomodidad.Size = new System.Drawing.Size(138, 26);
-            this.btnSimboloIncomodidad.TabIndex = 2;
-            this.btnSimboloIncomodidad.Text = "Insertar";
-            this.btnSimboloIncomodidad.UseVisualStyleBackColor = true;
-            // 
-            // chkSimboloComodidad
-            // 
-            this.chkSimboloComodidad.AutoSize = true;
-            this.chkSimboloComodidad.Location = new System.Drawing.Point(160, 25);
-            this.chkSimboloComodidad.Name = "chkSimboloComodidad";
-            this.chkSimboloComodidad.Size = new System.Drawing.Size(134, 17);
-            this.chkSimboloComodidad.TabIndex = 1;
-            this.chkSimboloComodidad.Text = "Simbolo de Comodidad";
-            this.chkSimboloComodidad.UseVisualStyleBackColor = true;
-            // 
-            // btnSimboloComodidad
-            // 
-            this.btnSimboloComodidad.Location = new System.Drawing.Point(6, 19);
-            this.btnSimboloComodidad.Name = "btnSimboloComodidad";
-            this.btnSimboloComodidad.Size = new System.Drawing.Size(138, 26);
-            this.btnSimboloComodidad.TabIndex = 0;
-            this.btnSimboloComodidad.Text = "Insertar";
-            this.btnSimboloComodidad.UseVisualStyleBackColor = true;
+            this.lblFrecuenciaIzq.AutoSize = true;
+            this.lblFrecuenciaIzq.ForeColor = System.Drawing.Color.Blue;
+            this.lblFrecuenciaIzq.Location = new System.Drawing.Point(152, 319);
+            this.lblFrecuenciaIzq.Name = "lblFrecuenciaIzq";
+            this.lblFrecuenciaIzq.Size = new System.Drawing.Size(60, 13);
+            this.lblFrecuenciaIzq.TabIndex = 10;
+            this.lblFrecuenciaIzq.Text = "Frecuencia";
             // 
             // gpbTipoIzq
             // 
-            this.gpbTipoIzq.Controls.Add(this.radAerea);
-            this.gpbTipoIzq.Controls.Add(this.radOsea);
-            this.gpbTipoIzq.Location = new System.Drawing.Point(32, 342);
+            this.gpbTipoIzq.Controls.Add(this.radAereaIzq);
+            this.gpbTipoIzq.Controls.Add(this.radOseaIzq);
+            this.gpbTipoIzq.ForeColor = System.Drawing.Color.Blue;
+            this.gpbTipoIzq.Location = new System.Drawing.Point(46, 342);
             this.gpbTipoIzq.Name = "gpbTipoIzq";
-            this.gpbTipoIzq.Size = new System.Drawing.Size(318, 42);
+            this.gpbTipoIzq.Size = new System.Drawing.Size(309, 42);
             this.gpbTipoIzq.TabIndex = 8;
             this.gpbTipoIzq.TabStop = false;
             // 
-            // radAerea
+            // radAereaIzq
             // 
-            this.radAerea.AutoSize = true;
-            this.radAerea.Checked = true;
-            this.radAerea.Location = new System.Drawing.Point(166, 19);
-            this.radAerea.Name = "radAerea";
-            this.radAerea.Size = new System.Drawing.Size(73, 17);
-            this.radAerea.TabIndex = 1;
-            this.radAerea.TabStop = true;
-            this.radAerea.Text = "Vía Aérea";
-            this.radAerea.UseVisualStyleBackColor = true;
+            this.radAereaIzq.AutoSize = true;
+            this.radAereaIzq.Checked = true;
+            this.radAereaIzq.Location = new System.Drawing.Point(166, 19);
+            this.radAereaIzq.Name = "radAereaIzq";
+            this.radAereaIzq.Size = new System.Drawing.Size(73, 17);
+            this.radAereaIzq.TabIndex = 1;
+            this.radAereaIzq.TabStop = true;
+            this.radAereaIzq.Text = "Vía Aérea";
+            this.radAereaIzq.UseVisualStyleBackColor = true;
             // 
-            // radOsea
+            // radOseaIzq
             // 
-            this.radOsea.AutoSize = true;
-            this.radOsea.Location = new System.Drawing.Point(19, 19);
-            this.radOsea.Name = "radOsea";
-            this.radOsea.Size = new System.Drawing.Size(70, 17);
-            this.radOsea.TabIndex = 0;
-            this.radOsea.Text = "Vía Osea";
-            this.radOsea.UseVisualStyleBackColor = true;
+            this.radOseaIzq.AutoSize = true;
+            this.radOseaIzq.Location = new System.Drawing.Point(19, 19);
+            this.radOseaIzq.Name = "radOseaIzq";
+            this.radOseaIzq.Size = new System.Drawing.Size(70, 17);
+            this.radOseaIzq.TabIndex = 0;
+            this.radOseaIzq.Text = "Vía Osea";
+            this.radOseaIzq.UseVisualStyleBackColor = true;
             // 
             // gpbAudiogramaDerecho
             // 
-            this.gpbAudiogramaDerecho.Controls.Add(this.groupBox2);
-            this.gpbAudiogramaDerecho.Controls.Add(this.groupBox1);
+            this.gpbAudiogramaDerecho.Controls.Add(this.lblNivelAuditivoDer);
+            this.gpbAudiogramaDerecho.Controls.Add(this.lblFrecuenciaDer);
+            this.gpbAudiogramaDerecho.Controls.Add(this.gpbTipoDer);
             this.gpbAudiogramaDerecho.Controls.Add(this.linerRight);
+            this.gpbAudiogramaDerecho.ForeColor = System.Drawing.Color.Red;
             this.gpbAudiogramaDerecho.Location = new System.Drawing.Point(504, 15);
             this.gpbAudiogramaDerecho.Name = "gpbAudiogramaDerecho";
             this.gpbAudiogramaDerecho.Size = new System.Drawing.Size(506, 508);
@@ -230,121 +156,57 @@
             this.gpbAudiogramaDerecho.TabStop = false;
             this.gpbAudiogramaDerecho.Text = "Audiograma Derecho";
             // 
-            // groupBox2
+            // lblNivelAuditivoDer
             // 
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.checkBox2);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.checkBox3);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Location = new System.Drawing.Point(52, 372);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(318, 130);
-            this.groupBox2.TabIndex = 10;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Simbolos";
+            this.lblNivelAuditivoDer.AutoSize = true;
+            this.lblNivelAuditivoDer.ForeColor = System.Drawing.Color.Red;
+            this.lblNivelAuditivoDer.Location = new System.Drawing.Point(394, 133);
+            this.lblNivelAuditivoDer.Name = "lblNivelAuditivoDer";
+            this.lblNivelAuditivoDer.Size = new System.Drawing.Size(94, 13);
+            this.lblNivelAuditivoDer.TabIndex = 13;
+            this.lblNivelAuditivoDer.Text = "Nivel Auditivo (dB)";
             // 
-            // checkBox1
+            // lblFrecuenciaDer
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(160, 99);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(155, 17);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Simbolo de Campo Auditivo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.lblFrecuenciaDer.AutoSize = true;
+            this.lblFrecuenciaDer.ForeColor = System.Drawing.Color.Red;
+            this.lblFrecuenciaDer.Location = new System.Drawing.Point(157, 319);
+            this.lblFrecuenciaDer.Name = "lblFrecuenciaDer";
+            this.lblFrecuenciaDer.Size = new System.Drawing.Size(60, 13);
+            this.lblFrecuenciaDer.TabIndex = 12;
+            this.lblFrecuenciaDer.Text = "Frecuencia";
             // 
-            // button1
+            // gpbTipoDer
             // 
-            this.button1.Location = new System.Drawing.Point(6, 93);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 26);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Insertar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.gpbTipoDer.Controls.Add(this.radAereaDer);
+            this.gpbTipoDer.Controls.Add(this.radOseaDer);
+            this.gpbTipoDer.Location = new System.Drawing.Point(53, 342);
+            this.gpbTipoDer.Name = "gpbTipoDer";
+            this.gpbTipoDer.Size = new System.Drawing.Size(310, 42);
+            this.gpbTipoDer.TabIndex = 9;
+            this.gpbTipoDer.TabStop = false;
             // 
-            // checkBox2
+            // radAereaDer
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(160, 62);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(142, 17);
-            this.checkBox2.TabIndex = 3;
-            this.checkBox2.Text = "Simbolo de Incomodidad";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.radAereaDer.AutoSize = true;
+            this.radAereaDer.Checked = true;
+            this.radAereaDer.Location = new System.Drawing.Point(166, 19);
+            this.radAereaDer.Name = "radAereaDer";
+            this.radAereaDer.Size = new System.Drawing.Size(73, 17);
+            this.radAereaDer.TabIndex = 1;
+            this.radAereaDer.TabStop = true;
+            this.radAereaDer.Text = "Vía Aérea";
+            this.radAereaDer.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // radOseaDer
             // 
-            this.button2.Location = new System.Drawing.Point(6, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 26);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Insertar";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(160, 25);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(134, 17);
-            this.checkBox3.TabIndex = 1;
-            this.checkBox3.Text = "Simbolo de Comodidad";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(6, 19);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(138, 26);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Insertar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Location = new System.Drawing.Point(52, 319);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(318, 42);
-            this.groupBox1.TabIndex = 9;
-            this.groupBox1.TabStop = false;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(166, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(73, 17);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Vía Aérea";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(19, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(70, 17);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.Text = "Vía Osea";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // orientedTextLabel1
-            // 
-            this.orientedTextLabel1.AutoSize = true;
-            this.orientedTextLabel1.Location = new System.Drawing.Point(368, 404);
-            this.orientedTextLabel1.Name = "orientedTextLabel1";
-            this.orientedTextLabel1.RotationAngle = -90;
-            this.orientedTextLabel1.Size = new System.Drawing.Size(98, 13);
-            this.orientedTextLabel1.TabIndex = 11;
-            this.orientedTextLabel1.Text = "orientedTextLabel1";
-            this.orientedTextLabel1.TextDirection = Mds.Biodata.Forms.UserControls.Direction.Clockwise;
-            this.orientedTextLabel1.TextOrientation = Mds.Biodata.Forms.UserControls.Orientation.Rotate;
+            this.radOseaDer.AutoSize = true;
+            this.radOseaDer.Location = new System.Drawing.Point(19, 19);
+            this.radOseaDer.Name = "radOseaDer";
+            this.radOseaDer.Size = new System.Drawing.Size(70, 17);
+            this.radOseaDer.TabIndex = 0;
+            this.radOseaDer.Text = "Vía Osea";
+            this.radOseaDer.UseVisualStyleBackColor = true;
             // 
             // uscAudiometria
             // 
@@ -357,15 +219,12 @@
             this.Load += new System.EventHandler(this.uscAudiometria_Load);
             this.gpbAudiogramaIzquierdo.ResumeLayout(false);
             this.gpbAudiogramaIzquierdo.PerformLayout();
-            this.gpbSimbolos.ResumeLayout(false);
-            this.gpbSimbolos.PerformLayout();
             this.gpbTipoIzq.ResumeLayout(false);
             this.gpbTipoIzq.PerformLayout();
             this.gpbAudiogramaDerecho.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gpbAudiogramaDerecho.PerformLayout();
+            this.gpbTipoDer.ResumeLayout(false);
+            this.gpbTipoDer.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -377,26 +236,14 @@
         private System.Windows.Forms.GroupBox gpbAudiogramaIzquierdo;
         private System.Windows.Forms.GroupBox gpbAudiogramaDerecho;
         private System.Windows.Forms.GroupBox gpbTipoIzq;
-        private System.Windows.Forms.RadioButton radAerea;
-        private System.Windows.Forms.RadioButton radOsea;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.GroupBox gpbSimbolos;
-        private System.Windows.Forms.Button btnSimboloComodidad;
-        private System.Windows.Forms.CheckBox chkSimboloComodidad;
-        private System.Windows.Forms.CheckBox chkSimboloIncomodidad;
-        private System.Windows.Forms.Button btnSimboloIncomodidad;
-        private System.Windows.Forms.CheckBox chkSimboloCampoAuditivo;
-        private System.Windows.Forms.Button btnSimboloCampoAuditivo;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label lblFrecuencia;
-        private OrientedTextLabel orientedTextLabel1;
+        private System.Windows.Forms.RadioButton radAereaIzq;
+        private System.Windows.Forms.RadioButton radOseaIzq;
+        private System.Windows.Forms.GroupBox gpbTipoDer;
+        private System.Windows.Forms.RadioButton radAereaDer;
+        private System.Windows.Forms.RadioButton radOseaDer;
+        private System.Windows.Forms.Label lblFrecuenciaIzq;
+        private System.Windows.Forms.Label lblNivelAuditivoIzq;
+        private System.Windows.Forms.Label lblNivelAuditivoDer;
+        private System.Windows.Forms.Label lblFrecuenciaDer;
     }
 }
