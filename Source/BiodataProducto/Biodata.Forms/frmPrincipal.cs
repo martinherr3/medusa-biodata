@@ -95,7 +95,7 @@ namespace Mds.Biodata.Forms
 
         private void tsmConsultarEstudio_Click(object sender, EventArgs e)
         {
-
+            OpenConsultaEstudio();
         }
 
         private void OpenEstudio()
@@ -103,6 +103,18 @@ namespace Mds.Biodata.Forms
             try
             {
                 GereralFunctions.AbrirFormulario(new frmEstudio(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Estudios", DockStyle.Fill);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+        private void OpenConsultaEstudio()
+        {
+            try
+            {
+                GereralFunctions.AbrirFormulario(new frmConsultaEstudio(), (TabControl)this.spcRight.Panel2.Controls[0], "Consulta de Estudios", DockStyle.Fill);
             }
             catch (Exception ex)
             {

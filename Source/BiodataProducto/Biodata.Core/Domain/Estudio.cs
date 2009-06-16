@@ -61,6 +61,11 @@ namespace Mds.Biodata.Domain
              set { _TipoEstudio = value;}
          }
 
+         public virtual TipoEstudio TipoEstudioValue
+         {
+             get { return (TipoEstudio)_TipoEstudio; }
+         }
+
          public virtual System.Int32? IDHistoriaClinica
          {
              get { return _IDHistoriaClinica; }
@@ -114,4 +119,14 @@ namespace Mds.Biodata.Domain
         }
 
      }
+
+    public enum TipoEstudio
+    {
+        Anamnesis,
+        Audiometria,
+        ImpedanciometriaEstatica,
+        ImpedanciometriaDinamica,
+        LogoAudiometria,
+        Timpanometria
+    }
 }
