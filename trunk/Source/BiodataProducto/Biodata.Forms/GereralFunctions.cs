@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Data;
 
 namespace Mds.Biodata.Forms
 {
@@ -324,7 +326,29 @@ namespace Mds.Biodata.Forms
         //        }
         //    }
         //    return false;
-        //} 
+        //}
+
+        public static string ConvertDataTableToXML(DataTable dtBuildSQL)
+        {
+            DataSet dsBuildSQL = new DataSet();
+
+            StringBuilder sbSQL;
+            StringWriter swSQL;
+            string XMLformat;
+            sbSQL = new StringBuilder();
+            swSQL = new StringWriter(sbSQL);
+            dsBuildSQL.Merge(dtBuildSQL);//, true, MissingSchemaAction.AddWithKey);
+            dsBuildSQL.Tables[0].TableName = dtBuildSQL.ToString();
+            foreach (DataColumn col in dsBuildSQL.Tables[0].Columns)
+            {
+
+                col.ColumnMapping = MappingType.Attribute;
+
+            }
+            dsBuildSQL.WriteXml(swSQL, XmlWriteMode.WriteSchema);
+            XMLformat = sbSQL.ToString();
+            return XMLformat;
+        } 
 
     }
 }

@@ -49,6 +49,11 @@ namespace Mds.Biodata.Domain
              set { _Apellido = value;}
          }
 
+         public virtual System.String ApellidoNombre
+         {
+             get { return _Apellido + ", " + _Nombre; }
+         }
+
          public virtual System.String Direccion {
              get { return _Direccion; }
              set { _Direccion = value;}

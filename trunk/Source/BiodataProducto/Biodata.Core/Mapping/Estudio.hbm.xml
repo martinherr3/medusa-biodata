@@ -54,6 +54,10 @@
     <joined-subclass name="Timpanometria" table="Timpanometria">
       <key column="IDEstudio"/>
       <property name="TimpanometriaGrafico" column="TimpanometriaGrafico" type="System.String" not-null="false" />
+      <property name="ReflejoEstapedialIzq" column="ReflejoEstapedialIzq" type="System.Int32" not-null="false" />
+      <property name="ReflejoEstapedialDer" column="ReflejoEstapedialDer" type="System.Int32" not-null="false" />
+      <property name="TablaReflejosIzq" column="TablaReflejosIzq" type="System.String" not-null="false" length="200"/>
+      <property name="TablaReflejosDer" column="TablaReflejosDer" type="System.String" not-null="false" length="200"/>
     </joined-subclass>
     <!--<bag name="Anamnesises" table="Anamnesis" inverse="true" lazy="true" cascade="delete">
     <key column="IDEstudio" />

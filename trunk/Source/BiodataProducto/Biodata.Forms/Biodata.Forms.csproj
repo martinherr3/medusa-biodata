@@ -111,11 +111,23 @@
     <Compile Include="frmCiudad.Designer.cs">
       <DependentUpon>frmCiudad.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConsultaEstudio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultaEstudio.Designer.cs">
+      <DependentUpon>frmConsultaEstudio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEstudio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEstudio.Designer.cs">
       <DependentUpon>frmEstudio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFiltrosABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFiltrosABM.Designer.cs">
+      <DependentUpon>frmFiltrosABM.cs</DependentUpon>
     </Compile>
     <Compile Include="frmObraSocial.cs">
       <SubType>Form</SubType>
@@ -157,8 +169,16 @@
       <DependentUpon>frmCiudad.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultaEstudio.resx">
+      <DependentUpon>frmConsultaEstudio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEstudio.resx">
       <DependentUpon>frmEstudio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFiltrosABM.resx">
+      <DependentUpon>frmFiltrosABM.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmObraSocial.resx">
@@ -320,6 +340,8 @@
     <Content Include="Imagenes\accept.png" />
     <Content Include="Imagenes\audioprotesis.gif" />
     <Content Include="Imagenes\cancel.png" />
+    <Content Include="Imagenes\ConsultaEstudios.png" />
+    <Content Include="Imagenes\ConsultaEstudios32.png" />
     <Content Include="Imagenes\Estudio.png" />
     <Content Include="Imagenes\EstudioSafe.png" />
     <Content Include="Imagenes\iCal17.png" />
