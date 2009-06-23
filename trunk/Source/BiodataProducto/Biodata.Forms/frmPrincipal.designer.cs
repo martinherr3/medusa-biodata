@@ -74,7 +74,7 @@
             this.tsmObraSocial = new System.Windows.Forms.ToolStripMenuItem();
             this.spcRight = new System.Windows.Forms.SplitContainer();
             this.splitLeft = new System.Windows.Forms.SplitContainer();
-            this.tbcPrincipal = new System.Windows.Forms.TabControl();
+            this.tbcPrincipal = new Dotnetrix.Controls.TabControlEX();
             this.tosPrincipal.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.spcRight.Panel1.SuspendLayout();
@@ -459,17 +459,18 @@
             this.splitLeft.Location = new System.Drawing.Point(0, 0);
             this.splitLeft.Name = "splitLeft";
             this.splitLeft.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.splitLeft.Size = new System.Drawing.Size(94, 478);
-            this.splitLeft.SplitterDistance = 318;
+            this.splitLeft.Size = new System.Drawing.Size(94, 100);
+            this.splitLeft.SplitterDistance = 66;
             this.splitLeft.TabIndex = 0;
             this.splitLeft.Visible = false;
             // 
             // tbcPrincipal
             // 
+            this.tbcPrincipal.AllowDrop = true;
+            this.tbcPrincipal.AllowTabDrag = true;
             this.tbcPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbcPrincipal.Location = new System.Drawing.Point(0, 0);
             this.tbcPrincipal.Name = "tbcPrincipal";
-            this.tbcPrincipal.SelectedIndex = 0;
             this.tbcPrincipal.Size = new System.Drawing.Size(936, 478);
             this.tbcPrincipal.TabIndex = 0;
             // 
@@ -510,7 +511,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmObraSocial;
         private System.Windows.Forms.SplitContainer spcRight;
         private System.Windows.Forms.SplitContainer splitLeft;
-        internal System.Windows.Forms.TabControl tbcPrincipal;
         private System.Windows.Forms.ToolStripButton tsbPaciente;
         private System.Windows.Forms.ToolStripMenuItem tsmGestionCiudad;
         private System.Windows.Forms.ToolStripMenuItem tsmGestionObraSocial;
@@ -548,5 +548,6 @@
         private System.Windows.Forms.ToolStripButton tsbReporteAudifono;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton tsbAyuda;
+        public Dotnetrix.Controls.TabControlEX tbcPrincipal;
     }
 }

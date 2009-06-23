@@ -74,6 +74,7 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="NHibernate, Version=1.2.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Q:\Biodata\NHibernate.dll</HintPath>
@@ -85,11 +86,16 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="TabControlEX, Version=0.0.3271.41578, Culture=neutral, PublicKeyToken=1db242dc828e4b4e">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Q:\Biodata\TabControlEX.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enumeraciones.cs" />
@@ -206,10 +212,15 @@
       <DependentUpon>ReporteBase.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteObrasSociales.resx">
+      <DependentUpon>ReporteObrasSociales.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportePacientes.resx">
       <DependentUpon>ReportePacientes.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptObrasSociales.rdlc" />
     <EmbeddedResource Include="Reportes\rptPacientes.rdlc" />
     <EmbeddedResource Include="UserControls\uscAnamnesis.resx">
       <DependentUpon>uscAnamnesis.cs</DependentUpon>
@@ -243,6 +254,7 @@
     <None Include="Config\CastleComponents.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Properties\DataSources\Mds.Biodata.Domain.ObraSocial.datasource" />
     <None Include="Properties\DataSources\Mds.Biodata.Domain.Paciente.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -258,6 +270,12 @@
     </Compile>
     <Compile Include="Reportes\ReporteBase.Designer.cs">
       <DependentUpon>ReporteBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteObrasSociales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteObrasSociales.Designer.cs">
+      <DependentUpon>ReporteObrasSociales.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReportePacientes.cs">
       <SubType>Form</SubType>

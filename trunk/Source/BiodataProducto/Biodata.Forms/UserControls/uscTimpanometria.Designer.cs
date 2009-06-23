@@ -39,6 +39,10 @@
             this.rad10Der = new System.Windows.Forms.RadioButton();
             this.rad05Der = new System.Windows.Forms.RadioButton();
             this.lblReflexSensitivityDer = new System.Windows.Forms.Label();
+            this.lblIPSIHLIzq = new System.Windows.Forms.Label();
+            this.lblCONTRAHLIzq = new System.Windows.Forms.Label();
+            this.lblCONTRAHLDer = new System.Windows.Forms.Label();
+            this.lblIPSIHLDer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaReflejosIzq)).BeginInit();
             this.gpbIzquierdo.SuspendLayout();
             this.gpbDerecho.SuspendLayout();
@@ -72,13 +76,15 @@
             // 
             // gpbIzquierdo
             // 
+            this.gpbIzquierdo.Controls.Add(this.lblCONTRAHLIzq);
+            this.gpbIzquierdo.Controls.Add(this.lblIPSIHLIzq);
             this.gpbIzquierdo.Controls.Add(this.rad10Izq);
             this.gpbIzquierdo.Controls.Add(this.rad05Izq);
             this.gpbIzquierdo.Controls.Add(this.lblReflexSensitivityIzq);
             this.gpbIzquierdo.Controls.Add(this.dgvTablaReflejosIzq);
             this.gpbIzquierdo.Location = new System.Drawing.Point(487, 19);
             this.gpbIzquierdo.Name = "gpbIzquierdo";
-            this.gpbIzquierdo.Size = new System.Drawing.Size(334, 149);
+            this.gpbIzquierdo.Size = new System.Drawing.Size(403, 149);
             this.gpbIzquierdo.TabIndex = 11;
             this.gpbIzquierdo.TabStop = false;
             this.gpbIzquierdo.Text = "Oido Izquierdo";
@@ -116,13 +122,15 @@
             // 
             // gpbDerecho
             // 
+            this.gpbDerecho.Controls.Add(this.lblCONTRAHLDer);
+            this.gpbDerecho.Controls.Add(this.lblIPSIHLDer);
             this.gpbDerecho.Controls.Add(this.dgvTablaReflejosDer);
             this.gpbDerecho.Controls.Add(this.rad10Der);
             this.gpbDerecho.Controls.Add(this.rad05Der);
             this.gpbDerecho.Controls.Add(this.lblReflexSensitivityDer);
             this.gpbDerecho.Location = new System.Drawing.Point(487, 179);
             this.gpbDerecho.Name = "gpbDerecho";
-            this.gpbDerecho.Size = new System.Drawing.Size(334, 149);
+            this.gpbDerecho.Size = new System.Drawing.Size(403, 149);
             this.gpbDerecho.TabIndex = 14;
             this.gpbDerecho.TabStop = false;
             this.gpbDerecho.Text = "Oido Derecho";
@@ -168,6 +176,42 @@
             this.lblReflexSensitivityDer.TabIndex = 11;
             this.lblReflexSensitivityDer.Text = "Reflejo Estapedial";
             // 
+            // lblIPSIHLIzq
+            // 
+            this.lblIPSIHLIzq.AutoSize = true;
+            this.lblIPSIHLIzq.Location = new System.Drawing.Point(328, 79);
+            this.lblIPSIHLIzq.Name = "lblIPSIHLIzq";
+            this.lblIPSIHLIzq.Size = new System.Drawing.Size(44, 13);
+            this.lblIPSIHLIzq.TabIndex = 14;
+            this.lblIPSIHLIzq.Text = "IPSI HL";
+            // 
+            // lblCONTRAHLIzq
+            // 
+            this.lblCONTRAHLIzq.AutoSize = true;
+            this.lblCONTRAHLIzq.Location = new System.Drawing.Point(328, 113);
+            this.lblCONTRAHLIzq.Name = "lblCONTRAHLIzq";
+            this.lblCONTRAHLIzq.Size = new System.Drawing.Size(69, 13);
+            this.lblCONTRAHLIzq.TabIndex = 15;
+            this.lblCONTRAHLIzq.Text = "CONTRA HL";
+            // 
+            // lblCONTRAHLDer
+            // 
+            this.lblCONTRAHLDer.AutoSize = true;
+            this.lblCONTRAHLDer.Location = new System.Drawing.Point(328, 118);
+            this.lblCONTRAHLDer.Name = "lblCONTRAHLDer";
+            this.lblCONTRAHLDer.Size = new System.Drawing.Size(69, 13);
+            this.lblCONTRAHLDer.TabIndex = 17;
+            this.lblCONTRAHLDer.Text = "CONTRA HL";
+            // 
+            // lblIPSIHLDer
+            // 
+            this.lblIPSIHLDer.AutoSize = true;
+            this.lblIPSIHLDer.Location = new System.Drawing.Point(328, 84);
+            this.lblIPSIHLDer.Name = "lblIPSIHLDer";
+            this.lblIPSIHLDer.Size = new System.Drawing.Size(44, 13);
+            this.lblIPSIHLDer.TabIndex = 16;
+            this.lblIPSIHLDer.Text = "IPSI HL";
+            // 
             // uscTimpanometria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,7 +220,7 @@
             this.Controls.Add(this.gpbIzquierdo);
             this.Controls.Add(this.linerCentral);
             this.Name = "uscTimpanometria";
-            this.Size = new System.Drawing.Size(829, 341);
+            this.Size = new System.Drawing.Size(893, 341);
             this.Load += new System.EventHandler(this.uscTimpanometria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaReflejosIzq)).EndInit();
             this.gpbIzquierdo.ResumeLayout(false);
@@ -201,5 +245,9 @@
         private System.Windows.Forms.RadioButton rad05Der;
         private System.Windows.Forms.Label lblReflexSensitivityDer;
         private System.Windows.Forms.DataGridView dgvTablaReflejosDer;
+        private System.Windows.Forms.Label lblIPSIHLIzq;
+        private System.Windows.Forms.Label lblCONTRAHLIzq;
+        private System.Windows.Forms.Label lblCONTRAHLDer;
+        private System.Windows.Forms.Label lblIPSIHLDer;
     }
 }
