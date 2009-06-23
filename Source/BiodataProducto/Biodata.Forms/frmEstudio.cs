@@ -66,6 +66,7 @@ namespace Mds.Biodata.Forms
         {
             InitializeComponent();
             TabPageActual = tbpSeleccionPaciente;
+            tbcEstudio.SelectedTab = tbpSeleccionPaciente; 
         }
 
         private void InitializeObjectView()
@@ -108,11 +109,19 @@ namespace Mds.Biodata.Forms
                 tbcEstudio.SelectedIndex += 1;
                 btnSiguiente.Enabled = false;
                 CargarEstudio();
+
+                tbpSeleccionPaciente.Enabled = false;
+                tbpAccionARealizar.Enabled = false;
+                tbpEstudio.Enabled = true;
             }
             else
             {
                 tbcEstudio.SelectedIndex += 1;
                 btnAnterior.Enabled = true;
+
+                tbpSeleccionPaciente.Enabled = false;
+                tbpAccionARealizar.Enabled = true;
+                tbpEstudio.Enabled = false;
             }
 
             if (tbcEstudio.SelectedTab == tbpAccionARealizar)
@@ -179,11 +188,19 @@ namespace Mds.Biodata.Forms
             {
                 tbcEstudio.SelectedIndex -= 1;
                 btnAnterior.Enabled = false;
+
+                tbpSeleccionPaciente.Enabled = true;
+                tbpAccionARealizar.Enabled = false;
+                tbpEstudio.Enabled = false;
             }
             else
             {
                 tbcEstudio.SelectedIndex -= 1;
                 btnSiguiente.Enabled = true;
+
+                tbpSeleccionPaciente.Enabled = false;
+                tbpAccionARealizar.Enabled = true;
+                tbpEstudio.Enabled = false;
             }
         }
 
@@ -206,7 +223,7 @@ namespace Mds.Biodata.Forms
                 if (ValidData())
                 {
 
-                    uscBase UseEstudio = (uscBase)tbpEstudio.Controls[0];
+                    uscBase UseEstudio = (uscBase)tbpAccionARealizar.Controls[0];
 
                     Estudio wEstudio = UseEstudio.ObtenerDatosEstudio();
 

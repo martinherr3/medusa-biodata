@@ -155,7 +155,7 @@ namespace Mds.Biodata.Forms
 
         private void tsmReporteObraSocial_Click(object sender, EventArgs e)
         {
-
+            OpenReporteObraSocial();
         }
 
         private void tsmReporteEstudiosPaciente_Click(object sender, EventArgs e)
@@ -183,6 +183,18 @@ namespace Mds.Biodata.Forms
             try
             {
                 GereralFunctions.AbrirFormulario(new Reportes.ReportePacientes(), (TabControl)this.spcRight.Panel2.Controls[0], "Reporte de Pacientes", DockStyle.Fill);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+        private void OpenReporteObraSocial()
+        {
+            try
+            {
+                GereralFunctions.AbrirFormulario(new Reportes.ReporteObrasSociales(), (TabControl)this.spcRight.Panel2.Controls[0], "Reporte de Obras Sociales", DockStyle.Fill);
             }
             catch (Exception ex)
             {

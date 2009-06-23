@@ -2,7 +2,7 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <DataSources>
     <DataSource Name="DummyDataSource">
-      <rd:DataSourceID>538f5705-98a4-42d9-ac35-71fd6112ed3c</rd:DataSourceID>
+      <rd:DataSourceID>d1441889-d1d5-490f-a926-ca622965f10c</rd:DataSourceID>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString />
@@ -19,7 +19,7 @@
   <PageHeader>
     <PrintOnFirstPage>true</PrintOnFirstPage>
     <ReportItems>
-      <Textbox Name="txtListadoPacientes">
+      <Textbox Name="txtListadoObrasSociales">
         <Style>
           <BackgroundColor>LightBlue</BackgroundColor>
           <FontSize>15pt</FontSize>
@@ -31,85 +31,53 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <CanGrow>true</CanGrow>
-        <Value>Listado de Pacientes</Value>
+        <Value>Listado de Obras Sociales</Value>
       </Textbox>
     </ReportItems>
     <Height>1.5cm</Height>
     <PrintOnLastPage>true</PrintOnLastPage>
   </PageHeader>
   <BottomMargin>2.5cm</BottomMargin>
-  <rd:ReportID>280675f1-53f7-4852-ac15-71c72ff97b9f</rd:ReportID>
+  <rd:ReportID>1a878248-8e03-4e41-81dc-bd70f5c80bd1</rd:ReportID>
   <PageWidth>21cm</PageWidth>
   <DataSets>
-    <DataSet Name="Mds_Biodata_Domain_Paciente">
+    <DataSet Name="Mds_Biodata_Domain_ObraSocial">
       <Fields>
-        <Field Name="Apellido">
-          <DataField>Apellido</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="AudifonoPacientes">
-          <DataField>AudifonoPacientes</DataField>
-          <rd:TypeName>System.Collections.Generic.IList`1[[Mds.Biodata.Domain.AudifonoPaciente, Mds.Biodata.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]</rd:TypeName>
-        </Field>
-        <Field Name="Celular">
-          <DataField>Celular</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="Comentario">
-          <DataField>Comentario</DataField>
+        <Field Name="Contacto">
+          <DataField>Contacto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="CorreoElectronico">
           <DataField>CorreoElectronico</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="CUIT">
+          <DataField>CUIT</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Direccion">
           <DataField>Direccion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="FechaNacimiento">
-          <DataField>FechaNacimiento</DataField>
-          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
-        </Field>
-        <Field Name="HistoriaClinicas">
-          <DataField>HistoriaClinicas</DataField>
-          <rd:TypeName>System.Collections.Generic.IList`1[[Mds.Biodata.Domain.HistoriaClinica, Mds.Biodata.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]</rd:TypeName>
         </Field>
         <Field Name="ID">
           <DataField>ID</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="IDCiudad">
-          <DataField>IDCiudad</DataField>
-          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
-        </Field>
-        <Field Name="IDCiudadLookup">
-          <DataField>IDCiudadLookup</DataField>
-          <rd:TypeName>Mds.Biodata.Domain.Ciudad</rd:TypeName>
-        </Field>
-        <Field Name="Nombre">
-          <DataField>Nombre</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="NumeroDocumento">
-          <DataField>NumeroDocumento</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
-        </Field>
         <Field Name="ObraSocialXPacientes">
           <DataField>ObraSocialXPacientes</DataField>
           <rd:TypeName>System.Collections.Generic.IList`1[[Mds.Biodata.Domain.ObraSocialXPaciente, Mds.Biodata.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]</rd:TypeName>
         </Field>
-        <Field Name="Sexo">
-          <DataField>Sexo</DataField>
+        <Field Name="PaginaWeb">
+          <DataField>PaginaWeb</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RazonSocial">
+          <DataField>RazonSocial</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Telefono">
           <DataField>Telefono</DataField>
           <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="TipoDocumento">
-          <DataField>TipoDocumento</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <Query>
@@ -119,25 +87,41 @@
       </Query>
       <rd:DataSetInfo>
         <rd:DataSetName>Mds.Biodata.Domain</rd:DataSetName>
-        <rd:TableName>Paciente</rd:TableName>
-        <rd:ObjectDataSourceType>Mds.Biodata.Domain.Paciente, Mds.Biodata.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>ObraSocial</rd:TableName>
+        <rd:ObjectDataSourceType>Mds.Biodata.Domain.ObraSocial, Mds.Biodata.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <Width>20cm</Width>
+  <Width>24.91218cm</Width>
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
       <Table Name="table1">
-        <DataSetName>Mds_Biodata_Domain_Paciente</DataSetName>
+        <DataSetName>Mds_Biodata_Domain_ObraSocial</DataSetName>
         <Details>
           <TableRows>
             <TableRow>
               <TableCells>
                 <TableCell>
                   <ReportItems>
-                    <Textbox Name="Apellido">
-                      <rd:DefaultName>Apellido</rd:DefaultName>
+                    <Textbox Name="RazonSocial">
+                      <rd:DefaultName>RazonSocial</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!RazonSocial.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Contacto">
+                      <rd:DefaultName>Contacto</rd:DefaultName>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -146,14 +130,14 @@
                       </Style>
                       <ZIndex>3</ZIndex>
                       <CanGrow>true</CanGrow>
-                      <Value>=Fields!Apellido.Value</Value>
+                      <Value>=Fields!Contacto.Value</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
                 <TableCell>
                   <ReportItems>
-                    <Textbox Name="Nombre">
-                      <rd:DefaultName>Nombre</rd:DefaultName>
+                    <Textbox Name="Telefono">
+                      <rd:DefaultName>Telefono</rd:DefaultName>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -162,7 +146,7 @@
                       </Style>
                       <ZIndex>2</ZIndex>
                       <CanGrow>true</CanGrow>
-                      <Value>=Fields!Nombre.Value</Value>
+                      <Value>=Fields!Telefono.Value</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
@@ -184,8 +168,8 @@
                 </TableCell>
                 <TableCell>
                   <ReportItems>
-                    <Textbox Name="Telefono">
-                      <rd:DefaultName>Telefono</rd:DefaultName>
+                    <Textbox Name="CorreoElectronico">
+                      <rd:DefaultName>CorreoElectronico</rd:DefaultName>
                       <Style>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
@@ -193,12 +177,12 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                       <CanGrow>true</CanGrow>
-                      <Value>=Fields!Telefono.Value</Value>
+                      <Value>=Fields!CorreoElectronico.Value</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
               </TableCells>
-              <Height>0.91711cm</Height>
+              <Height>0.67019cm</Height>
             </TableRow>
           </TableRows>
         </Details>
@@ -208,8 +192,8 @@
               <TableCells>
                 <TableCell>
                   <ReportItems>
-                    <Textbox Name="textbox1">
-                      <rd:DefaultName>textbox1</rd:DefaultName>
+                    <Textbox Name="textbox11">
+                      <rd:DefaultName>textbox11</rd:DefaultName>
                       <Style>
                         <BackgroundColor>Gainsboro</BackgroundColor>
                         <FontWeight>700</FontWeight>
@@ -218,9 +202,9 @@
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
-                      <ZIndex>11</ZIndex>
+                      <ZIndex>14</ZIndex>
                       <CanGrow>true</CanGrow>
-                      <Value>Apellido</Value>
+                      <Value>Razón Social</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
@@ -236,9 +220,9 @@
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
-                      <ZIndex>10</ZIndex>
+                      <ZIndex>13</ZIndex>
                       <CanGrow>true</CanGrow>
-                      <Value>Nombre</Value>
+                      <Value>Contacto</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
@@ -254,9 +238,9 @@
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
-                      <ZIndex>9</ZIndex>
+                      <ZIndex>12</ZIndex>
                       <CanGrow>true</CanGrow>
-                      <Value>Dirección</Value>
+                      <Value>Teléfono</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
@@ -272,32 +256,53 @@
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
-                      <ZIndex>8</ZIndex>
+                      <ZIndex>11</ZIndex>
                       <CanGrow>true</CanGrow>
-                      <Value>Teléfono</Value>
+                      <Value>Dirección</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox4">
+                      <rd:DefaultName>textbox4</rd:DefaultName>
+                      <Style>
+                        <BackgroundColor>Gainsboro</BackgroundColor>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Correo Electronico</Value>
                     </Textbox>
                   </ReportItems>
                 </TableCell>
               </TableCells>
-              <Height>0.91711cm</Height>
+              <Height>0.67019cm</Height>
             </TableRow>
           </TableRows>
         </Header>
         <TableColumns>
           <TableColumn>
-            <Width>4.99245cm</Width>
+            <Width>5.66218cm</Width>
           </TableColumn>
           <TableColumn>
-            <Width>4.68042cm</Width>
+            <Width>4.5cm</Width>
           </TableColumn>
           <TableColumn>
-            <Width>5.30448cm</Width>
+            <Width>4.25cm</Width>
           </TableColumn>
           <TableColumn>
-            <Width>5.02264cm</Width>
+            <Width>5cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>5.5cm</Width>
           </TableColumn>
         </TableColumns>
-        <Height>2.75133cm</Height>
+        <Height>2.01058cm</Height>
         <Footer>
           <TableRows>
             <TableRow>
@@ -312,7 +317,7 @@
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
-                      <ZIndex>7</ZIndex>
+                      <ZIndex>9</ZIndex>
                       <CanGrow>true</CanGrow>
                       <Value />
                     </Textbox>
@@ -328,7 +333,7 @@
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
-                      <ZIndex>6</ZIndex>
+                      <ZIndex>8</ZIndex>
                       <CanGrow>true</CanGrow>
                       <Value />
                     </Textbox>
@@ -344,7 +349,7 @@
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
-                      <ZIndex>5</ZIndex>
+                      <ZIndex>7</ZIndex>
                       <CanGrow>true</CanGrow>
                       <Value />
                     </Textbox>
@@ -360,27 +365,38 @@
                         <PaddingTop>2pt</PaddingTop>
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
-                      <ZIndex>4</ZIndex>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox6">
+                      <rd:DefaultName>textbox6</rd:DefaultName>
+                      <Style>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
                       <CanGrow>true</CanGrow>
                       <Value />
                     </Textbox>
                   </ReportItems>
                 </TableCell>
               </TableCells>
-              <Height>0.91711cm</Height>
+              <Height>0.67019cm</Height>
             </TableRow>
           </TableRows>
         </Footer>
       </Table>
     </ReportItems>
-    <Height>15cm</Height>
+    <Height>5cm</Height>
   </Body>
   <Language>en-US</Language>
-  <PageFooter>
-    <PrintOnFirstPage>true</PrintOnFirstPage>
-    <Height>0.75cm</Height>
-    <PrintOnLastPage>true</PrintOnLastPage>
-  </PageFooter>
   <TopMargin>2.5cm</TopMargin>
   <PageHeight>29.7cm</PageHeight>
 </Report>

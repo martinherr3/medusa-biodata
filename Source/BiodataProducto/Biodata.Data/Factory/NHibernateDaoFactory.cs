@@ -6,6 +6,7 @@ namespace Mds.Biodata.Data
 {
     public class NHibernateDaoFactory : IDaoFactory
     {
+        
 
         private string sessionFactoryConfigPath;
         public NHibernateDaoFactory(string sessionFactoryConfigPath)

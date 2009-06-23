@@ -124,6 +124,7 @@ namespace Mds.Biodata.Forms
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            //NHibernate.ICriteria kk = CreateCriteria(
             
         }
     }
