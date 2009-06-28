@@ -88,7 +88,7 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(114, 30);
             this.btnBuscar.TabIndex = 0;
-            this.btnBuscar.Texto = "Buscar";
+            this.btnBuscar.Text = "Buscar";
             // 
             // btnCerrar
             // 
@@ -99,7 +99,7 @@
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(80, 30);
             this.btnCerrar.TabIndex = 5;
-            this.btnCerrar.Texto = "Cerrar";
+            this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnCerrar_Click);
             // 
             // dgvConsultas

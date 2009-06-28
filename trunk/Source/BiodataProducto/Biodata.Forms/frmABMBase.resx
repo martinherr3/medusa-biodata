@@ -118,6 +118,50 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnNew.Location" type="System.Drawing.Point, System.Drawing">
+    <value>448, 43</value>
+  </data>
+  <data name="&gt;&gt;btnAccept.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnAccept.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 27</value>
+  </data>
+  <data name="&gt;&gt;btnClose.Name" xml:space="preserve">
+    <value>btnClose</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dgvList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dgvList.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;btnEdit.Parent" xml:space="preserve">
+    <value>pnlList</value>
+  </data>
+  <data name="&gt;&gt;dgvList.Type" xml:space="preserve">
+    <value>Medusa.Biodata.FrontEnd.UserControls.GridView, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnNew.Type" xml:space="preserve">
+    <value>Medusa.Biodata.FrontEnd.UserControls.ButtonUC, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnEdit.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnNew.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 34</value>
+  </data>
+  <data name="&gt;&gt;pnlDetails.Name" xml:space="preserve">
+    <value>pnlDetails</value>
+  </data>
+  <data name="&gt;&gt;btnSelect.Name" xml:space="preserve">
+    <value>btnSelect</value>
+  </data>
+  <data name="btnDelete.Text" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
   <data name="ptbProgress.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhIAAgAPYAAP////8AAP76+v7i4v7S0v7U1P7u7v78/P729v64uP5sbP5ERP5OTv6IiP7W1v70
@@ -192,40 +236,8 @@
         QzwCRVjAEkBwwYAFFIRoCC9XXBCSToQEAgA7AAAAAAAAAAAA
 </value>
   </data>
-  <data name="btnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAo9JREFUOE+lk3tI
-        U1Ecx+8okv6K/pAIQZEIigoqFEMzAsleRERIoGmlaQ9LKWQ1zEcO09TaLHWjx0zX0NShaI0S6WH5wEew
-        gqJMxETddpvd4d3jbrv7du71gXX7I+jC9/I7557Ph3MOvysDQP3XIwgCYyZ4P9SDMz+AZ1gD98AduHor
-        4OwuBvsqH2ynHA5TFpj2dDDGZIKAWohY8N/agYBXkgBP5oQsfCP1TONRqcA1pCELOQR8zFz8DHjfDMnP
-        +QhjMs+7YdcfkAqc/XfBu8fB2ZrAWfTwTD+EZ7IG7gk13OOlcI0Vwjl6BT5HP2jdbqmA7akgglF4LPXz
-        cDWBVQQuIXCBCLMjF+Fj3sGmjZIKmBcK+F0jBCaXOLkA34BzLJ/AchFmv5wmgtewVm2WCmZMl8CadWAG
-        roLpuwymNwv2lyfn4QsiLG+IRnrtNlhU66QC2pgC5q0S/tmPJGZ47e2wdyWB/SrAqZj9lIgsfQSudyTi
-        mHaDVPCjJRm0MQF0615w1hZ4bUZkG2KR/XgHztVHIE23FddaE9A0WImc5sPYo1rjiy1fLRObUHjRzcnw
-        TDzFVO12WJtj4LE2IlMfhbb3NTAOV4lg46Aa6q4c1PWV4awhHpElQb4tSplsTtCQAG7KBIe5GpaGg2Qn
-        iUgj5xXg253ZuPk8E8WmDBR2nELRszPQditx/NFOrC+gOFFg0x+CRReP6Xu7MFUdie8VoUi6vxFPBtQw
-        9N9CXW8ZdD2lRHIemu4iZBj2ITyP+hyioFYu9vTS/hbqI5pwfn9lCB+nCuZjylfxKbXRqHlTiFR9PMLy
-        KPNaBRW0eAd/wn8bb1LK6BN1cQjLpYYIvOK3n+lfBGTLdGjuMgQrqOVL1/8C8/TKXY6ArmQAAAAASUVO
-        RK5CYII=
-</value>
-  </data>
-  <data name="btnDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAlNJREFUOE+lk1FI
-        E3Ecx5VtvfXQS0RQNKK3egkiIhDJLKjWS9hAWUQtCEohoW0GqRBZxMSwllG5wD040hWMGm6uVWrLLB9m
-        IJStsaZz27XbDW/b3W67b/+b8yLuRfAPX+7uf//P5/+7393VAqjZ0JAEG4kMixEPinND4EPPwM0OoDDT
-        j3zQitzEbbDvOsH6TMh62sC4L4FxGcieqxvLgvJPNyAWFRHLZE7K2j1yTjvPKAX5rwNkIQ9RYFZTYlAW
-        aJJMNdI1mS8XkHacUApy0w9QLkTBp16ATzjALQ+CW3qEQuw+CtG7yEe6kQubIWSnQdnrlQL2o5UIwuAS
-        Q1XYRuA+At8hcFcFZhdaITBTSD0+qBQw3g6U8gsEJk1cWoN7kIt0EthUgdnvRiJ4j+TDvUoB7bkGNmQH
-        M2MB86kdTLAN6cD5Kny1Aq/Mt0DIBJDo260UUK5zYCZvobTyjSSEYtqNtL8F7A8JvoDw0zoEDVvhb9Ag
-        oNsEb6PK8t9r/DNqAOVqAvXqOPjkKIopF6jxszI8d/0QCm96Ic6PIedsx5cr+0q+BnWr/B1QIwZwsdeI
-        P9+P5MhhcEknKN9pUnYzPug3I09g9OsA8xagRwvqXj28R1W//gmGm8DHPciGbEgMnySVNIOeuAmBHq+U
-        Lc6+lJ5bHpmubfAfUYuyIOXQIWE/huUndYjbDuC3dSfJLiz2ahE4pQE7eBEgEGeqAU0SvayS+rC4rh9p
-        Ur+9+7NxjxA3a5Hq0CBsrMVbnbo01qi6sS6B1O0p/Q4L2TEilU2OMQmW5v8C9F/h6fOcGuQAAAAASUVO
-        RK5CYII=
-</value>
+  <data name="&gt;&gt;btnEdit.Type" xml:space="preserve">
+    <value>Medusa.Biodata.FrontEnd.UserControls.ButtonUC, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="btnEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -245,36 +257,86 @@
         5g3/goPxn3ZZ7+u5YCFiAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnNew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAkFJREFUOE+lk/9L
-        E2Ecx+vPiCCKfumHCgrCH4LRD1H0/QdZxWSxhhZUCgWZUVmRtkVnE2stwha4H5TmCJcceBsWViZS0FSE
-        NBlqztuuzVvedne7be+e59wmclA/+MCb557nntfr+fDcPRsBbFhXo4L1pAIXoyxyY11QI51Qvnkgj3Yg
-        O8wgM9QK6X0zJK4RabYBYrAOYsBK9lzZuCIo/AwCxZwhxQKZoym/I8+pnmqjIPvVQxaqKGriSvIiClqK
-        ZKkUOibzBRlJ31GjIDPyFAV5FmriDVTeB2XxFZSF55Dn2yHPOpGN3kNm5ga09AgE7wGjQPrMEMEMFL6r
-        BLsJ7CKwg8B3dViarocmfkLiRZVRIA7cRD47TWByiAtl+CEy0WYCN+qw9KOWCD4g/mynUZBir0KKeCGO
-        NkH8cg3icAOSg7YSfEWHlydroC0NgndtNwqEwDmIHx8gvzxOEkEuGUQyXANpisJ2vGMtuO45iwtPTsHW
-        YsKRpt2313zG371WCAEzhLeHocZ7kUsEIIRO63AgaMZ9/3n0T7jxPcbBFbqEM65dqLq8ian8B4LfCmW+
-        H7HXexH374cS74HAnSRlW2B/dBB94+3om+ygpYMJ18EVvkgF8qqg2ww1xiIdcYPvPkYqsSA1dAdaKoTj
-        t/aAnejU4XILjrmpYPUeJHwnwHsPYfGlCTH3PswxW0i24lfbNpjqN+MxZ4eDs+m8Y8BmrOBfF4rs1FLN
-        7EAbVwu6M+3peM0Z/O9GksVOkj+07FLvpMxflz7jN3QF2zMAAAAASUVORK5CYII=
-</value>
+  <data name="&gt;&gt;btnSelect.Parent" xml:space="preserve">
+    <value>pnlList</value>
   </data>
-  <data name="btnSelect.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAgdJREFUOE+lk01o
-        02Achx1exJve9CCKV0+CeBBEPPiJMpF52KiI6E0Hepju0OkY84vKRK0T0QrrYcOtCHVU7GTK1DmGHlpF
-        0Dlq17VLG9Ola9omTdvHN103xOxkAz9I3uR5fn/C+zYAq+q6LEE9WYYrkQDFcB9G6DH6514Kk3fJj7vI
-        jXWjvelAC7aRCbSi+s+i+hyic7F4WVD+6YdK0ZZKWaxZWXon7tMDx+2C/Kde8aFBxVQXU1Ipm2mR+Vqs
-        Z7FeLqB4D9kFuYl7lAtRjNQzDMmLPvcEPf6AQuwOhegN8pGr5KYvYWYmkD177ALtg0sIptGlvhrsFnCP
-        gK8L+EoV1qbOY6rvST3caReor9op5acELH5ifAm+Ri7SIeC2Kqx9PyMEb0ne32YXpAMX0EIe1MnLqB8v
-        oo63ooyeqsHnqnD2Wwvm/ChSz1a7QPadRH3XRSn7RSREUfGjvG5B+2HBpwXcTPbrMcx0kPitjXbB7yEH
-        sq8J+fl+jOQQxZQPeeTEX3Aj2fBBDOUls93rVphg0IEeGybxdDvJwV3oyQHk4NFacyML4QMshPYKwTCx
-        zjUrCPqbMBIBMiE3Uv9hMUkz6TGnGHkEQ4xtNRvKCxE/M84GuyDlPYLk2cfco90k3DuYcW0S2czs7S3E
-        bm4g1rWeaOdafjlXE2m3NvA/W/l/D1RdJ9Eq/QM1xfsUQezVJAAAAABJRU5ErkJggg==
-</value>
+  <data name="&gt;&gt;dgvList.Parent" xml:space="preserve">
+    <value>pnlList</value>
+  </data>
+  <data name="btnEdit.Text" xml:space="preserve">
+    <value>Editar</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
+    <value>Medusa.Biodata.FrontEnd.UserControls.ButtonUC, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="pnlDetails.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;ptbProgress.Name" xml:space="preserve">
+    <value>ptbProgress</value>
+  </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 27</value>
+  </data>
+  <data name="&gt;&gt;dgvList.Name" xml:space="preserve">
+    <value>dgvList</value>
+  </data>
+  <data name="ptbProgress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 83</value>
+  </data>
+  <data name="ptbProgress.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;lblDeleteItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlDetails.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSelect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>448, 3</value>
+  </data>
+  <data name="&gt;&gt;lblDeleteItem.Name" xml:space="preserve">
+    <value>lblDeleteItem</value>
+  </data>
+  <data name="btnAccept.Text" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+  <data name="lblDeleteItem.Text" xml:space="preserve">
+    <value>¿Desea Eliminar este elemento?</value>
+  </data>
+  <data name="btnNew.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
+    <value>pnlList</value>
+  </data>
+  <data name="&gt;&gt;ptbProgress.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnSelect.Text" xml:space="preserve">
+    <value>Seleccionar</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;bgwLoad.Name" xml:space="preserve">
+    <value>bgwLoad</value>
+  </data>
+  <data name="&gt;&gt;btnAccept.Parent" xml:space="preserve">
+    <value>pnlDetails</value>
+  </data>
+  <data name="btnSelect.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 34</value>
+  </data>
+  <data name="btnNew.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;btnNew.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="btnCancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -290,6 +352,45 @@
         3bv0252aojsxQXdRD1Dv3BoRRwCy0IfD7N6+iVPNYe9ksYuZwK9VSGPlk2PiMYB80PmakvGgZFhSumUp
         fSiily96ma7ezH9Y/wG8K4uxJJsUrgAAAABJRU5ErkJggg==
 </value>
+  </data>
+  <data name="btnClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAo9JREFUOE+lk3tI
+        U1Ecx+8okv6K/pAIQZEIigoqFEMzAsleRERIoGmlaQ9LKWQ1zEcO09TaLHWjx0zX0NShaI0S6WH5wEew
+        gqJMxETddpvd4d3jbrv7du71gXX7I+jC9/I7557Ph3MOvysDQP3XIwgCYyZ4P9SDMz+AZ1gD98AduHor
+        4OwuBvsqH2ynHA5TFpj2dDDGZIKAWohY8N/agYBXkgBP5oQsfCP1TONRqcA1pCELOQR8zFz8DHjfDMnP
+        +QhjMs+7YdcfkAqc/XfBu8fB2ZrAWfTwTD+EZ7IG7gk13OOlcI0Vwjl6BT5HP2jdbqmA7akgglF4LPXz
+        cDWBVQQuIXCBCLMjF+Fj3sGmjZIKmBcK+F0jBCaXOLkA34BzLJ/AchFmv5wmgtewVm2WCmZMl8CadWAG
+        roLpuwymNwv2lyfn4QsiLG+IRnrtNlhU66QC2pgC5q0S/tmPJGZ47e2wdyWB/SrAqZj9lIgsfQSudyTi
+        mHaDVPCjJRm0MQF0615w1hZ4bUZkG2KR/XgHztVHIE23FddaE9A0WImc5sPYo1rjiy1fLRObUHjRzcnw
+        TDzFVO12WJtj4LE2IlMfhbb3NTAOV4lg46Aa6q4c1PWV4awhHpElQb4tSplsTtCQAG7KBIe5GpaGg2Qn
+        iUgj5xXg253ZuPk8E8WmDBR2nELRszPQditx/NFOrC+gOFFg0x+CRReP6Xu7MFUdie8VoUi6vxFPBtQw
+        9N9CXW8ZdD2lRHIemu4iZBj2ITyP+hyioFYu9vTS/hbqI5pwfn9lCB+nCuZjylfxKbXRqHlTiFR9PMLy
+        KPNaBRW0eAd/wn8bb1LK6BN1cQjLpYYIvOK3n+lfBGTLdGjuMgQrqOVL1/8C8/TKXY6ArmQAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="btnAccept.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>448, 123</value>
+  </data>
+  <data name="&gt;&gt;btnClose.Type" xml:space="preserve">
+    <value>Medusa.Biodata.FrontEnd.UserControls.ButtonUC, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;pnlList.Name" xml:space="preserve">
+    <value>pnlList</value>
+  </data>
+  <data name="lblDeleteItem.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="btnCancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 243</value>
+  </data>
+  <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>448, 83</value>
   </data>
   <data name="btnAccept.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -309,7 +410,259 @@
         Eqp4ITIjQ6KjS6m/X6adN+1fvn8DPGaAEztEPfgAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btnNew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAkFJREFUOE+lk/9L
+        E2Ecx+vPiCCKfumHCgrCH4LRD1H0/QdZxWSxhhZUCgWZUVmRtkVnE2stwha4H5TmCJcceBsWViZS0FSE
+        NBlqztuuzVvedne7be+e59wmclA/+MCb557nntfr+fDcPRsBbFhXo4L1pAIXoyxyY11QI51Qvnkgj3Yg
+        O8wgM9QK6X0zJK4RabYBYrAOYsBK9lzZuCIo/AwCxZwhxQKZoym/I8+pnmqjIPvVQxaqKGriSvIiClqK
+        ZKkUOibzBRlJ31GjIDPyFAV5FmriDVTeB2XxFZSF55Dn2yHPOpGN3kNm5ga09AgE7wGjQPrMEMEMFL6r
+        BLsJ7CKwg8B3dViarocmfkLiRZVRIA7cRD47TWByiAtl+CEy0WYCN+qw9KOWCD4g/mynUZBir0KKeCGO
+        NkH8cg3icAOSg7YSfEWHlydroC0NgndtNwqEwDmIHx8gvzxOEkEuGUQyXANpisJ2vGMtuO45iwtPTsHW
+        YsKRpt2313zG371WCAEzhLeHocZ7kUsEIIRO63AgaMZ9/3n0T7jxPcbBFbqEM65dqLq8ian8B4LfCmW+
+        H7HXexH374cS74HAnSRlW2B/dBB94+3om+ygpYMJ18EVvkgF8qqg2ww1xiIdcYPvPkYqsSA1dAdaKoTj
+        t/aAnejU4XILjrmpYPUeJHwnwHsPYfGlCTH3PswxW0i24lfbNpjqN+MxZ4eDs+m8Y8BmrOBfF4rs1FLN
+        7EAbVwu6M+3peM0Z/O9GksVOkj+07FLvpMxflz7jN3QF2zMAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="&gt;&gt;pnlDetails.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Type" xml:space="preserve">
+    <value>Medusa.Biodata.FrontEnd.UserControls.ButtonUC, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="ptbProgress.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 34</value>
+  </data>
+  <data name="dgvList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>439, 194</value>
+  </data>
+  <data name="btnSelect.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAgdJREFUOE+lk01o
+        02Achx1exJve9CCKV0+CeBBEPPiJMpF52KiI6E0Hepju0OkY84vKRK0T0QrrYcOtCHVU7GTK1DmGHlpF
+        0Dlq17VLG9Ola9omTdvHN103xOxkAz9I3uR5fn/C+zYAq+q6LEE9WYYrkQDFcB9G6DH6514Kk3fJj7vI
+        jXWjvelAC7aRCbSi+s+i+hyic7F4WVD+6YdK0ZZKWaxZWXon7tMDx+2C/Kde8aFBxVQXU1Ipm2mR+Vqs
+        Z7FeLqB4D9kFuYl7lAtRjNQzDMmLPvcEPf6AQuwOhegN8pGr5KYvYWYmkD177ALtg0sIptGlvhrsFnCP
+        gK8L+EoV1qbOY6rvST3caReor9op5acELH5ifAm+Ri7SIeC2Kqx9PyMEb0ne32YXpAMX0EIe1MnLqB8v
+        oo63ooyeqsHnqnD2Wwvm/ChSz1a7QPadRH3XRSn7RSREUfGjvG5B+2HBpwXcTPbrMcx0kPitjXbB7yEH
+        sq8J+fl+jOQQxZQPeeTEX3Aj2fBBDOUls93rVphg0IEeGybxdDvJwV3oyQHk4NFacyML4QMshPYKwTCx
+        zjUrCPqbMBIBMiE3Uv9hMUkz6TGnGHkEQ4xtNRvKCxE/M84GuyDlPYLk2cfco90k3DuYcW0S2czs7S3E
+        bm4g1rWeaOdafjlXE2m3NvA/W/l/D1RdJ9Eq/QM1xfsUQezVJAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btnClose.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;ptbProgress.Parent" xml:space="preserve">
+    <value>pnlList</value>
+  </data>
+  <data name="pnlList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>frmABMBase</value>
+  </data>
+  <data name="pnlDetails.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 223</value>
+  </data>
+  <data name="&gt;&gt;btnSelect.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblDeleteItem.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnSelect.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>frmABMBase</value>
+  </data>
+  <data name="&gt;&gt;btnNew.Parent" xml:space="preserve">
+    <value>pnlList</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>pnlDetails</value>
+  </data>
+  <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 34</value>
+  </data>
+  <data name="btnNew.Text" xml:space="preserve">
+    <value>Nuevo</value>
+  </data>
+  <data name="btnClose.Text" xml:space="preserve">
+    <value>Cerrar</value>
+  </data>
+  <data name="&gt;&gt;btnAccept.Name" xml:space="preserve">
+    <value>btnAccept</value>
+  </data>
+  <data name="&gt;&gt;pnlList.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnDelete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAlNJREFUOE+lk1FI
+        E3Ecx5VtvfXQS0RQNKK3egkiIhDJLKjWS9hAWUQtCEohoW0GqRBZxMSwllG5wD040hWMGm6uVWrLLB9m
+        IJStsaZz27XbDW/b3W67b/+b8yLuRfAPX+7uf//P5/+7393VAqjZ0JAEG4kMixEPinND4EPPwM0OoDDT
+        j3zQitzEbbDvOsH6TMh62sC4L4FxGcieqxvLgvJPNyAWFRHLZE7K2j1yTjvPKAX5rwNkIQ9RYFZTYlAW
+        aJJMNdI1mS8XkHacUApy0w9QLkTBp16ATzjALQ+CW3qEQuw+CtG7yEe6kQubIWSnQdnrlQL2o5UIwuAS
+        Q1XYRuA+At8hcFcFZhdaITBTSD0+qBQw3g6U8gsEJk1cWoN7kIt0EthUgdnvRiJ4j+TDvUoB7bkGNmQH
+        M2MB86kdTLAN6cD5Kny1Aq/Mt0DIBJDo260UUK5zYCZvobTyjSSEYtqNtL8F7A8JvoDw0zoEDVvhb9Ag
+        oNsEb6PK8t9r/DNqAOVqAvXqOPjkKIopF6jxszI8d/0QCm96Ic6PIedsx5cr+0q+BnWr/B1QIwZwsdeI
+        P9+P5MhhcEknKN9pUnYzPug3I09g9OsA8xagRwvqXj28R1W//gmGm8DHPciGbEgMnySVNIOeuAmBHq+U
+        Lc6+lJ5bHpmubfAfUYuyIOXQIWE/huUndYjbDuC3dSfJLiz2ahE4pQE7eBEgEGeqAU0SvayS+rC4rh9p
+        Ur+9+7NxjxA3a5Hq0CBsrMVbnbo01qi6sS6B1O0p/Q4L2TEilU2OMQmW5v8C9F/h6fOcGuQAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="dgvList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="btnAccept.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>Mds.Biodata.Forms.frmBase, Mds.Biodata.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="pnlList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 205</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pnlDetails.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
+  </data>
+  <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>448, 163</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
+    <value>btnDelete</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>596, 509</value>
+  </data>
+  <data name="pnlDetails.Size" type="System.Drawing.Size, System.Drawing">
+    <value>411, 273</value>
+  </data>
+  <data name="lblDeleteItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 207</value>
+  </data>
+  <data name="pnlDetails.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lblDeleteItem.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;btnSelect.Type" xml:space="preserve">
+    <value>Medusa.Biodata.FrontEnd.UserControls.ButtonUC, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="&gt;&gt;btnClose.Parent" xml:space="preserve">
+    <value>pnlList</value>
+  </data>
+  <data name="btnAccept.Location" type="System.Drawing.Point, System.Drawing">
+    <value>188, 243</value>
+  </data>
+  <data name="lblDeleteItem.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="btnSelect.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="lblDeleteItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 13</value>
+  </data>
+  <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnNew.Name" xml:space="preserve">
+    <value>btnNew</value>
+  </data>
+  <data name="&gt;&gt;ptbProgress.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlDetails.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblDeleteItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
+  </data>
+  <data name="pnlList.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lblDeleteItem.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;pnlList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnEdit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;pnlList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 34</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnCancel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="&gt;&gt;lblDeleteItem.Parent" xml:space="preserve">
+    <value>pnlDetails</value>
+  </data>
+  <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
+    <value>btnEdit</value>
+  </data>
+  <data name="&gt;&gt;dgvList.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;bgwLoad.Type" xml:space="preserve">
+    <value>System.ComponentModel.BackgroundWorker, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAccept.Type" xml:space="preserve">
+    <value>Medusa.Biodata.FrontEnd.UserControls.ButtonUC, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="btnDelete.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="pnlList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="btnClose.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 34</value>
+  </data>
+  <data name="ptbProgress.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
+  <data name="&gt;&gt;btnCancel.Name" xml:space="preserve">
+    <value>btnCancel</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="bgwLoad.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>English</value>
   </metadata>
 </root>

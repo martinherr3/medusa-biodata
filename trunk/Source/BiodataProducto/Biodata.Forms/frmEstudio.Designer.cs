@@ -209,7 +209,7 @@
             this.btnRegistrarEstudio.Name = "btnRegistrarEstudio";
             this.btnRegistrarEstudio.Size = new System.Drawing.Size(133, 30);
             this.btnRegistrarEstudio.TabIndex = 4;
-            this.btnRegistrarEstudio.Texto = "Registrar Estudio";
+            this.btnRegistrarEstudio.Text = "Registrar Estudio";
             this.btnRegistrarEstudio.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnRegistrarEstudio_Click);
             // 
             // btnAnterior
@@ -221,7 +221,7 @@
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(91, 30);
             this.btnAnterior.TabIndex = 2;
-            this.btnAnterior.Texto = "Anterior";
+            this.btnAnterior.Text = "Anterior";
             this.btnAnterior.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnAnterior_Click);
             // 
             // btnSiguiente
@@ -233,7 +233,7 @@
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(93, 30);
             this.btnSiguiente.TabIndex = 1;
-            this.btnSiguiente.Texto = "Siguiente";
+            this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnSiguiente_Click);
             // 
             // bgwLoad
@@ -250,7 +250,7 @@
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(123, 30);
             this.btnCerrar.TabIndex = 3;
-            this.btnCerrar.Texto = "Cerrar";
+            this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnCerrar_Click);
             // 
             // tbcEstudio

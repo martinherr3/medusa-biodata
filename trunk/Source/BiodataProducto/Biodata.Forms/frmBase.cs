@@ -14,6 +14,8 @@ namespace Mds.Biodata.Forms
     {
         public frmBase()
         {
+            System.Globalization.CultureInfo.CurrentCulture.ClearCachedData();
+            System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(System.Globalization.CultureInfo.CurrentCulture.Name.Substring(0, 2));
             InitializeComponent();
         }
 
@@ -66,6 +68,8 @@ namespace Mds.Biodata.Forms
 
         protected void ProcesarMensaje(String message, String Title)
         {
+            System.Resources.ResourceManager mdsRM = new System.Resources.ResourceManager(this.GetType());
+            
             MessageBox.Show(message, Title);
         }
 

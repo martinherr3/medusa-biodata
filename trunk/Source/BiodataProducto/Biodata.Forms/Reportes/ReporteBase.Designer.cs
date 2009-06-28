@@ -56,7 +56,7 @@
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(114, 30);
             this.btnCerrar.TabIndex = 4;
-            this.btnCerrar.Texto = "Cerrar";
+            this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnCerrar_Click);
             // 
             // reportViewer1
