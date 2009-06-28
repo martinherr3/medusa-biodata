@@ -20,22 +20,32 @@ namespace Medusa.Biodata.FrontEnd.UserControls
             InitializeComponent();
         }
 
-        private string _texto;
-        public string Texto
-        {
-            get { return _texto; }
-            set
-            {
-                _texto = value;
-                btn.Text = Texto;
-            }
-        }
+        //private string _texto;
+        //public string Texto
+        //{
+        //    get { return _texto; }
+        //    set
+        //    {
+        //        _texto = value;
+        //        btn.Text = Texto;
+        //    }
+        //}
 
+        //public override string Text
+        //{
+        //    get { return Texto; }
+        //    set { Texto = value; }
+        //}
+
+        
+        [EditorBrowsable(EditorBrowsableState.Always), Browsable(true),DesignerSerializationVisibility(DesignerSerializationVisibility.Visible), Bindable(true)]
         public override string Text
         {
-            get { return Texto; }
-            set { Texto = value; }
+            get { return btn.Text; }
+            set { btn.Text = value; }
         }
+
+
 
         public Image Image
         {
