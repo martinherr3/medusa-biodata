@@ -20,6 +20,11 @@ namespace Mds.Biodata.Forms
         public delegate void SeleccionComplejaEventHandler(bool pCerrar);
 
 
+        //###################################################################
+        //ESTO POR SI SE LLEGA A BORRAR DEL DESIGNER DEL frmABMBase
+        //this.BotonClick += new BotonClickEventHandler(this.Accion);
+        //###################################################################
+
         //Public Enum EstadoForm 
         // Nuevo 
         // Eliminar 

@@ -12,8 +12,11 @@ namespace Mds.Biodata.Forms
 {
     public partial class frmBase : Form
     {
+        private System.Resources.ResourceManager mdsRM;
+
         public frmBase()
         {
+            mdsRM = new System.Resources.ResourceManager(this.GetType());
             System.Globalization.CultureInfo.CurrentCulture.ClearCachedData();
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(System.Globalization.CultureInfo.CurrentCulture.Name.Substring(0, 2));
             InitializeComponent();
@@ -46,6 +49,23 @@ namespace Mds.Biodata.Forms
             set { _principal = value; }
         }
 
+        /// <summary>
+        /// Traduce el mensaje, en caso de encontrar su significado, segun el idioma seleccionado
+        /// </summary>
+        /// <param name="pMessage"></param>
+        /// <returns></returns>
+        protected String Translate(String pMessage)
+        {
+            if (mdsRM.GetString(pMessage) == "" || mdsRM.GetString(pMessage) == null)
+            {
+                return pMessage;
+            }
+            else
+            {
+                return mdsRM.GetString(pMessage);
+            }
+        }
+
         protected void ProcesarExcepcion(Exception ex)
         {
             ProcesarExcepcion(ex, MessageBoxIcon.Information);
@@ -63,14 +83,14 @@ namespace Mds.Biodata.Forms
 
         protected DialogResult ProcesarMensaje(String message, String Title, MessageBoxButtons Buttons)
         {
-            return MessageBox.Show(message, Title, Buttons);
+            return MessageBox.Show(Translate(message), Translate(Title), Buttons);
         }
 
         protected void ProcesarMensaje(String message, String Title)
         {
-            System.Resources.ResourceManager mdsRM = new System.Resources.ResourceManager(this.GetType());
-            
-            MessageBox.Show(message, Title);
+            //System.Resources.ResourceManager mdsRM = new System.Resources.ResourceManager(this.GetType());
+
+            MessageBox.Show(Translate(message), Translate(Title));
         }
 
         protected void ProcesarAdvertencia(String message)
@@ -80,7 +100,7 @@ namespace Mds.Biodata.Forms
 
         protected void ProcesarAdvertencia(String message, String Title)
         {
-            MessageBox.Show(message, Title);
+            MessageBox.Show(Translate(message), Translate(Title));
         }
     }
 }

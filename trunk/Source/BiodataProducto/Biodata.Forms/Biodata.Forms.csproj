@@ -175,6 +175,10 @@
       <DependentUpon>frmBase.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCiudad.en.resx">
+      <DependentUpon>frmCiudad.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCiudad.resx">
       <DependentUpon>frmCiudad.cs</DependentUpon>
       <SubType>Designer</SubType>
