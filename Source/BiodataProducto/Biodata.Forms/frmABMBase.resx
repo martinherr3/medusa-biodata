@@ -153,9 +153,6 @@
   <data name="btnNew.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 34</value>
   </data>
-  <data name="&gt;&gt;pnlDetails.Name" xml:space="preserve">
-    <value>pnlDetails</value>
-  </data>
   <data name="&gt;&gt;btnSelect.Name" xml:space="preserve">
     <value>btnSelect</value>
   </data>
@@ -236,9 +233,6 @@
         QzwCRVjAEkBwwYAFFIRoCC9XXBCSToQEAgA7AAAAAAAAAAAA
 </value>
   </data>
-  <data name="&gt;&gt;btnEdit.Type" xml:space="preserve">
-    <value>Medusa.Biodata.FrontEnd.UserControls.ButtonUC, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
   <data name="btnEdit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -266,8 +260,8 @@
   <data name="btnEdit.Text" xml:space="preserve">
     <value>Editar</value>
   </data>
-  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
-    <value>Medusa.Biodata.FrontEnd.UserControls.ButtonUC, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  <data name="btnDelete.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="&gt;&gt;btnClose.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -278,17 +272,17 @@
   <data name="&gt;&gt;ptbProgress.Name" xml:space="preserve">
     <value>ptbProgress</value>
   </data>
-  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 27</value>
+  <data name="lblDeleteItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopRight</value>
   </data>
   <data name="&gt;&gt;dgvList.Name" xml:space="preserve">
     <value>dgvList</value>
   </data>
-  <data name="ptbProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>200, 83</value>
+  <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
+    <value>448, 163</value>
   </data>
-  <data name="ptbProgress.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="pnlList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>572, 205</value>
   </data>
   <data name="&gt;&gt;lblDeleteItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -296,26 +290,38 @@
   <data name="&gt;&gt;pnlDetails.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnSelect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>448, 3</value>
-  </data>
-  <data name="&gt;&gt;lblDeleteItem.Name" xml:space="preserve">
-    <value>lblDeleteItem</value>
-  </data>
-  <data name="btnAccept.Text" xml:space="preserve">
-    <value>Aceptar</value>
+  <data name="btnAccept.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAArNJREFUOE+lk+1L
+        U1Ecx+vf2N12TUECGVGIICHUXgVJxKbZUMyHZWm6BzcfaZsxbKZFGTkfxkgpLbPUanNOberU5taUMnHZ
+        VULMvemBasPowb6de6Ft+iKCLnwv58Lv8zn3nPM7uwHs+q+HFcSmwHsoIXfmoC7bncpkPNkfkoyKQhJn
+        EiNxJOmO2fYm7KzfBud50qQyd0pQ65bhVsCM/pVuLl1LLShxHoe4jw6Ke2lprCQiILNKMyeSw9fmDXCs
+        DcD66jqM81Vc2LF9rR9Ns9U4YBWEU6yCiIQT5LhT4zNdyRsszBbW+stQ6StB+exZaEkqSGq852B7cx+X
+        pishMvM3RDf48dz+sS+ZK1mvGs/iZmZhFlR5TkMxUwjFdAHU04VwrQ9B71HCTiS5vUeQeJWvjwgyRkVM
+        V6AFlkAzKr3FUD6VEzAfyikSdz4m3jpJLRAMr6P9RROs802Ia+AzEcFRW+Lmw9U7qPOXQ+MpIn8yiKWP
+        C1BNFmJ8fZiDf279QPvzy9BPFqM/0AWhgdqMCMQP6M2BlR4YfCrU+TT4/O0TB334+i4Cm+caoHZmQ+c6
+        g4FAJ4S1sYJemrm50IyOxSvQTslh8tYg/P0LB2/92oL52UWUObJQTgSt/np0eEygq6noEtJuC/XywXTY
+        Vu+hZlIOtesU6mcqsPx+Ee1zjSgdOgGF/SS0jhzYXvfgmOUw6CoquokpFkH8PnI0Jnc5HjF3UTWWB81I
+        DlTDMijtbFg4G4+Xu2EYLoZQzdug1VT0GNnNSGrmS+MaqbDRVQY7kbT5TdCNFeH8iBxtZAk2AuscRRCU
+        8sIE3t5If1pzTyNfShupoKRTjA6fCX0vLehbsMDsMSK9NQ1CBS9Iq6Jw5BRie5u+wE+g9ZSOrqUYoYYX
+        Eqp4ITIjQ6KjS6m/X6adN+1fvn8DPGaAEztEPfgAAAAASUVORK5CYII=
+</value>
   </data>
   <data name="lblDeleteItem.Text" xml:space="preserve">
     <value>¿Desea Eliminar este elemento?</value>
   </data>
-  <data name="btnNew.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="ptbProgress.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
-    <value>pnlList</value>
+  <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;ptbProgress.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="lblDeleteItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>188, 13</value>
   </data>
   <data name="btnSelect.Text" xml:space="preserve">
     <value>Seleccionar</value>
@@ -383,6 +389,9 @@
   <data name="&gt;&gt;pnlList.Name" xml:space="preserve">
     <value>pnlList</value>
   </data>
+  <data name="&gt;&gt;pnlList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="lblDeleteItem.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
@@ -391,24 +400,6 @@
   </data>
   <data name="btnEdit.Location" type="System.Drawing.Point, System.Drawing">
     <value>448, 83</value>
-  </data>
-  <data name="btnAccept.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAArNJREFUOE+lk+1L
-        U1Ecx+vf2N12TUECGVGIICHUXgVJxKbZUMyHZWm6BzcfaZsxbKZFGTkfxkgpLbPUanNOberU5taUMnHZ
-        VULMvemBasPowb6de6Ft+iKCLnwv58Lv8zn3nPM7uwHs+q+HFcSmwHsoIXfmoC7bncpkPNkfkoyKQhJn
-        EiNxJOmO2fYm7KzfBud50qQyd0pQ65bhVsCM/pVuLl1LLShxHoe4jw6Ke2lprCQiILNKMyeSw9fmDXCs
-        DcD66jqM81Vc2LF9rR9Ns9U4YBWEU6yCiIQT5LhT4zNdyRsszBbW+stQ6StB+exZaEkqSGq852B7cx+X
-        pishMvM3RDf48dz+sS+ZK1mvGs/iZmZhFlR5TkMxUwjFdAHU04VwrQ9B71HCTiS5vUeQeJWvjwgyRkVM
-        V6AFlkAzKr3FUD6VEzAfyikSdz4m3jpJLRAMr6P9RROs802Ia+AzEcFRW+Lmw9U7qPOXQ+MpIn8yiKWP
-        C1BNFmJ8fZiDf279QPvzy9BPFqM/0AWhgdqMCMQP6M2BlR4YfCrU+TT4/O0TB334+i4Cm+caoHZmQ+c6
-        g4FAJ4S1sYJemrm50IyOxSvQTslh8tYg/P0LB2/92oL52UWUObJQTgSt/np0eEygq6noEtJuC/XywXTY
-        Vu+hZlIOtesU6mcqsPx+Ee1zjSgdOgGF/SS0jhzYXvfgmOUw6CoquokpFkH8PnI0Jnc5HjF3UTWWB81I
-        DlTDMijtbFg4G4+Xu2EYLoZQzdug1VT0GNnNSGrmS+MaqbDRVQY7kbT5TdCNFeH8iBxtZAk2AuscRRCU
-        8sIE3t5If1pzTyNfShupoKRTjA6fCX0vLehbsMDsMSK9NQ1CBS9Iq6Jw5BRie5u+wE+g9ZSOrqUYoYYX
-        Eqp4ITIjQ6KjS6m/X6adN+1fvn8DPGaAEztEPfgAAAAASUVORK5CYII=
-</value>
   </data>
   <data name="btnNew.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -426,6 +417,9 @@
         7EAbVwu6M+3peM0Z/O9GksVOkj+07FLvpMxflz7jN3QF2zMAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btnCancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 27</value>
+  </data>
   <data name="&gt;&gt;pnlDetails.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -437,6 +431,9 @@
   </data>
   <data name="dgvList.Size" type="System.Drawing.Size, System.Drawing">
     <value>439, 194</value>
+  </data>
+  <data name="&gt;&gt;btnDelete.Parent" xml:space="preserve">
+    <value>pnlList</value>
   </data>
   <data name="btnSelect.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -471,6 +468,12 @@
   <data name="&gt;&gt;btnSelect.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="lblDeleteItem.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 207</value>
+  </data>
+  <data name="btnAccept.Text" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
   <data name="lblDeleteItem.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -483,11 +486,11 @@
   <data name="&gt;&gt;btnNew.Parent" xml:space="preserve">
     <value>pnlList</value>
   </data>
-  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
-    <value>pnlDetails</value>
+  <data name="btnNew.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="btnEdit.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="ptbProgress.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 83</value>
   </data>
   <data name="btnEdit.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 34</value>
@@ -524,14 +527,11 @@
   <data name="dgvList.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="btnAccept.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>Mds.Biodata.Forms.frmBase, Mds.Biodata.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="pnlList.Size" type="System.Drawing.Size, System.Drawing">
-    <value>572, 205</value>
+  <data name="btnAccept.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
   <data name="&gt;&gt;btnDelete.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -539,8 +539,8 @@
   <data name="pnlDetails.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
   </data>
-  <data name="btnClose.Location" type="System.Drawing.Point, System.Drawing">
-    <value>448, 163</value>
+  <data name="&gt;&gt;btnDelete.Type" xml:space="preserve">
+    <value>Medusa.Biodata.FrontEnd.UserControls.ButtonUC, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
     <value>btnDelete</value>
@@ -551,8 +551,8 @@
   <data name="pnlDetails.Size" type="System.Drawing.Size, System.Drawing">
     <value>411, 273</value>
   </data>
-  <data name="lblDeleteItem.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 207</value>
+  <data name="&gt;&gt;pnlDetails.Name" xml:space="preserve">
+    <value>pnlDetails</value>
   </data>
   <data name="pnlDetails.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -575,8 +575,8 @@
   <data name="btnSelect.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="lblDeleteItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 13</value>
+  <data name="&gt;&gt;btnCancel.Parent" xml:space="preserve">
+    <value>pnlDetails</value>
   </data>
   <data name="btnCancel.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -590,8 +590,8 @@
   <data name="&gt;&gt;pnlDetails.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblDeleteItem.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopRight</value>
+  <data name="btnSelect.Location" type="System.Drawing.Point, System.Drawing">
+    <value>448, 3</value>
   </data>
   <data name="pnlList.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -608,8 +608,8 @@
   <data name="btnClose.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;pnlList.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;btnEdit.Type" xml:space="preserve">
+    <value>Medusa.Biodata.FrontEnd.UserControls.ButtonUC, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="btnDelete.Size" type="System.Drawing.Size, System.Drawing">
     <value>121, 34</value>
@@ -638,8 +638,8 @@
   <data name="btnDelete.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="btnDelete.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+  <data name="&gt;&gt;lblDeleteItem.Name" xml:space="preserve">
+    <value>lblDeleteItem</value>
   </data>
   <data name="pnlList.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -661,8 +661,5 @@
   </metadata>
   <metadata name="bgwLoad.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>English</value>
   </metadata>
 </root>

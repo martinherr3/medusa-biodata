@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCiudad));
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.cmbProvincia = new System.Windows.Forms.ComboBox();
@@ -38,18 +39,74 @@
             this.pnlDetails.SuspendLayout();
             this.SuspendLayout();
             // 
+            // lblDeleteItem
+            // 
+            this.lblDeleteItem.AccessibleDescription = null;
+            this.lblDeleteItem.AccessibleName = null;
+            resources.ApplyResources(this.lblDeleteItem, "lblDeleteItem");
+            // 
+            // pnlList
+            // 
+            this.pnlList.AccessibleDescription = null;
+            this.pnlList.AccessibleName = null;
+            resources.ApplyResources(this.pnlList, "pnlList");
+            this.pnlList.BackgroundImage = null;
+            this.pnlList.Font = null;
+            // 
+            // btnClose
+            // 
+            this.btnClose.AccessibleDescription = null;
+            this.btnClose.AccessibleName = null;
+            resources.ApplyResources(this.btnClose, "btnClose");
+            this.btnClose.BackgroundImage = null;
+            this.btnClose.Font = null;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AccessibleDescription = null;
+            this.btnDelete.AccessibleName = null;
+            resources.ApplyResources(this.btnDelete, "btnDelete");
+            this.btnDelete.BackgroundImage = null;
+            this.btnDelete.Font = null;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.AccessibleDescription = null;
+            this.btnEdit.AccessibleName = null;
+            resources.ApplyResources(this.btnEdit, "btnEdit");
+            this.btnEdit.BackgroundImage = null;
+            this.btnEdit.Font = null;
+            // 
+            // btnNew
+            // 
+            this.btnNew.AccessibleDescription = null;
+            this.btnNew.AccessibleName = null;
+            resources.ApplyResources(this.btnNew, "btnNew");
+            this.btnNew.BackgroundImage = null;
+            this.btnNew.Font = null;
+            // 
             // btnSelect
             // 
+            this.btnSelect.AccessibleDescription = null;
+            this.btnSelect.AccessibleName = null;
+            resources.ApplyResources(this.btnSelect, "btnSelect");
+            this.btnSelect.BackgroundImage = null;
+            this.btnSelect.Font = null;
             this.btnSelect.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnSelect_Click);
             // 
             // pnlDetails
             // 
+            this.pnlDetails.AccessibleDescription = null;
+            this.pnlDetails.AccessibleName = null;
+            resources.ApplyResources(this.pnlDetails, "pnlDetails");
+            this.pnlDetails.BackgroundImage = null;
             this.pnlDetails.Controls.Add(this.lblProvincia);
             this.pnlDetails.Controls.Add(this.lblDescripcion);
             this.pnlDetails.Controls.Add(this.lblID);
             this.pnlDetails.Controls.Add(this.cmbProvincia);
             this.pnlDetails.Controls.Add(this.txtDescripcion);
             this.pnlDetails.Controls.Add(this.txtID);
+            this.pnlDetails.Font = null;
             this.pnlDetails.Controls.SetChildIndex(this.txtID, 0);
             this.pnlDetails.Controls.SetChildIndex(this.btnAccept, 0);
             this.pnlDetails.Controls.SetChildIndex(this.btnCancel, 0);
@@ -60,8 +117,21 @@
             this.pnlDetails.Controls.SetChildIndex(this.lblDescripcion, 0);
             this.pnlDetails.Controls.SetChildIndex(this.lblProvincia, 0);
             // 
+            // btnCancel
+            // 
+            this.btnCancel.AccessibleDescription = null;
+            this.btnCancel.AccessibleName = null;
+            resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.BackgroundImage = null;
+            this.btnCancel.Font = null;
+            // 
             // btnAccept
             // 
+            this.btnAccept.AccessibleDescription = null;
+            this.btnAccept.AccessibleName = null;
+            resources.ApplyResources(this.btnAccept, "btnAccept");
+            this.btnAccept.BackgroundImage = null;
+            this.btnAccept.Font = null;
             this.btnAccept.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnAccept_Click);
             // 
             // bgwLoad
@@ -71,62 +141,67 @@
             // 
             // txtID
             // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(126, 37);
+            this.txtID.AccessibleDescription = null;
+            this.txtID.AccessibleName = null;
+            resources.ApplyResources(this.txtID, "txtID");
+            this.txtID.BackgroundImage = null;
+            this.txtID.Font = null;
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(63, 20);
-            this.txtID.TabIndex = 5;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(126, 74);
+            this.txtDescripcion.AccessibleDescription = null;
+            this.txtDescripcion.AccessibleName = null;
+            resources.ApplyResources(this.txtDescripcion, "txtDescripcion");
+            this.txtDescripcion.BackgroundImage = null;
+            this.txtDescripcion.Font = null;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(219, 20);
-            this.txtDescripcion.TabIndex = 6;
             // 
             // cmbProvincia
             // 
+            this.cmbProvincia.AccessibleDescription = null;
+            this.cmbProvincia.AccessibleName = null;
+            resources.ApplyResources(this.cmbProvincia, "cmbProvincia");
+            this.cmbProvincia.BackgroundImage = null;
             this.cmbProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbProvincia.Font = null;
             this.cmbProvincia.FormattingEnabled = true;
-            this.cmbProvincia.Location = new System.Drawing.Point(126, 114);
             this.cmbProvincia.Name = "cmbProvincia";
-            this.cmbProvincia.Size = new System.Drawing.Size(219, 21);
-            this.cmbProvincia.TabIndex = 7;
             // 
             // lblID
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(102, 40);
+            this.lblID.AccessibleDescription = null;
+            this.lblID.AccessibleName = null;
+            resources.ApplyResources(this.lblID, "lblID");
+            this.lblID.Font = null;
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(18, 13);
-            this.lblID.TabIndex = 8;
-            this.lblID.Text = "ID";
             // 
             // lblDescripcion
             // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(57, 81);
+            this.lblDescripcion.AccessibleDescription = null;
+            this.lblDescripcion.AccessibleName = null;
+            resources.ApplyResources(this.lblDescripcion, "lblDescripcion");
+            this.lblDescripcion.Font = null;
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
-            this.lblDescripcion.TabIndex = 9;
-            this.lblDescripcion.Text = "Descripcion";
             // 
             // lblProvincia
             // 
-            this.lblProvincia.AutoSize = true;
-            this.lblProvincia.Location = new System.Drawing.Point(69, 122);
+            this.lblProvincia.AccessibleDescription = null;
+            this.lblProvincia.AccessibleName = null;
+            resources.ApplyResources(this.lblProvincia, "lblProvincia");
+            this.lblProvincia.Font = null;
             this.lblProvincia.Name = "lblProvincia";
-            this.lblProvincia.Size = new System.Drawing.Size(51, 13);
-            this.lblProvincia.TabIndex = 10;
-            this.lblProvincia.Text = "Provincia";
             // 
             // frmCiudad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 509);
+            this.BackgroundImage = null;
+            this.Font = null;
+            this.Icon = null;
             this.Name = "frmCiudad";
-            this.Text = "frmCiudad";
             this.Load += new System.EventHandler(this.frmCiudad_Load);
             this.pnlList.ResumeLayout(false);
             this.pnlDetails.ResumeLayout(false);

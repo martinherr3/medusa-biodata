@@ -70,8 +70,8 @@ namespace Mds.Biodata.Forms
         {
             this.CiudadObjectView = new ObjectView(typeof(Ciudad));
             this.CiudadObjectView.AllowRemove = false;
-            this.CiudadObjectView.Columns.Add("Descripcion", "Descripcion");
-            this.CiudadObjectView.Columns.Add("IDProvinciaLookup.Descripcion", "Provincia");
+            this.CiudadObjectView.Columns.Add("Descripcion", Translate("Descripcion"));
+            this.CiudadObjectView.Columns.Add("IDProvinciaLookup.Descripcion", Translate("Provincia"));
      
             this.CiudadCurrencyManager = this.dgvList.BindingContext[this.CiudadObjectView];
         }
@@ -119,7 +119,7 @@ namespace Mds.Biodata.Forms
         {
             if (txtDescripcion.Text == "" || txtDescripcion.Text == null)
             {
-                ProcesarAdvertencia("Debe ingresar la advertencia del paciente");
+                ProcesarAdvertencia(Translate("Debe ingresar la descripción de la ciudad"));
                 return false;
             }
             return true;

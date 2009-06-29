@@ -229,6 +229,8 @@ namespace Mds.Biodata.Forms
             // 
             // frmABMBase
             // 
+            //this.BotonClick += new BotonClickEventHandler(this.Accion);
+            this.BotonClick += new BotonClickEventHandler(this.Accion);
             this.AccessibleDescription = null;
             this.AccessibleName = null;
             resources.ApplyResources(this, "$this");
