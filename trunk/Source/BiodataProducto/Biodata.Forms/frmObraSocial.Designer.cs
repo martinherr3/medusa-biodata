@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmObraSocial));
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
@@ -50,14 +51,65 @@
             // 
             // lblDeleteItem
             // 
-            this.lblDeleteItem.Location = new System.Drawing.Point(277, 260);
+            this.lblDeleteItem.AccessibleDescription = null;
+            this.lblDeleteItem.AccessibleName = null;
+            resources.ApplyResources(this.lblDeleteItem, "lblDeleteItem");
+            // 
+            // pnlList
+            // 
+            this.pnlList.AccessibleDescription = null;
+            this.pnlList.AccessibleName = null;
+            resources.ApplyResources(this.pnlList, "pnlList");
+            this.pnlList.BackgroundImage = null;
+            this.pnlList.Font = null;
+            // 
+            // btnClose
+            // 
+            this.btnClose.AccessibleDescription = null;
+            this.btnClose.AccessibleName = null;
+            resources.ApplyResources(this.btnClose, "btnClose");
+            this.btnClose.BackgroundImage = null;
+            this.btnClose.Font = null;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.AccessibleDescription = null;
+            this.btnDelete.AccessibleName = null;
+            resources.ApplyResources(this.btnDelete, "btnDelete");
+            this.btnDelete.BackgroundImage = null;
+            this.btnDelete.Font = null;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.AccessibleDescription = null;
+            this.btnEdit.AccessibleName = null;
+            resources.ApplyResources(this.btnEdit, "btnEdit");
+            this.btnEdit.BackgroundImage = null;
+            this.btnEdit.Font = null;
+            // 
+            // btnNew
+            // 
+            this.btnNew.AccessibleDescription = null;
+            this.btnNew.AccessibleName = null;
+            resources.ApplyResources(this.btnNew, "btnNew");
+            this.btnNew.BackgroundImage = null;
+            this.btnNew.Font = null;
             // 
             // btnSelect
             // 
+            this.btnSelect.AccessibleDescription = null;
+            this.btnSelect.AccessibleName = null;
+            resources.ApplyResources(this.btnSelect, "btnSelect");
+            this.btnSelect.BackgroundImage = null;
+            this.btnSelect.Font = null;
             this.btnSelect.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnSelect_Click);
             // 
             // pnlDetails
             // 
+            this.pnlDetails.AccessibleDescription = null;
+            this.pnlDetails.AccessibleName = null;
+            resources.ApplyResources(this.pnlDetails, "pnlDetails");
+            this.pnlDetails.BackgroundImage = null;
             this.pnlDetails.Controls.Add(this.lblPaginaWeb);
             this.pnlDetails.Controls.Add(this.lblCorreoElectronico);
             this.pnlDetails.Controls.Add(this.lblCUIT);
@@ -74,8 +126,7 @@
             this.pnlDetails.Controls.Add(this.txtRazonSocial);
             this.pnlDetails.Controls.Add(this.txtDireccion);
             this.pnlDetails.Controls.Add(this.txtID);
-            this.pnlDetails.Location = new System.Drawing.Point(12, 228);
-            this.pnlDetails.Size = new System.Drawing.Size(480, 333);
+            this.pnlDetails.Font = null;
             this.pnlDetails.Controls.SetChildIndex(this.txtID, 0);
             this.pnlDetails.Controls.SetChildIndex(this.btnAccept, 0);
             this.pnlDetails.Controls.SetChildIndex(this.btnCancel, 0);
@@ -98,11 +149,19 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(364, 296);
+            this.btnCancel.AccessibleDescription = null;
+            this.btnCancel.AccessibleName = null;
+            resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.BackgroundImage = null;
+            this.btnCancel.Font = null;
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(245, 296);
+            this.btnAccept.AccessibleDescription = null;
+            this.btnAccept.AccessibleName = null;
+            resources.ApplyResources(this.btnAccept, "btnAccept");
+            this.btnAccept.BackgroundImage = null;
+            this.btnAccept.Font = null;
             this.btnAccept.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnAccept_Click);
             // 
             // bgwLoad
@@ -112,141 +171,150 @@
             // 
             // txtID
             // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(113, 33);
+            this.txtID.AccessibleDescription = null;
+            this.txtID.AccessibleName = null;
+            resources.ApplyResources(this.txtID, "txtID");
+            this.txtID.BackgroundImage = null;
+            this.txtID.Font = null;
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(42, 20);
-            this.txtID.TabIndex = 5;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(113, 85);
+            this.txtDireccion.AccessibleDescription = null;
+            this.txtDireccion.AccessibleName = null;
+            resources.ApplyResources(this.txtDireccion, "txtDireccion");
+            this.txtDireccion.BackgroundImage = null;
+            this.txtDireccion.Font = null;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(257, 20);
-            this.txtDireccion.TabIndex = 8;
             // 
             // txtRazonSocial
             // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(113, 59);
+            this.txtRazonSocial.AccessibleDescription = null;
+            this.txtRazonSocial.AccessibleName = null;
+            resources.ApplyResources(this.txtRazonSocial, "txtRazonSocial");
+            this.txtRazonSocial.BackgroundImage = null;
+            this.txtRazonSocial.Font = null;
             this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(257, 20);
-            this.txtRazonSocial.TabIndex = 7;
             // 
             // txtContacto
             // 
-            this.txtContacto.Location = new System.Drawing.Point(113, 137);
+            this.txtContacto.AccessibleDescription = null;
+            this.txtContacto.AccessibleName = null;
+            resources.ApplyResources(this.txtContacto, "txtContacto");
+            this.txtContacto.BackgroundImage = null;
+            this.txtContacto.Font = null;
             this.txtContacto.Name = "txtContacto";
-            this.txtContacto.Size = new System.Drawing.Size(175, 20);
-            this.txtContacto.TabIndex = 10;
             // 
             // txtCUIT
             // 
-            this.txtCUIT.Location = new System.Drawing.Point(113, 163);
-            this.txtCUIT.MaxLength = 13;
+            this.txtCUIT.AccessibleDescription = null;
+            this.txtCUIT.AccessibleName = null;
+            resources.ApplyResources(this.txtCUIT, "txtCUIT");
+            this.txtCUIT.BackgroundImage = null;
+            this.txtCUIT.Font = null;
             this.txtCUIT.Name = "txtCUIT";
-            this.txtCUIT.Size = new System.Drawing.Size(175, 20);
-            this.txtCUIT.TabIndex = 11;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(113, 111);
+            this.txtTelefono.AccessibleDescription = null;
+            this.txtTelefono.AccessibleName = null;
+            resources.ApplyResources(this.txtTelefono, "txtTelefono");
+            this.txtTelefono.BackgroundImage = null;
+            this.txtTelefono.Font = null;
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(175, 20);
-            this.txtTelefono.TabIndex = 9;
             // 
             // txtCorreoElectronico
             // 
-            this.txtCorreoElectronico.Location = new System.Drawing.Point(113, 189);
+            this.txtCorreoElectronico.AccessibleDescription = null;
+            this.txtCorreoElectronico.AccessibleName = null;
+            resources.ApplyResources(this.txtCorreoElectronico, "txtCorreoElectronico");
+            this.txtCorreoElectronico.BackgroundImage = null;
+            this.txtCorreoElectronico.Font = null;
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
-            this.txtCorreoElectronico.Size = new System.Drawing.Size(175, 20);
-            this.txtCorreoElectronico.TabIndex = 12;
             // 
             // txtPaginaWeb
             // 
-            this.txtPaginaWeb.Location = new System.Drawing.Point(113, 215);
+            this.txtPaginaWeb.AccessibleDescription = null;
+            this.txtPaginaWeb.AccessibleName = null;
+            resources.ApplyResources(this.txtPaginaWeb, "txtPaginaWeb");
+            this.txtPaginaWeb.BackgroundImage = null;
+            this.txtPaginaWeb.Font = null;
             this.txtPaginaWeb.Name = "txtPaginaWeb";
-            this.txtPaginaWeb.Size = new System.Drawing.Size(175, 20);
-            this.txtPaginaWeb.TabIndex = 13;
             // 
             // lblID
             // 
-            this.lblID.AutoSize = true;
-            this.lblID.Location = new System.Drawing.Point(88, 36);
+            this.lblID.AccessibleDescription = null;
+            this.lblID.AccessibleName = null;
+            resources.ApplyResources(this.lblID, "lblID");
+            this.lblID.Font = null;
             this.lblID.Name = "lblID";
-            this.lblID.Size = new System.Drawing.Size(18, 13);
-            this.lblID.TabIndex = 13;
-            this.lblID.Text = "ID";
             // 
             // lblRazonSocial
             // 
-            this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.Location = new System.Drawing.Point(37, 62);
+            this.lblRazonSocial.AccessibleDescription = null;
+            this.lblRazonSocial.AccessibleName = null;
+            resources.ApplyResources(this.lblRazonSocial, "lblRazonSocial");
+            this.lblRazonSocial.Font = null;
             this.lblRazonSocial.Name = "lblRazonSocial";
-            this.lblRazonSocial.Size = new System.Drawing.Size(70, 13);
-            this.lblRazonSocial.TabIndex = 14;
-            this.lblRazonSocial.Text = "Razon Social";
             // 
             // lblDireccion
             // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(55, 88);
+            this.lblDireccion.AccessibleDescription = null;
+            this.lblDireccion.AccessibleName = null;
+            resources.ApplyResources(this.lblDireccion, "lblDireccion");
+            this.lblDireccion.Font = null;
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
-            this.lblDireccion.TabIndex = 15;
-            this.lblDireccion.Text = "Dirección";
             // 
             // lblCUIT
             // 
-            this.lblCUIT.AutoSize = true;
-            this.lblCUIT.Location = new System.Drawing.Point(75, 166);
+            this.lblCUIT.AccessibleDescription = null;
+            this.lblCUIT.AccessibleName = null;
+            resources.ApplyResources(this.lblCUIT, "lblCUIT");
+            this.lblCUIT.Font = null;
             this.lblCUIT.Name = "lblCUIT";
-            this.lblCUIT.Size = new System.Drawing.Size(32, 13);
-            this.lblCUIT.TabIndex = 18;
-            this.lblCUIT.Text = "CUIT";
             // 
             // lblContacto
             // 
-            this.lblContacto.AutoSize = true;
-            this.lblContacto.Location = new System.Drawing.Point(57, 140);
+            this.lblContacto.AccessibleDescription = null;
+            this.lblContacto.AccessibleName = null;
+            resources.ApplyResources(this.lblContacto, "lblContacto");
+            this.lblContacto.Font = null;
             this.lblContacto.Name = "lblContacto";
-            this.lblContacto.Size = new System.Drawing.Size(50, 13);
-            this.lblContacto.TabIndex = 17;
-            this.lblContacto.Text = "Contacto";
             // 
             // lblTelefono
             // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(57, 114);
+            this.lblTelefono.AccessibleDescription = null;
+            this.lblTelefono.AccessibleName = null;
+            resources.ApplyResources(this.lblTelefono, "lblTelefono");
+            this.lblTelefono.Font = null;
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
-            this.lblTelefono.TabIndex = 16;
-            this.lblTelefono.Text = "Telefono";
             // 
             // lblPaginaWeb
             // 
-            this.lblPaginaWeb.AutoSize = true;
-            this.lblPaginaWeb.Location = new System.Drawing.Point(44, 214);
+            this.lblPaginaWeb.AccessibleDescription = null;
+            this.lblPaginaWeb.AccessibleName = null;
+            resources.ApplyResources(this.lblPaginaWeb, "lblPaginaWeb");
+            this.lblPaginaWeb.Font = null;
             this.lblPaginaWeb.Name = "lblPaginaWeb";
-            this.lblPaginaWeb.Size = new System.Drawing.Size(63, 13);
-            this.lblPaginaWeb.TabIndex = 20;
-            this.lblPaginaWeb.Text = "PaginaWeb";
             // 
             // lblCorreoElectronico
             // 
-            this.lblCorreoElectronico.AutoSize = true;
-            this.lblCorreoElectronico.Location = new System.Drawing.Point(16, 188);
+            this.lblCorreoElectronico.AccessibleDescription = null;
+            this.lblCorreoElectronico.AccessibleName = null;
+            resources.ApplyResources(this.lblCorreoElectronico, "lblCorreoElectronico");
+            this.lblCorreoElectronico.Font = null;
             this.lblCorreoElectronico.Name = "lblCorreoElectronico";
-            this.lblCorreoElectronico.Size = new System.Drawing.Size(94, 13);
-            this.lblCorreoElectronico.TabIndex = 19;
-            this.lblCorreoElectronico.Text = "Correo Electronico";
             // 
             // frmObraSocial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 573);
+            this.BackgroundImage = null;
+            this.Font = null;
+            this.Icon = null;
             this.Name = "frmObraSocial";
-            this.Text = "Obra Social";
             this.Load += new System.EventHandler(this.frmObraSocial_Load);
             this.pnlList.ResumeLayout(false);
             this.pnlDetails.ResumeLayout(false);
