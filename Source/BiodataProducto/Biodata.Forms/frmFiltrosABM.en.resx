@@ -117,29 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;gpbFiltros.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="gpbFiltros.Text" xml:space="preserve">
+    <value>Filters</value>
+  </data>
+  <data name="btnCerrar.Text" xml:space="preserve">
+    <value>Close</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnBuscar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 30</value>
-  </data>
-  <data name="&gt;&gt;sptContenedor.Panel1.Parent" xml:space="preserve">
-    <value>sptContenedor</value>
-  </data>
-  <data name="&gt;&gt;bgwLoad.Type" xml:space="preserve">
-    <value>System.ComponentModel.BackgroundWorker, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnBuscar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>568, 19</value>
-  </data>
-  <data name="btnBuscar.Text" xml:space="preserve">
-    <value>Buscar</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnCerrar.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Right</value>
-  </data>
   <data name="ptbProgress.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhIAAgAPYAAP////8AAP76+v7i4v7S0v7U1P7u7v78/P729v64uP5sbP5ERP5OTv6IiP7W1v70
@@ -214,160 +198,6 @@
         QzwCRVjAEkBwwYAFFIRoCC9XXBCSToQEAgA7AAAAAAAAAAAA
 </value>
   </data>
-  <data name="&gt;&gt;ptbProgress.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="ptbProgress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 34</value>
-  </data>
-  <data name="dgvConsultas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>688, 346</value>
-  </data>
-  <data name="sptContenedor.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
-    <value>Horizontal</value>
-  </data>
-  <data name="&gt;&gt;gpbFiltros.Name" xml:space="preserve">
-    <value>gpbFiltros</value>
-  </data>
-  <data name="&gt;&gt;dgvConsultas.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnCerrar.Parent" xml:space="preserve">
-    <value>sptContenedor.Panel1</value>
-  </data>
-  <data name="gpbFiltros.Size" type="System.Drawing.Size, System.Drawing">
-    <value>688, 83</value>
-  </data>
-  <data name="btnCerrar.Text" xml:space="preserve">
-    <value>Cerrar</value>
-  </data>
-  <data name="&gt;&gt;sptContenedor.Panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>frmFiltrosABM</value>
-  </data>
-  <data name="&gt;&gt;btnBuscar.Parent" xml:space="preserve">
-    <value>gpbFiltros</value>
-  </data>
-  <data name="&gt;&gt;sptContenedor.Name" xml:space="preserve">
-    <value>sptContenedor</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="ptbProgress.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;btnBuscar.Name" xml:space="preserve">
-    <value>btnBuscar</value>
-  </data>
-  <data name="dgvConsultas.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="gpbFiltros.Text" xml:space="preserve">
-    <value>Filtros</value>
-  </data>
-  <data name="&gt;&gt;sptContenedor.Panel2.Parent" xml:space="preserve">
-    <value>sptContenedor</value>
-  </data>
-  <data name="dgvConsultas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 26</value>
-  </data>
-  <data name="&gt;&gt;dgvConsultas.Type" xml:space="preserve">
-    <value>Medusa.Biodata.FrontEnd.UserControls.GridView, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>Mds.Biodata.Forms.frmBase, Mds.Biodata.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btnCerrar.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ptbProgress.Name" xml:space="preserve">
-    <value>ptbProgress</value>
-  </data>
-  <data name="&gt;&gt;btnBuscar.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ptbProgress.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;dgvConsultas.Parent" xml:space="preserve">
-    <value>sptContenedor.Panel2</value>
-  </data>
-  <data name="&gt;&gt;sptContenedor.Panel2.Name" xml:space="preserve">
-    <value>sptContenedor.Panel2</value>
-  </data>
-  <data name="gpbFiltros.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;gpbFiltros.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnBuscar.Type" xml:space="preserve">
-    <value>Medusa.Biodata.FrontEnd.UserControls.ButtonUC, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;bgwLoad.Name" xml:space="preserve">
-    <value>bgwLoad</value>
-  </data>
-  <data name="&gt;&gt;btnCerrar.Type" xml:space="preserve">
-    <value>Medusa.Biodata.FrontEnd.UserControls.ButtonUC, Mds.Biodata.UserControls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="sptContenedor.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;ptbProgress.Parent" xml:space="preserve">
-    <value>sptContenedor.Panel2</value>
-  </data>
-  <data name="&gt;&gt;sptContenedor.Panel1.Name" xml:space="preserve">
-    <value>sptContenedor.Panel1</value>
-  </data>
-  <data name="ptbProgress.Location" type="System.Drawing.Point, System.Drawing">
-    <value>355, 138</value>
-  </data>
-  <data name="&gt;&gt;sptContenedor.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>828, 554</value>
-  </data>
-  <data name="&gt;&gt;sptContenedor.Panel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="sptContenedor.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="sptContenedor.Panel1.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="btnBuscar.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btnCerrar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>736, 31</value>
-  </data>
-  <data name="btnCerrar.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="sptContenedor.Size" type="System.Drawing.Size, System.Drawing">
-    <value>828, 554</value>
-  </data>
-  <data name="&gt;&gt;ptbProgress.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="sptContenedor.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;gpbFiltros.Parent" xml:space="preserve">
-    <value>sptContenedor.Panel1</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="sptContenedor.Panel2.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
-    <value>No</value>
-  </data>
-  <data name="gpbFiltros.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 12</value>
-  </data>
   <data name="btnBuscar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -426,37 +256,7 @@
         UGwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="&gt;&gt;sptContenedor.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="btnBuscar.Text" xml:space="preserve">
+    <value>Search</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>frmFiltrosABM</value>
-  </data>
-  <data name="&gt;&gt;sptContenedor.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnCerrar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 30</value>
-  </data>
-  <data name="sptContenedor.SplitterDistance" type="System.Int32, mscorlib">
-    <value>111</value>
-  </data>
-  <data name="&gt;&gt;dgvConsultas.Name" xml:space="preserve">
-    <value>dgvConsultas</value>
-  </data>
-  <data name="&gt;&gt;sptContenedor.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sptContenedor.Panel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;btnCerrar.Name" xml:space="preserve">
-    <value>btnCerrar</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="bgwLoad.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
 </root>

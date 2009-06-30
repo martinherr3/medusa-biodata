@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
+            this.spcRight = new System.Windows.Forms.SplitContainer();
+            this.splitLeft = new System.Windows.Forms.SplitContainer();
+            this.tbcPrincipal = new Dotnetrix.Controls.TabControlEX();
             this.tosPrincipal = new System.Windows.Forms.ToolStrip();
             this.tsbUsuarioLogueado = new System.Windows.Forms.ToolStripLabel();
             this.tsbPaciente = new System.Windows.Forms.ToolStripButton();
@@ -72,19 +75,85 @@
             this.tsmAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmObraSocial = new System.Windows.Forms.ToolStripMenuItem();
-            this.spcRight = new System.Windows.Forms.SplitContainer();
-            this.splitLeft = new System.Windows.Forms.SplitContainer();
-            this.tbcPrincipal = new Dotnetrix.Controls.TabControlEX();
-            this.tosPrincipal.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.spcRight.Panel1.SuspendLayout();
             this.spcRight.Panel2.SuspendLayout();
             this.spcRight.SuspendLayout();
             this.splitLeft.SuspendLayout();
+            this.tosPrincipal.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // spcRight
+            // 
+            this.spcRight.AccessibleDescription = null;
+            this.spcRight.AccessibleName = null;
+            resources.ApplyResources(this.spcRight, "spcRight");
+            this.spcRight.BackgroundImage = null;
+            this.spcRight.Font = null;
+            this.spcRight.Name = "spcRight";
+            // 
+            // spcRight.Panel1
+            // 
+            this.spcRight.Panel1.AccessibleDescription = null;
+            this.spcRight.Panel1.AccessibleName = null;
+            resources.ApplyResources(this.spcRight.Panel1, "spcRight.Panel1");
+            this.spcRight.Panel1.BackgroundImage = null;
+            this.spcRight.Panel1.Controls.Add(this.splitLeft);
+            this.spcRight.Panel1.Font = null;
+            this.spcRight.Panel1Collapsed = true;
+            // 
+            // spcRight.Panel2
+            // 
+            this.spcRight.Panel2.AccessibleDescription = null;
+            this.spcRight.Panel2.AccessibleName = null;
+            resources.ApplyResources(this.spcRight.Panel2, "spcRight.Panel2");
+            this.spcRight.Panel2.BackgroundImage = null;
+            this.spcRight.Panel2.Controls.Add(this.tbcPrincipal);
+            this.spcRight.Panel2.Font = null;
+            // 
+            // splitLeft
+            // 
+            this.splitLeft.AccessibleDescription = null;
+            this.splitLeft.AccessibleName = null;
+            resources.ApplyResources(this.splitLeft, "splitLeft");
+            this.splitLeft.BackgroundImage = null;
+            this.splitLeft.Font = null;
+            this.splitLeft.Name = "splitLeft";
+            // 
+            // splitLeft.Panel1
+            // 
+            this.splitLeft.Panel1.AccessibleDescription = null;
+            this.splitLeft.Panel1.AccessibleName = null;
+            resources.ApplyResources(this.splitLeft.Panel1, "splitLeft.Panel1");
+            this.splitLeft.Panel1.BackgroundImage = null;
+            this.splitLeft.Panel1.Font = null;
+            // 
+            // splitLeft.Panel2
+            // 
+            this.splitLeft.Panel2.AccessibleDescription = null;
+            this.splitLeft.Panel2.AccessibleName = null;
+            resources.ApplyResources(this.splitLeft.Panel2, "splitLeft.Panel2");
+            this.splitLeft.Panel2.BackgroundImage = null;
+            this.splitLeft.Panel2.Font = null;
+            // 
+            // tbcPrincipal
+            // 
+            this.tbcPrincipal.AccessibleDescription = null;
+            this.tbcPrincipal.AccessibleName = null;
+            resources.ApplyResources(this.tbcPrincipal, "tbcPrincipal");
+            this.tbcPrincipal.AllowDrop = true;
+            this.tbcPrincipal.AllowTabDrag = true;
+            this.tbcPrincipal.BackgroundImage = null;
+            this.tbcPrincipal.Font = null;
+            this.tbcPrincipal.Name = "tbcPrincipal";
             // 
             // tosPrincipal
             // 
+            this.tosPrincipal.AccessibleDescription = null;
+            this.tosPrincipal.AccessibleName = null;
+            resources.ApplyResources(this.tosPrincipal, "tosPrincipal");
+            this.tosPrincipal.BackgroundImage = null;
+            this.tosPrincipal.Font = null;
             this.tosPrincipal.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.tosPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbUsuarioLogueado,
@@ -98,99 +167,108 @@
             this.tsbReporteAudifono,
             this.toolStripSeparator3,
             this.tsbAyuda});
-            this.tosPrincipal.Location = new System.Drawing.Point(0, 24);
             this.tosPrincipal.Name = "tosPrincipal";
-            this.tosPrincipal.Size = new System.Drawing.Size(936, 39);
-            this.tosPrincipal.TabIndex = 2;
-            this.tosPrincipal.Text = "ToolStrip1";
             // 
             // tsbUsuarioLogueado
             // 
+            this.tsbUsuarioLogueado.AccessibleDescription = null;
+            this.tsbUsuarioLogueado.AccessibleName = null;
             this.tsbUsuarioLogueado.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            resources.ApplyResources(this.tsbUsuarioLogueado, "tsbUsuarioLogueado");
+            this.tsbUsuarioLogueado.BackgroundImage = null;
             this.tsbUsuarioLogueado.Name = "tsbUsuarioLogueado";
-            this.tsbUsuarioLogueado.Size = new System.Drawing.Size(50, 36);
-            this.tsbUsuarioLogueado.Text = "Usuario: ";
             // 
             // tsbPaciente
             // 
+            this.tsbPaciente.AccessibleDescription = null;
+            this.tsbPaciente.AccessibleName = null;
+            resources.ApplyResources(this.tsbPaciente, "tsbPaciente");
+            this.tsbPaciente.BackgroundImage = null;
             this.tsbPaciente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbPaciente.Image = ((System.Drawing.Image)(resources.GetObject("tsbPaciente.Image")));
-            this.tsbPaciente.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbPaciente.Name = "tsbPaciente";
-            this.tsbPaciente.Size = new System.Drawing.Size(36, 36);
-            this.tsbPaciente.Text = "Pacientes";
             // 
             // tsbEstudio
             // 
+            this.tsbEstudio.AccessibleDescription = null;
+            this.tsbEstudio.AccessibleName = null;
+            resources.ApplyResources(this.tsbEstudio, "tsbEstudio");
+            this.tsbEstudio.BackgroundImage = null;
             this.tsbEstudio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbEstudio.Image = ((System.Drawing.Image)(resources.GetObject("tsbEstudio.Image")));
-            this.tsbEstudio.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEstudio.Name = "tsbEstudio";
-            this.tsbEstudio.Size = new System.Drawing.Size(36, 36);
-            this.tsbEstudio.Text = "Estudio";
             // 
             // toolStripSeparator1
             // 
+            this.toolStripSeparator1.AccessibleDescription = null;
+            this.toolStripSeparator1.AccessibleName = null;
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
             // tsbRecordatorio
             // 
+            this.tsbRecordatorio.AccessibleDescription = null;
+            this.tsbRecordatorio.AccessibleName = null;
+            resources.ApplyResources(this.tsbRecordatorio, "tsbRecordatorio");
+            this.tsbRecordatorio.BackgroundImage = null;
             this.tsbRecordatorio.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbRecordatorio.Image = ((System.Drawing.Image)(resources.GetObject("tsbRecordatorio.Image")));
-            this.tsbRecordatorio.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbRecordatorio.Name = "tsbRecordatorio";
-            this.tsbRecordatorio.Size = new System.Drawing.Size(36, 36);
-            this.tsbRecordatorio.Text = "Recordatorios";
             // 
             // tsbAudifono
             // 
+            this.tsbAudifono.AccessibleDescription = null;
+            this.tsbAudifono.AccessibleName = null;
+            resources.ApplyResources(this.tsbAudifono, "tsbAudifono");
+            this.tsbAudifono.BackgroundImage = null;
             this.tsbAudifono.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbAudifono.Image = ((System.Drawing.Image)(resources.GetObject("tsbAudifono.Image")));
-            this.tsbAudifono.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAudifono.Name = "tsbAudifono";
-            this.tsbAudifono.Size = new System.Drawing.Size(36, 36);
-            this.tsbAudifono.Text = "Audifonos";
             // 
             // toolStripSeparator2
             // 
+            this.toolStripSeparator2.AccessibleDescription = null;
+            this.toolStripSeparator2.AccessibleName = null;
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
             // tsbReportePaciente
             // 
+            this.tsbReportePaciente.AccessibleDescription = null;
+            this.tsbReportePaciente.AccessibleName = null;
+            resources.ApplyResources(this.tsbReportePaciente, "tsbReportePaciente");
+            this.tsbReportePaciente.BackgroundImage = null;
             this.tsbReportePaciente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbReportePaciente.Image = ((System.Drawing.Image)(resources.GetObject("tsbReportePaciente.Image")));
-            this.tsbReportePaciente.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbReportePaciente.Name = "tsbReportePaciente";
-            this.tsbReportePaciente.Size = new System.Drawing.Size(36, 36);
-            this.tsbReportePaciente.Text = "Reporte de Pacientes";
             // 
             // tsbReporteAudifono
             // 
+            this.tsbReporteAudifono.AccessibleDescription = null;
+            this.tsbReporteAudifono.AccessibleName = null;
+            resources.ApplyResources(this.tsbReporteAudifono, "tsbReporteAudifono");
+            this.tsbReporteAudifono.BackgroundImage = null;
             this.tsbReporteAudifono.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbReporteAudifono.Image = ((System.Drawing.Image)(resources.GetObject("tsbReporteAudifono.Image")));
-            this.tsbReporteAudifono.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbReporteAudifono.Name = "tsbReporteAudifono";
-            this.tsbReporteAudifono.Size = new System.Drawing.Size(36, 36);
-            this.tsbReporteAudifono.Text = "Reporte de Audifonos";
             // 
             // toolStripSeparator3
             // 
+            this.toolStripSeparator3.AccessibleDescription = null;
+            this.toolStripSeparator3.AccessibleName = null;
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
             // 
             // tsbAyuda
             // 
+            this.tsbAyuda.AccessibleDescription = null;
+            this.tsbAyuda.AccessibleName = null;
+            resources.ApplyResources(this.tsbAyuda, "tsbAyuda");
+            this.tsbAyuda.BackgroundImage = null;
             this.tsbAyuda.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbAyuda.Image = ((System.Drawing.Image)(resources.GetObject("tsbAyuda.Image")));
-            this.tsbAyuda.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbAyuda.Name = "tsbAyuda";
-            this.tsbAyuda.Size = new System.Drawing.Size(36, 36);
-            this.tsbAyuda.Text = "Ayuda";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.AccessibleDescription = null;
+            this.menuStrip1.AccessibleName = null;
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.BackgroundImage = null;
+            this.menuStrip1.Font = null;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmPaciente,
             this.tsmEstudio,
@@ -199,106 +277,142 @@
             this.tsmReporte,
             this.tsmHerramientasSeguridad,
             this.tsmAyuda});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(936, 24);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
             // 
             // tsmPaciente
             // 
+            this.tsmPaciente.AccessibleDescription = null;
+            this.tsmPaciente.AccessibleName = null;
+            resources.ApplyResources(this.tsmPaciente, "tsmPaciente");
+            this.tsmPaciente.BackgroundImage = null;
             this.tsmPaciente.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmGestionPaciente,
             this.tsmGestionCiudad,
             this.tsmGestionObraSocial,
             this.tsmSeleccionAudifono});
             this.tsmPaciente.Name = "tsmPaciente";
-            this.tsmPaciente.Size = new System.Drawing.Size(65, 20);
-            this.tsmPaciente.Text = "Pacientes";
+            this.tsmPaciente.ShortcutKeyDisplayString = null;
             // 
             // tsmGestionPaciente
             // 
+            this.tsmGestionPaciente.AccessibleDescription = null;
+            this.tsmGestionPaciente.AccessibleName = null;
+            resources.ApplyResources(this.tsmGestionPaciente, "tsmGestionPaciente");
+            this.tsmGestionPaciente.BackgroundImage = null;
             this.tsmGestionPaciente.Name = "tsmGestionPaciente";
-            this.tsmGestionPaciente.Size = new System.Drawing.Size(209, 22);
-            this.tsmGestionPaciente.Text = "Gestión de Pacientes";
+            this.tsmGestionPaciente.ShortcutKeyDisplayString = null;
             this.tsmGestionPaciente.Click += new System.EventHandler(this.tsmGestionPaciente_Click);
             // 
             // tsmGestionCiudad
             // 
+            this.tsmGestionCiudad.AccessibleDescription = null;
+            this.tsmGestionCiudad.AccessibleName = null;
+            resources.ApplyResources(this.tsmGestionCiudad, "tsmGestionCiudad");
+            this.tsmGestionCiudad.BackgroundImage = null;
             this.tsmGestionCiudad.Name = "tsmGestionCiudad";
-            this.tsmGestionCiudad.Size = new System.Drawing.Size(209, 22);
-            this.tsmGestionCiudad.Text = "Gestión de Ciudades";
+            this.tsmGestionCiudad.ShortcutKeyDisplayString = null;
             this.tsmGestionCiudad.Click += new System.EventHandler(this.tsmGestionCiudad_Click);
             // 
             // tsmGestionObraSocial
             // 
+            this.tsmGestionObraSocial.AccessibleDescription = null;
+            this.tsmGestionObraSocial.AccessibleName = null;
+            resources.ApplyResources(this.tsmGestionObraSocial, "tsmGestionObraSocial");
+            this.tsmGestionObraSocial.BackgroundImage = null;
             this.tsmGestionObraSocial.Name = "tsmGestionObraSocial";
-            this.tsmGestionObraSocial.Size = new System.Drawing.Size(209, 22);
-            this.tsmGestionObraSocial.Text = "Gestión de Obras Sociales";
+            this.tsmGestionObraSocial.ShortcutKeyDisplayString = null;
             this.tsmGestionObraSocial.Click += new System.EventHandler(this.tsmGestionObraSocial_Click);
             // 
             // tsmSeleccionAudifono
             // 
+            this.tsmSeleccionAudifono.AccessibleDescription = null;
+            this.tsmSeleccionAudifono.AccessibleName = null;
+            resources.ApplyResources(this.tsmSeleccionAudifono, "tsmSeleccionAudifono");
+            this.tsmSeleccionAudifono.BackgroundImage = null;
             this.tsmSeleccionAudifono.Name = "tsmSeleccionAudifono";
-            this.tsmSeleccionAudifono.Size = new System.Drawing.Size(209, 22);
-            this.tsmSeleccionAudifono.Text = "Selección de Audífono";
+            this.tsmSeleccionAudifono.ShortcutKeyDisplayString = null;
             this.tsmSeleccionAudifono.Click += new System.EventHandler(this.tsmSeleccionAudifono_Click);
             // 
             // tsmEstudio
             // 
+            this.tsmEstudio.AccessibleDescription = null;
+            this.tsmEstudio.AccessibleName = null;
+            resources.ApplyResources(this.tsmEstudio, "tsmEstudio");
+            this.tsmEstudio.BackgroundImage = null;
             this.tsmEstudio.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmNuevoEstudio,
             this.tsmConsultarEstudio});
             this.tsmEstudio.Name = "tsmEstudio";
-            this.tsmEstudio.Size = new System.Drawing.Size(54, 20);
-            this.tsmEstudio.Text = "Estudio";
+            this.tsmEstudio.ShortcutKeyDisplayString = null;
             // 
             // tsmNuevoEstudio
             // 
+            this.tsmNuevoEstudio.AccessibleDescription = null;
+            this.tsmNuevoEstudio.AccessibleName = null;
+            resources.ApplyResources(this.tsmNuevoEstudio, "tsmNuevoEstudio");
+            this.tsmNuevoEstudio.BackgroundImage = null;
             this.tsmNuevoEstudio.Name = "tsmNuevoEstudio";
-            this.tsmNuevoEstudio.Size = new System.Drawing.Size(218, 22);
-            this.tsmNuevoEstudio.Text = "Generar Nuevo Estudio";
+            this.tsmNuevoEstudio.ShortcutKeyDisplayString = null;
             this.tsmNuevoEstudio.Click += new System.EventHandler(this.tsmNuevoEstudio_Click);
             // 
             // tsmConsultarEstudio
             // 
+            this.tsmConsultarEstudio.AccessibleDescription = null;
+            this.tsmConsultarEstudio.AccessibleName = null;
+            resources.ApplyResources(this.tsmConsultarEstudio, "tsmConsultarEstudio");
+            this.tsmConsultarEstudio.BackgroundImage = null;
             this.tsmConsultarEstudio.Name = "tsmConsultarEstudio";
-            this.tsmConsultarEstudio.Size = new System.Drawing.Size(218, 22);
-            this.tsmConsultarEstudio.Text = "Consultar Estudio Realizado";
+            this.tsmConsultarEstudio.ShortcutKeyDisplayString = null;
             this.tsmConsultarEstudio.Click += new System.EventHandler(this.tsmConsultarEstudio_Click);
             // 
             // tsmAudifono
             // 
+            this.tsmAudifono.AccessibleDescription = null;
+            this.tsmAudifono.AccessibleName = null;
+            resources.ApplyResources(this.tsmAudifono, "tsmAudifono");
+            this.tsmAudifono.BackgroundImage = null;
             this.tsmAudifono.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmGestionAudifono});
             this.tsmAudifono.Name = "tsmAudifono";
-            this.tsmAudifono.Size = new System.Drawing.Size(67, 20);
-            this.tsmAudifono.Text = "Audífonos";
+            this.tsmAudifono.ShortcutKeyDisplayString = null;
             // 
             // tsmGestionAudifono
             // 
+            this.tsmGestionAudifono.AccessibleDescription = null;
+            this.tsmGestionAudifono.AccessibleName = null;
+            resources.ApplyResources(this.tsmGestionAudifono, "tsmGestionAudifono");
+            this.tsmGestionAudifono.BackgroundImage = null;
             this.tsmGestionAudifono.Name = "tsmGestionAudifono";
-            this.tsmGestionAudifono.Size = new System.Drawing.Size(187, 22);
-            this.tsmGestionAudifono.Text = "Gestión de Audífonos";
+            this.tsmGestionAudifono.ShortcutKeyDisplayString = null;
             this.tsmGestionAudifono.Click += new System.EventHandler(this.tsmGestionAudifono_Click);
             // 
             // tsmAgenda
             // 
+            this.tsmAgenda.AccessibleDescription = null;
+            this.tsmAgenda.AccessibleName = null;
+            resources.ApplyResources(this.tsmAgenda, "tsmAgenda");
+            this.tsmAgenda.BackgroundImage = null;
             this.tsmAgenda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmRecordatorio});
             this.tsmAgenda.Name = "tsmAgenda";
-            this.tsmAgenda.Size = new System.Drawing.Size(56, 20);
-            this.tsmAgenda.Text = "Agenda";
+            this.tsmAgenda.ShortcutKeyDisplayString = null;
             // 
             // tsmRecordatorio
             // 
+            this.tsmRecordatorio.AccessibleDescription = null;
+            this.tsmRecordatorio.AccessibleName = null;
+            resources.ApplyResources(this.tsmRecordatorio, "tsmRecordatorio");
+            this.tsmRecordatorio.BackgroundImage = null;
             this.tsmRecordatorio.Name = "tsmRecordatorio";
-            this.tsmRecordatorio.Size = new System.Drawing.Size(152, 22);
-            this.tsmRecordatorio.Text = "Recordatorios";
+            this.tsmRecordatorio.ShortcutKeyDisplayString = null;
             this.tsmRecordatorio.Click += new System.EventHandler(this.tsmRecordatorio_Click);
             // 
             // tsmReporte
             // 
+            this.tsmReporte.AccessibleDescription = null;
+            this.tsmReporte.AccessibleName = null;
+            resources.ApplyResources(this.tsmReporte, "tsmReporte");
+            this.tsmReporte.BackgroundImage = null;
             this.tsmReporte.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmInformeFichaPaciente,
             this.tsmReportePaciente,
@@ -309,193 +423,206 @@
             this.tsmReportePacientesPorAudifono,
             this.tsmReporteAudifonosPorPaciente});
             this.tsmReporte.Name = "tsmReporte";
-            this.tsmReporte.Size = new System.Drawing.Size(63, 20);
-            this.tsmReporte.Text = "Reportes";
+            this.tsmReporte.ShortcutKeyDisplayString = null;
             // 
             // tsmInformeFichaPaciente
             // 
+            this.tsmInformeFichaPaciente.AccessibleDescription = null;
+            this.tsmInformeFichaPaciente.AccessibleName = null;
+            resources.ApplyResources(this.tsmInformeFichaPaciente, "tsmInformeFichaPaciente");
+            this.tsmInformeFichaPaciente.BackgroundImage = null;
             this.tsmInformeFichaPaciente.Name = "tsmInformeFichaPaciente";
-            this.tsmInformeFichaPaciente.Size = new System.Drawing.Size(253, 22);
-            this.tsmInformeFichaPaciente.Text = "Informe de Ficha de Paciente";
+            this.tsmInformeFichaPaciente.ShortcutKeyDisplayString = null;
             this.tsmInformeFichaPaciente.Click += new System.EventHandler(this.tsmInformeFichaPaciente_Click);
             // 
             // tsmReportePaciente
             // 
+            this.tsmReportePaciente.AccessibleDescription = null;
+            this.tsmReportePaciente.AccessibleName = null;
+            resources.ApplyResources(this.tsmReportePaciente, "tsmReportePaciente");
+            this.tsmReportePaciente.BackgroundImage = null;
             this.tsmReportePaciente.Name = "tsmReportePaciente";
-            this.tsmReportePaciente.Size = new System.Drawing.Size(253, 22);
-            this.tsmReportePaciente.Text = "Reporte de Pacientes";
+            this.tsmReportePaciente.ShortcutKeyDisplayString = null;
             this.tsmReportePaciente.Click += new System.EventHandler(this.tsmReportePaciente_Click);
             // 
             // tsmReporteAudifono
             // 
+            this.tsmReporteAudifono.AccessibleDescription = null;
+            this.tsmReporteAudifono.AccessibleName = null;
+            resources.ApplyResources(this.tsmReporteAudifono, "tsmReporteAudifono");
+            this.tsmReporteAudifono.BackgroundImage = null;
             this.tsmReporteAudifono.Name = "tsmReporteAudifono";
-            this.tsmReporteAudifono.Size = new System.Drawing.Size(253, 22);
-            this.tsmReporteAudifono.Text = "Reporte de Audífonos";
+            this.tsmReporteAudifono.ShortcutKeyDisplayString = null;
             this.tsmReporteAudifono.Click += new System.EventHandler(this.tsmReporteAudifono_Click);
             // 
             // tsmReporteObraSocial
             // 
+            this.tsmReporteObraSocial.AccessibleDescription = null;
+            this.tsmReporteObraSocial.AccessibleName = null;
+            resources.ApplyResources(this.tsmReporteObraSocial, "tsmReporteObraSocial");
+            this.tsmReporteObraSocial.BackgroundImage = null;
             this.tsmReporteObraSocial.Name = "tsmReporteObraSocial";
-            this.tsmReporteObraSocial.Size = new System.Drawing.Size(253, 22);
-            this.tsmReporteObraSocial.Text = "Reporte de Obras Sociales";
+            this.tsmReporteObraSocial.ShortcutKeyDisplayString = null;
             this.tsmReporteObraSocial.Click += new System.EventHandler(this.tsmReporteObraSocial_Click);
             // 
             // tsmReporteEstudiosPaciente
             // 
+            this.tsmReporteEstudiosPaciente.AccessibleDescription = null;
+            this.tsmReporteEstudiosPaciente.AccessibleName = null;
+            resources.ApplyResources(this.tsmReporteEstudiosPaciente, "tsmReporteEstudiosPaciente");
+            this.tsmReporteEstudiosPaciente.BackgroundImage = null;
             this.tsmReporteEstudiosPaciente.Name = "tsmReporteEstudiosPaciente";
-            this.tsmReporteEstudiosPaciente.Size = new System.Drawing.Size(253, 22);
-            this.tsmReporteEstudiosPaciente.Text = "Reporte de Estudios por Paciente";
+            this.tsmReporteEstudiosPaciente.ShortcutKeyDisplayString = null;
             this.tsmReporteEstudiosPaciente.Click += new System.EventHandler(this.tsmReporteEstudiosPaciente_Click);
             // 
             // tsmReporteRecordatorio
             // 
+            this.tsmReporteRecordatorio.AccessibleDescription = null;
+            this.tsmReporteRecordatorio.AccessibleName = null;
+            resources.ApplyResources(this.tsmReporteRecordatorio, "tsmReporteRecordatorio");
+            this.tsmReporteRecordatorio.BackgroundImage = null;
             this.tsmReporteRecordatorio.Name = "tsmReporteRecordatorio";
-            this.tsmReporteRecordatorio.Size = new System.Drawing.Size(253, 22);
-            this.tsmReporteRecordatorio.Text = "Reporte de Recordatorio";
+            this.tsmReporteRecordatorio.ShortcutKeyDisplayString = null;
             this.tsmReporteRecordatorio.Click += new System.EventHandler(this.tsmReporteRecordatorio_Click);
             // 
             // tsmReportePacientesPorAudifono
             // 
+            this.tsmReportePacientesPorAudifono.AccessibleDescription = null;
+            this.tsmReportePacientesPorAudifono.AccessibleName = null;
+            resources.ApplyResources(this.tsmReportePacientesPorAudifono, "tsmReportePacientesPorAudifono");
+            this.tsmReportePacientesPorAudifono.BackgroundImage = null;
             this.tsmReportePacientesPorAudifono.Name = "tsmReportePacientesPorAudifono";
-            this.tsmReportePacientesPorAudifono.Size = new System.Drawing.Size(253, 22);
-            this.tsmReportePacientesPorAudifono.Text = "Reporte de Pacientes por Audífono";
+            this.tsmReportePacientesPorAudifono.ShortcutKeyDisplayString = null;
             this.tsmReportePacientesPorAudifono.Click += new System.EventHandler(this.tsmReportePacientesPorAudifono_Click);
             // 
             // tsmReporteAudifonosPorPaciente
             // 
+            this.tsmReporteAudifonosPorPaciente.AccessibleDescription = null;
+            this.tsmReporteAudifonosPorPaciente.AccessibleName = null;
+            resources.ApplyResources(this.tsmReporteAudifonosPorPaciente, "tsmReporteAudifonosPorPaciente");
+            this.tsmReporteAudifonosPorPaciente.BackgroundImage = null;
             this.tsmReporteAudifonosPorPaciente.Name = "tsmReporteAudifonosPorPaciente";
-            this.tsmReporteAudifonosPorPaciente.Size = new System.Drawing.Size(253, 22);
-            this.tsmReporteAudifonosPorPaciente.Text = "Reporte de Audífonos por paciente";
+            this.tsmReporteAudifonosPorPaciente.ShortcutKeyDisplayString = null;
             this.tsmReporteAudifonosPorPaciente.Click += new System.EventHandler(this.tsmReporteAudifonosPorPaciente_Click);
             // 
             // tsmHerramientasSeguridad
             // 
+            this.tsmHerramientasSeguridad.AccessibleDescription = null;
+            this.tsmHerramientasSeguridad.AccessibleName = null;
+            resources.ApplyResources(this.tsmHerramientasSeguridad, "tsmHerramientasSeguridad");
+            this.tsmHerramientasSeguridad.BackgroundImage = null;
             this.tsmHerramientasSeguridad.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmGestionParametrosSistema,
             this.tsmCambioPasswordUsuario,
             this.tsmBackUpBaseDatos});
             this.tsmHerramientasSeguridad.Name = "tsmHerramientasSeguridad";
-            this.tsmHerramientasSeguridad.Size = new System.Drawing.Size(143, 20);
-            this.tsmHerramientasSeguridad.Text = "Herramientas y Seguridad";
+            this.tsmHerramientasSeguridad.ShortcutKeyDisplayString = null;
             // 
             // tsmGestionParametrosSistema
             // 
+            this.tsmGestionParametrosSistema.AccessibleDescription = null;
+            this.tsmGestionParametrosSistema.AccessibleName = null;
+            resources.ApplyResources(this.tsmGestionParametrosSistema, "tsmGestionParametrosSistema");
+            this.tsmGestionParametrosSistema.BackgroundImage = null;
             this.tsmGestionParametrosSistema.Name = "tsmGestionParametrosSistema";
-            this.tsmGestionParametrosSistema.Size = new System.Drawing.Size(251, 22);
-            this.tsmGestionParametrosSistema.Text = "Gestión de Parametros del Sistema";
+            this.tsmGestionParametrosSistema.ShortcutKeyDisplayString = null;
             this.tsmGestionParametrosSistema.Click += new System.EventHandler(this.tsmGestionParametrosSistema_Click);
             // 
             // tsmCambioPasswordUsuario
             // 
+            this.tsmCambioPasswordUsuario.AccessibleDescription = null;
+            this.tsmCambioPasswordUsuario.AccessibleName = null;
+            resources.ApplyResources(this.tsmCambioPasswordUsuario, "tsmCambioPasswordUsuario");
+            this.tsmCambioPasswordUsuario.BackgroundImage = null;
             this.tsmCambioPasswordUsuario.Name = "tsmCambioPasswordUsuario";
-            this.tsmCambioPasswordUsuario.Size = new System.Drawing.Size(251, 22);
-            this.tsmCambioPasswordUsuario.Text = "Cambio de Password del Usuario";
+            this.tsmCambioPasswordUsuario.ShortcutKeyDisplayString = null;
             this.tsmCambioPasswordUsuario.Click += new System.EventHandler(this.tsmCambioPasswordUsuario_Click);
             // 
             // tsmBackUpBaseDatos
             // 
+            this.tsmBackUpBaseDatos.AccessibleDescription = null;
+            this.tsmBackUpBaseDatos.AccessibleName = null;
+            resources.ApplyResources(this.tsmBackUpBaseDatos, "tsmBackUpBaseDatos");
+            this.tsmBackUpBaseDatos.BackgroundImage = null;
             this.tsmBackUpBaseDatos.Name = "tsmBackUpBaseDatos";
-            this.tsmBackUpBaseDatos.Size = new System.Drawing.Size(251, 22);
-            this.tsmBackUpBaseDatos.Text = "BackUp de Base de Datos";
+            this.tsmBackUpBaseDatos.ShortcutKeyDisplayString = null;
             this.tsmBackUpBaseDatos.Click += new System.EventHandler(this.tsmBackUpBaseDatos_Click);
             // 
             // tsmAyuda
             // 
+            this.tsmAyuda.AccessibleDescription = null;
+            this.tsmAyuda.AccessibleName = null;
+            resources.ApplyResources(this.tsmAyuda, "tsmAyuda");
+            this.tsmAyuda.BackgroundImage = null;
             this.tsmAyuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmManualAyuda,
             this.tsmAcercaDe,
             this.tsmSalir});
             this.tsmAyuda.Name = "tsmAyuda";
-            this.tsmAyuda.Size = new System.Drawing.Size(50, 20);
-            this.tsmAyuda.Text = "Ayuda";
+            this.tsmAyuda.ShortcutKeyDisplayString = null;
             // 
             // tsmManualAyuda
             // 
+            this.tsmManualAyuda.AccessibleDescription = null;
+            this.tsmManualAyuda.AccessibleName = null;
+            resources.ApplyResources(this.tsmManualAyuda, "tsmManualAyuda");
+            this.tsmManualAyuda.BackgroundImage = null;
             this.tsmManualAyuda.Name = "tsmManualAyuda";
-            this.tsmManualAyuda.Size = new System.Drawing.Size(168, 22);
-            this.tsmManualAyuda.Text = "Manual de Ayuda";
+            this.tsmManualAyuda.ShortcutKeyDisplayString = null;
             this.tsmManualAyuda.Click += new System.EventHandler(this.tsmManualAyuda_Click);
             // 
             // tsmAcercaDe
             // 
+            this.tsmAcercaDe.AccessibleDescription = null;
+            this.tsmAcercaDe.AccessibleName = null;
+            resources.ApplyResources(this.tsmAcercaDe, "tsmAcercaDe");
+            this.tsmAcercaDe.BackgroundImage = null;
             this.tsmAcercaDe.Name = "tsmAcercaDe";
-            this.tsmAcercaDe.Size = new System.Drawing.Size(168, 22);
-            this.tsmAcercaDe.Text = "Acerca de ...";
+            this.tsmAcercaDe.ShortcutKeyDisplayString = null;
             this.tsmAcercaDe.Click += new System.EventHandler(this.tsmAcercaDe_Click);
             // 
             // tsmSalir
             // 
+            this.tsmSalir.AccessibleDescription = null;
+            this.tsmSalir.AccessibleName = null;
+            resources.ApplyResources(this.tsmSalir, "tsmSalir");
+            this.tsmSalir.BackgroundImage = null;
             this.tsmSalir.Name = "tsmSalir";
-            this.tsmSalir.Size = new System.Drawing.Size(168, 22);
-            this.tsmSalir.Text = "Salir";
+            this.tsmSalir.ShortcutKeyDisplayString = null;
             this.tsmSalir.Click += new System.EventHandler(this.tsmSalir_Click);
             // 
             // tsmObraSocial
             // 
+            this.tsmObraSocial.AccessibleDescription = null;
+            this.tsmObraSocial.AccessibleName = null;
+            resources.ApplyResources(this.tsmObraSocial, "tsmObraSocial");
+            this.tsmObraSocial.BackgroundImage = null;
             this.tsmObraSocial.Name = "tsmObraSocial";
-            this.tsmObraSocial.Size = new System.Drawing.Size(32, 19);
-            // 
-            // spcRight
-            // 
-            this.spcRight.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.spcRight.Location = new System.Drawing.Point(0, 63);
-            this.spcRight.Name = "spcRight";
-            // 
-            // spcRight.Panel1
-            // 
-            this.spcRight.Panel1.Controls.Add(this.splitLeft);
-            this.spcRight.Panel1Collapsed = true;
-            // 
-            // spcRight.Panel2
-            // 
-            this.spcRight.Panel2.Controls.Add(this.tbcPrincipal);
-            this.spcRight.Size = new System.Drawing.Size(936, 478);
-            this.spcRight.SplitterDistance = 94;
-            this.spcRight.TabIndex = 4;
-            // 
-            // splitLeft
-            // 
-            this.splitLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitLeft.Location = new System.Drawing.Point(0, 0);
-            this.splitLeft.Name = "splitLeft";
-            this.splitLeft.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.splitLeft.Size = new System.Drawing.Size(94, 100);
-            this.splitLeft.SplitterDistance = 66;
-            this.splitLeft.TabIndex = 0;
-            this.splitLeft.Visible = false;
-            // 
-            // tbcPrincipal
-            // 
-            this.tbcPrincipal.AllowDrop = true;
-            this.tbcPrincipal.AllowTabDrag = true;
-            this.tbcPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbcPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.tbcPrincipal.Name = "tbcPrincipal";
-            this.tbcPrincipal.Size = new System.Drawing.Size(936, 478);
-            this.tbcPrincipal.TabIndex = 0;
+            this.tsmObraSocial.ShortcutKeyDisplayString = null;
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 541);
+            this.BackgroundImage = null;
             this.Controls.Add(this.spcRight);
             this.Controls.Add(this.tosPrincipal);
             this.Controls.Add(this.menuStrip1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Font = null;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
-            this.Text = "Audiologia - Gestión";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
-            this.tosPrincipal.ResumeLayout(false);
-            this.tosPrincipal.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.spcRight.Panel1.ResumeLayout(false);
             this.spcRight.Panel2.ResumeLayout(false);
             this.spcRight.ResumeLayout(false);
             this.splitLeft.ResumeLayout(false);
+            this.tosPrincipal.ResumeLayout(false);
+            this.tosPrincipal.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

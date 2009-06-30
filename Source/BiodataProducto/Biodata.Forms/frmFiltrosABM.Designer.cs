@@ -37,73 +37,95 @@
             this.gpbFiltros = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
             this.btnCerrar = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
-            this.dgvConsultas = new Medusa.Biodata.FrontEnd.UserControls.GridView(this.components);
             this.ptbProgress = new System.Windows.Forms.PictureBox();
+            this.dgvConsultas = new Medusa.Biodata.FrontEnd.UserControls.GridView(this.components);
             this.bgwLoad = new System.ComponentModel.BackgroundWorker();
             this.sptContenedor.Panel1.SuspendLayout();
             this.sptContenedor.Panel2.SuspendLayout();
             this.sptContenedor.SuspendLayout();
             this.gpbFiltros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbProgress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).BeginInit();
             this.SuspendLayout();
             // 
             // sptContenedor
             // 
-            this.sptContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sptContenedor.Location = new System.Drawing.Point(0, 0);
+            this.sptContenedor.AccessibleDescription = null;
+            this.sptContenedor.AccessibleName = null;
+            resources.ApplyResources(this.sptContenedor, "sptContenedor");
+            this.sptContenedor.BackgroundImage = null;
+            this.sptContenedor.Font = null;
             this.sptContenedor.Name = "sptContenedor";
-            this.sptContenedor.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // sptContenedor.Panel1
             // 
+            this.sptContenedor.Panel1.AccessibleDescription = null;
+            this.sptContenedor.Panel1.AccessibleName = null;
+            resources.ApplyResources(this.sptContenedor.Panel1, "sptContenedor.Panel1");
+            this.sptContenedor.Panel1.BackgroundImage = null;
             this.sptContenedor.Panel1.Controls.Add(this.gpbFiltros);
             this.sptContenedor.Panel1.Controls.Add(this.btnCerrar);
-            this.sptContenedor.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.sptContenedor.Panel1.Font = null;
             // 
             // sptContenedor.Panel2
             // 
+            this.sptContenedor.Panel2.AccessibleDescription = null;
+            this.sptContenedor.Panel2.AccessibleName = null;
+            resources.ApplyResources(this.sptContenedor.Panel2, "sptContenedor.Panel2");
+            this.sptContenedor.Panel2.BackgroundImage = null;
             this.sptContenedor.Panel2.Controls.Add(this.ptbProgress);
             this.sptContenedor.Panel2.Controls.Add(this.dgvConsultas);
-            this.sptContenedor.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.sptContenedor.Size = new System.Drawing.Size(828, 554);
-            this.sptContenedor.SplitterDistance = 111;
-            this.sptContenedor.TabIndex = 0;
+            this.sptContenedor.Panel2.Font = null;
             // 
             // gpbFiltros
             // 
+            this.gpbFiltros.AccessibleDescription = null;
+            this.gpbFiltros.AccessibleName = null;
+            resources.ApplyResources(this.gpbFiltros, "gpbFiltros");
+            this.gpbFiltros.BackgroundImage = null;
             this.gpbFiltros.Controls.Add(this.btnBuscar);
-            this.gpbFiltros.Location = new System.Drawing.Point(28, 12);
+            this.gpbFiltros.Font = null;
             this.gpbFiltros.Name = "gpbFiltros";
-            this.gpbFiltros.Size = new System.Drawing.Size(688, 83);
-            this.gpbFiltros.TabIndex = 6;
             this.gpbFiltros.TabStop = false;
-            this.gpbFiltros.Text = "Filtros";
             // 
             // btnBuscar
             // 
+            this.btnBuscar.AccessibleDescription = null;
+            this.btnBuscar.AccessibleName = null;
+            resources.ApplyResources(this.btnBuscar, "btnBuscar");
+            this.btnBuscar.BackgroundImage = null;
+            this.btnBuscar.Font = null;
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.Location = new System.Drawing.Point(568, 19);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(114, 30);
-            this.btnBuscar.TabIndex = 0;
-            this.btnBuscar.Text = "Buscar";
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCerrar.AccessibleDescription = null;
+            this.btnCerrar.AccessibleName = null;
+            resources.ApplyResources(this.btnCerrar, "btnCerrar");
+            this.btnCerrar.BackgroundImage = null;
+            this.btnCerrar.Font = null;
             this.btnCerrar.Image = null;
             this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnCerrar.Location = new System.Drawing.Point(736, 31);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(80, 30);
-            this.btnCerrar.TabIndex = 5;
-            this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnCerrar_Click);
+            // 
+            // ptbProgress
+            // 
+            this.ptbProgress.AccessibleDescription = null;
+            this.ptbProgress.AccessibleName = null;
+            resources.ApplyResources(this.ptbProgress, "ptbProgress");
+            this.ptbProgress.BackgroundImage = null;
+            this.ptbProgress.Font = null;
+            this.ptbProgress.ImageLocation = null;
+            this.ptbProgress.Name = "ptbProgress";
+            this.ptbProgress.TabStop = false;
             // 
             // dgvConsultas
             // 
+            this.dgvConsultas.AccessibleDescription = null;
+            this.dgvConsultas.AccessibleName = null;
             this.dgvConsultas.AllowUserToAddRows = false;
             this.dgvConsultas.AllowUserToDeleteRows = false;
             this.dgvConsultas.AllowUserToResizeRows = false;
@@ -112,8 +134,10 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvConsultas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            resources.ApplyResources(this.dgvConsultas, "dgvConsultas");
             this.dgvConsultas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvConsultas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvConsultas.BackgroundImage = null;
             this.dgvConsultas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.SteelBlue;
@@ -133,41 +157,32 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvConsultas.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvConsultas.EnableHeadersVisualStyles = false;
+            this.dgvConsultas.Font = null;
             this.dgvConsultas.GridColor = System.Drawing.Color.Silver;
-            this.dgvConsultas.Location = new System.Drawing.Point(28, 26);
             this.dgvConsultas.MultiSelect = false;
             this.dgvConsultas.Name = "dgvConsultas";
             this.dgvConsultas.ReadOnly = true;
             this.dgvConsultas.RowHeadersVisible = false;
             this.dgvConsultas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvConsultas.Size = new System.Drawing.Size(688, 346);
-            this.dgvConsultas.TabIndex = 0;
-            // 
-            // ptbProgress
-            // 
-            this.ptbProgress.Image = ((System.Drawing.Image)(resources.GetObject("ptbProgress.Image")));
-            this.ptbProgress.Location = new System.Drawing.Point(355, 138);
-            this.ptbProgress.Name = "ptbProgress";
-            this.ptbProgress.Size = new System.Drawing.Size(35, 34);
-            this.ptbProgress.TabIndex = 5;
-            this.ptbProgress.TabStop = false;
-            this.ptbProgress.Visible = false;
             // 
             // frmFiltrosABM
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AccessibleDescription = null;
+            this.AccessibleName = null;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(828, 554);
+            this.BackgroundImage = null;
             this.Controls.Add(this.sptContenedor);
+            this.Font = null;
+            this.Icon = null;
             this.Name = "frmFiltrosABM";
-            this.Text = "frmFiltrosABM";
             this.sptContenedor.Panel1.ResumeLayout(false);
             this.sptContenedor.Panel2.ResumeLayout(false);
             this.sptContenedor.ResumeLayout(false);
             this.gpbFiltros.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptbProgress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvConsultas)).EndInit();
             this.ResumeLayout(false);
 
         }

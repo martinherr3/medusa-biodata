@@ -94,10 +94,10 @@ namespace Mds.Biodata.Forms
         {
             this.ObraSocialObjectView = new ObjectView(typeof(ObraSocial));
             this.ObraSocialObjectView.AllowRemove = false;
-            this.ObraSocialObjectView.Columns.Add("RazonSocial", "Razon Social");
-            this.ObraSocialObjectView.Columns.Add("Direccion", "Direccion");
-            this.ObraSocialObjectView.Columns.Add("Telefono", "Telefono");
-            this.ObraSocialObjectView.Columns.Add("Contacto", "Contacto");
+            this.ObraSocialObjectView.Columns.Add("RazonSocial", Translate("Razon Social"));
+            this.ObraSocialObjectView.Columns.Add("Direccion", Translate("Direccion"));
+            this.ObraSocialObjectView.Columns.Add("Telefono", Translate("Telefono"));
+            this.ObraSocialObjectView.Columns.Add("Contacto", Translate("Contacto"));
             this.ObraSocialCurrencyManager = this.dgvList.BindingContext[this.ObraSocialObjectView];
         }
 

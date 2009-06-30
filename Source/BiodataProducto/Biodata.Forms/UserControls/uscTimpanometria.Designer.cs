@@ -31,18 +31,18 @@
             this.linerCentral = new Pavr.Drawing.Liner();
             this.dgvTablaReflejosIzq = new System.Windows.Forms.DataGridView();
             this.gpbIzquierdo = new System.Windows.Forms.GroupBox();
+            this.lblCONTRAHLIzq = new System.Windows.Forms.Label();
+            this.lblIPSIHLIzq = new System.Windows.Forms.Label();
             this.rad10Izq = new System.Windows.Forms.RadioButton();
             this.rad05Izq = new System.Windows.Forms.RadioButton();
             this.lblReflexSensitivityIzq = new System.Windows.Forms.Label();
             this.gpbDerecho = new System.Windows.Forms.GroupBox();
+            this.lblCONTRAHLDer = new System.Windows.Forms.Label();
+            this.lblIPSIHLDer = new System.Windows.Forms.Label();
             this.dgvTablaReflejosDer = new System.Windows.Forms.DataGridView();
             this.rad10Der = new System.Windows.Forms.RadioButton();
             this.rad05Der = new System.Windows.Forms.RadioButton();
             this.lblReflexSensitivityDer = new System.Windows.Forms.Label();
-            this.lblIPSIHLIzq = new System.Windows.Forms.Label();
-            this.lblCONTRAHLIzq = new System.Windows.Forms.Label();
-            this.lblCONTRAHLDer = new System.Windows.Forms.Label();
-            this.lblIPSIHLDer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTablaReflejosIzq)).BeginInit();
             this.gpbIzquierdo.SuspendLayout();
             this.gpbDerecho.SuspendLayout();
@@ -61,7 +61,7 @@
             this.linerCentral.PointColor = System.Drawing.Color.Black;
             this.linerCentral.Size = new System.Drawing.Size(469, 322);
             this.linerCentral.TabIndex = 8;
-            this.linerCentral.XInterval = "-300, 200, 100, +";
+            this.linerCentral.XInterval = "-300, 200, 50, +";
             this.linerCentral.YInterval = "0, 5, 1, +";
             // 
             // dgvTablaReflejosIzq
@@ -71,7 +71,7 @@
             this.dgvTablaReflejosIzq.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTablaReflejosIzq.Location = new System.Drawing.Point(6, 41);
             this.dgvTablaReflejosIzq.Name = "dgvTablaReflejosIzq";
-            this.dgvTablaReflejosIzq.Size = new System.Drawing.Size(321, 102);
+            this.dgvTablaReflejosIzq.Size = new System.Drawing.Size(321, 85);
             this.dgvTablaReflejosIzq.TabIndex = 10;
             // 
             // gpbIzquierdo
@@ -84,10 +84,28 @@
             this.gpbIzquierdo.Controls.Add(this.dgvTablaReflejosIzq);
             this.gpbIzquierdo.Location = new System.Drawing.Point(487, 19);
             this.gpbIzquierdo.Name = "gpbIzquierdo";
-            this.gpbIzquierdo.Size = new System.Drawing.Size(403, 149);
+            this.gpbIzquierdo.Size = new System.Drawing.Size(403, 137);
             this.gpbIzquierdo.TabIndex = 11;
             this.gpbIzquierdo.TabStop = false;
             this.gpbIzquierdo.Text = "Oido Izquierdo";
+            // 
+            // lblCONTRAHLIzq
+            // 
+            this.lblCONTRAHLIzq.AutoSize = true;
+            this.lblCONTRAHLIzq.Location = new System.Drawing.Point(328, 94);
+            this.lblCONTRAHLIzq.Name = "lblCONTRAHLIzq";
+            this.lblCONTRAHLIzq.Size = new System.Drawing.Size(69, 13);
+            this.lblCONTRAHLIzq.TabIndex = 15;
+            this.lblCONTRAHLIzq.Text = "CONTRA HL";
+            // 
+            // lblIPSIHLIzq
+            // 
+            this.lblIPSIHLIzq.AutoSize = true;
+            this.lblIPSIHLIzq.Location = new System.Drawing.Point(328, 66);
+            this.lblIPSIHLIzq.Name = "lblIPSIHLIzq";
+            this.lblIPSIHLIzq.Size = new System.Drawing.Size(44, 13);
+            this.lblIPSIHLIzq.TabIndex = 14;
+            this.lblIPSIHLIzq.Text = "IPSI HL";
             // 
             // rad10Izq
             // 
@@ -128,12 +146,30 @@
             this.gpbDerecho.Controls.Add(this.rad10Der);
             this.gpbDerecho.Controls.Add(this.rad05Der);
             this.gpbDerecho.Controls.Add(this.lblReflexSensitivityDer);
-            this.gpbDerecho.Location = new System.Drawing.Point(487, 179);
+            this.gpbDerecho.Location = new System.Drawing.Point(487, 162);
             this.gpbDerecho.Name = "gpbDerecho";
-            this.gpbDerecho.Size = new System.Drawing.Size(403, 149);
+            this.gpbDerecho.Size = new System.Drawing.Size(403, 134);
             this.gpbDerecho.TabIndex = 14;
             this.gpbDerecho.TabStop = false;
             this.gpbDerecho.Text = "Oido Derecho";
+            // 
+            // lblCONTRAHLDer
+            // 
+            this.lblCONTRAHLDer.AutoSize = true;
+            this.lblCONTRAHLDer.Location = new System.Drawing.Point(328, 85);
+            this.lblCONTRAHLDer.Name = "lblCONTRAHLDer";
+            this.lblCONTRAHLDer.Size = new System.Drawing.Size(69, 13);
+            this.lblCONTRAHLDer.TabIndex = 17;
+            this.lblCONTRAHLDer.Text = "CONTRA HL";
+            // 
+            // lblIPSIHLDer
+            // 
+            this.lblIPSIHLDer.AutoSize = true;
+            this.lblIPSIHLDer.Location = new System.Drawing.Point(328, 58);
+            this.lblIPSIHLDer.Name = "lblIPSIHLDer";
+            this.lblIPSIHLDer.Size = new System.Drawing.Size(44, 13);
+            this.lblIPSIHLDer.TabIndex = 16;
+            this.lblIPSIHLDer.Text = "IPSI HL";
             // 
             // dgvTablaReflejosDer
             // 
@@ -142,7 +178,7 @@
             this.dgvTablaReflejosDer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTablaReflejosDer.Location = new System.Drawing.Point(6, 41);
             this.dgvTablaReflejosDer.Name = "dgvTablaReflejosDer";
-            this.dgvTablaReflejosDer.Size = new System.Drawing.Size(321, 102);
+            this.dgvTablaReflejosDer.Size = new System.Drawing.Size(321, 85);
             this.dgvTablaReflejosDer.TabIndex = 14;
             // 
             // rad10Der
@@ -175,42 +211,6 @@
             this.lblReflexSensitivityDer.Size = new System.Drawing.Size(92, 13);
             this.lblReflexSensitivityDer.TabIndex = 11;
             this.lblReflexSensitivityDer.Text = "Reflejo Estapedial";
-            // 
-            // lblIPSIHLIzq
-            // 
-            this.lblIPSIHLIzq.AutoSize = true;
-            this.lblIPSIHLIzq.Location = new System.Drawing.Point(328, 79);
-            this.lblIPSIHLIzq.Name = "lblIPSIHLIzq";
-            this.lblIPSIHLIzq.Size = new System.Drawing.Size(44, 13);
-            this.lblIPSIHLIzq.TabIndex = 14;
-            this.lblIPSIHLIzq.Text = "IPSI HL";
-            // 
-            // lblCONTRAHLIzq
-            // 
-            this.lblCONTRAHLIzq.AutoSize = true;
-            this.lblCONTRAHLIzq.Location = new System.Drawing.Point(328, 113);
-            this.lblCONTRAHLIzq.Name = "lblCONTRAHLIzq";
-            this.lblCONTRAHLIzq.Size = new System.Drawing.Size(69, 13);
-            this.lblCONTRAHLIzq.TabIndex = 15;
-            this.lblCONTRAHLIzq.Text = "CONTRA HL";
-            // 
-            // lblCONTRAHLDer
-            // 
-            this.lblCONTRAHLDer.AutoSize = true;
-            this.lblCONTRAHLDer.Location = new System.Drawing.Point(328, 118);
-            this.lblCONTRAHLDer.Name = "lblCONTRAHLDer";
-            this.lblCONTRAHLDer.Size = new System.Drawing.Size(69, 13);
-            this.lblCONTRAHLDer.TabIndex = 17;
-            this.lblCONTRAHLDer.Text = "CONTRA HL";
-            // 
-            // lblIPSIHLDer
-            // 
-            this.lblIPSIHLDer.AutoSize = true;
-            this.lblIPSIHLDer.Location = new System.Drawing.Point(328, 84);
-            this.lblIPSIHLDer.Name = "lblIPSIHLDer";
-            this.lblIPSIHLDer.Size = new System.Drawing.Size(44, 13);
-            this.lblIPSIHLDer.TabIndex = 16;
-            this.lblIPSIHLDer.Text = "IPSI HL";
             // 
             // uscTimpanometria
             // 
