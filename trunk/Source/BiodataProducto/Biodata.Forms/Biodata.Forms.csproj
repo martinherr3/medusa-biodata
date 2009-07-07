@@ -105,6 +105,12 @@
     <Compile Include="frmABMBase.designer.cs">
       <DependentUpon>frmABMBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAudifonos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAudifonos.Designer.cs">
+      <DependentUpon>frmAudifonos.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,12 @@
     <Compile Include="frmRecordatorio.Designer.cs">
       <DependentUpon>frmRecordatorio.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStartForm.Designer.cs">
+      <DependentUpon>frmStartForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GereralFunctions.cs" />
     <Compile Include="InputBox.cs" />
     <Compile Include="Program.cs" />
@@ -169,6 +181,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmABMBase.resx">
       <DependentUpon>frmABMBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAudifonos.resx">
+      <DependentUpon>frmAudifonos.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBase.resx">
@@ -221,6 +237,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRecordatorio.resx">
       <DependentUpon>frmRecordatorio.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStartForm.resx">
+      <DependentUpon>frmStartForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -389,6 +409,40 @@
     <Content Include="Imagenes\note_edit.png" />
     <Content Include="Imagenes\note_go.png" />
     <Content Include="Imagenes\user-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxSWDIRLib">
+      <Guid>{AC4C21AD-9194-416E-9D34-D6C1350F28F6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="ShockwaveFlashObjects">
+      <Guid>{D27CDB6B-AE6D-11CF-96B8-444553540000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="SWDIRLib">
+      <Guid>{AC4C21AD-9194-416E-9D34-D6C1350F28F6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
