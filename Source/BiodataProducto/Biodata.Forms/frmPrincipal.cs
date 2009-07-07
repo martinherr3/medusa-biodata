@@ -18,12 +18,25 @@ namespace Mds.Biodata.Forms
         {
             InitializeComponent();
         }
+
+        private void OpenStartPage()
+        {
+            try
+            {
+                GereralFunctions.AbrirFormulario(new frmStartForm(), (TabControl)this.spcRight.Panel2.Controls[0], "Start Page", DockStyle.Fill);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
         #endregion
 
         #region "--[Events]--"
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             GereralFunctions.Principal = this;
+            OpenStartPage();
         }
         #endregion
 
@@ -126,14 +139,38 @@ namespace Mds.Biodata.Forms
         #region "--[Audifono]--"
         private void tsmGestionAudifono_Click(object sender, EventArgs e)
         {
+            OpenAudifonos();
+        }
 
+        private void OpenAudifonos()
+        {
+            try
+            {
+                GereralFunctions.AbrirFormulario(new frmAudifonos(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Audifonos", DockStyle.Fill);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
         }
         #endregion
 
         #region "--[Agenda]--"
         private void tsmRecordatorio_Click(object sender, EventArgs e)
         {
+            OpenRecordatorio();
+        }
 
+        private void OpenRecordatorio()
+        {
+            try
+            {
+                GereralFunctions.AbrirFormulario(new frmRecordatorio(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Recordatorios", DockStyle.Fill);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
         }
         #endregion
 
