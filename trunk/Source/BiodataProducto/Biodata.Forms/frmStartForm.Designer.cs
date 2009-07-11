@@ -51,6 +51,7 @@
             this.Controls.Add(this.flaPresentacion);
             this.Name = "frmStartForm";
             this.Text = "frmStartForm";
+            this.Load += new System.EventHandler(this.frmStartForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.flaPresentacion)).EndInit();
             this.ResumeLayout(false);
 

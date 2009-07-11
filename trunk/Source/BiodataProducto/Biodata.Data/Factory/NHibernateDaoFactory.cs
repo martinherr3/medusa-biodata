@@ -106,5 +106,9 @@ namespace Mds.Biodata.Data
         {
             return new MarcaAudifonoDao(SessionFactoryConfigPath);
         }
+        public ITestLingDao GetTestLingDao()
+        {
+            return new TestLingDao(SessionFactoryConfigPath);
+        }
     }
 }

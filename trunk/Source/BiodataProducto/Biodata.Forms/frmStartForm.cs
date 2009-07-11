@@ -14,5 +14,10 @@ namespace Mds.Biodata.Forms
         {
             InitializeComponent();
         }
+
+        private void frmStartForm_Load(object sender, EventArgs e)
+        {
+            flaPresentacion.Movie = Application.StartupPath + "\\Imagenes\\Biodata.swf";
+        }
     }
 }
