@@ -58,6 +58,7 @@ namespace Mds.Biodata.Forms
         }
 
         private TabPage TabPageActual;
+        private Int32 TipoEstudioActual = -1;
 
         #endregion
 
@@ -66,7 +67,8 @@ namespace Mds.Biodata.Forms
         {
             InitializeComponent();
             TabPageActual = tbpSeleccionPaciente;
-            tbcEstudio.SelectedTab = tbpSeleccionPaciente; 
+            tbcEstudio.SelectedTab = tbpSeleccionPaciente;
+            LoadTipoEstudios();
         }
 
         private void InitializeObjectView()
@@ -106,13 +108,44 @@ namespace Mds.Biodata.Forms
         {
             if (tbcEstudio.SelectedTab == tbpAccionARealizar)
             {
-                tbcEstudio.SelectedIndex += 1;
-                btnSiguiente.Enabled = false;
-                CargarEstudio();
+                if (TipoEstudioActual == -1)
+                {
+                    tbcEstudio.SelectedIndex += 1;
+                    btnSiguiente.Enabled = false;
 
-                tbpSeleccionPaciente.Enabled = false;
-                tbpAccionARealizar.Enabled = false;
-                tbpEstudio.Enabled = true;
+                    tbpSeleccionPaciente.Enabled = false;
+                    tbpAccionARealizar.Enabled = false;
+                    tbpEstudio.Enabled = true;
+
+                    CargarEstudio();
+                }
+                else
+                {
+                    if (TipoEstudioActual != Convert.ToInt32((Enumeraciones.TipoEstudio)cmbTipoEstudio.SelectedItem))
+                    {
+                        if (ProcesarMensaje("El tipo de estudio ha cambiado, se reemplazara el anterior. ¿Desea continuar?", "Cambio de estudio", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            tbcEstudio.SelectedIndex += 1;
+                            btnSiguiente.Enabled = false;
+
+                            tbpSeleccionPaciente.Enabled = false;
+                            tbpAccionARealizar.Enabled = false;
+                            tbpEstudio.Enabled = true;
+
+                            CargarEstudio();
+                        }
+                    }
+                    else
+                    {
+                        tbcEstudio.SelectedIndex += 1;
+                        btnSiguiente.Enabled = false;
+
+                        tbpSeleccionPaciente.Enabled = false;
+                        tbpAccionARealizar.Enabled = false;
+                        tbpEstudio.Enabled = true;
+                    }
+                }
+  
             }
             else
             {
@@ -124,10 +157,10 @@ namespace Mds.Biodata.Forms
                 tbpEstudio.Enabled = false;
             }
 
-            if (tbcEstudio.SelectedTab == tbpAccionARealizar)
-            {
-                LoadTipoEstudios();
-            }
+            //if (tbcEstudio.SelectedTab == tbpAccionARealizar)
+            //{
+            //    LoadTipoEstudios();
+            //}
         }
 
         /// <summary>
@@ -148,16 +181,16 @@ namespace Mds.Biodata.Forms
                     wUserAudiometria.Dock = DockStyle.Fill;
                     tbpEstudio.Controls.Add(wUserAudiometria);
                     break;
-                case Enumeraciones.TipoEstudio.ImpedanciometriaDinamica:
-                    uscImpedanciometriaDinamica wUserImpedanciometriaDinamica = new uscImpedanciometriaDinamica();
-                    wUserImpedanciometriaDinamica.Dock = DockStyle.Fill;
-                    tbpEstudio.Controls.Add(wUserImpedanciometriaDinamica);
-                    break;
-                case Enumeraciones.TipoEstudio.ImpedanciometriaEstatica:
-                    uscImpedanciometriaEstatica wUserImpedanciometriaEstatica = new uscImpedanciometriaEstatica();
-                    wUserImpedanciometriaEstatica.Dock = DockStyle.Fill;
-                    tbpEstudio.Controls.Add(wUserImpedanciometriaEstatica);
-                    break;
+                //case Enumeraciones.TipoEstudio.ImpedanciometriaDinamica:
+                //    uscImpedanciometriaDinamica wUserImpedanciometriaDinamica = new uscImpedanciometriaDinamica();
+                //    wUserImpedanciometriaDinamica.Dock = DockStyle.Fill;
+                //    tbpEstudio.Controls.Add(wUserImpedanciometriaDinamica);
+                //    break;
+                //case Enumeraciones.TipoEstudio.ImpedanciometriaEstatica:
+                //    uscImpedanciometriaEstatica wUserImpedanciometriaEstatica = new uscImpedanciometriaEstatica();
+                //    wUserImpedanciometriaEstatica.Dock = DockStyle.Fill;
+                //    tbpEstudio.Controls.Add(wUserImpedanciometriaEstatica);
+                //    break;
                 case Enumeraciones.TipoEstudio.LogoAudiometria:
                     uscLogoAudiometria wUserLogoAudiometria = new uscLogoAudiometria();
                     wUserLogoAudiometria.Dock = DockStyle.Fill;
@@ -168,7 +201,14 @@ namespace Mds.Biodata.Forms
                     wUserTimpanometria.Dock = DockStyle.Fill;
                     tbpEstudio.Controls.Add(wUserTimpanometria);
                     break;
+                case Enumeraciones.TipoEstudio.TestDeLing:
+                    uscTestLing wUserTestLing = new uscTestLing();
+                    wUserTestLing.Dock = DockStyle.Fill;
+                    tbpEstudio.Controls.Add(wUserTestLing);
+                    break;
             }
+
+            TipoEstudioActual = Convert.ToInt32((Enumeraciones.TipoEstudio)cmbTipoEstudio.SelectedItem);
         }
 
         /// <summary>
@@ -223,7 +263,7 @@ namespace Mds.Biodata.Forms
                 if (ValidData())
                 {
 
-                    uscBase UseEstudio = (uscBase)tbpAccionARealizar.Controls[0];
+                    uscBase UseEstudio = (uscBase)tbpEstudio.Controls[0];
 
                     Estudio wEstudio = UseEstudio.ObtenerDatosEstudio();
 

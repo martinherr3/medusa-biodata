@@ -66,6 +66,7 @@
     <Compile Include="DataInterfaces\IProvinciaDao.cs" />
     <Compile Include="DataInterfaces\IRecordatorioDao.cs" />
     <Compile Include="DataInterfaces\ISeleccionAudifonoDao.cs" />
+    <Compile Include="DataInterfaces\ITestLingDao.cs" />
     <Compile Include="DataInterfaces\ITimpanometriaDao.cs" />
     <Compile Include="Domain\Anamnesi.cs" />
     <Compile Include="Domain\AnamnesisPregunta.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Domain\Provincia.cs" />
     <Compile Include="Domain\Recordatorio.cs" />
     <Compile Include="Domain\SeleccionAudifono.cs" />
+    <Compile Include="Domain\TestLing.cs" />
     <Compile Include="Domain\Timpanometria.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

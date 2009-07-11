@@ -507,6 +507,7 @@ namespace Mds.Biodata.Forms
                             {
                                 txtCiudad.Tag = ((Ciudad)this.Seleccion).ID;
                                 txtCiudad.Text = ((Ciudad)this.Seleccion).Descripcion;
+                                PacienteEntity.IDCiudadLookup = (Ciudad)this.Seleccion;
                             }
                             else
                             {

@@ -278,6 +278,10 @@
       <DependentUpon>uscBase.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uscTestLing.resx">
+      <DependentUpon>uscTestLing.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\uscTimpanometria.resx">
       <DependentUpon>uscTimpanometria.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -350,23 +354,17 @@
     <Compile Include="UserControls\uscBase.Designer.cs">
       <DependentUpon>uscBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\uscImpedanciometriaDinamica.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\uscImpedanciometriaDinamica.Designer.cs">
-      <DependentUpon>uscImpedanciometriaDinamica.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\uscImpedanciometriaEstatica.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\uscImpedanciometriaEstatica.Designer.cs">
-      <DependentUpon>uscImpedanciometriaEstatica.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\uscLogoAudiometria.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControls\uscLogoAudiometria.Designer.cs">
       <DependentUpon>uscLogoAudiometria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uscTestLing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uscTestLing.Designer.cs">
+      <DependentUpon>uscTestLing.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\uscTimpanometria.cs">
       <SubType>UserControl</SubType>
@@ -395,20 +393,51 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="23 JetAudio.ico" />
-    <Content Include="Imagenes\accept.png" />
-    <Content Include="Imagenes\audioprotesis.gif" />
-    <Content Include="Imagenes\cancel.png" />
-    <Content Include="Imagenes\ConsultaEstudios.png" />
-    <Content Include="Imagenes\ConsultaEstudios32.png" />
-    <Content Include="Imagenes\Estudio.png" />
-    <Content Include="Imagenes\EstudioSafe.png" />
-    <Content Include="Imagenes\iCal17.png" />
-    <Content Include="Imagenes\note.png" />
-    <Content Include="Imagenes\note_add.png" />
-    <Content Include="Imagenes\note_delete.png" />
-    <Content Include="Imagenes\note_edit.png" />
-    <Content Include="Imagenes\note_go.png" />
-    <Content Include="Imagenes\user-32.png" />
+    <Content Include="Imagenes\accept.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\audioprotesis.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Biodata.swf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\cancel.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\ConsultaEstudios.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\ConsultaEstudios32.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\Estudio.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\EstudioSafe.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\iCal17.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\note.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\note_add.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\note_delete.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\note_edit.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\note_go.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagenes\user-32.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxShockwaveFlashObjects">

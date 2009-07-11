@@ -17,7 +17,7 @@
     <property name="Celular" column="Celular" type="System.String" not-null="false" />
     <property name="IDCiudad" column="IDCiudad" type="System.Int32" not-null="false" />
     <!--<many-to-one name="IDCiudadLookup" column="IDCiudad" class="Ciudad"  update="0"  insert="0" />-->
-    <many-to-one name="IDCiudadLookup" column="IDCiudad" class="Ciudad"/>
+    <many-to-one name="IDCiudadLookup" column="IDCiudad" class="Ciudad" update="0"  insert="0"/>
     <bag name="AudifonoPacientes" table="AudifonoPaciente" inverse="true" lazy="true" cascade="delete">
       <key column="IDPaciente" />
       <one-to-many class="AudifonoPaciente"/>

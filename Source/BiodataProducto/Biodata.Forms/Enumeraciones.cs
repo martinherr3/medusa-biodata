@@ -36,12 +36,13 @@ namespace Mds.Biodata.Forms
 
         public enum TipoEstudio
         {
-            Anamnesis,
-            Audiometria,
-            ImpedanciometriaEstatica,
-            ImpedanciometriaDinamica,
-            LogoAudiometria,
-            Timpanometria
+            Anamnesis=0,
+            Audiometria=1,
+            //ImpedanciometriaEstatica=2,
+            //ImpedanciometriaDinamica=3,
+            LogoAudiometria=4,
+            Timpanometria=5,
+            TestDeLing=6
         }
 
     }

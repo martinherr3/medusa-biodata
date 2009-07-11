@@ -63,6 +63,7 @@
     <Compile Include="ProvinciaBusiness.cs" />
     <Compile Include="RecordatorioBusiness.cs" />
     <Compile Include="SeleccionAudifonoBusiness.cs" />
+    <Compile Include="TestLingBusiness.cs" />
     <Compile Include="TimpanometriaBusiness.cs" />
   </ItemGroup>
   <ItemGroup>
