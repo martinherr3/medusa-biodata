@@ -28,5 +28,7 @@ namespace Mds.Biodata.Core.DataInterfaces
         IAnamnesisPreguntaDao GetAnamnesisPreguntaDao();
         IMarcaAudifonoDao GetMarcaAudifonoDao();
         ITestLingDao GetTestLingDao();
+        IAnamnesisListadoPreguntaDao GetAnamnesisListadoPreguntaDao();
+
     }
 }

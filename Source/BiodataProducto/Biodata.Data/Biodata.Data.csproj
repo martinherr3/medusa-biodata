@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataHibernate\AnamnesiDao.cs" />
+    <Compile Include="DataHibernate\AnamnesisListadoPreguntaDao.cs" />
     <Compile Include="DataHibernate\AnamnesisPreguntaDao.cs" />
     <Compile Include="DataHibernate\AudifonoDao.cs" />
     <Compile Include="DataHibernate\AudifonoPacienteDao.cs" />

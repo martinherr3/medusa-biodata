@@ -60,6 +60,31 @@ namespace Mds.Biodata.Forms
         private TabPage TabPageActual;
         private Int32 TipoEstudioActual = -1;
 
+        private EstadoForm _estado = EstadoForm.Nuevo;
+        public EstadoForm Estado
+        {
+            get { return _estado; }
+            set
+            {
+                _estado = value;
+            }
+        }
+
+        private Estudio _EstudioActual;
+
+        public Estudio EstudioActual
+        {
+            get { return _EstudioActual; }
+            set { _EstudioActual = value; }
+        }
+
+        private Int32 _EstudioActualID;
+
+        public Int32 EstudioActualID
+        {
+            get { return _EstudioActualID; }
+            set { _EstudioActualID = value; }
+        }
         #endregion
 
         #region "--[Methods]--"
@@ -75,6 +100,7 @@ namespace Mds.Biodata.Forms
         {
             this.PacienteObjectView = new ObjectView(typeof(Paciente));
             this.PacienteObjectView.AllowRemove = false;
+            this.PacienteObjectView.Columns.Add("ID", "ID");
             this.PacienteObjectView.Columns.Add("Nombre", "Nombre");
             this.PacienteObjectView.Columns.Add("Apellido", "Apellido");
             this.PacienteObjectView.Columns.Add("Direccion", "Direccion");
@@ -174,11 +200,22 @@ namespace Mds.Biodata.Forms
                 case Enumeraciones.TipoEstudio.Anamnesis:
                     uscAnamnesis wUserAnamnesis = new uscAnamnesis();
                     wUserAnamnesis.Dock = DockStyle.Fill;
+                    if (this.Estado == EstadoForm.Editar)
+                    {
+                        wUserAnamnesis.CargarDatosEstudio(this.EstudioActual);
+                    }
+                    else
+                    {
+                        wUserAnamnesis.CargarPreguntas();
+                    }
+                        
                     tbpEstudio.Controls.Add(wUserAnamnesis);
                     break;
                 case Enumeraciones.TipoEstudio.Audiometria:
                     uscAudiometria wUserAudiometria = new uscAudiometria();
                     wUserAudiometria.Dock = DockStyle.Fill;
+                    if (this.Estado == EstadoForm.Editar)
+                        wUserAudiometria.CargarDatosEstudio(this.EstudioActual);
                     tbpEstudio.Controls.Add(wUserAudiometria);
                     break;
                 //case Enumeraciones.TipoEstudio.ImpedanciometriaDinamica:
@@ -194,16 +231,37 @@ namespace Mds.Biodata.Forms
                 case Enumeraciones.TipoEstudio.LogoAudiometria:
                     uscLogoAudiometria wUserLogoAudiometria = new uscLogoAudiometria();
                     wUserLogoAudiometria.Dock = DockStyle.Fill;
+                    if (this.Estado == EstadoForm.Editar)
+                        wUserLogoAudiometria.CargarDatosEstudio(this.EstudioActual);
                     tbpEstudio.Controls.Add(wUserLogoAudiometria);
                     break;
                 case Enumeraciones.TipoEstudio.Timpanometria:
                     uscTimpanometria wUserTimpanometria = new uscTimpanometria();
                     wUserTimpanometria.Dock = DockStyle.Fill;
+                    if (this.Estado == EstadoForm.Editar)
+                    {
+                        wUserTimpanometria.CargarDatosEstudio(this.EstudioActual);
+                    }
+                    else
+                    {
+                        wUserTimpanometria.DarFormatoGrillas();
+                    }
+                        
                     tbpEstudio.Controls.Add(wUserTimpanometria);
                     break;
                 case Enumeraciones.TipoEstudio.TestDeLing:
                     uscTestLing wUserTestLing = new uscTestLing();
                     wUserTestLing.Dock = DockStyle.Fill;
+                    if (this.Estado == EstadoForm.Editar)
+                    {
+                        wUserTestLing.CargarDatosEstudio(this.EstudioActual);
+                    }
+                    else
+                    {
+                        wUserTestLing.DarFormatoGrillas();
+                        wUserTestLing.CargarValoresInicialesGrilla();
+                    }
+                        
                     tbpEstudio.Controls.Add(wUserTestLing);
                     break;
             }
@@ -262,7 +320,6 @@ namespace Mds.Biodata.Forms
             {
                 if (ValidData())
                 {
-
                     uscBase UseEstudio = (uscBase)tbpEstudio.Controls[0];
 
                     Estudio wEstudio = UseEstudio.ObtenerDatosEstudio();
@@ -279,27 +336,34 @@ namespace Mds.Biodata.Forms
 
                     EstudioBusiness EstudioBP = new EstudioBusiness(DaoFactory.GetEstudioDao());
 
-                    EstudioBP.Insert(wEstudio);
+                    if (this.Estado == EstadoForm.Nuevo)
+                    {
+                        EstudioBP.Insert(wEstudio);
+
+                        //INSERTA POR SEPARADO CABECERA Y DETALLES EN TODOS LOS CASOS DEJA EN EN LA PROPIEDAD "Cascade" DEL
+                        //.hbm COMO "Delete" NADA MAS, DESPUES LE BUSCAMOS UNA SOLUCION
+
+                        //ESTO NO DEBERIA ESTAR, ES UNA NEGRADA PERO PARA SALIR DEL PASO NO QUEDA OTRA POR AHORA
+                        //switch (wEstudio.GetType().Name)
+                        //{
+                        //    case "Anamnesi":
+                        //        AnamnesisPreguntaBusiness wPreguntaRespuestaBP = new AnamnesisPreguntaBusiness(DaoFactory.GetAnamnesisPreguntaDao());
+                        //        foreach (AnamnesisPregunta wPreguntaRespuesta in ((Anamnesi)wEstudio).AnamnesisPreguntases)
+                        //        {
+                        //            wPreguntaRespuesta.IDEstudio = wEstudio.ID;
+                        //            wPreguntaRespuestaBP.Insert(wPreguntaRespuesta);
+                        //        }
+
+                        //        break;
+                        //}
+                    }
+                    else
+                    {
+                        EstudioBP.Update(wEstudio);
+                        EstudioBP.Commit();
+                    }
 
                     ProcesarMensaje("Se registro el Estudio en forma exitosa");
-
-                    //INSERTA POR SEPARADO CABECERA Y DETALLES EN TODOS LOS CASOS DEJA EN EN LA PROPIEDAD "Cascade" DEL
-                    //.hbm COMO "Delete" NADA MAS, DESPUES LE BUSCAMOS UNA SOLUCION
-
-                    //ESTO NO DEBERIA ESTAR, ES UNA NEGRADA PERO PARA SALIR DEL PASO NO QUEDA OTRA POR AHORA
-                    //switch (wEstudio.GetType().Name)
-                    //{
-                    //    case "Anamnesi":
-                    //        AnamnesisPreguntaBusiness wPreguntaRespuestaBP = new AnamnesisPreguntaBusiness(DaoFactory.GetAnamnesisPreguntaDao());
-                    //        foreach (AnamnesisPregunta wPreguntaRespuesta in ((Anamnesi)wEstudio).AnamnesisPreguntases)
-                    //        {
-                    //            wPreguntaRespuesta.IDEstudio = wEstudio.ID;
-                    //            wPreguntaRespuestaBP.Insert(wPreguntaRespuesta);
-                    //        }
-
-                    //        break;
-                    //}
-
                 }
             }
             catch (Exception ex)
@@ -322,6 +386,53 @@ namespace Mds.Biodata.Forms
 
             return true;
         }
+
+        /// <summary>
+        /// Cargo los datos del estudio en caso de una modificacion
+        /// </summary>
+        private void CargarDatosAModificar()
+        {
+            try
+            {
+                EstudioBusiness EstudioBP = new EstudioBusiness(DaoFactory.GetEstudioDao());
+
+                this.EstudioActual = EstudioBP.GetById(this.EstudioActualID);
+
+                Int32 i = -1;
+
+                for (i = 0; i < dgvPacientes.Rows.Count; i++)
+                {
+                    if (Convert.ToInt32(dgvPacientes.Rows[i].Cells[0].Value) == this.EstudioActual.IDHistoriaClinicaLookup.IDPacienteLookup.ID)
+                    {
+                        dgvPacientes.Rows[i].Selected = true;
+                        dgvPacientes.CurrentCell = dgvPacientes.Rows[i].Cells[1];
+                        break;
+                    }
+                }
+
+                if (i == dgvPacientes.Rows.Count)
+                {
+                    ProcesarMensaje("No se encontro al paciente, posible error en la carga de datos", "Paciente en Estudio");
+                }
+
+
+                dgvPacientes.Enabled = false;
+
+                txtNombre.Text = EstudioActual.Nombre;
+                dtpFechaEstudio.Value = EstudioActual.FechaEstudio;
+                txtInstrumentosUtilizados.Text = EstudioActual.InstrumentosUtilizados;
+                txtObservaciones.Text = EstudioActual.Observaciones;
+                cmbTipoEstudio.SelectedItem = (Enumeraciones.TipoEstudio)EstudioActual.TipoEstudio;
+                CargarEstudio();
+
+                //Audiometria wAudiometriaModificar = (Audiometria)this.EstudioActual;
+            }
+            catch (Exception ex)
+            {
+
+                ProcesarExcepcion(ex);
+            }
+        }
         #endregion
 
         #region "--[Events]--"
@@ -340,7 +451,16 @@ namespace Mds.Biodata.Forms
         {
             this.PacienteObjectView.DataSource = (IList)this._PacienteEntities;
             this.dgvPacientes.DataSource = this.PacienteObjectView;
+            this.dgvPacientes.Columns[0].Visible = false;
             ptbProgress.Visible = false;
+            //Una vez cargados el listado de pacientes empezamos a 
+            //cargar datos de estudio si es una modificacion
+            if (this.Estado == EstadoForm.Editar)
+            {
+                CargarDatosAModificar();
+                //Una vez cargo el estudio puede modificar los datos pero no el tipo del mismo
+                cmbTipoEstudio.Enabled = false;
+            }
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)

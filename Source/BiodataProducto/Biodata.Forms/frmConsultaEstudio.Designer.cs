@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaEstudio));
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblFechaEstudio = new System.Windows.Forms.Label();
             this.lblTipoEstudio = new System.Windows.Forms.Label();
@@ -36,14 +37,20 @@
             this.txtApellidoPaciente = new System.Windows.Forms.TextBox();
             this.cmbTipoEstudio = new System.Windows.Forms.ComboBox();
             this.dtpFechaEstudio = new System.Windows.Forms.DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDelete = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
+            this.btnEdit = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
+            this.btnNew = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
             this.gpbFiltros.SuspendLayout();
             this.sptContenedor.Panel1.SuspendLayout();
+            this.sptContenedor.Panel2.SuspendLayout();
             this.sptContenedor.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(736, 37);
+            this.btnCerrar.Location = new System.Drawing.Point(785, 37);
             // 
             // gpbFiltros
             // 
@@ -72,6 +79,11 @@
             // 
             // sptContenedor
             // 
+            // 
+            // sptContenedor.Panel2
+            // 
+            this.sptContenedor.Panel2.Controls.Add(this.panel1);
+            this.sptContenedor.Size = new System.Drawing.Size(877, 554);
             this.sptContenedor.SplitterDistance = 103;
             // 
             // bgwLoad
@@ -147,18 +159,64 @@
             this.dtpFechaEstudio.Size = new System.Drawing.Size(176, 20);
             this.dtpFechaEstudio.TabIndex = 8;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnDelete);
+            this.panel1.Controls.Add(this.btnEdit);
+            this.panel1.Controls.Add(this.btnNew);
+            this.panel1.Location = new System.Drawing.Point(735, 17);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(130, 126);
+            this.panel1.TabIndex = 6;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDelete.Location = new System.Drawing.Point(6, 89);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(121, 34);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "Eliminar";
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEdit.Image = ((System.Drawing.Image)(resources.GetObject("btnEdit.Image")));
+            this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEdit.Location = new System.Drawing.Point(6, 49);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(121, 34);
+            this.btnEdit.TabIndex = 5;
+            this.btnEdit.Text = "Editar";
+            this.btnEdit.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnEdit_Click);
+            // 
+            // btnNew
+            // 
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
+            this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNew.Location = new System.Drawing.Point(6, 9);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(121, 34);
+            this.btnNew.TabIndex = 4;
+            this.btnNew.Text = "Nuevo";
+            // 
             // frmConsultaEstudio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 554);
+            this.ClientSize = new System.Drawing.Size(877, 554);
             this.Name = "frmConsultaEstudio";
             this.Text = "frmConsultaEstudio";
             this.Load += new System.EventHandler(this.frmConsultaEstudio_Load);
             this.gpbFiltros.ResumeLayout(false);
             this.gpbFiltros.PerformLayout();
             this.sptContenedor.Panel1.ResumeLayout(false);
+            this.sptContenedor.Panel2.ResumeLayout(false);
             this.sptContenedor.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -173,5 +231,9 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cmbTipoEstudio;
         private System.Windows.Forms.DateTimePicker dtpFechaEstudio;
+        private System.Windows.Forms.Panel panel1;
+        protected Medusa.Biodata.FrontEnd.UserControls.ButtonUC btnDelete;
+        protected Medusa.Biodata.FrontEnd.UserControls.ButtonUC btnEdit;
+        protected Medusa.Biodata.FrontEnd.UserControls.ButtonUC btnNew;
     }
 }

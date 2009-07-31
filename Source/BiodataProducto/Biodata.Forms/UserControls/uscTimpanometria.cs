@@ -25,9 +25,16 @@ namespace Mds.Biodata.Forms.UserControls
         {
             Timpanometria wTimpanometria = new Timpanometria();
 
-            List<Liner.Main.Grid.Args.Line> wLineasEstudio = linerCentral.GenerateLinePointsArgs();
+            object myLineas;
+            object myLineasSeries;
 
-            String strLineasEstudio = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(wLineasEstudio);
+            //List<Liner.Main.Grid.Args.Line> wLineasEstudio = linerCentral.GenerateLinePointsArgs();
+
+            linerCentral.GenerateLinePointsArgs(out myLineas, out myLineasSeries);
+
+            //String strLineasEstudio = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(wLineasEstudio);
+
+            String strLineasEstudio = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(myLineas);
 
             wTimpanometria.TimpanometriaGrafico = strLineasEstudio;
             if (rad05Izq.Checked)
@@ -47,12 +54,56 @@ namespace Mds.Biodata.Forms.UserControls
                 wTimpanometria.ReflejoEstapedialDer = 1;
             }
             wTimpanometria.TablaReflejosIzq = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize((DataTable)dgvTablaReflejosIzq.DataSource);
-            wTimpanometria.TablaReflejosDer = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize((DataTable)dgvTablaReflejosDer.DataSource); 
-
+            wTimpanometria.TablaReflejosDer = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize((DataTable)dgvTablaReflejosDer.DataSource);
+            if (this.EstudioActualID != null)
+            {
+                wTimpanometria.ID = this.EstudioActualID.Value;
+            }
             return (Estudio)wTimpanometria;
         }
 
-        private void DarFormatoGrillas()
+        public override void CargarDatosEstudio(Estudio pEstudio)
+        {
+            //base.CargarDatosEstudio(pEstudio);
+            Timpanometria wTimpanometria = (Timpanometria)pEstudio;
+
+            Liner.Main.Collections.Collection TimpanometriaGrafico;
+            TimpanometriaGrafico = (Liner.Main.Collections.Collection)Mds.Architecture.HelpersFunctions.SerializationFunctions.Deserialize(typeof(Liner.Main.Collections.Collection), wTimpanometria.TimpanometriaGrafico);
+
+            linerCentral.AutoGenerateLine(TimpanometriaGrafico, TimpanometriaGrafico.GetCurrentLineSeries());
+
+            if (wTimpanometria.ReflejoEstapedialIzq == 0)
+            {
+                rad05Izq.Checked = true;
+            }
+            else
+            {
+                rad10Izq.Checked = true;
+            }
+
+            if (wTimpanometria.ReflejoEstapedialDer == 0)
+            {
+                rad05Der.Checked = true;
+            }
+            else
+            {
+                rad10Der.Checked = true;
+            }
+
+            DataTable wDtReflejosIzq;
+            wDtReflejosIzq = (DataTable)Mds.Architecture.HelpersFunctions.SerializationFunctions.Deserialize(typeof(DataTable), wTimpanometria.TablaReflejosIzq);
+            dgvTablaReflejosIzq.DataSource = wDtReflejosIzq;
+            
+            DataTable wDtReflejosDer;
+            wDtReflejosDer = (DataTable)Mds.Architecture.HelpersFunctions.SerializationFunctions.Deserialize(typeof(DataTable), wTimpanometria.TablaReflejosDer);
+            dgvTablaReflejosDer.DataSource = wDtReflejosDer;
+
+            DeterminarAnchoColumnas();
+
+            this.EstudioActualID = pEstudio.ID;
+        }
+
+        public void DarFormatoGrillas()
         {
             DataTable oDTIzq = new DataTable("Datos");
 
@@ -72,6 +123,16 @@ namespace Mds.Biodata.Forms.UserControls
             dgvTablaReflejosIzq.DataSource = oDTIzq;
             dgvTablaReflejosDer.DataSource = oDTDer;
 
+            DeterminarAnchoColumnas();
+
+            //String strDT = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(oDT);
+            //DataTable kk = (DataTable)Mds.Architecture.HelpersFunctions.SerializationFunctions.DeserializeFromXml(typeof(DataTable), strDT);
+
+
+        }
+
+        private void DeterminarAnchoColumnas()
+        {
             dgvTablaReflejosIzq.Columns["-250-"].Width = 56;
             dgvTablaReflejosIzq.Columns["-500-"].Width = 56;
             dgvTablaReflejosIzq.Columns["-1K-"].Width = 56;
@@ -83,18 +144,13 @@ namespace Mds.Biodata.Forms.UserControls
             dgvTablaReflejosDer.Columns["-1K-"].Width = 56;
             dgvTablaReflejosDer.Columns["-2K-"].Width = 55;
             dgvTablaReflejosDer.Columns["-4K-"].Width = 55;
-
-            //String strDT = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(oDT);
-            //DataTable kk = (DataTable)Mds.Architecture.HelpersFunctions.SerializationFunctions.DeserializeFromXml(typeof(DataTable), strDT);
-
-
         }
         #endregion
 
         #region "--[Events]--"
         private void uscTimpanometria_Load(object sender, EventArgs e)
         {
-            DarFormatoGrillas();
+            //DarFormatoGrillas();
         }
         #endregion
     }
