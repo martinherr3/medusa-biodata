@@ -115,7 +115,10 @@ namespace Mds.Biodata.Forms
         {
             try
             {
-                GereralFunctions.AbrirFormulario(new frmEstudio(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Estudios", DockStyle.Fill);
+                frmEstudio myEstudio = new frmEstudio();
+                myEstudio.Estado = EstadoForm.Nuevo;
+
+                GereralFunctions.AbrirFormulario(myEstudio, (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Estudios", DockStyle.Fill);
             }
             catch (Exception ex)
             {

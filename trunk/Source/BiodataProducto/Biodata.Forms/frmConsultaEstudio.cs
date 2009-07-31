@@ -127,5 +127,21 @@ namespace Mds.Biodata.Forms
             //NHibernate.ICriteria kk = CreateCriteria(
             
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            ModificarEstudio();
+        }
+
+        private void ModificarEstudio()
+        {
+            frmEstudio frm = new frmEstudio();
+            frm.Estado = EstadoForm.Editar;
+            
+            ObjectViews.ObjectViewRow RowSelected = (ObjectViewRow)dgvConsultas.CurrentRow.DataBoundItem;
+            frm.EstudioActualID =((Estudio)RowSelected.InnerObject).ID;
+
+            GereralFunctions.AbrirFormulario(frm, (TabControl)this.Parent.Parent, "Gestion de Estudio", DockStyle.Fill, false, true);
+        }
     }
 }

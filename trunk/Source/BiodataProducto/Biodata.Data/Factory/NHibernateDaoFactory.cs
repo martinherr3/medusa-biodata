@@ -110,5 +110,9 @@ namespace Mds.Biodata.Data
         {
             return new TestLingDao(SessionFactoryConfigPath);
         }
+        public IAnamnesisListadoPreguntaDao GetAnamnesisListadoPreguntaDao()
+        {
+            return new AnamnesisListadoPreguntaDao(SessionFactoryConfigPath);
+        }
     }
 }

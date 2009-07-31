@@ -10,6 +10,14 @@ namespace Mds.Biodata.Forms.UserControls
 {
     public partial class uscAnamnesisPregunta : uscBase 
     {
+        private Int32? _PreguntaID;
+
+        public Int32? PreguntaID
+        {
+            get { return _PreguntaID; }
+            set { _PreguntaID = value; }
+        }
+
         public String Pregunta
         {
             get { return txtPregunta.Text; }

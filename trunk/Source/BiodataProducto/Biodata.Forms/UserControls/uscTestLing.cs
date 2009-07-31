@@ -23,7 +23,7 @@ namespace Mds.Biodata.Forms.UserControls
         /// <summary>
         /// Da formato a la grilla
         /// </summary>
-        private void DarFormatoGrillas()
+        public void DarFormatoGrillas()
         {
             DataTable oDT = new DataTable("Datos");
 
@@ -50,6 +50,13 @@ namespace Mds.Biodata.Forms.UserControls
 
             dgvValores.DataSource = oDT;
 
+            DeterminarAnchoColumnas();
+            //String strDT = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(oDT);
+            //DataTable kk = (DataTable)Mds.Architecture.HelpersFunctions.SerializationFunctions.DeserializeFromXml(typeof(DataTable), strDT);
+        }
+
+        private void DeterminarAnchoColumnas()
+        {
             dgvValores.Columns["Sonidos"].Width = 80;
             dgvValores.Columns["Aciertos30cm"].Width = 80;
             dgvValores.Columns["Intentos30cm"].Width = 80;
@@ -57,8 +64,6 @@ namespace Mds.Biodata.Forms.UserControls
             dgvValores.Columns["Intentos5m"].Width = 80;
             dgvValores.Columns["AciertosAtravesPuerta"].Width = 115;
             dgvValores.Columns["IntentosAtravesPuerta"].Width = 115;
-            //String strDT = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(oDT);
-            //DataTable kk = (DataTable)Mds.Architecture.HelpersFunctions.SerializationFunctions.DeserializeFromXml(typeof(DataTable), strDT);
         }
 
         public override Estudio ObtenerDatosEstudio()
@@ -66,21 +71,38 @@ namespace Mds.Biodata.Forms.UserControls
             TestLing wTestLing = new TestLing();
 
             wTestLing.TablaValores = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize((DataTable)dgvValores.DataSource);
+            if (this.EstudioActualID != null)
+            {
+                wTestLing.ID = this.EstudioActualID.Value;
+            }
             return (Estudio)wTestLing;
+        }
+
+        public override void CargarDatosEstudio(Estudio pEstudio)
+        {
+            //base.CargarDatosEstudio(pEstudio);
+            TestLing wTestLing = (TestLing)pEstudio;
+
+            DataTable wDt;
+            wDt = (DataTable)Mds.Architecture.HelpersFunctions.SerializationFunctions.Deserialize(typeof(DataTable), wTestLing.TablaValores);
+            dgvValores.DataSource = wDt;
+            DeterminarAnchoColumnas();
+
+            this.EstudioActualID = pEstudio.ID;
         }
         #endregion
 
         #region "--[Events]--"
         private void uscTestLing_Load(object sender, EventArgs e)
         {
-            DarFormatoGrillas();
-            CargarValoresInicialesGrilla();
+            //DarFormatoGrillas();
+            //CargarValoresInicialesGrilla();
         }
 
         /// <summary>
         /// Carga valores por defecto en la grilla los cuales pueden ser modificados
         /// </summary>
-        private void CargarValoresInicialesGrilla()
+        public void CargarValoresInicialesGrilla()
         {
             dgvValores.Rows[0].Cells["Sonidos"].Value = "/m/";
             dgvValores.Rows[1].Cells["Sonidos"].Value = "/a/";

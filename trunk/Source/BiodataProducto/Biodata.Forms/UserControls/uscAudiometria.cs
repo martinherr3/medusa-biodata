@@ -26,14 +26,46 @@ namespace Mds.Biodata.Forms.UserControls
         {
             Audiometria wAudiometria = new Audiometria();
 
-            List<Liner.Main.Grid.Args.Line> wLineasEstudiosLeft = linerLeft.GenerateLinePointsArgs();
-            List<Liner.Main.Grid.Args.Line> wLineasEstudiosRight = linerRight.GenerateLinePointsArgs();
+            object myLineasLeft;
+            object myLineasSeriesLeft;
 
-            String strLineasEstudiosLeft = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(wLineasEstudiosLeft);
-            String strLineasEstudiosRight = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(wLineasEstudiosRight);
+            object myLineasRight;
+            object myLineasSeriesRight;
+
+            //List<Liner.Main.Grid.Args.Line> wLineasEstudiosLeft = linerLeft.GenerateLinePointsArgs();
+            //List<Liner.Main.Grid.Args.Line> wLineasEstudiosRight = linerRight.GenerateLinePointsArgs();
+
+            linerLeft.GenerateLinePointsArgs(out myLineasLeft, out myLineasSeriesLeft);
+            linerRight.GenerateLinePointsArgs(out myLineasRight, out myLineasSeriesRight);
+
+
+            //String strLineasEstudiosLeft = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(wLineasEstudiosLeft);
+            //String strLineasEstudiosRight = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(wLineasEstudiosRight);
+            String strLineasEstudiosLeft = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(myLineasLeft);
+            String strLineasEstudiosRight = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(myLineasRight);
             wAudiometria.AudiogramaIzquierdo = strLineasEstudiosLeft;
             wAudiometria.AudiogramaDerecho = strLineasEstudiosRight;
+            if (this.EstudioActualID != null)
+            {
+                wAudiometria.ID = this.EstudioActualID.Value;
+            }
             return (Estudio)wAudiometria;
+        }
+
+        public override void CargarDatosEstudio(Estudio pEstudio)
+        {
+            //base.CargarDatosEstudio(pEstudio);
+            Audiometria wAudiometria = (Audiometria)pEstudio;
+
+            Liner.Main.Collections.Collection AudiometriaLeft;
+            AudiometriaLeft = (Liner.Main.Collections.Collection)Mds.Architecture.HelpersFunctions.SerializationFunctions.Deserialize(typeof(Liner.Main.Collections.Collection), wAudiometria.AudiogramaIzquierdo);
+            Liner.Main.Collections.Collection AudiometriaRight;
+            AudiometriaRight = (Liner.Main.Collections.Collection)Mds.Architecture.HelpersFunctions.SerializationFunctions.Deserialize(typeof(Liner.Main.Collections.Collection), wAudiometria.AudiogramaDerecho);
+
+            linerLeft.AutoGenerateLine(AudiometriaLeft, AudiometriaLeft.GetCurrentLineSeries());
+            linerRight.AutoGenerateLine(AudiometriaRight, AudiometriaRight.GetCurrentLineSeries());
+
+            this.EstudioActualID = pEstudio.ID;
         }
         #endregion
 
