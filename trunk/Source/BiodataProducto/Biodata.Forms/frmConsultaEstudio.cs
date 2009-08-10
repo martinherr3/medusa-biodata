@@ -82,7 +82,7 @@ namespace Mds.Biodata.Forms
         /// <summary>
         /// Carga la grilla con los registros de la DB
         /// </summary>
-        private void LoadList()
+        private void LoadList(Boolean ContarParametrosBusqueda)
         {
             try
             {
@@ -91,7 +91,59 @@ namespace Mds.Biodata.Forms
                 dgvConsultas.DataSource = null;
                 //Habilitar(false);
                 btnCerrar.Enabled = true;
-                bgwLoad.RunWorkerAsync();
+                bgwLoad.RunWorkerAsync(ContarParametrosBusqueda);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+        /// <summary>
+        /// Carga los tipos de estudios para la seleccion
+        /// </summary>
+        private void LoadTipoEstudios()
+        {
+            Array miTipos = Enum.GetValues(typeof(Enumeraciones.TipoEstudio));
+
+            cmbTipoEstudio.Items.Add("--Seleccione Item--");
+
+            for (Int32 i = 0; i < miTipos.Length; i++)
+            {
+                cmbTipoEstudio.Items.Add(miTipos.GetValue(i));
+            }
+
+            cmbTipoEstudio.SelectedIndex = 0;
+        }
+
+        /// <summary>
+        /// Permite modificar un estudio cargando los controles necesarios según el tipo de estudio
+        /// </summary>
+        private void ModificarEstudio()
+        {
+
+            frmEstudio frm = new frmEstudio();
+            frm.Estado = EstadoForm.Editar;
+
+            ObjectViews.ObjectViewRow RowSelected = (ObjectViewRow)dgvConsultas.CurrentRow.DataBoundItem;
+            frm.EstudioActualID = ((Estudio)RowSelected.InnerObject).ID;
+
+            GereralFunctions.AbrirFormulario(frm, (TabControl)this.Parent.Parent, "Gestion de Estudio", DockStyle.Fill, false, true);
+        }
+
+        /// <summary>
+        /// Abre el formulario para crear un nuevo estudio
+        /// </summary>
+        private void NuevoEstudio()
+        {
+            try
+            {
+                frmEstudio frm = new frmEstudio();
+                frm.Estado = EstadoForm.Nuevo;
+                //frm.Llamador = this;
+                //this.Parent.Enabled = false;
+                GereralFunctions.AbrirFormulario(frm, (TabControl)this.Parent.Parent, "Gestión de Estudios", DockStyle.Fill, false, true);
+
             }
             catch (Exception ex)
             {
@@ -103,13 +155,31 @@ namespace Mds.Biodata.Forms
         #region "--[Events]--"
         private void frmConsultaEstudio_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
+
             _EstudioBP = new EstudioBusiness(DaoFactory.GetEstudioDao());
-            LoadList();
+            //LoadList(false);
+            LoadTipoEstudios();
         }
 
         private void bgwLoad_DoWork(object sender, DoWorkEventArgs e)
         {
-            _EstudioEntities = _EstudioBP.GetAll();
+            if (!Convert.ToBoolean(e.Argument))
+            {
+                _EstudioEntities = _EstudioBP.GetAll();
+            }
+            else
+            {
+                Int32? ValorTipoEstudio = null;
+
+                if (cmbTipoEstudio.SelectedIndex != 0)
+                {
+                    ValorTipoEstudio = Convert.ToInt32((Enumeraciones.TipoEstudio)cmbTipoEstudio.SelectedItem);
+                }
+
+                _EstudioEntities = _EstudioBP.GetEstudiosNombre(txtNombre.Text, dtpFechaEstudioDesde.Value, dtpFechaEstudioHasta.Value, ValorTipoEstudio);
+
+            }
         }
 
         private void bgwLoad_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -120,12 +190,10 @@ namespace Mds.Biodata.Forms
             ptbProgress.Visible = false;
             //Habilitar(true);
         }
-        #endregion
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //NHibernate.ICriteria kk = CreateCriteria(
-            
+            LoadList(true);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -133,15 +201,29 @@ namespace Mds.Biodata.Forms
             ModificarEstudio();
         }
 
-        private void ModificarEstudio()
+        private void btnNew_Click(object sender, EventArgs e)
         {
-            frmEstudio frm = new frmEstudio();
-            frm.Estado = EstadoForm.Editar;
-            
-            ObjectViews.ObjectViewRow RowSelected = (ObjectViewRow)dgvConsultas.CurrentRow.DataBoundItem;
-            frm.EstudioActualID =((Estudio)RowSelected.InnerObject).ID;
-
-            GereralFunctions.AbrirFormulario(frm, (TabControl)this.Parent.Parent, "Gestion de Estudio", DockStyle.Fill, false, true);
+            NuevoEstudio();
         }
+        #endregion
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            EliminarEstudio();
+        }
+
+        private void EliminarEstudio()
+        {
+            if (ProcesarMensaje("Esta seguro que desea eliminar el estudio seleccionado", "Eliminación de estudio", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                ObjectViews.ObjectViewRow RowSelected = (ObjectViewRow)dgvConsultas.CurrentRow.DataBoundItem;
+                Estudio pEntity = (Estudio)RowSelected.InnerObject;
+                _EstudioBP.Delete(pEntity);
+                _EstudioBP.Commit();
+
+                LoadList(true);
+            }
+        }
+
     }
 }

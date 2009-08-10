@@ -12,5 +12,10 @@ namespace Mds.Biodata.Business
         {
             
         }
+
+        public List<Estudio> GetEstudiosNombre(String pNombre, DateTime? pFechaEstudioDesde, DateTime? pFechaEstudioHasta, Int32? pTipoEstudio)
+        {
+            return Dao.GetEstudiosByNombre(pNombre, pFechaEstudioDesde, pFechaEstudioHasta, pTipoEstudio);
+        }
     }
 }

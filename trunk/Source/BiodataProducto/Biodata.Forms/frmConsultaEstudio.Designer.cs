@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaEstudio));
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lblFechaEstudio = new System.Windows.Forms.Label();
+            this.lblFechaEstudioDesde = new System.Windows.Forms.Label();
             this.lblTipoEstudio = new System.Windows.Forms.Label();
-            this.lblApellidoPaciente = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellidoPaciente = new System.Windows.Forms.TextBox();
             this.cmbTipoEstudio = new System.Windows.Forms.ComboBox();
-            this.dtpFechaEstudio = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaEstudioDesde = new System.Windows.Forms.DateTimePicker();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDelete = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
             this.btnEdit = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
             this.btnNew = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
+            this.dtpFechaEstudioHasta = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaEstudioHasta = new System.Windows.Forms.Label();
             this.gpbFiltros.SuspendLayout();
             this.sptContenedor.Panel1.SuspendLayout();
             this.sptContenedor.Panel2.SuspendLayout();
@@ -50,31 +50,32 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(785, 37);
+            this.btnCerrar.Location = new System.Drawing.Point(1128, 37);
             // 
             // gpbFiltros
             // 
-            this.gpbFiltros.Controls.Add(this.dtpFechaEstudio);
+            this.gpbFiltros.Controls.Add(this.dtpFechaEstudioHasta);
+            this.gpbFiltros.Controls.Add(this.lblFechaEstudioHasta);
+            this.gpbFiltros.Controls.Add(this.dtpFechaEstudioDesde);
             this.gpbFiltros.Controls.Add(this.cmbTipoEstudio);
-            this.gpbFiltros.Controls.Add(this.txtApellidoPaciente);
             this.gpbFiltros.Controls.Add(this.txtNombre);
-            this.gpbFiltros.Controls.Add(this.lblApellidoPaciente);
             this.gpbFiltros.Controls.Add(this.lblTipoEstudio);
-            this.gpbFiltros.Controls.Add(this.lblFechaEstudio);
+            this.gpbFiltros.Controls.Add(this.lblFechaEstudioDesde);
             this.gpbFiltros.Controls.Add(this.lblNombre);
+            this.gpbFiltros.Size = new System.Drawing.Size(837, 83);
             this.gpbFiltros.Controls.SetChildIndex(this.lblNombre, 0);
             this.gpbFiltros.Controls.SetChildIndex(this.btnBuscar, 0);
-            this.gpbFiltros.Controls.SetChildIndex(this.lblFechaEstudio, 0);
+            this.gpbFiltros.Controls.SetChildIndex(this.lblFechaEstudioDesde, 0);
             this.gpbFiltros.Controls.SetChildIndex(this.lblTipoEstudio, 0);
-            this.gpbFiltros.Controls.SetChildIndex(this.lblApellidoPaciente, 0);
             this.gpbFiltros.Controls.SetChildIndex(this.txtNombre, 0);
-            this.gpbFiltros.Controls.SetChildIndex(this.txtApellidoPaciente, 0);
             this.gpbFiltros.Controls.SetChildIndex(this.cmbTipoEstudio, 0);
-            this.gpbFiltros.Controls.SetChildIndex(this.dtpFechaEstudio, 0);
+            this.gpbFiltros.Controls.SetChildIndex(this.dtpFechaEstudioDesde, 0);
+            this.gpbFiltros.Controls.SetChildIndex(this.lblFechaEstudioHasta, 0);
+            this.gpbFiltros.Controls.SetChildIndex(this.dtpFechaEstudioHasta, 0);
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(568, 25);
+            this.btnBuscar.Location = new System.Drawing.Point(717, 24);
             this.btnBuscar.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnBuscar_Click);
             // 
             // sptContenedor
@@ -100,32 +101,23 @@
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre";
             // 
-            // lblFechaEstudio
+            // lblFechaEstudioDesde
             // 
-            this.lblFechaEstudio.AutoSize = true;
-            this.lblFechaEstudio.Location = new System.Drawing.Point(272, 25);
-            this.lblFechaEstudio.Name = "lblFechaEstudio";
-            this.lblFechaEstudio.Size = new System.Drawing.Size(90, 13);
-            this.lblFechaEstudio.TabIndex = 2;
-            this.lblFechaEstudio.Text = "Fecha de Estudio";
+            this.lblFechaEstudioDesde.AutoSize = true;
+            this.lblFechaEstudioDesde.Location = new System.Drawing.Point(19, 60);
+            this.lblFechaEstudioDesde.Name = "lblFechaEstudioDesde";
+            this.lblFechaEstudioDesde.Size = new System.Drawing.Size(71, 13);
+            this.lblFechaEstudioDesde.TabIndex = 2;
+            this.lblFechaEstudioDesde.Text = "Fecha Desde";
             // 
             // lblTipoEstudio
             // 
             this.lblTipoEstudio.AutoSize = true;
-            this.lblTipoEstudio.Location = new System.Drawing.Point(9, 55);
+            this.lblTipoEstudio.Location = new System.Drawing.Point(294, 28);
             this.lblTipoEstudio.Name = "lblTipoEstudio";
             this.lblTipoEstudio.Size = new System.Drawing.Size(81, 13);
             this.lblTipoEstudio.TabIndex = 3;
             this.lblTipoEstudio.Text = "Tipo de Estudio";
-            // 
-            // lblApellidoPaciente
-            // 
-            this.lblApellidoPaciente.AutoSize = true;
-            this.lblApellidoPaciente.Location = new System.Drawing.Point(256, 55);
-            this.lblApellidoPaciente.Name = "lblApellidoPaciente";
-            this.lblApellidoPaciente.Size = new System.Drawing.Size(106, 13);
-            this.lblApellidoPaciente.TabIndex = 4;
-            this.lblApellidoPaciente.Text = "Apellido del Paciente";
             // 
             // txtNombre
             // 
@@ -134,30 +126,23 @@
             this.txtNombre.Size = new System.Drawing.Size(154, 20);
             this.txtNombre.TabIndex = 5;
             // 
-            // txtApellidoPaciente
-            // 
-            this.txtApellidoPaciente.Location = new System.Drawing.Point(368, 52);
-            this.txtApellidoPaciente.Name = "txtApellidoPaciente";
-            this.txtApellidoPaciente.Size = new System.Drawing.Size(178, 20);
-            this.txtApellidoPaciente.TabIndex = 6;
-            // 
             // cmbTipoEstudio
             // 
+            this.cmbTipoEstudio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoEstudio.FormattingEnabled = true;
-            this.cmbTipoEstudio.Location = new System.Drawing.Point(96, 51);
+            this.cmbTipoEstudio.Location = new System.Drawing.Point(381, 24);
             this.cmbTipoEstudio.Name = "cmbTipoEstudio";
             this.cmbTipoEstudio.Size = new System.Drawing.Size(154, 21);
             this.cmbTipoEstudio.TabIndex = 7;
             // 
-            // dtpFechaEstudio
+            // dtpFechaEstudioDesde
             // 
-            this.dtpFechaEstudio.Checked = false;
-            this.dtpFechaEstudio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaEstudio.Location = new System.Drawing.Point(369, 25);
-            this.dtpFechaEstudio.Name = "dtpFechaEstudio";
-            this.dtpFechaEstudio.ShowCheckBox = true;
-            this.dtpFechaEstudio.Size = new System.Drawing.Size(176, 20);
-            this.dtpFechaEstudio.TabIndex = 8;
+            this.dtpFechaEstudioDesde.Checked = false;
+            this.dtpFechaEstudioDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaEstudioDesde.Location = new System.Drawing.Point(96, 56);
+            this.dtpFechaEstudioDesde.Name = "dtpFechaEstudioDesde";
+            this.dtpFechaEstudioDesde.Size = new System.Drawing.Size(154, 20);
+            this.dtpFechaEstudioDesde.TabIndex = 8;
             // 
             // panel1
             // 
@@ -179,6 +164,7 @@
             this.btnDelete.Size = new System.Drawing.Size(121, 34);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Eliminar";
+            this.btnDelete.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -202,6 +188,25 @@
             this.btnNew.Size = new System.Drawing.Size(121, 34);
             this.btnNew.TabIndex = 4;
             this.btnNew.Text = "Nuevo";
+            this.btnNew.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnNew_Click);
+            // 
+            // dtpFechaEstudioHasta
+            // 
+            this.dtpFechaEstudioHasta.Checked = false;
+            this.dtpFechaEstudioHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaEstudioHasta.Location = new System.Drawing.Point(381, 56);
+            this.dtpFechaEstudioHasta.Name = "dtpFechaEstudioHasta";
+            this.dtpFechaEstudioHasta.Size = new System.Drawing.Size(154, 20);
+            this.dtpFechaEstudioHasta.TabIndex = 10;
+            // 
+            // lblFechaEstudioHasta
+            // 
+            this.lblFechaEstudioHasta.AutoSize = true;
+            this.lblFechaEstudioHasta.Location = new System.Drawing.Point(307, 60);
+            this.lblFechaEstudioHasta.Name = "lblFechaEstudioHasta";
+            this.lblFechaEstudioHasta.Size = new System.Drawing.Size(68, 13);
+            this.lblFechaEstudioHasta.TabIndex = 9;
+            this.lblFechaEstudioHasta.Text = "Fecha Hasta";
             // 
             // frmConsultaEstudio
             // 
@@ -223,17 +228,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblApellidoPaciente;
         private System.Windows.Forms.Label lblTipoEstudio;
-        private System.Windows.Forms.Label lblFechaEstudio;
+        private System.Windows.Forms.Label lblFechaEstudioDesde;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtApellidoPaciente;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.ComboBox cmbTipoEstudio;
-        private System.Windows.Forms.DateTimePicker dtpFechaEstudio;
+        private System.Windows.Forms.DateTimePicker dtpFechaEstudioDesde;
         private System.Windows.Forms.Panel panel1;
         protected Medusa.Biodata.FrontEnd.UserControls.ButtonUC btnDelete;
         protected Medusa.Biodata.FrontEnd.UserControls.ButtonUC btnEdit;
         protected Medusa.Biodata.FrontEnd.UserControls.ButtonUC btnNew;
+        private System.Windows.Forms.DateTimePicker dtpFechaEstudioHasta;
+        private System.Windows.Forms.Label lblFechaEstudioHasta;
     }
 }
