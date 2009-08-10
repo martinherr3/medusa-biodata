@@ -124,9 +124,6 @@
   <data name="&gt;&gt;tsmSeleccionAudifono.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsbPaciente.Name" xml:space="preserve">
-    <value>tsbPaciente</value>
-  </data>
   <data name="&gt;&gt;splitLeft.Type" xml:space="preserve">
     <value>System.Windows.Forms.SplitContainer, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -142,20 +139,24 @@
   <data name="&gt;&gt;tsmReporteObraSocial.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsbAyuda.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tsbAyuda.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
   <data name="tsmReporteRecordatorio.Text" xml:space="preserve">
     <value>Reporte de Recordatorio</value>
   </data>
-  <data name="&gt;&gt;tsmAudifono.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tsbPaciente.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
   </data>
-  <data name="&gt;&gt;tsmReportePacientesPorAudifono.Type" xml:space="preserve">
+  <data name="&gt;&gt;tsmAudifono.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tosPrincipal.Size" type="System.Drawing.Size, System.Drawing">
     <value>936, 39</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="spcRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="&gt;&gt;tsbUsuarioLogueado.Name" xml:space="preserve">
     <value>tsbUsuarioLogueado</value>
@@ -237,17 +238,11 @@
   <data name="&gt;&gt;spcRight.Panel2.Parent" xml:space="preserve">
     <value>spcRight</value>
   </data>
-  <data name="&gt;&gt;tsmAyuda.Name" xml:space="preserve">
-    <value>tsmAyuda</value>
-  </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 39</value>
   </data>
-  <data name="&gt;&gt;spcRight.Panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmSalir.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="tsmRecordatorio.Size" type="System.Drawing.Size, System.Drawing">
     <value>152, 22</value>
@@ -272,9 +267,6 @@
   </data>
   <data name="&gt;&gt;tsbRecordatorio.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmReporteObraSocial.Name" xml:space="preserve">
-    <value>tsmReporteObraSocial</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator3.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -315,9 +307,6 @@
   <data name="&gt;&gt;tsmInformeFichaPaciente.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmAgenda.Name" xml:space="preserve">
-    <value>tsmAgenda</value>
-  </data>
   <data name="&gt;&gt;tsmHerramientasSeguridad.Name" xml:space="preserve">
     <value>tsmHerramientasSeguridad</value>
   </data>
@@ -327,15 +316,11 @@
   <data name="splitLeft.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="splitLeft.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmPrincipal</value>
-  </data>
-  <data name="tsmGestionParametrosSistema.Size" type="System.Drawing.Size, System.Drawing">
-    <value>251, 22</value>
   </data>
   <data name="tsbEstudio.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -366,17 +351,26 @@
         AbBxAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="&gt;&gt;spcRight.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="tsmInformeFichaPaciente.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
   </data>
   <data name="&gt;&gt;tsmObraSocial.Name" xml:space="preserve">
     <value>tsmObraSocial</value>
   </data>
+  <data name="&gt;&gt;tsbRecordatorio.Name" xml:space="preserve">
+    <value>tsbRecordatorio</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Audiologia - Gestión</value>
   </data>
   <data name="tsmConsultarEstudio.Text" xml:space="preserve">
     <value>Consultar Estudio Realizado</value>
+  </data>
+  <data name="&gt;&gt;tsmReporteRecordatorio.Name" xml:space="preserve">
+    <value>tsmReporteRecordatorio</value>
   </data>
   <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
     <value>toolStripSeparator2</value>
@@ -399,6 +393,9 @@
   <data name="tsbAudifono.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="&gt;&gt;tsmSalir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;menuStrip1.Type" xml:space="preserve">
     <value>System.Windows.Forms.MenuStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -409,9 +406,6 @@
     <value>tsmGestionAudifono</value>
   </data>
   <data name="&gt;&gt;tsmManualAyuda.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsmAgenda.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;spcRight.Name" xml:space="preserve">
@@ -450,6 +444,12 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>Mds.Biodata.Forms.frmBase, Mds.Biodata.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="&gt;&gt;splitLeft.Name" xml:space="preserve">
+    <value>splitLeft</value>
+  </data>
+  <data name="tsmCambioPasswordUsuario.Text" xml:space="preserve">
+    <value>Cambio de Password del Usuario</value>
+  </data>
   <data name="tsbRecordatorio.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
@@ -458,9 +458,6 @@
   </data>
   <data name="tsmReporteAudifono.Text" xml:space="preserve">
     <value>Reporte de Audífonos</value>
-  </data>
-  <data name="&gt;&gt;tosPrincipal.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tsmReporteAudifonosPorPaciente.Text" xml:space="preserve">
     <value>Reporte de Audífonos por paciente</value>
@@ -474,14 +471,14 @@
   <data name="tsmReportePacientesPorAudifono.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
   </data>
+  <data name="tsmReporteRecordatorio.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 22</value>
+  </data>
   <data name="&gt;&gt;splitLeft.Panel2.Parent" xml:space="preserve">
     <value>splitLeft</value>
   </data>
   <data name="&gt;&gt;splitLeft.Panel2.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="tsmSeleccionAudifono.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
   </data>
   <data name="&gt;&gt;splitLeft.Panel1.Parent" xml:space="preserve">
     <value>splitLeft</value>
@@ -507,95 +504,8 @@
   <data name="&gt;&gt;tsmHerramientasSeguridad.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tsbReportePaciente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
+  <data name="&gt;&gt;tsmReporteObraSocial.Name" xml:space="preserve">
+    <value>tsmReporteObraSocial</value>
   </data>
   <data name="&gt;&gt;spcRight.Panel1.Parent" xml:space="preserve">
     <value>spcRight</value>
@@ -608,9 +518,6 @@
   </data>
   <data name="tsbPaciente.Text" xml:space="preserve">
     <value>Pacientes</value>
-  </data>
-  <data name="&gt;&gt;tsmAcercaDe.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsmGestionCiudad.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2532,6 +2439,9 @@
   <data name="&gt;&gt;tsmGestionPaciente.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="tbcPrincipal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
   <data name="tsbUsuarioLogueado.Text" xml:space="preserve">
     <value>Usuario: </value>
   </data>
@@ -2541,8 +2451,8 @@
   <data name="&gt;&gt;tsbAudifono.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tsmReporteRecordatorio.Name" xml:space="preserve">
-    <value>tsmReporteRecordatorio</value>
+  <data name="&gt;&gt;tsmAgenda.Name" xml:space="preserve">
+    <value>tsmAgenda</value>
   </data>
   <data name="tsmReporteEstudiosPaciente.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -3157,8 +3067,11 @@
   <data name="&gt;&gt;tsmGestionParametrosSistema.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;menuStrip1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;tbcPrincipal.Parent" xml:space="preserve">
+    <value>spcRight.Panel2</value>
+  </data>
+  <data name="&gt;&gt;tsmManualAyuda.Name" xml:space="preserve">
+    <value>tsmManualAyuda</value>
   </data>
   <data name="&gt;&gt;tsbReportePaciente.Name" xml:space="preserve">
     <value>tsbReportePaciente</value>
@@ -3284,6 +3197,9 @@
   <data name="tsmHerramientasSeguridad.Text" xml:space="preserve">
     <value>Herramientas y Seguridad</value>
   </data>
+  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>6, 39</value>
+  </data>
   <data name="&gt;&gt;tsmGestionObraSocial.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -3293,11 +3209,104 @@
   <data name="tsmGestionObraSocial.Text" xml:space="preserve">
     <value>Gestión de Obras Sociales</value>
   </data>
-  <data name="&gt;&gt;tsmManualAyuda.Name" xml:space="preserve">
-    <value>tsmManualAyuda</value>
+  <data name="tsbReportePaciente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
   <data name="tsmCambioPasswordUsuario.Size" type="System.Drawing.Size, System.Drawing">
     <value>251, 22</value>
+  </data>
+  <data name="tsmAudifono.Text" xml:space="preserve">
+    <value>Audífonos</value>
   </data>
   <data name="tsmReporteObraSocial.Text" xml:space="preserve">
     <value>Reporte de Obras Sociales</value>
@@ -3341,11 +3350,11 @@
   <data name="tsmAudifono.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 20</value>
   </data>
-  <data name="tsmAudifono.Text" xml:space="preserve">
-    <value>Audífonos</value>
+  <data name="&gt;&gt;tsmReportePacientesPorAudifono.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tbcPrincipal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;tsmAgenda.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tsmEstudio.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 20</value>
@@ -3356,12 +3365,6 @@
   <data name="tosPrincipal.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 24</value>
   </data>
-  <data name="&gt;&gt;tosPrincipal.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tsmGestionCiudad.Size" type="System.Drawing.Size, System.Drawing">
-    <value>209, 22</value>
-  </data>
   <data name="&gt;&gt;tsmReportePaciente.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -3371,14 +3374,11 @@
   <data name="&gt;&gt;tsbAyuda.Name" xml:space="preserve">
     <value>tsbAyuda</value>
   </data>
-  <data name="&gt;&gt;tsbRecordatorio.Name" xml:space="preserve">
-    <value>tsbRecordatorio</value>
+  <data name="&gt;&gt;tsbPaciente.Name" xml:space="preserve">
+    <value>tsbPaciente</value>
   </data>
   <data name="splitLeft.Orientation" type="System.Windows.Forms.Orientation, System.Windows.Forms">
     <value>Horizontal</value>
-  </data>
-  <data name="tsmRecordatorio.Text" xml:space="preserve">
-    <value>Recordatorios</value>
   </data>
   <data name="tsmBackUpBaseDatos.Size" type="System.Drawing.Size, System.Drawing">
     <value>251, 22</value>
@@ -3395,6 +3395,9 @@
   <data name="tsbReportePaciente.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
+  <data name="tsmPaciente.Text" xml:space="preserve">
+    <value>Pacientes</value>
+  </data>
   <data name="&gt;&gt;tsmEstudio.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -3410,14 +3413,11 @@
   <data name="tsbAudifono.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 36</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>936, 541</value>
-  </data>
   <data name="splitLeft.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="tsmReporteRecordatorio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 22</value>
+  <data name="&gt;&gt;tosPrincipal.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;splitLeft.Parent" xml:space="preserve">
     <value>spcRight.Panel1</value>
@@ -3443,8 +3443,8 @@
   <data name="&gt;&gt;tsbReporteAudifono.Name" xml:space="preserve">
     <value>tsbReporteAudifono</value>
   </data>
-  <data name="tsmPaciente.Text" xml:space="preserve">
-    <value>Pacientes</value>
+  <data name="&gt;&gt;tsbAyuda.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tsmNuevoEstudio.Size" type="System.Drawing.Size, System.Drawing">
     <value>218, 22</value>
@@ -3452,8 +3452,8 @@
   <data name="tsbReporteAudifono.Size" type="System.Drawing.Size, System.Drawing">
     <value>36, 36</value>
   </data>
-  <data name="spcRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="tsmGestionCiudad.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
   </data>
   <data name="&gt;&gt;menuStrip1.Name" xml:space="preserve">
     <value>menuStrip1</value>
@@ -3923,8 +3923,8 @@
   <data name="&gt;&gt;tsmReporteRecordatorio.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;tbcPrincipal.Parent" xml:space="preserve">
-    <value>spcRight.Panel2</value>
+  <data name="tsmGestionParametrosSistema.Size" type="System.Drawing.Size, System.Drawing">
+    <value>251, 22</value>
   </data>
   <data name="&gt;&gt;tosPrincipal.Parent" xml:space="preserve">
     <value>$this</value>
@@ -3938,8 +3938,8 @@
   <data name="&gt;&gt;tsmNuevoEstudio.Name" xml:space="preserve">
     <value>tsmNuevoEstudio</value>
   </data>
-  <data name="tsbPaciente.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>936, 541</value>
   </data>
   <data name="tsmReporteAudifono.Size" type="System.Drawing.Size, System.Drawing">
     <value>253, 22</value>
@@ -3947,17 +3947,17 @@
   <data name="spcRight.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 63</value>
   </data>
-  <data name="tsmCambioPasswordUsuario.Text" xml:space="preserve">
-    <value>Cambio de Password del Usuario</value>
+  <data name="tsmSeleccionAudifono.Size" type="System.Drawing.Size, System.Drawing">
+    <value>209, 22</value>
   </data>
   <data name="tsmEstudio.Text" xml:space="preserve">
     <value>Estudio</value>
   </data>
-  <data name="&gt;&gt;splitLeft.Name" xml:space="preserve">
-    <value>splitLeft</value>
+  <data name="&gt;&gt;spcRight.Panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.SplitterPanel, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;spcRight.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;tosPrincipal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbEstudio.Name" xml:space="preserve">
     <value>tsbEstudio</value>
@@ -3965,8 +3965,8 @@
   <data name="tsbAyuda.Text" xml:space="preserve">
     <value>Ayuda</value>
   </data>
-  <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>6, 39</value>
+  <data name="&gt;&gt;tsmAcercaDe.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tsmAyuda.Text" xml:space="preserve">
     <value>Ayuda</value>
@@ -3980,11 +3980,11 @@
   <data name="&gt;&gt;tsmAyuda.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="&gt;&gt;tsmAyuda.Name" xml:space="preserve">
+    <value>tsmAyuda</value>
   </data>
-  <data name="tsbAyuda.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
+  <data name="tsmRecordatorio.Text" xml:space="preserve">
+    <value>Recordatorios</value>
   </data>
   <data name="tsmReporte.Text" xml:space="preserve">
     <value>Reportes</value>
@@ -3995,16 +3995,13 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>54</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>English</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="tosPrincipal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 24</value>
-  </metadata>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
+  </metadata>
+  <metadata name="tosPrincipal.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>0, 24</value>
   </metadata>
 </root>

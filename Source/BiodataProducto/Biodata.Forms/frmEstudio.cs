@@ -12,6 +12,7 @@ using Mds.Biodata.Domain;
 using ObjectViews;
 using System.Collections;
 using Mds.Biodata.Forms.UserControls;
+using Mds.Biodata.Data;
 
 namespace Mds.Biodata.Forms
 {
@@ -334,7 +335,7 @@ namespace Mds.Biodata.Forms
                     wEstudio.IDHistoriaClinicaLookup = ((Paciente)wFila.InnerObject).HistoriaClinicas[0];
                     wEstudio.IDHistoriaClinica = wEstudio.IDHistoriaClinicaLookup.ID;
 
-                    EstudioBusiness EstudioBP = new EstudioBusiness(DaoFactory.GetEstudioDao());
+                    EstudioBusiness EstudioBP = new EstudioBusiness(DaoFactory.GetEstudioDao());    
 
                     if (this.Estado == EstadoForm.Nuevo)
                     {
