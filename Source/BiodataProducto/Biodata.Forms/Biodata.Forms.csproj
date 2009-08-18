@@ -256,11 +256,16 @@
       <DependentUpon>ReporteObrasSociales.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportePacienteDetalle.resx">
+      <DependentUpon>ReportePacienteDetalle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportePacientes.resx">
       <DependentUpon>ReportePacientes.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptObrasSociales.rdlc" />
+    <EmbeddedResource Include="Reportes\rptPacienteDetalle.rdlc" />
     <EmbeddedResource Include="Reportes\rptPacientes.rdlc" />
     <EmbeddedResource Include="UserControls\uscAnamnesis.resx">
       <DependentUpon>uscAnamnesis.cs</DependentUpon>
@@ -320,6 +325,12 @@
     </Compile>
     <Compile Include="Reportes\ReporteObrasSociales.Designer.cs">
       <DependentUpon>ReporteObrasSociales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportePacienteDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportePacienteDetalle.Designer.cs">
+      <DependentUpon>ReportePacienteDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReportePacientes.cs">
       <SubType>Form</SubType>

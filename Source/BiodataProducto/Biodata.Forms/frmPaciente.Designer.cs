@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPaciente));
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
@@ -77,6 +78,18 @@
             this.lblAntecedentesHereditarios = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.lblObservaciones = new System.Windows.Forms.Label();
+            this.gpbFiltros = new System.Windows.Forms.GroupBox();
+            this.lblCiudadBuscar = new System.Windows.Forms.Label();
+            this.cmbCiudadBuscar = new System.Windows.Forms.ComboBox();
+            this.txtDocumentoBuscar = new System.Windows.Forms.TextBox();
+            this.lblDocumentoBuscar = new System.Windows.Forms.Label();
+            this.txtNombreBuscar = new System.Windows.Forms.TextBox();
+            this.lblNombreBuscar = new System.Windows.Forms.Label();
+            this.cmbSexoBuscar = new System.Windows.Forms.ComboBox();
+            this.txtApellidoBuscar = new System.Windows.Forms.TextBox();
+            this.lblSexoBuscar = new System.Windows.Forms.Label();
+            this.lblApellidoBuscar = new System.Windows.Forms.Label();
+            this.btnBuscar = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
             this.pnlList.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -85,6 +98,7 @@
             this.tbcDatos.SuspendLayout();
             this.tbpDatosPaciente.SuspendLayout();
             this.tbpDatosHistorialClinico.SuspendLayout();
+            this.gpbFiltros.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDeleteItem
@@ -93,6 +107,7 @@
             // 
             // pnlList
             // 
+            this.pnlList.Location = new System.Drawing.Point(12, 88);
             this.pnlList.Size = new System.Drawing.Size(800, 205);
             // 
             // btnClose
@@ -373,31 +388,31 @@
             this.dgvObrasSociales.AllowUserToAddRows = false;
             this.dgvObrasSociales.AllowUserToDeleteRows = false;
             this.dgvObrasSociales.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvObrasSociales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvObrasSociales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvObrasSociales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvObrasSociales.BackgroundColor = System.Drawing.Color.White;
             this.dgvObrasSociales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkSalmon;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvObrasSociales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSalmon;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvObrasSociales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvObrasSociales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvObrasSociales.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObrasSociales.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvObrasSociales.EnableHeadersVisualStyles = false;
             this.dgvObrasSociales.GridColor = System.Drawing.Color.Silver;
             this.dgvObrasSociales.Location = new System.Drawing.Point(20, 28);
@@ -596,15 +611,134 @@
             this.lblObservaciones.TabIndex = 21;
             this.lblObservaciones.Text = "Observaciones";
             // 
+            // gpbFiltros
+            // 
+            this.gpbFiltros.Controls.Add(this.lblCiudadBuscar);
+            this.gpbFiltros.Controls.Add(this.cmbCiudadBuscar);
+            this.gpbFiltros.Controls.Add(this.txtDocumentoBuscar);
+            this.gpbFiltros.Controls.Add(this.lblDocumentoBuscar);
+            this.gpbFiltros.Controls.Add(this.txtNombreBuscar);
+            this.gpbFiltros.Controls.Add(this.lblNombreBuscar);
+            this.gpbFiltros.Controls.Add(this.cmbSexoBuscar);
+            this.gpbFiltros.Controls.Add(this.txtApellidoBuscar);
+            this.gpbFiltros.Controls.Add(this.lblSexoBuscar);
+            this.gpbFiltros.Controls.Add(this.lblApellidoBuscar);
+            this.gpbFiltros.Controls.Add(this.btnBuscar);
+            this.gpbFiltros.Location = new System.Drawing.Point(16, 0);
+            this.gpbFiltros.Name = "gpbFiltros";
+            this.gpbFiltros.Size = new System.Drawing.Size(796, 71);
+            this.gpbFiltros.TabIndex = 7;
+            this.gpbFiltros.TabStop = false;
+            this.gpbFiltros.Text = "Filtros";
+            // 
+            // lblCiudadBuscar
+            // 
+            this.lblCiudadBuscar.AutoSize = true;
+            this.lblCiudadBuscar.Location = new System.Drawing.Point(453, 22);
+            this.lblCiudadBuscar.Name = "lblCiudadBuscar";
+            this.lblCiudadBuscar.Size = new System.Drawing.Size(40, 13);
+            this.lblCiudadBuscar.TabIndex = 32;
+            this.lblCiudadBuscar.Text = "Ciudad";
+            // 
+            // cmbCiudadBuscar
+            // 
+            this.cmbCiudadBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCiudadBuscar.FormattingEnabled = true;
+            this.cmbCiudadBuscar.Location = new System.Drawing.Point(499, 18);
+            this.cmbCiudadBuscar.Name = "cmbCiudadBuscar";
+            this.cmbCiudadBuscar.Size = new System.Drawing.Size(148, 21);
+            this.cmbCiudadBuscar.TabIndex = 31;
+            // 
+            // txtDocumentoBuscar
+            // 
+            this.txtDocumentoBuscar.Location = new System.Drawing.Point(377, 45);
+            this.txtDocumentoBuscar.Name = "txtDocumentoBuscar";
+            this.txtDocumentoBuscar.Size = new System.Drawing.Size(270, 20);
+            this.txtDocumentoBuscar.TabIndex = 19;
+            // 
+            // lblDocumentoBuscar
+            // 
+            this.lblDocumentoBuscar.AutoSize = true;
+            this.lblDocumentoBuscar.Location = new System.Drawing.Point(309, 48);
+            this.lblDocumentoBuscar.Name = "lblDocumentoBuscar";
+            this.lblDocumentoBuscar.Size = new System.Drawing.Size(62, 13);
+            this.lblDocumentoBuscar.TabIndex = 18;
+            this.lblDocumentoBuscar.Text = "Documento";
+            // 
+            // txtNombreBuscar
+            // 
+            this.txtNombreBuscar.Location = new System.Drawing.Point(92, 45);
+            this.txtNombreBuscar.Name = "txtNombreBuscar";
+            this.txtNombreBuscar.Size = new System.Drawing.Size(179, 20);
+            this.txtNombreBuscar.TabIndex = 17;
+            // 
+            // lblNombreBuscar
+            // 
+            this.lblNombreBuscar.AutoSize = true;
+            this.lblNombreBuscar.Location = new System.Drawing.Point(42, 45);
+            this.lblNombreBuscar.Name = "lblNombreBuscar";
+            this.lblNombreBuscar.Size = new System.Drawing.Size(44, 13);
+            this.lblNombreBuscar.TabIndex = 16;
+            this.lblNombreBuscar.Text = "Nombre";
+            // 
+            // cmbSexoBuscar
+            // 
+            this.cmbSexoBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSexoBuscar.FormattingEnabled = true;
+            this.cmbSexoBuscar.Location = new System.Drawing.Point(377, 18);
+            this.cmbSexoBuscar.Name = "cmbSexoBuscar";
+            this.cmbSexoBuscar.Size = new System.Drawing.Size(61, 21);
+            this.cmbSexoBuscar.TabIndex = 15;
+            // 
+            // txtApellidoBuscar
+            // 
+            this.txtApellidoBuscar.Location = new System.Drawing.Point(92, 19);
+            this.txtApellidoBuscar.Name = "txtApellidoBuscar";
+            this.txtApellidoBuscar.Size = new System.Drawing.Size(179, 20);
+            this.txtApellidoBuscar.TabIndex = 14;
+            // 
+            // lblSexoBuscar
+            // 
+            this.lblSexoBuscar.AutoSize = true;
+            this.lblSexoBuscar.Location = new System.Drawing.Point(340, 21);
+            this.lblSexoBuscar.Name = "lblSexoBuscar";
+            this.lblSexoBuscar.Size = new System.Drawing.Size(31, 13);
+            this.lblSexoBuscar.TabIndex = 13;
+            this.lblSexoBuscar.Text = "Sexo";
+            // 
+            // lblApellidoBuscar
+            // 
+            this.lblApellidoBuscar.AutoSize = true;
+            this.lblApellidoBuscar.Location = new System.Drawing.Point(42, 19);
+            this.lblApellidoBuscar.Name = "lblApellidoBuscar";
+            this.lblApellidoBuscar.Size = new System.Drawing.Size(44, 13);
+            this.lblApellidoBuscar.TabIndex = 11;
+            this.lblApellidoBuscar.Text = "Apellido";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.Location = new System.Drawing.Point(678, 18);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(114, 27);
+            this.btnBuscar.TabIndex = 0;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnBuscar_Click);
+            // 
             // frmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(824, 698);
+            this.Controls.Add(this.gpbFiltros);
             this.Name = "frmPaciente";
             this.Text = "frmPaciente";
             this.Load += new System.EventHandler(this.frmPaciente_Load);
             this.SeleccionCompleja += new Mds.Biodata.Forms.frmABMBase.SeleccionComplejaEventHandler(this.frmPacienteSelecciones_SeleccionCompleja);
+            this.Controls.SetChildIndex(this.pnlList, 0);
+            this.Controls.SetChildIndex(this.pnlDetails, 0);
+            this.Controls.SetChildIndex(this.gpbFiltros, 0);
             this.pnlList.ResumeLayout(false);
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
@@ -616,6 +750,8 @@
             this.tbpDatosPaciente.PerformLayout();
             this.tbpDatosHistorialClinico.ResumeLayout(false);
             this.tbpDatosHistorialClinico.PerformLayout();
+            this.gpbFiltros.ResumeLayout(false);
+            this.gpbFiltros.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -667,5 +803,17 @@
         private System.Windows.Forms.Label lblAntecedentesPersonales;
         private System.Windows.Forms.Label lblInicioAtencion;
         private System.Windows.Forms.DateTimePicker dtpInicioAtencion;
+        public System.Windows.Forms.GroupBox gpbFiltros;
+        public Medusa.Biodata.FrontEnd.UserControls.ButtonUC btnBuscar;
+        private System.Windows.Forms.ComboBox cmbSexoBuscar;
+        private System.Windows.Forms.TextBox txtApellidoBuscar;
+        private System.Windows.Forms.Label lblSexoBuscar;
+        private System.Windows.Forms.Label lblApellidoBuscar;
+        private System.Windows.Forms.TextBox txtNombreBuscar;
+        private System.Windows.Forms.Label lblNombreBuscar;
+        private System.Windows.Forms.TextBox txtDocumentoBuscar;
+        private System.Windows.Forms.Label lblDocumentoBuscar;
+        private System.Windows.Forms.Label lblCiudadBuscar;
+        private System.Windows.Forms.ComboBox cmbCiudadBuscar;
     }
 }

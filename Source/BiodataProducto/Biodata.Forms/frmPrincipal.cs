@@ -180,7 +180,7 @@ namespace Mds.Biodata.Forms
         #region "--[Reportes]--"
         private void tsmInformeFichaPaciente_Click(object sender, EventArgs e)
         {
-
+            OpenReportePacienteDetalle();
         }
 
         private void tsmReportePaciente_Click(object sender, EventArgs e)
@@ -235,6 +235,18 @@ namespace Mds.Biodata.Forms
             try
             {
                 GereralFunctions.AbrirFormulario(new Reportes.ReporteObrasSociales(), (TabControl)this.spcRight.Panel2.Controls[0], "Reporte de Obras Sociales", DockStyle.Fill);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+        private void OpenReportePacienteDetalle()
+        {
+            try
+            {
+                GereralFunctions.AbrirFormulario(new Reportes.ReportePacienteDetalle(), (TabControl)this.spcRight.Panel2.Controls[0], "Informe de Paciente", DockStyle.Fill);
             }
             catch (Exception ex)
             {

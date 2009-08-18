@@ -32,7 +32,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbTipoAudifono = new System.Windows.Forms.ComboBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -126,19 +126,21 @@
             // 
             // cmbMarca
             // 
+            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(152, 96);
             this.cmbMarca.Name = "cmbMarca";
             this.cmbMarca.Size = new System.Drawing.Size(232, 21);
             this.cmbMarca.TabIndex = 12;
             // 
-            // comboBox2
+            // cmbTipoAudifono
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(152, 245);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(232, 21);
-            this.comboBox2.TabIndex = 13;
+            this.cmbTipoAudifono.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoAudifono.FormattingEnabled = true;
+            this.cmbTipoAudifono.Location = new System.Drawing.Point(152, 245);
+            this.cmbTipoAudifono.Name = "cmbTipoAudifono";
+            this.cmbTipoAudifono.Size = new System.Drawing.Size(232, 21);
+            this.cmbTipoAudifono.TabIndex = 13;
             // 
             // radioButton1
             // 
@@ -209,7 +211,7 @@
             this.tabPageEX1.Controls.Add(this.radioButton2);
             this.tabPageEX1.Controls.Add(this.cmbMarca);
             this.tabPageEX1.Controls.Add(this.radioButton1);
-            this.tabPageEX1.Controls.Add(this.comboBox2);
+            this.tabPageEX1.Controls.Add(this.cmbTipoAudifono);
             this.tabPageEX1.Location = new System.Drawing.Point(27, 4);
             this.tabPageEX1.Name = "tabPageEX1";
             this.tabPageEX1.Size = new System.Drawing.Size(684, 393);
@@ -335,7 +337,7 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ComboBox cmbMarca;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbTipoAudifono;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.CheckBox checkBox1;
