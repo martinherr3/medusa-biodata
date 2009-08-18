@@ -12,5 +12,10 @@ namespace Mds.Biodata.Business
         {
 
         }
+
+        public List<Paciente> GetPacientesByParameters(String pNombre, String pApellido, Decimal? pNumeroDocumento, String pSexo, Int32? pIDCiudad)
+        {
+            return Dao.GetPacientesByParameters(pNombre, pApellido, pNumeroDocumento, pSexo, pIDCiudad);
+        }
     }
 }

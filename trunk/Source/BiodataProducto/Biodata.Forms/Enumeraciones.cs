@@ -45,6 +45,16 @@ namespace Mds.Biodata.Forms
             TestDeLing=6
         }
 
+        public enum TipoAudifono
+        {
+            Retroauricular=0,
+            Minicanal=1,
+            Cic=2,
+            Canal=3,
+            HalfShell=4,
+            FullShell=5
+        }
+
     }
 
     public class Constantes

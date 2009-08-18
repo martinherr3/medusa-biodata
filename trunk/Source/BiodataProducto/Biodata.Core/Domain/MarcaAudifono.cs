@@ -13,7 +13,7 @@ namespace Mds.Biodata.Domain
 
 
         private System.String _Nombre;
-        private List<Audifono> _Audifonos = new List<Audifono>();
+        private IList<Audifono> _Audifonos = new List<Audifono>();
 
         public MarcaAudifono()
         {
@@ -29,7 +29,7 @@ namespace Mds.Biodata.Domain
              set { _Nombre = value;}
          }
 
-         public virtual List<Audifono> Audifonos{
+         public virtual IList<Audifono> Audifonos{
              get { return _Audifonos; }
              set { _Audifonos = value; }
          }

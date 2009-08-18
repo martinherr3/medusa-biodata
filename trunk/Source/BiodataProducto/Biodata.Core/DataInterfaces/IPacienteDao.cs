@@ -12,6 +12,6 @@ namespace Mds.Biodata.Core.DataInterfaces
     /// </summary>
     public interface IPacienteDao : IDao<Paciente, System.Int32>
     {
-
+        List<Paciente> GetPacientesByParameters(String pNombre, String pApellido, Decimal? pNumeroDocumento, String pSexo, Int32? pIDCiudad);
     }
 }

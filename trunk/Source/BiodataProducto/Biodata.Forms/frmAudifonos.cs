@@ -89,10 +89,83 @@ namespace Mds.Biodata.Forms
             //Marca Audifonos
             MarcaAudifonoBusiness MarcaBP = new MarcaAudifonoBusiness(DaoFactory.GetMarcaAudifonoDao());
             List<MarcaAudifono> wMarcaEntities = MarcaBP.GetAll();
-            //cmbProvincia.DataSource = wMarcaEntities;
+            cmbMarca.DataSource = wMarcaEntities;
 
             cmbMarca.ValueMember = "ID";
             cmbMarca.DisplayMember = "Nombre";
+
+            //Tipo de Documento
+            cmbTipoAudifono.DataSource = Enum.GetValues(typeof(Enumeraciones.TipoAudifono));
         }
+
+
+        public override void Accion()
+        {
+            try
+            {
+                pnlDetails.Visible = true;
+
+                switch (Estado)
+                {
+                    case EstadoForm.Nuevo:
+                        textBox1.Text = string.Empty;
+                        textBox1.Enabled = false;
+                        //txtNombre.Text = string.Empty;
+                        //txtApellido.Text = string.Empty;
+                        //txtDireccion.Text = string.Empty;
+                        //cmbTipoDocumento.SelectedItem = Enumeraciones.TipoDocumento.DNI;
+                        //txtNumeroDocumento.Text = string.Empty;
+                        //txtCorreoElectronico.Text = string.Empty;
+                        //dtpFechaNacimiento.Value = DateTime.Now;
+                        //cmbSexo.SelectedItem = Enumeraciones.Sexo.M;
+                        //txtComentario.Text = string.Empty;
+                        //txtTelefono.Text = string.Empty;
+                        //txtCelular.Text = string.Empty;
+                        //txtCiudad.Tag = string.Empty;
+                        //txtCiudad.Text = string.Empty;
+                        ////Limpieza de los controles de Historia Clinica
+                        ///////////////////////////////////////////////////////////////////
+                        //dtpInicioAtencion.Value = DateTime.Now;
+                        //txtObservaciones.Text = string.Empty;
+                        //txtAntecedentesHereditarios.Text = string.Empty;
+                        //txtAntecedentesPersonales.Text = string.Empty;
+                        //txtEstadoSalud.Text = string.Empty;
+                        ///////////////////////////////////////////////////////////////////
+                        ////Limpieza de la grilla de obras sociales
+                        ///////////////////////////////////////////////////////////////////
+                        //dgvObrasSociales.DataSource = null;
+                        ///////////////////////////////////////////////////////////////////
+                        textBox2.Focus();
+                        //PacienteEntity = new Paciente();
+
+                        break;
+
+                    case EstadoForm.Editar:
+                        //if (dgvList.Rows.Count > 0)
+                        //{
+                        //    txtID.Enabled = false;
+                        //    LoadData();
+                        //    txtNombre.Focus();
+                        //}
+
+                        break;
+
+                    case EstadoForm.Eliminar:
+                        //if (dgvList.Rows.Count > 0)
+                        //{
+                        //    txtID.Enabled = false;
+                        //    LoadData();
+                        //}
+
+                        break;
+                }
+            }
+
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
     }
 }

@@ -114,7 +114,7 @@ namespace Mds.Biodata.Forms
         /// <summary>
         /// Carga la grilla con los registros de la DB
         /// </summary>
-        private void LoadList()
+        private void LoadList(Boolean ContarParametrosBusqueda)
         {
             try
             {
@@ -124,7 +124,7 @@ namespace Mds.Biodata.Forms
                 dgvList.DataSource = null;
                 Habilitar(false);
                 btnClose.Enabled = true;
-                bgwLoad.RunWorkerAsync();
+                bgwLoad.RunWorkerAsync(ContarParametrosBusqueda);
             }
             catch (Exception ex)
             {
@@ -224,7 +224,7 @@ namespace Mds.Biodata.Forms
         }
 
         /// <summary>
-        /// Carga los combos de Tipo de Documento, Sexo y Ciudad
+        /// Carga los combos de Tipo de Documento y Sexo
         /// </summary>
         private void LoadCombos()
         {
@@ -234,6 +234,46 @@ namespace Mds.Biodata.Forms
                 cmbTipoDocumento.DataSource = Enum.GetValues(typeof(Enumeraciones.TipoDocumento));
                 //Sexo
                 cmbSexo.DataSource = Enum.GetValues(typeof(Enumeraciones.Sexo));
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+        /// <summary>
+        /// Carga los combos de Tipo de Documento y Sexo para busqueda
+        /// </summary>
+        private void LoadCombosBusqueda()
+        {
+            try
+            {
+                Array miSexo = Enum.GetValues(typeof(Enumeraciones.Sexo));
+
+                cmbSexoBuscar.Items.Add("--Sel--");
+
+                for (Int32 i = 0; i < miSexo.Length; i++)
+                {
+                    cmbSexoBuscar.Items.Add(miSexo.GetValue(i));
+                }
+
+                cmbSexoBuscar.SelectedIndex = 0;
+
+                CiudadBusiness CiudadBP = new CiudadBusiness(DaoFactory.GetCiudadDao());
+                List<Ciudad> wCiudadEntitiesBuscar = CiudadBP.GetAll();
+                //cmbCiudadBuscar.DataSource = wCiudadEntitiesBuscar;
+                cmbCiudadBuscar.ValueMember = "ID";
+                cmbCiudadBuscar.DisplayMember = "Descripcion";
+
+                for (Int32 i = wCiudadEntitiesBuscar.Count - 1; i > -1; i--)
+                {
+                    cmbCiudadBuscar.Items.Insert(0, wCiudadEntitiesBuscar[i]);
+                }
+
+                cmbCiudadBuscar.Items.Insert(0, "--Sel--");
+
+                cmbCiudadBuscar.SelectedIndex = 0;
+
             }
             catch (Exception ex)
             {
@@ -286,14 +326,38 @@ namespace Mds.Biodata.Forms
         #region "--[Events]--"
         private void frmPaciente_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
             _PacienteBP = new PacienteBusiness(DaoFactory.GetPacienteDao());
             LoadCombos();
-            LoadList();
+            LoadCombosBusqueda();
+            LoadList(false);
         }
 
         private void bgwLoad_DoWork(object sender, DoWorkEventArgs e)
         {
-            _PacienteEntities = _PacienteBP.GetAll();
+            if (!Convert.ToBoolean(e.Argument))
+            {
+                _PacienteEntities = _PacienteBP.GetAll();
+            }
+            else
+            {
+                Int32? ValorCiudad = null;
+
+                if (cmbCiudadBuscar.SelectedIndex != 0)
+                {
+                    ValorCiudad = (Int32)cmbCiudadBuscar.SelectedValue;
+                }
+
+                Decimal? ValorNumeroDocumento = null;
+
+                if (txtNumeroDocumento.Text != "")
+                {
+                    ValorNumeroDocumento = Convert.ToDecimal(txtNumeroDocumento.Text);
+                }
+
+                _PacienteEntities = _PacienteBP.GetPacientesByParameters(txtNombreBuscar.Text, txtApellidoBuscar.Text, ValorNumeroDocumento, cmbSexoBuscar.SelectedText, ValorCiudad);
+
+            }
         }
 
         private void bgwLoad_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -410,7 +474,7 @@ namespace Mds.Biodata.Forms
                             PacienteEntity.HistoriaClinicas[0].EstadoSalud = txtEstadoSalud.Text;
                             PacienteBP.Update(PacienteEntity);
                             PacienteBP.Commit();
-                            
+
                             //ObraSocialXPacienteBusiness wObraSocialXPacienteBP = new ObraSocialXPacienteBusiness(DaoFactory.GetObraSocialXPacienteDao());
                             ////Borramos las anteriores
                             //ObraSocialXPaciente wObraSocialesABorrar = new ObraSocialXPaciente();
@@ -443,7 +507,7 @@ namespace Mds.Biodata.Forms
                             //wObraSocialXPacienteBP2.Commit();
                             break;
                         case EstadoForm.Nuevo:
-                            
+
                             HistoriaClinica wHistoriaNuevo = new HistoriaClinica();
                             wHistoriaNuevo.FechaInicioAtencion = dtpInicioAtencion.Value;
                             wHistoriaNuevo.Observaciones = txtObservaciones.Text;
@@ -458,7 +522,7 @@ namespace Mds.Biodata.Forms
                     pnlDetails.Visible = false;
                     CambiarTamaño(true);
                     Estado = EstadoForm.Grilla;
-                    LoadList();
+                    LoadList(false);
                 }
             }
 
@@ -545,6 +609,12 @@ namespace Mds.Biodata.Forms
         {
             AgregarObraSocial();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            LoadList(true);
+        }
         #endregion
+
     }
 }
