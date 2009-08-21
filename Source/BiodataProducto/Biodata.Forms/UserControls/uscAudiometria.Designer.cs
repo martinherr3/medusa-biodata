@@ -82,9 +82,9 @@
             this.gpbAudiogramaIzquierdo.Controls.Add(this.lblFrecuenciaIzq);
             this.gpbAudiogramaIzquierdo.Controls.Add(this.gpbTipoIzq);
             this.gpbAudiogramaIzquierdo.Controls.Add(this.linerLeft);
-            this.gpbAudiogramaIzquierdo.Location = new System.Drawing.Point(3, 15);
+            this.gpbAudiogramaIzquierdo.Location = new System.Drawing.Point(518, 11);
             this.gpbAudiogramaIzquierdo.Name = "gpbAudiogramaIzquierdo";
-            this.gpbAudiogramaIzquierdo.Size = new System.Drawing.Size(495, 508);
+            this.gpbAudiogramaIzquierdo.Size = new System.Drawing.Size(489, 491);
             this.gpbAudiogramaIzquierdo.TabIndex = 11;
             this.gpbAudiogramaIzquierdo.TabStop = false;
             this.gpbAudiogramaIzquierdo.Text = "Audiograma Izquierdo";
@@ -149,9 +149,9 @@
             this.gpbAudiogramaDerecho.Controls.Add(this.gpbTipoDer);
             this.gpbAudiogramaDerecho.Controls.Add(this.linerRight);
             this.gpbAudiogramaDerecho.ForeColor = System.Drawing.Color.Red;
-            this.gpbAudiogramaDerecho.Location = new System.Drawing.Point(504, 15);
+            this.gpbAudiogramaDerecho.Location = new System.Drawing.Point(3, 11);
             this.gpbAudiogramaDerecho.Name = "gpbAudiogramaDerecho";
-            this.gpbAudiogramaDerecho.Size = new System.Drawing.Size(506, 508);
+            this.gpbAudiogramaDerecho.Size = new System.Drawing.Size(509, 491);
             this.gpbAudiogramaDerecho.TabIndex = 12;
             this.gpbAudiogramaDerecho.TabStop = false;
             this.gpbAudiogramaDerecho.Text = "Audiograma Derecho";
