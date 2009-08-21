@@ -303,6 +303,7 @@
     <None Include="Config\CastleComponents.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Properties\DataSources\Mds.Biodata.Domain.HistoriaClinica.datasource" />
     <None Include="Properties\DataSources\Mds.Biodata.Domain.ObraSocial.datasource" />
     <None Include="Properties\DataSources\Mds.Biodata.Domain.Paciente.datasource" />
     <None Include="Properties\Settings.settings">

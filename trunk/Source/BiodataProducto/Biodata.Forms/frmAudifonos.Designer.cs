@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.txtNombreModelo = new System.Windows.Forms.TextBox();
+            this.txtObservacion = new System.Windows.Forms.TextBox();
             this.cmbMarca = new System.Windows.Forms.ComboBox();
             this.cmbTipoAudifono = new System.Windows.Forms.ComboBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.tabControlEX1 = new Dotnetrix.Controls.TabControlEX();
-            this.tabPageEX1 = new Dotnetrix.Controls.TabPageEX();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabPageEX2 = new Dotnetrix.Controls.TabPageEX();
-            this.linerLeft = new Pavr.Drawing.Liner();
+            this.radDigital = new System.Windows.Forms.RadioButton();
+            this.radAnalogico = new System.Windows.Forms.RadioButton();
+            this.chkProgramable = new System.Windows.Forms.CheckBox();
+            this.txtPresionSalida = new System.Windows.Forms.TextBox();
+            this.tbcAudifono = new Dotnetrix.Controls.TabControlEX();
+            this.tbpDatos = new Dotnetrix.Controls.TabPageEX();
+            this.lblPresionSalida = new System.Windows.Forms.Label();
+            this.lblProgramable = new System.Windows.Forms.Label();
+            this.lblSenal = new System.Windows.Forms.Label();
+            this.lblTipoAudifono = new System.Windows.Forms.Label();
+            this.lblObservacion = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblNombreModelo = new System.Windows.Forms.Label();
+            this.lblID = new System.Windows.Forms.Label();
+            this.tbpFranjaAdaptacion = new Dotnetrix.Controls.TabPageEX();
+            this.linerFranjaAdaptacion = new Pavr.Drawing.Liner();
             this.pnlList.SuspendLayout();
             this.pnlDetails.SuspendLayout();
-            this.tabControlEX1.SuspendLayout();
-            this.tabPageEX1.SuspendLayout();
-            this.tabPageEX2.SuspendLayout();
+            this.tbcAudifono.SuspendLayout();
+            this.tbpDatos.SuspendLayout();
+            this.tbpFranjaAdaptacion.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDeleteItem
@@ -86,13 +86,13 @@
             // 
             // pnlDetails
             // 
-            this.pnlDetails.Controls.Add(this.tabControlEX1);
+            this.pnlDetails.Controls.Add(this.tbcAudifono);
             this.pnlDetails.Location = new System.Drawing.Point(12, 234);
             this.pnlDetails.Size = new System.Drawing.Size(721, 476);
             this.pnlDetails.Controls.SetChildIndex(this.lblDeleteItem, 0);
             this.pnlDetails.Controls.SetChildIndex(this.btnAccept, 0);
             this.pnlDetails.Controls.SetChildIndex(this.btnCancel, 0);
-            this.pnlDetails.Controls.SetChildIndex(this.tabControlEX1, 0);
+            this.pnlDetails.Controls.SetChildIndex(this.tbcAudifono, 0);
             // 
             // btnCancel
             // 
@@ -102,27 +102,27 @@
             // 
             this.btnAccept.Location = new System.Drawing.Point(493, 446);
             // 
-            // textBox1
+            // txtID
             // 
-            this.textBox1.Location = new System.Drawing.Point(152, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(65, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtID.Location = new System.Drawing.Point(152, 18);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(65, 20);
+            this.txtID.TabIndex = 5;
             // 
-            // textBox2
+            // txtNombreModelo
             // 
-            this.textBox2.Location = new System.Drawing.Point(152, 55);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(343, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtNombreModelo.Location = new System.Drawing.Point(152, 55);
+            this.txtNombreModelo.Name = "txtNombreModelo";
+            this.txtNombreModelo.Size = new System.Drawing.Size(343, 20);
+            this.txtNombreModelo.TabIndex = 6;
             // 
-            // textBox3
+            // txtObservacion
             // 
-            this.textBox3.Location = new System.Drawing.Point(152, 132);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(343, 94);
-            this.textBox3.TabIndex = 7;
+            this.txtObservacion.Location = new System.Drawing.Point(152, 132);
+            this.txtObservacion.Multiline = true;
+            this.txtObservacion.Name = "txtObservacion";
+            this.txtObservacion.Size = new System.Drawing.Size(343, 94);
+            this.txtObservacion.TabIndex = 7;
             // 
             // cmbMarca
             // 
@@ -142,175 +142,175 @@
             this.cmbTipoAudifono.Size = new System.Drawing.Size(232, 21);
             this.cmbTipoAudifono.TabIndex = 13;
             // 
-            // radioButton1
+            // radDigital
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(152, 281);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(54, 17);
-            this.radioButton1.TabIndex = 14;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Digital";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radDigital.AutoSize = true;
+            this.radDigital.Checked = true;
+            this.radDigital.Location = new System.Drawing.Point(152, 281);
+            this.radDigital.Name = "radDigital";
+            this.radDigital.Size = new System.Drawing.Size(54, 17);
+            this.radDigital.TabIndex = 14;
+            this.radDigital.TabStop = true;
+            this.radDigital.Text = "Digital";
+            this.radDigital.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radAnalogico
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(212, 281);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(72, 17);
-            this.radioButton2.TabIndex = 15;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Analogico";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radAnalogico.AutoSize = true;
+            this.radAnalogico.Location = new System.Drawing.Point(212, 281);
+            this.radAnalogico.Name = "radAnalogico";
+            this.radAnalogico.Size = new System.Drawing.Size(72, 17);
+            this.radAnalogico.TabIndex = 15;
+            this.radAnalogico.TabStop = true;
+            this.radAnalogico.Text = "Analogico";
+            this.radAnalogico.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkProgramable
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(152, 313);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkProgramable.AutoSize = true;
+            this.chkProgramable.Location = new System.Drawing.Point(152, 313);
+            this.chkProgramable.Name = "chkProgramable";
+            this.chkProgramable.Size = new System.Drawing.Size(15, 14);
+            this.chkProgramable.TabIndex = 16;
+            this.chkProgramable.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txtPresionSalida
             // 
-            this.textBox4.Location = new System.Drawing.Point(152, 343);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(65, 20);
-            this.textBox4.TabIndex = 17;
+            this.txtPresionSalida.Location = new System.Drawing.Point(152, 343);
+            this.txtPresionSalida.Name = "txtPresionSalida";
+            this.txtPresionSalida.Size = new System.Drawing.Size(65, 20);
+            this.txtPresionSalida.TabIndex = 17;
             // 
-            // tabControlEX1
+            // tbcAudifono
             // 
-            this.tabControlEX1.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.tabControlEX1.Controls.Add(this.tabPageEX1);
-            this.tabControlEX1.Controls.Add(this.tabPageEX2);
-            this.tabControlEX1.Location = new System.Drawing.Point(3, 3);
-            this.tabControlEX1.Multiline = true;
-            this.tabControlEX1.Name = "tabControlEX1";
-            this.tabControlEX1.SelectedIndex = 0;
-            this.tabControlEX1.Size = new System.Drawing.Size(715, 401);
-            this.tabControlEX1.TabIndex = 18;
+            this.tbcAudifono.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.tbcAudifono.Controls.Add(this.tbpDatos);
+            this.tbcAudifono.Controls.Add(this.tbpFranjaAdaptacion);
+            this.tbcAudifono.Location = new System.Drawing.Point(3, 3);
+            this.tbcAudifono.Multiline = true;
+            this.tbcAudifono.Name = "tbcAudifono";
+            this.tbcAudifono.SelectedIndex = 1;
+            this.tbcAudifono.Size = new System.Drawing.Size(715, 401);
+            this.tbcAudifono.TabIndex = 18;
             // 
-            // tabPageEX1
+            // tbpDatos
             // 
-            this.tabPageEX1.Controls.Add(this.label8);
-            this.tabPageEX1.Controls.Add(this.label7);
-            this.tabPageEX1.Controls.Add(this.label6);
-            this.tabPageEX1.Controls.Add(this.label5);
-            this.tabPageEX1.Controls.Add(this.label4);
-            this.tabPageEX1.Controls.Add(this.label3);
-            this.tabPageEX1.Controls.Add(this.label2);
-            this.tabPageEX1.Controls.Add(this.label1);
-            this.tabPageEX1.Controls.Add(this.textBox1);
-            this.tabPageEX1.Controls.Add(this.textBox4);
-            this.tabPageEX1.Controls.Add(this.textBox2);
-            this.tabPageEX1.Controls.Add(this.checkBox1);
-            this.tabPageEX1.Controls.Add(this.textBox3);
-            this.tabPageEX1.Controls.Add(this.radioButton2);
-            this.tabPageEX1.Controls.Add(this.cmbMarca);
-            this.tabPageEX1.Controls.Add(this.radioButton1);
-            this.tabPageEX1.Controls.Add(this.cmbTipoAudifono);
-            this.tabPageEX1.Location = new System.Drawing.Point(27, 4);
-            this.tabPageEX1.Name = "tabPageEX1";
-            this.tabPageEX1.Size = new System.Drawing.Size(684, 393);
-            this.tabPageEX1.TabIndex = 0;
-            this.tabPageEX1.Text = "Datos";
+            this.tbpDatos.Controls.Add(this.lblPresionSalida);
+            this.tbpDatos.Controls.Add(this.lblProgramable);
+            this.tbpDatos.Controls.Add(this.lblSenal);
+            this.tbpDatos.Controls.Add(this.lblTipoAudifono);
+            this.tbpDatos.Controls.Add(this.lblObservacion);
+            this.tbpDatos.Controls.Add(this.lblMarca);
+            this.tbpDatos.Controls.Add(this.lblNombreModelo);
+            this.tbpDatos.Controls.Add(this.lblID);
+            this.tbpDatos.Controls.Add(this.txtID);
+            this.tbpDatos.Controls.Add(this.txtPresionSalida);
+            this.tbpDatos.Controls.Add(this.txtNombreModelo);
+            this.tbpDatos.Controls.Add(this.chkProgramable);
+            this.tbpDatos.Controls.Add(this.txtObservacion);
+            this.tbpDatos.Controls.Add(this.radAnalogico);
+            this.tbpDatos.Controls.Add(this.cmbMarca);
+            this.tbpDatos.Controls.Add(this.radDigital);
+            this.tbpDatos.Controls.Add(this.cmbTipoAudifono);
+            this.tbpDatos.Location = new System.Drawing.Point(27, 4);
+            this.tbpDatos.Name = "tbpDatos";
+            this.tbpDatos.Size = new System.Drawing.Size(684, 393);
+            this.tbpDatos.TabIndex = 0;
+            this.tbpDatos.Text = "Datos";
             // 
-            // label8
+            // lblPresionSalida
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(26, 346);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(113, 13);
-            this.label8.TabIndex = 25;
-            this.label8.Text = "Presion Maxima Salida";
+            this.lblPresionSalida.AutoSize = true;
+            this.lblPresionSalida.Location = new System.Drawing.Point(26, 346);
+            this.lblPresionSalida.Name = "lblPresionSalida";
+            this.lblPresionSalida.Size = new System.Drawing.Size(113, 13);
+            this.lblPresionSalida.TabIndex = 25;
+            this.lblPresionSalida.Text = "Presion Maxima Salida";
             // 
-            // label7
+            // lblProgramable
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(73, 314);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 13);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Programable";
+            this.lblProgramable.AutoSize = true;
+            this.lblProgramable.Location = new System.Drawing.Point(73, 314);
+            this.lblProgramable.Name = "lblProgramable";
+            this.lblProgramable.Size = new System.Drawing.Size(66, 13);
+            this.lblProgramable.TabIndex = 24;
+            this.lblProgramable.Text = "Programable";
             // 
-            // label6
+            // lblSenal
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(102, 283);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Señal";
+            this.lblSenal.AutoSize = true;
+            this.lblSenal.Location = new System.Drawing.Point(102, 283);
+            this.lblSenal.Name = "lblSenal";
+            this.lblSenal.Size = new System.Drawing.Size(34, 13);
+            this.lblSenal.TabIndex = 23;
+            this.lblSenal.Text = "Señal";
             // 
-            // label5
+            // lblTipoAudifono
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(102, 248);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 13);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Tipo";
+            this.lblTipoAudifono.AutoSize = true;
+            this.lblTipoAudifono.Location = new System.Drawing.Point(102, 248);
+            this.lblTipoAudifono.Name = "lblTipoAudifono";
+            this.lblTipoAudifono.Size = new System.Drawing.Size(28, 13);
+            this.lblTipoAudifono.TabIndex = 22;
+            this.lblTipoAudifono.Text = "Tipo";
             // 
-            // label4
+            // lblObservacion
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(70, 135);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 13);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Observación";
+            this.lblObservacion.AutoSize = true;
+            this.lblObservacion.Location = new System.Drawing.Point(70, 135);
+            this.lblObservacion.Name = "lblObservacion";
+            this.lblObservacion.Size = new System.Drawing.Size(67, 13);
+            this.lblObservacion.TabIndex = 21;
+            this.lblObservacion.Text = "Observación";
             // 
-            // label3
+            // lblMarca
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(102, 99);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Marca";
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(102, 99);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(37, 13);
+            this.lblMarca.TabIndex = 20;
+            this.lblMarca.Text = "Marca";
             // 
-            // label2
+            // lblNombreModelo
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 58);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Nombre de Modelo";
+            this.lblNombreModelo.AutoSize = true;
+            this.lblNombreModelo.Location = new System.Drawing.Point(40, 58);
+            this.lblNombreModelo.Name = "lblNombreModelo";
+            this.lblNombreModelo.Size = new System.Drawing.Size(97, 13);
+            this.lblNombreModelo.TabIndex = 19;
+            this.lblNombreModelo.Text = "Nombre de Modelo";
             // 
-            // label1
+            // lblID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(119, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "ID";
+            this.lblID.AutoSize = true;
+            this.lblID.Location = new System.Drawing.Point(119, 21);
+            this.lblID.Name = "lblID";
+            this.lblID.Size = new System.Drawing.Size(18, 13);
+            this.lblID.TabIndex = 18;
+            this.lblID.Text = "ID";
             // 
-            // tabPageEX2
+            // tbpFranjaAdaptacion
             // 
-            this.tabPageEX2.Controls.Add(this.linerLeft);
-            this.tabPageEX2.Location = new System.Drawing.Point(27, 4);
-            this.tabPageEX2.Name = "tabPageEX2";
-            this.tabPageEX2.Size = new System.Drawing.Size(684, 393);
-            this.tabPageEX2.TabIndex = 1;
-            this.tabPageEX2.Text = "Franja Adaptación";
+            this.tbpFranjaAdaptacion.Controls.Add(this.linerFranjaAdaptacion);
+            this.tbpFranjaAdaptacion.Location = new System.Drawing.Point(27, 4);
+            this.tbpFranjaAdaptacion.Name = "tbpFranjaAdaptacion";
+            this.tbpFranjaAdaptacion.Size = new System.Drawing.Size(684, 393);
+            this.tbpFranjaAdaptacion.TabIndex = 1;
+            this.tbpFranjaAdaptacion.Text = "Franja Adaptación";
             // 
-            // linerLeft
+            // linerFranjaAdaptacion
             // 
-            this.linerLeft.BackColor = System.Drawing.Color.Transparent;
-            this.linerLeft.CreateButtonText = "Generar Franja";
-            this.linerLeft.LegendCaption = "Leyendas";
-            this.linerLeft.LineColor = null;
-            this.linerLeft.Location = new System.Drawing.Point(16, 28);
-            this.linerLeft.MatrixLinesColor = System.Drawing.Color.LightGray;
-            this.linerLeft.Name = "linerLeft";
-            this.linerLeft.PointColor = System.Drawing.Color.Black;
-            this.linerLeft.Size = new System.Drawing.Size(472, 296);
-            this.linerLeft.TabIndex = 8;
+            this.linerFranjaAdaptacion.BackColor = System.Drawing.Color.Transparent;
+            this.linerFranjaAdaptacion.CreateButtonText = "Generar Franja";
+            this.linerFranjaAdaptacion.LegendCaption = "Leyendas";
+            this.linerFranjaAdaptacion.LineColor = null;
+            this.linerFranjaAdaptacion.Location = new System.Drawing.Point(16, 28);
+            this.linerFranjaAdaptacion.MatrixLinesColor = System.Drawing.Color.LightGray;
+            this.linerFranjaAdaptacion.Name = "linerFranjaAdaptacion";
+            this.linerFranjaAdaptacion.PointColor = System.Drawing.Color.Black;
+            this.linerFranjaAdaptacion.Size = new System.Drawing.Size(472, 296);
+            this.linerFranjaAdaptacion.TabIndex = 8;
             // 
             // frmAudifonos
             // 
@@ -323,36 +323,36 @@
             this.pnlList.ResumeLayout(false);
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
-            this.tabControlEX1.ResumeLayout(false);
-            this.tabPageEX1.ResumeLayout(false);
-            this.tabPageEX1.PerformLayout();
-            this.tabPageEX2.ResumeLayout(false);
+            this.tbcAudifono.ResumeLayout(false);
+            this.tbpDatos.ResumeLayout(false);
+            this.tbpDatos.PerformLayout();
+            this.tbpFranjaAdaptacion.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtObservacion;
+        private System.Windows.Forms.TextBox txtNombreModelo;
         private System.Windows.Forms.ComboBox cmbMarca;
         private System.Windows.Forms.ComboBox cmbTipoAudifono;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private Dotnetrix.Controls.TabControlEX tabControlEX1;
-        private Dotnetrix.Controls.TabPageEX tabPageEX1;
-        private Dotnetrix.Controls.TabPageEX tabPageEX2;
-        private Pavr.Drawing.Liner linerLeft;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RadioButton radAnalogico;
+        private System.Windows.Forms.RadioButton radDigital;
+        private System.Windows.Forms.CheckBox chkProgramable;
+        private System.Windows.Forms.TextBox txtPresionSalida;
+        private Dotnetrix.Controls.TabControlEX tbcAudifono;
+        private Dotnetrix.Controls.TabPageEX tbpDatos;
+        private Dotnetrix.Controls.TabPageEX tbpFranjaAdaptacion;
+        private Pavr.Drawing.Liner linerFranjaAdaptacion;
+        private System.Windows.Forms.Label lblProgramable;
+        private System.Windows.Forms.Label lblSenal;
+        private System.Windows.Forms.Label lblTipoAudifono;
+        private System.Windows.Forms.Label lblObservacion;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Label lblNombreModelo;
+        private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.Label lblPresionSalida;
     }
 }
