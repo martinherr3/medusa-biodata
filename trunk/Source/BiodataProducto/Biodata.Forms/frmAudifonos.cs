@@ -64,26 +64,19 @@ namespace Mds.Biodata.Forms
             InitializeComponent();
         }
 
-        private void frmAudifonos_Load(object sender, EventArgs e)
-        {
-            _AudifonoBP = new AudifonoBusiness(DaoFactory.GetAudifonoDao());
-            LoadCombos();
-            //LoadList();
-        }
-
         private void InitializeObjectView()
         {
             this.AudifonoObjectView = new ObjectView(typeof(Audifono));
             this.AudifonoObjectView.AllowRemove = false;
             this.AudifonoObjectView.Columns.Add("NombreModelo", Translate("Nombre"));
             this.AudifonoObjectView.Columns.Add("Marca", Translate("Marca"));
-            this.AudifonoObjectView.Columns.Add("Tipo", Translate("Tipo"));
+            this.AudifonoObjectView.Columns.Add("PresionMaximaSalida", Translate("Presión Salida"));
 
             this.AudifonoCurrencyManager = this.dgvList.BindingContext[this.AudifonoObjectView];
         }
 
         /// <summary>
-        /// Carga el combo de Provincia
+        /// Carga el combo de marca de audifono y tipo de audifono
         /// </summary>
         private void LoadCombos()
         {
@@ -109,7 +102,7 @@ namespace Mds.Biodata.Forms
 
             txtID.Text = AudifonoEntity.ID.ToString();
             txtNombreModelo.Text = AudifonoEntity.NombreModelo;
-            cmbMarca.SelectedValue = AudifonoEntity.Marca;
+            cmbMarca.SelectedValue = AudifonoEntity.IDMarca;
             txtObservacion.Text = AudifonoEntity.Observacion;
             cmbTipoAudifono.SelectedItem = (Enumeraciones.TipoAudifono)AudifonoEntity.Tipo;
             if (AudifonoEntity.Senal == 0)
@@ -128,9 +121,56 @@ namespace Mds.Biodata.Forms
 
             linerFranjaAdaptacion.AutoGenerateLine(FranjaGrafico, FranjaGrafico.GetCurrentLineSeries());
         }
+
+        /// <summary>
+        /// Carga la grilla con los registros de la DB
+        /// </summary>
+        private void LoadList(Boolean ContarParametrosBusqueda)
+        {
+            try
+            {
+                ptbProgress.Visible = true;
+                //BuildColumns();
+                InitializeObjectView();
+                dgvList.DataSource = null;
+                Habilitar(false);
+                btnClose.Enabled = true;
+                bgwLoad.RunWorkerAsync(ContarParametrosBusqueda);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+        /// <summary>
+        /// Valida datos basicos antes de enviar la entidad
+        /// </summary>
+        /// <returns></returns>
+        private Boolean ValidData()
+        {
+            if (txtNombreModelo.Text == "" || txtNombreModelo.Text == null)
+            {
+                ProcesarAdvertencia("Debe ingresar el Nombre del modelo");
+                return false;
+            }
+            if (!ValidarNumero(txtPresionSalida.Text))
+            {
+                return false;
+            }
+
+            return true;
+        }
         #endregion
 
         #region "--[Events]--"
+        private void frmAudifonos_Load(object sender, EventArgs e)
+        {
+            _AudifonoBP = new AudifonoBusiness(DaoFactory.GetAudifonoDao());
+            LoadCombos();
+            LoadList(false);
+        }
+
         public override void Accion()
         {
             try
@@ -178,9 +218,81 @@ namespace Mds.Biodata.Forms
                 ProcesarExcepcion(ex);
             }
         }
+
+        private void bgwLoad_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (!Convert.ToBoolean(e.Argument))
+            {
+                _AudifonoEntities = _AudifonoBP.GetAll();
+            }
+            else
+            {
+                //VER FILTROS
+            }
+        }
+
+        private void bgwLoad_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.AudifonoObjectView.DataSource = (IList)this._AudifonoEntities;
+            this.dgvList.DataSource = this.AudifonoObjectView;
+            ptbProgress.Visible = false;
+            Habilitar(true);
+        }
+
+        private void btnAccept_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ValidData())
+                {
+                    AudifonoEntity.NombreModelo = txtNombreModelo.Text;
+                    AudifonoEntity.IDMarca = (Int32)cmbMarca.SelectedValue;
+                    AudifonoEntity.Observacion = txtObservacion.Text;
+                    AudifonoEntity.Tipo = Convert.ToInt32(cmbTipoAudifono.SelectedItem);
+                    if (radDigital.Checked)
+                    {
+                        AudifonoEntity.Senal = 0; //Digital
+                    }
+                    else
+                    {
+                        AudifonoEntity.Senal = 1; //Analogico
+                    }
+                    AudifonoEntity.Programable = chkProgramable.Checked;
+                    AudifonoEntity.PresionMaximaSalida = Convert.ToDecimal(txtPresionSalida.Text);
+                    
+                    object myLineas;
+                    object myLineasSeries;
+                    linerFranjaAdaptacion.GenerateLinePointsArgs(out myLineas, out myLineasSeries);
+                    String strLineasFranja = Mds.Architecture.HelpersFunctions.SerializationFunctions.Serialize(myLineas);
+                    AudifonoEntity.FranjaAdaptacion = strLineasFranja;
+
+                    switch (Estado)
+                    {
+                        case EstadoForm.Editar:
+                            AudifonoBP.Update(AudifonoEntity);
+                            AudifonoBP.Commit();
+                            break;
+                        case EstadoForm.Eliminar:
+                            AudifonoBP.Delete(AudifonoEntity);
+                            AudifonoBP.Commit();
+                            break;
+                        case EstadoForm.Nuevo:
+                            AudifonoBP.Insert(AudifonoEntity);
+                            break;
+                    }
+                    pnlDetails.Visible = false;
+                    CambiarTamaño(true);
+                    Estado = EstadoForm.Grilla;
+                    LoadList(false);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
         #endregion
-
-
 
     }
 }

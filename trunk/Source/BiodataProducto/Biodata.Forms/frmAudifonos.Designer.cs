@@ -101,6 +101,12 @@
             // btnAccept
             // 
             this.btnAccept.Location = new System.Drawing.Point(493, 446);
+            this.btnAccept.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnAccept_Click);
+            // 
+            // bgwLoad
+            // 
+            this.bgwLoad.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwLoad_DoWork);
+            this.bgwLoad.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwLoad_RunWorkerCompleted);
             // 
             // txtID
             // 
@@ -126,7 +132,6 @@
             // 
             // cmbMarca
             // 
-            this.cmbMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMarca.FormattingEnabled = true;
             this.cmbMarca.Location = new System.Drawing.Point(152, 96);
             this.cmbMarca.Name = "cmbMarca";
@@ -189,7 +194,7 @@
             this.tbcAudifono.Location = new System.Drawing.Point(3, 3);
             this.tbcAudifono.Multiline = true;
             this.tbcAudifono.Name = "tbcAudifono";
-            this.tbcAudifono.SelectedIndex = 1;
+            this.tbcAudifono.SelectedIndex = 0;
             this.tbcAudifono.Size = new System.Drawing.Size(715, 401);
             this.tbcAudifono.TabIndex = 18;
             // 
