@@ -5,14 +5,14 @@
         <generator class="identity"/>
     </id>
     <property name="NombreModelo" column="NombreModelo" type="System.String" not-null="true" length="100"/>
-    <property name="Marca" column="Marca" type="System.String" not-null="true" length="100"/>
     <property name="Observacion" column="Observacion" type="System.String" not-null="false" length="200"/>
     <property name="Tipo" column="Tipo" type="System.Int32" not-null="true" />
     <property name="Senal" column="Senal" type="System.Int32" not-null="false" />
     <property name="Programable" column="Programable" type="System.Boolean" not-null="false" />
     <property name="FranjaAdaptacion" column="FranjaAdaptacion" type="System.String" not-null="false" />
     <property name="PresionMaximaSalida" column="PresionMaximaSalida" type="System.Decimal" not-null="false" />
-    <many-to-one name="IDAudifonoLookup" column="IDAudifono" class="MarcaAudifono"  update="0"  insert="0" />
+    <property name="IDMarca" column="IDMarca" type="System.Int32" not-null="false" />
+    <many-to-one name="IDMarcaLookup" column="IDMarca" class="MarcaAudifono"  update="0"  insert="0" />
     <bag name="AudifonoPacientes" table="AudifonoPaciente" inverse="true" lazy="true" cascade="delete">
       <key column="IDAudifono" />
       <one-to-many class="AudifonoPaciente"/>

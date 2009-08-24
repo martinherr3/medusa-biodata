@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using Mds.Biodata.Core.DataInterfaces;
 using Mds.Architecture.Utils;
+using System.Text.RegularExpressions;
 
 namespace Mds.Biodata.Forms
 {
@@ -102,5 +103,13 @@ namespace Mds.Biodata.Forms
         {
             MessageBox.Show(Translate(message), Translate(Title));
         }
+
+        public Boolean ValidarNumero(String NumeroaValidar)
+        {
+            String Patron = "^[0-9]+$";
+            Regex ExpresionRegular = new Regex(Patron);
+            return ExpresionRegular.IsMatch(NumeroaValidar);
+        }
+
     }
 }

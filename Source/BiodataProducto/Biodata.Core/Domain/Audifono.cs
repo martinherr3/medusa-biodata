@@ -17,14 +17,14 @@ namespace Mds.Biodata.Domain
 
 
         private System.String _NombreModelo;
-        private System.Int32 _Marca;
         private System.String _Observacion;
         private System.Int32 _Tipo;
         private System.Int32? _Senal;
         private System.Boolean? _Programable;
         private System.String _FranjaAdaptacion;
         private System.Decimal? _PresionMaximaSalida;
-        private MarcaAudifono _IDAudifonoLookup;
+        private System.Int32 _IDMarca;
+        private MarcaAudifono _IDMarcaLookup;
         private IList<AudifonoPaciente> _AudifonoPacientes = new List<AudifonoPaciente>();
         private IList<MoldeAudifono> _MoldeAudifonos = new List<MoldeAudifono>();
         private IList<SeleccionAudifono> _SeleccionAudifonos = new List<SeleccionAudifono>();
@@ -41,11 +41,6 @@ namespace Mds.Biodata.Domain
          public virtual System.String NombreModelo {
              get { return _NombreModelo; }
              set { _NombreModelo = value;}
-         }
-
-         public virtual System.Int32 Marca {
-             get { return _Marca; }
-             set { _Marca = value;}
          }
 
          public virtual System.String Observacion {
@@ -78,10 +73,16 @@ namespace Mds.Biodata.Domain
              set { _PresionMaximaSalida = value;}
          }
 
-         public virtual MarcaAudifono IDAudifonoLookup
+         public virtual System.Int32 IDMarca
          {
-             get { return _IDAudifonoLookup; }
-             set { _IDAudifonoLookup = value; }
+             get { return _IDMarca; }
+             set { _IDMarca = value; }
+         }
+
+         public virtual MarcaAudifono IDMarcaLookup
+         {
+             get { return _IDMarcaLookup; }
+             set { _IDMarcaLookup = value; }
          }
 
          public virtual IList<AudifonoPaciente> AudifonoPacientes
