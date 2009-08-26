@@ -350,7 +350,7 @@ namespace Mds.Biodata.Forms
 
                 Decimal? ValorNumeroDocumento = null;
 
-                if (txtNumeroDocumento.Text != "")
+                if (txtDocumentoBuscar.Text != "")
                 {
                     ValorNumeroDocumento = Convert.ToDecimal(txtNumeroDocumento.Text);
                 }

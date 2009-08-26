@@ -69,7 +69,7 @@ namespace Mds.Biodata.Forms
             this.AudifonoObjectView = new ObjectView(typeof(Audifono));
             this.AudifonoObjectView.AllowRemove = false;
             this.AudifonoObjectView.Columns.Add("NombreModelo", Translate("Nombre"));
-            this.AudifonoObjectView.Columns.Add("Marca", Translate("Marca"));
+            this.AudifonoObjectView.Columns.Add("IDMarcaLookup.Nombre", Translate("Marca"));
             this.AudifonoObjectView.Columns.Add("PresionMaximaSalida", Translate("Presión Salida"));
 
             this.AudifonoCurrencyManager = this.dgvList.BindingContext[this.AudifonoObjectView];
@@ -118,8 +118,8 @@ namespace Mds.Biodata.Forms
 
             Liner.Main.Collections.Collection FranjaGrafico;
             FranjaGrafico = (Liner.Main.Collections.Collection)Mds.Architecture.HelpersFunctions.SerializationFunctions.Deserialize(typeof(Liner.Main.Collections.Collection), AudifonoEntity.FranjaAdaptacion);
-
-            linerFranjaAdaptacion.AutoGenerateLine(FranjaGrafico, FranjaGrafico.GetCurrentLineSeries());
+            if (FranjaGrafico.Count > 0)
+                linerFranjaAdaptacion.AutoGenerateLine(FranjaGrafico, FranjaGrafico.GetCurrentLineSeries());
         }
 
         /// <summary>
@@ -156,6 +156,7 @@ namespace Mds.Biodata.Forms
             }
             if (!ValidarNumero(txtPresionSalida.Text))
             {
+                ProcesarAdvertencia("La presión debe ser un valor numerico", "Presión");
                 return false;
             }
 
@@ -175,8 +176,9 @@ namespace Mds.Biodata.Forms
         {
             try
             {
+                linerFranjaAdaptacion.ClearSeries(false);
                 pnlDetails.Visible = true;
-
+                tbcAudifono.SelectedIndex = 0;
                 switch (Estado)
                 {
                     case EstadoForm.Nuevo:
@@ -188,8 +190,8 @@ namespace Mds.Biodata.Forms
                         radDigital.Checked = true;
                         chkProgramable.Checked = false;
                         txtPresionSalida.Text = string.Empty;
-                        linerFranjaAdaptacion.ClearSeries(true);    
                         txtNombreModelo.Focus();
+                        AudifonoEntity = new Audifono();
                         break;
 
                     case EstadoForm.Editar:
@@ -259,7 +261,7 @@ namespace Mds.Biodata.Forms
                     }
                     AudifonoEntity.Programable = chkProgramable.Checked;
                     AudifonoEntity.PresionMaximaSalida = Convert.ToDecimal(txtPresionSalida.Text);
-                    
+
                     object myLineas;
                     object myLineasSeries;
                     linerFranjaAdaptacion.GenerateLinePointsArgs(out myLineas, out myLineasSeries);
