@@ -341,21 +341,36 @@ namespace Mds.Biodata.Forms
             }
             else
             {
-                Int32? ValorCiudad = null;
-
-                if (cmbCiudadBuscar.SelectedIndex != 0)
-                {
-                    ValorCiudad = (Int32)cmbCiudadBuscar.SelectedValue;
-                }
-
                 Decimal? ValorNumeroDocumento = null;
 
                 if (txtDocumentoBuscar.Text != "")
                 {
-                    ValorNumeroDocumento = Convert.ToDecimal(txtNumeroDocumento.Text);
+                    if (GereralFunctions.ValidarNumero(txtDocumentoBuscar.Text))
+                    {
+                        ValorNumeroDocumento = Convert.ToDecimal(txtDocumentoBuscar.Text);
+                    }
+                    else
+                    {
+                        ProcesarAdvertencia(Translate("El documento debe ser númerico"), "Dato no valido");
+                        return;
+                    }
                 }
 
-                _PacienteEntities = _PacienteBP.GetPacientesByParameters(txtNombreBuscar.Text, txtApellidoBuscar.Text, ValorNumeroDocumento, cmbSexoBuscar.SelectedText, ValorCiudad);
+                Int32? ValorCiudad = null;
+
+                if (cmbCiudadBuscar.SelectedIndex != 0)
+                {
+                    Ciudad oCiudad = (Ciudad)cmbCiudadBuscar.SelectedItem;
+                    ValorCiudad = oCiudad.ID;
+                }
+
+               
+                String strSexo = "";
+                if (cmbSexoBuscar.SelectedIndex != 0)
+                {
+                    strSexo = cmbSexoBuscar.SelectedItem.ToString();
+                }
+                _PacienteEntities = _PacienteBP.GetPacientesByParameters(txtNombreBuscar.Text, txtApellidoBuscar.Text, ValorNumeroDocumento, strSexo, ValorCiudad);
 
             }
         }
@@ -615,6 +630,15 @@ namespace Mds.Biodata.Forms
             LoadList(true);
         }
         #endregion
+
+        private void buttonUC1_Click(object sender, EventArgs e)
+        {
+            Reportes.ReportePacienteDetalle frm = new Reportes.ReportePacienteDetalle();
+            //frm.Llamador = this;
+            //this.Parent.Enabled = false;
+            frm.PacienteParticular = PacienteEntity;
+            GereralFunctions.AbrirFormulario(frm, (TabControl)this.Parent.Parent, "Reporte Detalle Paciente", DockStyle.Fill, false, true);
+        }
 
     }
 }

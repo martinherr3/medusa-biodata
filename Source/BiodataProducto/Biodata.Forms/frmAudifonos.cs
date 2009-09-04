@@ -154,7 +154,8 @@ namespace Mds.Biodata.Forms
                 ProcesarAdvertencia("Debe ingresar el Nombre del modelo");
                 return false;
             }
-            if (!ValidarNumero(txtPresionSalida.Text))
+
+            if (!GereralFunctions.ValidarNumero(txtPresionSalida.Text))
             {
                 ProcesarAdvertencia("La presión debe ser un valor numerico", "Presión");
                 return false;
