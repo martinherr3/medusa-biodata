@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             ((System.ComponentModel.ISupportInitialize)(this.bscOrigenReporte)).BeginInit();
             this.SuspendLayout();
             // 
             // reportViewer1
             // 
+            reportDataSource1.Name = "Mds_Biodata_Domain_Paciente";
+            reportDataSource1.Value = this.bscOrigenReporte;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Mds.Biodata.Forms.Reportes.rptPacienteDetalle.rdlc";
             // 
             // ReportePacienteDetalle

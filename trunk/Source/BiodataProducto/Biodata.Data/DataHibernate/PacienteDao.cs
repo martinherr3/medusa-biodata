@@ -20,12 +20,12 @@ namespace Mds.Biodata.Data
             {
                 if (pNumeroDocumento == null)
                 {
-                    ICriterion[] criterios = { Expression.Like("Nombre", pNombre, MatchMode.Start), Expression.Like("Apellido", pApellido, MatchMode.Start) };
+                    ICriterion[] criterios = { Expression.Like("Sexo", pSexo, MatchMode.Start), Expression.Like("Nombre", pNombre, MatchMode.Start), Expression.Like("Apellido", pApellido, MatchMode.Start) };
                     return this.GetByCriteria(criterios);
                 }
                 else
                 {
-                    ICriterion[] criterios = { Expression.Like("Nombre", pNombre, MatchMode.Start), Expression.Like("Apellido", pApellido, MatchMode.Start), Expression.Eq("NumeroDocumento", pNumeroDocumento) };
+                    ICriterion[] criterios = { Expression.Like("Sexo", pSexo, MatchMode.Start), Expression.Like("Nombre", pNombre, MatchMode.Start), Expression.Like("Apellido", pApellido, MatchMode.Start), Expression.Eq("NumeroDocumento", pNumeroDocumento) };
                     return this.GetByCriteria(criterios);
                 }
                 
@@ -34,12 +34,12 @@ namespace Mds.Biodata.Data
             {
                 if (pNumeroDocumento == null)
                 {
-                    ICriterion[] criterios = { Expression.Like("Nombre", pNombre, MatchMode.Start), Expression.Like("Apellido", pApellido, MatchMode.Start), Expression.Eq("IDCiudad", pIDCiudad) };
+                    ICriterion[] criterios = { Expression.Like("Sexo", pSexo, MatchMode.Start), Expression.Like("Nombre", pNombre, MatchMode.Start), Expression.Like("Apellido", pApellido, MatchMode.Start), Expression.Eq("IDCiudad", pIDCiudad) };
                     return this.GetByCriteria(criterios);
                 }
                 else
                 {
-                    ICriterion[] criterios = { Expression.Like("Nombre", pNombre, MatchMode.Start), Expression.Like("Apellido", pApellido, MatchMode.Start), Expression.Eq("NumeroDocumento", pNumeroDocumento), Expression.Eq("IDCiudad", pIDCiudad) };
+                    ICriterion[] criterios = { Expression.Like("Sexo", pSexo, MatchMode.Start), Expression.Like("Nombre", pNombre, MatchMode.Start), Expression.Like("Apellido", pApellido, MatchMode.Start), Expression.Eq("NumeroDocumento", pNumeroDocumento), Expression.Eq("IDCiudad", pIDCiudad) };
                     return this.GetByCriteria(criterios);
                 }
             }

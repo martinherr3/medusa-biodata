@@ -2,7 +2,7 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <DataSources>
     <DataSource Name="DummyDataSource">
-      <rd:DataSourceID>c9fd666e-8d18-470b-8763-e0a579148dbe</rd:DataSourceID>
+      <rd:DataSourceID>8151e641-16a2-4dae-a657-3111ed669868</rd:DataSourceID>
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
         <ConnectString />
@@ -10,6 +10,28 @@
     </DataSource>
   </DataSources>
   <InteractiveHeight>29.7cm</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="Observaciones">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Observaciones</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AntecedentesHistoricos">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>AntecedentesHistoricos</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="AntecedentesPersonales">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>AntecedentesPersonales</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="EstadoSalud">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>EstadoSalud</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <rd:DrawGrid>true</rd:DrawGrid>
   <InteractiveWidth>21cm</InteractiveWidth>
   <rd:GridSpacing>0.25cm</rd:GridSpacing>
@@ -29,6 +51,7 @@
         <Value>biodata_logo</Value>
       </Image>
       <Textbox Name="txtTituloPaciente">
+        <Width>22.01058cm</Width>
         <Style>
           <BackgroundColor>SteelBlue</BackgroundColor>
           <FontSize>15pt</FontSize>
@@ -156,269 +179,15 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <Width>22.01058cm</Width>
+  <Width>23.50983cm</Width>
   <Body>
     <ColumnSpacing>1cm</ColumnSpacing>
     <ReportItems>
-      <Textbox Name="FechaNacimiento">
-        <rd:DefaultName>FechaNacimiento</rd:DefaultName>
-        <Top>3.25cm</Top>
-        <Width>6cm</Width>
+      <Textbox Name="textbox13">
+        <rd:DefaultName>textbox13</rd:DefaultName>
+        <Top>12.5cm</Top>
+        <Width>12.25cm</Width>
         <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>42</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>5.5cm</Left>
-        <Height>0.63492cm</Height>
-        <Value>=First(Fields!FechaNacimiento.Value)</Value>
-      </Textbox>
-      <Textbox Name="CorreoElectronico">
-        <rd:DefaultName>CorreoElectronico</rd:DefaultName>
-        <Top>2.5cm</Top>
-        <Width>5.5cm</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>41</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>14.75cm</Left>
-        <Height>0.63492cm</Height>
-        <Value>=First(Fields!CorreoElectronico.Value)</Value>
-      </Textbox>
-      <Textbox Name="Celular">
-        <rd:DefaultName>Celular</rd:DefaultName>
-        <Top>1.75cm</Top>
-        <Width>5.5cm</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>40</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>14.75cm</Left>
-        <Height>0.63492cm</Height>
-        <Value>=First(Fields!Celular.Value)</Value>
-      </Textbox>
-      <Textbox Name="Direccion">
-        <rd:DefaultName>Direccion</rd:DefaultName>
-        <Top>2.5cm</Top>
-        <Width>5cm</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>39</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>5.5cm</Left>
-        <Height>0.63492cm</Height>
-        <Value>=First(Fields!Direccion.Value)</Value>
-      </Textbox>
-      <Textbox Name="Telefono">
-        <rd:DefaultName>Telefono</rd:DefaultName>
-        <Top>1.75cm</Top>
-        <Width>5cm</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>38</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>5.5cm</Left>
-        <Height>0.63492cm</Height>
-        <Value>=First(Fields!Telefono.Value)</Value>
-      </Textbox>
-      <Textbox Name="Apellido">
-        <rd:DefaultName>Apellido</rd:DefaultName>
-        <Top>1cm</Top>
-        <Width>5.5cm</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>37</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>14.75cm</Left>
-        <Height>0.63492cm</Height>
-        <Value>=First(Fields!Apellido.Value)</Value>
-      </Textbox>
-      <Textbox Name="Nombre">
-        <rd:DefaultName>Nombre</rd:DefaultName>
-        <Top>1cm</Top>
-        <Width>5cm</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>36</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>5.5cm</Left>
-        <Height>0.63492cm</Height>
-        <Value>=First(Fields!Nombre.Value)</Value>
-      </Textbox>
-      <Textbox Name="textbox44">
-        <Top>28.75cm</Top>
-        <Width>3.58cm</Width>
-        <Style>
-          <Color>Red</Color>
-          <FontWeight>700</FontWeight>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>35</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>15.92cm</Left>
-        <Height>0.75cm</Height>
-        <Value>Timpanometria</Value>
-      </Textbox>
-      <Textbox Name="textbox45">
-        <Top>28.75cm</Top>
-        <Width>3.25cm</Width>
-        <Style>
-          <FontWeight>700</FontWeight>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>34</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>12.5cm</Left>
-        <Height>0.75cm</Height>
-        <Value>Tipo de Estudio:</Value>
-      </Textbox>
-      <Textbox Name="textbox36">
-        <Top>28.75cm</Top>
-        <Width>5cm</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>33</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>4.5cm</Left>
-        <Height>0.75cm</Height>
-        <Value>15/08/2009</Value>
-      </Textbox>
-      <Textbox Name="textbox37">
-        <Top>33cm</Top>
-        <Width>16cm</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>32</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>4.5cm</Left>
-        <Height>2.5cm</Height>
-        <Value>- Adecuado condicionamiento del Paciente a la prueba
-- No coincidencia estudios realizados. Se sugiere repetir los estudios y corroborar con prueba objetiva.</Value>
-      </Textbox>
-      <Textbox Name="textbox38">
-        <Top>30cm</Top>
-        <Width>16cm</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>31</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>4.5cm</Left>
-        <Height>2.75cm</Height>
-        <Value>- Impedanciometro Ladie</Value>
-      </Textbox>
-      <Textbox Name="textbox39">
-        <Top>27cm</Top>
-        <Width>16cm</Width>
-        <Style>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>30</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>4.5cm</Left>
-        <Height>1.25cm</Height>
-        <Value>Timpanometria en sospecha de ocupacion seromucosa del oido medio</Value>
-      </Textbox>
-      <Textbox Name="textbox40">
-        <Top>30cm</Top>
-        <Width>4.5cm</Width>
-        <Style>
-          <FontWeight>700</FontWeight>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>29</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
-        <Height>0.6cm</Height>
-        <Value>Instrumentos Utiliz.:</Value>
-      </Textbox>
-      <Textbox Name="textbox41">
-        <Top>28.75cm</Top>
-        <Width>3.43cm</Width>
-        <Style>
-          <FontWeight>700</FontWeight>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>28</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>1.07cm</Left>
-        <Height>0.5cm</Height>
-        <Value>Fecha de Estudio:</Value>
-      </Textbox>
-      <Textbox Name="textbox42">
-        <Top>33cm</Top>
-        <Width>3cm</Width>
-        <Style>
-          <FontWeight>700</FontWeight>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>27</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>1.5cm</Left>
-        <Height>0.5cm</Height>
-        <Value>Observaciones:</Value>
-      </Textbox>
-      <Textbox Name="textbox43">
-        <Top>27cm</Top>
-        <Width>2.5cm</Width>
-        <Style>
-          <FontWeight>700</FontWeight>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -426,26 +195,31 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>26</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>2cm</Left>
-        <Height>0.75cm</Height>
-        <Value>Descripción:</Value>
+        <Left>5cm</Left>
+        <Height>1.25cm</Height>
+        <Value>=Parameters!EstadoSalud.Value</Value>
       </Textbox>
-      <Line Name="line2">
-        <Top>26.75cm</Top>
+      <Textbox Name="textbox12">
+        <rd:DefaultName>textbox12</rd:DefaultName>
+        <Top>10.5cm</Top>
+        <Width>17.25cm</Width>
         <Style>
-          <BorderStyle>
-            <Default>Solid</Default>
-          </BorderStyle>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
         </Style>
         <ZIndex>25</ZIndex>
-        <Height>0cm</Height>
-      </Line>
-      <Textbox Name="textbox34">
-        <Top>19.75cm</Top>
-        <Width>3.08cm</Width>
+        <CanGrow>true</CanGrow>
+        <Left>5cm</Left>
+        <Height>1.74603cm</Height>
+        <Value>=Parameters!AntecedentesPersonales.Value</Value>
+      </Textbox>
+      <Textbox Name="textbox11">
+        <rd:DefaultName>textbox11</rd:DefaultName>
+        <Top>8.5cm</Top>
+        <Width>17.25cm</Width>
         <Style>
-          <Color>Blue</Color>
-          <FontWeight>700</FontWeight>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -453,15 +227,15 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>24</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>15.92cm</Left>
-        <Height>0.75cm</Height>
-        <Value>Audiometria</Value>
+        <Left>5cm</Left>
+        <Height>1.74603cm</Height>
+        <Value>=Parameters!AntecedentesHistoricos.Value</Value>
       </Textbox>
-      <Textbox Name="textbox35">
-        <Top>19.75cm</Top>
-        <Width>3.25cm</Width>
+      <Textbox Name="textbox10">
+        <rd:DefaultName>textbox10</rd:DefaultName>
+        <Top>6.25cm</Top>
+        <Width>17.25cm</Width>
         <Style>
-          <FontWeight>700</FontWeight>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -469,13 +243,14 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>23</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>12.5cm</Left>
-        <Height>0.75cm</Height>
-        <Value>Tipo de Estudio:</Value>
+        <Left>5cm</Left>
+        <Height>2cm</Height>
+        <Value>=Parameters!Observaciones.Value</Value>
       </Textbox>
-      <Textbox Name="textbox25">
-        <Top>19.75cm</Top>
-        <Width>5cm</Width>
+      <Textbox Name="CorreoElectronico">
+        <rd:DefaultName>CorreoElectronico</rd:DefaultName>
+        <Top>3cm</Top>
+        <Width>7.5cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -484,13 +259,14 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>22</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>4.5cm</Left>
-        <Height>0.75cm</Height>
-        <Value>15/08/2009</Value>
+        <Left>15cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=First(Fields!CorreoElectronico.Value)</Value>
       </Textbox>
-      <Textbox Name="textbox26">
-        <Top>24cm</Top>
-        <Width>16cm</Width>
+      <Textbox Name="Nombre">
+        <rd:DefaultName>Nombre</rd:DefaultName>
+        <Top>1cm</Top>
+        <Width>7cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -499,15 +275,16 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>21</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>4.5cm</Left>
-        <Height>2.5cm</Height>
-        <Value>- Adecuado condicionamiento del Paciente a la prueba
-- No coincidencia estudios realizados. Se sugiere repetir los estudios y corroborar con prueba objetiva.</Value>
+        <Left>3.5cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=First(Fields!Nombre.Value)</Value>
       </Textbox>
-      <Textbox Name="textbox27">
-        <Top>21cm</Top>
-        <Width>16cm</Width>
+      <Textbox Name="FechaNacimiento">
+        <rd:DefaultName>FechaNacimiento</rd:DefaultName>
+        <Top>4cm</Top>
+        <Width>6.5cm</Width>
         <Style>
+          <TextAlign>Left</TextAlign>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -515,13 +292,14 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>20</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>4.5cm</Left>
-        <Height>2.75cm</Height>
-        <Value>- Audiometro Biodata Midi</Value>
+        <Left>3.5cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=First(Fields!FechaNacimiento.Value)</Value>
       </Textbox>
-      <Textbox Name="textbox28">
-        <Top>18cm</Top>
-        <Width>16cm</Width>
+      <Textbox Name="Direccion">
+        <rd:DefaultName>Direccion</rd:DefaultName>
+        <Top>3cm</Top>
+        <Width>7cm</Width>
         <Style>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
@@ -530,15 +308,15 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>19</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>4.5cm</Left>
-        <Height>1.25cm</Height>
-        <Value>Audiometria anual de revisación para conductores de servicio publico de pasajeros</Value>
+        <Left>3.5cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=First(Fields!Direccion.Value)</Value>
       </Textbox>
-      <Textbox Name="textbox29">
-        <Top>21cm</Top>
-        <Width>4.5cm</Width>
+      <Textbox Name="Telefono">
+        <rd:DefaultName>Telefono</rd:DefaultName>
+        <Top>2cm</Top>
+        <Width>6.5cm</Width>
         <Style>
-          <FontWeight>700</FontWeight>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -546,15 +324,15 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>18</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.75cm</Left>
-        <Height>0.6cm</Height>
-        <Value>Instrumentos Utiliz.:</Value>
+        <Left>3.5cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=First(Fields!Telefono.Value)</Value>
       </Textbox>
-      <Textbox Name="textbox30">
-        <Top>19.75cm</Top>
-        <Width>3.43cm</Width>
+      <Textbox Name="Celular">
+        <rd:DefaultName>Celular</rd:DefaultName>
+        <Top>2cm</Top>
+        <Width>7cm</Width>
         <Style>
-          <FontWeight>700</FontWeight>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -562,15 +340,15 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>17</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>1.07cm</Left>
-        <Height>0.5cm</Height>
-        <Value>Fecha de Estudio:</Value>
+        <Left>15cm</Left>
+        <Height>0.63492cm</Height>
+        <Value>=First(Fields!Celular.Value)</Value>
       </Textbox>
-      <Textbox Name="textbox31">
-        <Top>24cm</Top>
-        <Width>3cm</Width>
+      <Textbox Name="Apellido">
+        <rd:DefaultName>Apellido</rd:DefaultName>
+        <Top>1cm</Top>
+        <Width>6.75cm</Width>
         <Style>
-          <FontWeight>700</FontWeight>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -578,28 +356,13 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>16</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>1.5cm</Left>
-        <Height>0.5cm</Height>
-        <Value>Observaciones:</Value>
-      </Textbox>
-      <Textbox Name="textbox32">
-        <Top>18cm</Top>
-        <Width>2.5cm</Width>
-        <Style>
-          <FontWeight>700</FontWeight>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>15</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>2cm</Left>
+        <Left>15cm</Left>
         <Height>0.75cm</Height>
-        <Value>Descripción:</Value>
+        <Value>=First(Fields!Apellido.Value)</Value>
       </Textbox>
       <Textbox Name="textbox33">
-        <Top>17cm</Top>
+        <Top>14.5cm</Top>
+        <Width>22.01058cm</Width>
         <Style>
           <Color>White</Color>
           <BackgroundColor>Blue</BackgroundColor>
@@ -610,14 +373,30 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
-        <ZIndex>14</ZIndex>
+        <ZIndex>15</ZIndex>
         <CanGrow>true</CanGrow>
         <Height>0.75265cm</Height>
         <Value>Estudios</Value>
       </Textbox>
       <Textbox Name="textbox21">
-        <Top>11.25cm</Top>
+        <Top>10.25cm</Top>
         <Width>4.2cm</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>14</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.3cm</Left>
+        <Height>0.6cm</Height>
+        <Value>Antecedentes Person.:</Value>
+      </Textbox>
+      <Textbox Name="textbox22">
+        <Top>8.5cm</Top>
+        <Width>4.35cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
           <PaddingLeft>2pt</PaddingLeft>
@@ -627,28 +406,12 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>13</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>0.3cm</Left>
-        <Height>0.6cm</Height>
-        <Value>Antecedentes Person.:</Value>
-      </Textbox>
-      <Textbox Name="textbox22">
-        <Top>9cm</Top>
-        <Width>4.35cm</Width>
-        <Style>
-          <FontWeight>700</FontWeight>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>12</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>0.15cm</Left>
+        <Left>0.25cm</Left>
         <Height>0.5cm</Height>
         <Value>Antecedentes Heredit.:</Value>
       </Textbox>
       <Textbox Name="textbox23">
-        <Top>13.75cm</Top>
+        <Top>12.25cm</Top>
         <Width>3.25cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -657,7 +420,7 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
-        <ZIndex>11</ZIndex>
+        <ZIndex>12</ZIndex>
         <CanGrow>true</CanGrow>
         <Left>1.25cm</Left>
         <Height>0.5cm</Height>
@@ -673,7 +436,7 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
-        <ZIndex>10</ZIndex>
+        <ZIndex>11</ZIndex>
         <CanGrow>true</CanGrow>
         <Left>1.5cm</Left>
         <Height>0.5cm</Height>
@@ -681,6 +444,25 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
       </Textbox>
       <Textbox Name="textbox9">
         <Top>5.25cm</Top>
+        <Width>22.01058cm</Width>
+        <Style>
+          <Color>White</Color>
+          <BackgroundColor>Blue</BackgroundColor>
+          <FontSize>12pt</FontSize>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>10</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Height>0.75265cm</Height>
+        <Value>Historia Clinica</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <Width>22.01058cm</Width>
         <Style>
           <Color>White</Color>
           <BackgroundColor>Blue</BackgroundColor>
@@ -694,33 +476,17 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         <ZIndex>9</ZIndex>
         <CanGrow>true</CanGrow>
         <Height>0.75265cm</Height>
-        <Value>Historia Clinica</Value>
-      </Textbox>
-      <Textbox Name="textbox2">
-        <rd:DefaultName>textbox2</rd:DefaultName>
-        <Style>
-          <Color>White</Color>
-          <BackgroundColor>Blue</BackgroundColor>
-          <FontSize>12pt</FontSize>
-          <TextAlign>Center</TextAlign>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>8</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Height>0.75265cm</Height>
         <Value>Datos Personales</Value>
       </Textbox>
       <Line Name="line1">
         <Top>5cm</Top>
+        <Width>22.01058cm</Width>
         <Style>
           <BorderStyle>
             <Default>Solid</Default>
           </BorderStyle>
         </Style>
-        <ZIndex>7</ZIndex>
+        <ZIndex>8</ZIndex>
         <Height>0cm</Height>
       </Line>
       <Textbox Name="textbox8">
@@ -733,14 +499,30 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
-        <ZIndex>6</ZIndex>
+        <ZIndex>7</ZIndex>
         <CanGrow>true</CanGrow>
         <Left>12.25cm</Left>
         <Height>0.6cm</Height>
         <Value>Apellido:</Value>
       </Textbox>
       <Textbox Name="textbox7">
-        <Top>2.5cm</Top>
+        <Top>3cm</Top>
+        <Width>2.08cm</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>6</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>1cm</Left>
+        <Height>0.5cm</Height>
+        <Value>Dirección:</Value>
+      </Textbox>
+      <Textbox Name="textbox6">
+        <Top>2cm</Top>
         <Width>2.08cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
@@ -751,13 +533,13 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>5</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>2.92cm</Left>
+        <Left>1.08cm</Left>
         <Height>0.5cm</Height>
-        <Value>Dirección:</Value>
+        <Value>Teléfono:</Value>
       </Textbox>
-      <Textbox Name="textbox6">
-        <Top>1.75cm</Top>
-        <Width>2.08cm</Width>
+      <Textbox Name="textbox5">
+        <Top>2cm</Top>
+        <Width>1.9cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
           <PaddingLeft>2pt</PaddingLeft>
@@ -767,13 +549,13 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>4</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>2.92cm</Left>
+        <Left>12.5cm</Left>
         <Height>0.5cm</Height>
-        <Value>Teléfono:</Value>
+        <Value>Celular:</Value>
       </Textbox>
-      <Textbox Name="textbox5">
-        <Top>1.75cm</Top>
-        <Width>1.9cm</Width>
+      <Textbox Name="textbox4">
+        <Top>3cm</Top>
+        <Width>3.75cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
           <PaddingLeft>2pt</PaddingLeft>
@@ -783,13 +565,13 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>3</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>12.5cm</Left>
+        <Left>10.63cm</Left>
         <Height>0.5cm</Height>
-        <Value>Celular:</Value>
+        <Value>Correo Electrónico:</Value>
       </Textbox>
-      <Textbox Name="textbox4">
-        <Top>2.5cm</Top>
-        <Width>3.75cm</Width>
+      <Textbox Name="textbox3">
+        <Top>4cm</Top>
+        <Width>2.85cm</Width>
         <Style>
           <FontWeight>700</FontWeight>
           <PaddingLeft>2pt</PaddingLeft>
@@ -799,23 +581,7 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
         </Style>
         <ZIndex>2</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>10.63cm</Left>
-        <Height>0.5cm</Height>
-        <Value>Correo Electrónico:</Value>
-      </Textbox>
-      <Textbox Name="textbox3">
-        <Top>3.25cm</Top>
-        <Width>2.85cm</Width>
-        <Style>
-          <FontWeight>700</FontWeight>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-        <ZIndex>1</ZIndex>
-        <CanGrow>true</CanGrow>
-        <Left>2.15cm</Left>
+        <Left>0.23cm</Left>
         <Height>0.5cm</Height>
         <Value>Fecha de Nac.:</Value>
       </Textbox>
@@ -830,13 +596,21 @@ bFE1RYUVo0VdUVtn5Qg+FK68UwwBgpqOp93Cjc4macHOhub1rfquYFdmH+sTu8XAxoYI0d7h7cYI2b6O
           <PaddingTop>2pt</PaddingTop>
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
+        <ZIndex>1</ZIndex>
         <CanGrow>true</CanGrow>
-        <Left>3cm</Left>
+        <Left>1.08cm</Left>
         <Height>0.5cm</Height>
         <Value>Nombre:</Value>
       </Textbox>
+      <Subreport Name="subreport1">
+        <Top>15.75cm</Top>
+        <ReportName>rptEstudios</ReportName>
+        <Width>22.75cm</Width>
+        <Left>0.25cm</Left>
+        <Height>5.25cm</Height>
+      </Subreport>
     </ReportItems>
-    <Height>36.5cm</Height>
+    <Height>21.25cm</Height>
   </Body>
   <Language>en-US</Language>
   <TopMargin>2.5cm</TopMargin>

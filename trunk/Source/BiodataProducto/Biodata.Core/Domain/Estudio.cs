@@ -66,6 +66,11 @@ namespace Mds.Biodata.Domain
              get { return (TipoEstudio)_TipoEstudio; }
          }
 
+         public virtual System.String TipoEstudioString
+         {
+             get { return Enum.GetName(typeof(TipoEstudio), TipoEstudioValue); }
+         }
+
          public virtual System.Int32? IDHistoriaClinica
          {
              get { return _IDHistoriaClinica; }

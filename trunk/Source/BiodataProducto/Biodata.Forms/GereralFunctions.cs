@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Mds.Biodata.Forms
 {
@@ -348,7 +349,13 @@ namespace Mds.Biodata.Forms
             dsBuildSQL.WriteXml(swSQL, XmlWriteMode.WriteSchema);
             XMLformat = sbSQL.ToString();
             return XMLformat;
-        } 
+        }
 
+        public static Boolean ValidarNumero(String NumeroaValidar)
+        {
+            String Patron = "^[0-9]+$";
+            Regex ExpresionRegular = new Regex(Patron);
+            return ExpresionRegular.IsMatch(NumeroaValidar);
+        }
     }
 }
