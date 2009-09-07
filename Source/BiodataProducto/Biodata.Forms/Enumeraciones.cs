@@ -55,6 +55,12 @@ namespace Mds.Biodata.Forms
             FullShell=5
         }
 
+        public enum SenalAudifono
+        {
+            Digital=0,
+            Analogico=1
+        }
+
     }
 
     public class Constantes

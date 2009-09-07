@@ -53,9 +53,19 @@ namespace Mds.Biodata.Domain
              set { _Tipo = value;}
          }
 
+         public virtual System.String TipoString
+         {
+             get { return Enum.GetName(typeof(TipoAudifono), (TipoAudifono)Tipo); }
+         }
+
          public virtual System.Int32? Senal {
              get { return _Senal; }
              set { _Senal = value;}
+         }
+
+         public virtual System.String SenalString
+         {
+             get { return Enum.GetName(typeof(SenalAudifono), (SenalAudifono)Senal); }
          }
 
          public virtual System.Boolean? Programable {
@@ -110,4 +120,20 @@ namespace Mds.Biodata.Domain
         }
 
      }
+
+    public enum TipoAudifono
+    {
+        Retroauricular = 0,
+        Minicanal = 1,
+        Cic = 2,
+        Canal = 3,
+        HalfShell = 4,
+        FullShell = 5
+    }
+
+    public enum SenalAudifono
+    {
+        Digital = 0,
+        Analogico = 1
+    }
 }

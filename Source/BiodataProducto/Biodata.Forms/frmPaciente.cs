@@ -65,6 +65,14 @@ namespace Mds.Biodata.Forms
             set { _SeleccionLlamada = value; }
         }
 
+        private Boolean _EnfocarReporte;
+
+        public Boolean EnfocarReporte
+        {
+            get { return _EnfocarReporte; }
+            set { _EnfocarReporte = value; }
+        }
+
 
         //private Mds.Architecture.HelpersFunctions.Validators.Winforms.Validation.ViewValidator vvtor;
 
@@ -93,6 +101,13 @@ namespace Mds.Biodata.Forms
             //vvtor.Bind(tNumber, typeof(Paciente), "Number");
             //tNumber.Validating += new EventValidation(vvtor).ValidatingHandler;
 
+        }
+
+        public frmPaciente(Boolean pEnfocarReporte)
+        {
+            InitializeComponent();
+
+            EnfocarReporte = pEnfocarReporte;
         }
 
         /// <summary>
@@ -331,6 +346,11 @@ namespace Mds.Biodata.Forms
             LoadCombos();
             LoadCombosBusqueda();
             LoadList(false);
+            
+            if (EnfocarReporte)
+            {
+                buttonUC1.Focus();
+            }
         }
 
         private void bgwLoad_DoWork(object sender, DoWorkEventArgs e)
@@ -629,16 +649,21 @@ namespace Mds.Biodata.Forms
         {
             LoadList(true);
         }
-        #endregion
 
         private void buttonUC1_Click(object sender, EventArgs e)
         {
-            Reportes.ReportePacienteDetalle frm = new Reportes.ReportePacienteDetalle();
-            //frm.Llamador = this;
-            //this.Parent.Enabled = false;
-            frm.PacienteParticular = PacienteEntity;
-            GereralFunctions.AbrirFormulario(frm, (TabControl)this.Parent.Parent, "Reporte Detalle Paciente", DockStyle.Fill, false, true);
-        }
+            if (dgvList.Rows.Count > 0)
+            {
+                Reportes.ReportePacienteDetalle frm = new Reportes.ReportePacienteDetalle();
+                //frm.Llamador = this;
+                //this.Parent.Enabled = false;
+                ObjectViews.ObjectViewRow RowSelected = (ObjectViewRow)dgvList.CurrentRow.DataBoundItem;
+                PacienteEntity = PacienteBP.GetById(((Paciente)RowSelected.InnerObject).ID);
 
+                frm.PacienteParticular = PacienteEntity;
+                GereralFunctions.AbrirFormulario(frm, (TabControl)this.Parent.Parent, "Reporte Detalle Paciente", DockStyle.Fill, false, true);
+            }
+        }
+        #endregion
     }
 }
