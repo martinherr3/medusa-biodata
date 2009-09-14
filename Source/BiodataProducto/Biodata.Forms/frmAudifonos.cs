@@ -163,13 +163,54 @@ namespace Mds.Biodata.Forms
 
             return true;
         }
+
+        /// <summary>
+        /// Carga los combos de Tipo de Audifono y Marca Audifono para busqueda
+        /// </summary>
+        private void LoadCombosBusqueda()
+        {
+            try
+            {
+                Array miTipoAudifono = Enum.GetValues(typeof(Enumeraciones.TipoAudifono));
+
+                cmbTipoBuscar.Items.Add("--Sel--");
+
+                for (Int32 i = 0; i < miTipoAudifono.Length; i++)
+                {
+                    cmbTipoBuscar.Items.Add(miTipoAudifono.GetValue(i));
+                }
+
+                cmbTipoBuscar.SelectedIndex = 0;
+
+                MarcaAudifonoBusiness MarcaBP = new MarcaAudifonoBusiness(DaoFactory.GetMarcaAudifonoDao());
+                List<MarcaAudifono> wMarcaEntitiesBuscar = MarcaBP.GetAll();
+                cmbMarcaBuscar.ValueMember = "ID";
+                cmbMarcaBuscar.DisplayMember = "Nombre";
+
+                for (Int32 i = wMarcaEntitiesBuscar.Count - 1; i > -1; i--)
+                {
+                    cmbMarcaBuscar.Items.Insert(0, wMarcaEntitiesBuscar[i]);
+                }
+
+                cmbMarcaBuscar.Items.Insert(0, "--Sel--");
+
+                cmbMarcaBuscar.SelectedIndex = 0;
+
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
         #endregion
 
         #region "--[Events]--"
         private void frmAudifonos_Load(object sender, EventArgs e)
         {
+            CheckForIllegalCrossThreadCalls = false;
             _AudifonoBP = new AudifonoBusiness(DaoFactory.GetAudifonoDao());
             LoadCombos();
+            LoadCombosBusqueda();
             LoadList(false);
         }
 
@@ -230,7 +271,35 @@ namespace Mds.Biodata.Forms
             }
             else
             {
-                //VER FILTROS
+                Decimal? ValorPresionSalida = null;
+
+                if (txtPresionSalidaBuscar.Text != "")
+                {
+                    if (GereralFunctions.ValidarNumero(txtPresionSalidaBuscar.Text))
+                    {
+                        ValorPresionSalida = Convert.ToDecimal(txtPresionSalidaBuscar.Text);
+                    }
+                    else
+                    {
+                        ProcesarAdvertencia(Translate("La presión de salida debe ser númerica"), "Dato no valido");
+                        return;
+                    }
+                }
+
+                Int32? ValorMarca = null;
+
+                if (cmbMarcaBuscar.SelectedIndex != 0)
+                {
+                    MarcaAudifono oMarca = (MarcaAudifono)cmbMarcaBuscar.SelectedItem;
+                    ValorMarca = oMarca.ID;
+                }
+
+                Int32? ValorTipo = null;
+                if (cmbTipoBuscar.SelectedIndex != 0)
+                {
+                    ValorTipo = Convert.ToInt32(cmbTipoBuscar.SelectedItem);
+                }
+                _AudifonoEntities = _AudifonoBP.GetAudifonosByParameters(txtNombreModeloBuscar.Text, ValorMarca, ValorTipo, ValorPresionSalida);
             }
         }
 
@@ -295,7 +364,11 @@ namespace Mds.Biodata.Forms
                 ProcesarExcepcion(ex);
             }
         }
-        #endregion
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            LoadList(true);
+        }
+        #endregion
     }
 }

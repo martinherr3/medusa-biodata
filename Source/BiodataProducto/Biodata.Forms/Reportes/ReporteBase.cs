@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Mds.Biodata.Core.DataInterfaces;
+using Mds.Architecture.Utils;
 
 namespace Mds.Biodata.Forms.Reportes
 {

@@ -18,5 +18,10 @@ namespace Mds.Biodata.Business
         {
 
         }
+
+        public List<Audifono> GetAudifonosByParameters(String pNombreModelo, Int32? pMarca, Int32? pTipo, Decimal? pPresionSalida)
+        {
+            return Dao.GetAudifonosByParameters(pNombreModelo, pMarca, pTipo, pPresionSalida);
+        }
     }
 }

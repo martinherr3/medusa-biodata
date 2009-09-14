@@ -257,46 +257,6 @@ namespace Mds.Biodata.Forms
         }
 
         /// <summary>
-        /// Carga los combos de Tipo de Documento y Sexo para busqueda
-        /// </summary>
-        private void LoadCombosBusqueda()
-        {
-            try
-            {
-                Array miSexo = Enum.GetValues(typeof(Enumeraciones.Sexo));
-
-                cmbSexoBuscar.Items.Add("--Sel--");
-
-                for (Int32 i = 0; i < miSexo.Length; i++)
-                {
-                    cmbSexoBuscar.Items.Add(miSexo.GetValue(i));
-                }
-
-                cmbSexoBuscar.SelectedIndex = 0;
-
-                CiudadBusiness CiudadBP = new CiudadBusiness(DaoFactory.GetCiudadDao());
-                List<Ciudad> wCiudadEntitiesBuscar = CiudadBP.GetAll();
-                //cmbCiudadBuscar.DataSource = wCiudadEntitiesBuscar;
-                cmbCiudadBuscar.ValueMember = "ID";
-                cmbCiudadBuscar.DisplayMember = "Descripcion";
-
-                for (Int32 i = wCiudadEntitiesBuscar.Count - 1; i > -1; i--)
-                {
-                    cmbCiudadBuscar.Items.Insert(0, wCiudadEntitiesBuscar[i]);
-                }
-
-                cmbCiudadBuscar.Items.Insert(0, "--Sel--");
-
-                cmbCiudadBuscar.SelectedIndex = 0;
-
-            }
-            catch (Exception ex)
-            {
-                ProcesarExcepcion(ex);
-            }
-        }
-
-        /// <summary>
         /// Elimina el registro del paciente para con esa obra social, solo elimina la vinculación, no la obra social en si
         /// </summary>
         private void EliminarObraSocial()
@@ -330,6 +290,46 @@ namespace Mds.Biodata.Forms
                 frm.Llamador = this;
                 this.Parent.Enabled = false;
                 GereralFunctions.AbrirFormulario(frm, (TabControl)this.Parent.Parent, "Seleccionar Obra Social", DockStyle.Fill, false, true);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+        /// <summary>
+        /// Carga los combos de Tipo de Documento y Sexo para busqueda
+        /// </summary>
+        private void LoadCombosBusqueda()
+        {
+            try
+            {
+                Array miSexo = Enum.GetValues(typeof(Enumeraciones.Sexo));
+
+                cmbSexoBuscar.Items.Add("--Sel--");
+
+                for (Int32 i = 0; i < miSexo.Length; i++)
+                {
+                    cmbSexoBuscar.Items.Add(miSexo.GetValue(i));
+                }
+
+                cmbSexoBuscar.SelectedIndex = 0;
+
+                CiudadBusiness CiudadBP = new CiudadBusiness(DaoFactory.GetCiudadDao());
+                List<Ciudad> wCiudadEntitiesBuscar = CiudadBP.GetAll();
+                //cmbCiudadBuscar.DataSource = wCiudadEntitiesBuscar;
+                cmbCiudadBuscar.ValueMember = "ID";
+                cmbCiudadBuscar.DisplayMember = "Descripcion";
+
+                for (Int32 i = wCiudadEntitiesBuscar.Count - 1; i > -1; i--)
+                {
+                    cmbCiudadBuscar.Items.Insert(0, wCiudadEntitiesBuscar[i]);
+                }
+
+                cmbCiudadBuscar.Items.Insert(0, "--Sel--");
+
+                cmbCiudadBuscar.SelectedIndex = 0;
+
             }
             catch (Exception ex)
             {
@@ -384,14 +384,13 @@ namespace Mds.Biodata.Forms
                     ValorCiudad = oCiudad.ID;
                 }
 
-               
+
                 String strSexo = "";
                 if (cmbSexoBuscar.SelectedIndex != 0)
                 {
                     strSexo = cmbSexoBuscar.SelectedItem.ToString();
                 }
                 _PacienteEntities = _PacienteBP.GetPacientesByParameters(txtNombreBuscar.Text, txtApellidoBuscar.Text, ValorNumeroDocumento, strSexo, ValorCiudad);
-
             }
         }
 
@@ -665,5 +664,7 @@ namespace Mds.Biodata.Forms
             }
         }
         #endregion
+
+        
     }
 }

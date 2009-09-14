@@ -78,6 +78,8 @@
             this.lblAntecedentesHereditarios = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.lblObservaciones = new System.Windows.Forms.Label();
+            this.buttonUC1 = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
+            this.btnBuscar = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
             this.gpbFiltros = new System.Windows.Forms.GroupBox();
             this.lblCiudadBuscar = new System.Windows.Forms.Label();
             this.cmbCiudadBuscar = new System.Windows.Forms.ComboBox();
@@ -89,8 +91,6 @@
             this.txtApellidoBuscar = new System.Windows.Forms.TextBox();
             this.lblSexoBuscar = new System.Windows.Forms.Label();
             this.lblApellidoBuscar = new System.Windows.Forms.Label();
-            this.btnBuscar = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
-            this.buttonUC1 = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
             this.pnlList.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -619,6 +619,29 @@
             this.lblObservaciones.TabIndex = 21;
             this.lblObservaciones.Text = "Observaciones";
             // 
+            // buttonUC1
+            // 
+            this.buttonUC1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonUC1.Image = null;
+            this.buttonUC1.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.buttonUC1.Location = new System.Drawing.Point(676, 203);
+            this.buttonUC1.Name = "buttonUC1";
+            this.buttonUC1.Size = new System.Drawing.Size(121, 34);
+            this.buttonUC1.TabIndex = 33;
+            this.buttonUC1.Text = "Informe en detalle";
+            this.buttonUC1.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.buttonUC1_Click);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.Location = new System.Drawing.Point(674, 18);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(114, 26);
+            this.btnBuscar.TabIndex = 3;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnBuscar_Click);
+            // 
             // gpbFiltros
             // 
             this.gpbFiltros.Controls.Add(this.lblCiudadBuscar);
@@ -626,16 +649,16 @@
             this.gpbFiltros.Controls.Add(this.txtDocumentoBuscar);
             this.gpbFiltros.Controls.Add(this.lblDocumentoBuscar);
             this.gpbFiltros.Controls.Add(this.txtNombreBuscar);
+            this.gpbFiltros.Controls.Add(this.btnBuscar);
             this.gpbFiltros.Controls.Add(this.lblNombreBuscar);
             this.gpbFiltros.Controls.Add(this.cmbSexoBuscar);
             this.gpbFiltros.Controls.Add(this.txtApellidoBuscar);
             this.gpbFiltros.Controls.Add(this.lblSexoBuscar);
             this.gpbFiltros.Controls.Add(this.lblApellidoBuscar);
-            this.gpbFiltros.Controls.Add(this.btnBuscar);
-            this.gpbFiltros.Location = new System.Drawing.Point(16, 0);
+            this.gpbFiltros.Location = new System.Drawing.Point(14, 8);
             this.gpbFiltros.Name = "gpbFiltros";
             this.gpbFiltros.Size = new System.Drawing.Size(796, 71);
-            this.gpbFiltros.TabIndex = 7;
+            this.gpbFiltros.TabIndex = 9;
             this.gpbFiltros.TabStop = false;
             this.gpbFiltros.Text = "Filtros";
             // 
@@ -723,29 +746,6 @@
             this.lblApellidoBuscar.TabIndex = 11;
             this.lblApellidoBuscar.Text = "Apellido";
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.Location = new System.Drawing.Point(678, 18);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(114, 27);
-            this.btnBuscar.TabIndex = 0;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnBuscar_Click);
-            // 
-            // buttonUC1
-            // 
-            this.buttonUC1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonUC1.Image = null;
-            this.buttonUC1.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonUC1.Location = new System.Drawing.Point(676, 203);
-            this.buttonUC1.Name = "buttonUC1";
-            this.buttonUC1.Size = new System.Drawing.Size(121, 34);
-            this.buttonUC1.TabIndex = 33;
-            this.buttonUC1.Text = "Informe en detalle";
-            this.buttonUC1.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.buttonUC1_Click);
-            // 
             // frmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -823,18 +823,18 @@
         private System.Windows.Forms.Label lblAntecedentesPersonales;
         private System.Windows.Forms.Label lblInicioAtencion;
         private System.Windows.Forms.DateTimePicker dtpInicioAtencion;
-        public System.Windows.Forms.GroupBox gpbFiltros;
+        private Medusa.Biodata.FrontEnd.UserControls.ButtonUC buttonUC1;
         public Medusa.Biodata.FrontEnd.UserControls.ButtonUC btnBuscar;
+        public System.Windows.Forms.GroupBox gpbFiltros;
+        private System.Windows.Forms.Label lblCiudadBuscar;
+        private System.Windows.Forms.ComboBox cmbCiudadBuscar;
+        private System.Windows.Forms.TextBox txtDocumentoBuscar;
+        private System.Windows.Forms.Label lblDocumentoBuscar;
+        private System.Windows.Forms.TextBox txtNombreBuscar;
+        private System.Windows.Forms.Label lblNombreBuscar;
         private System.Windows.Forms.ComboBox cmbSexoBuscar;
         private System.Windows.Forms.TextBox txtApellidoBuscar;
         private System.Windows.Forms.Label lblSexoBuscar;
         private System.Windows.Forms.Label lblApellidoBuscar;
-        private System.Windows.Forms.TextBox txtNombreBuscar;
-        private System.Windows.Forms.Label lblNombreBuscar;
-        private System.Windows.Forms.TextBox txtDocumentoBuscar;
-        private System.Windows.Forms.Label lblDocumentoBuscar;
-        private System.Windows.Forms.Label lblCiudadBuscar;
-        private System.Windows.Forms.ComboBox cmbCiudadBuscar;
-        private Medusa.Biodata.FrontEnd.UserControls.ButtonUC buttonUC1;
     }
 }

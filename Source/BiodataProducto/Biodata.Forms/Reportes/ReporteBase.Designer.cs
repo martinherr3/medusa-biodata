@@ -87,9 +87,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlDatos;
         private Medusa.Biodata.FrontEnd.UserControls.ButtonUC btnCerrar;
         public System.Windows.Forms.BindingSource bscOrigenReporte;
         public Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        public System.Windows.Forms.Panel pnlDatos;
     }
 }
