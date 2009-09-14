@@ -54,6 +54,7 @@
             this.pnlDetails.Controls.Add(this.txtIDVinculado);
             this.pnlDetails.Controls.Add(this.lblFecha);
             this.pnlDetails.Controls.Add(this.lblDescripcion);
+            this.pnlDetails.Location = new System.Drawing.Point(12, 374);
             this.pnlDetails.Controls.SetChildIndex(this.lblDescripcion, 0);
             this.pnlDetails.Controls.SetChildIndex(this.lblFecha, 0);
             this.pnlDetails.Controls.SetChildIndex(this.txtIDVinculado, 0);
@@ -164,7 +165,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 509);
+            this.ClientSize = new System.Drawing.Size(596, 660);
             this.Name = "frmRecordatorio";
             this.Text = "frmRecordatorio";
             this.Load += new System.EventHandler(this.frmRecordatorio_Load);

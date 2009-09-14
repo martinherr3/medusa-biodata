@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAudifonos));
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNombreModelo = new System.Windows.Forms.TextBox();
             this.txtObservacion = new System.Windows.Forms.TextBox();
@@ -49,11 +50,22 @@
             this.lblID = new System.Windows.Forms.Label();
             this.tbpFranjaAdaptacion = new Dotnetrix.Controls.TabPageEX();
             this.linerFranjaAdaptacion = new Pavr.Drawing.Liner();
+            this.gpbFiltros = new System.Windows.Forms.GroupBox();
+            this.lblMarcaBuscar = new System.Windows.Forms.Label();
+            this.cmbMarcaBuscar = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
+            this.cmbTipoBuscar = new System.Windows.Forms.ComboBox();
+            this.txtNombreModeloBuscar = new System.Windows.Forms.TextBox();
+            this.lblTipoBuscar = new System.Windows.Forms.Label();
+            this.lblNombreModeloBuscar = new System.Windows.Forms.Label();
+            this.lblPresionSalidaBuscar = new System.Windows.Forms.Label();
+            this.txtPresionSalidaBuscar = new System.Windows.Forms.TextBox();
             this.pnlList.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             this.tbcAudifono.SuspendLayout();
             this.tbpDatos.SuspendLayout();
             this.tbpFranjaAdaptacion.SuspendLayout();
+            this.gpbFiltros.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDeleteItem
@@ -62,7 +74,8 @@
             // 
             // pnlList
             // 
-            this.pnlList.Size = new System.Drawing.Size(721, 216);
+            this.pnlList.Location = new System.Drawing.Point(12, 80);
+            this.pnlList.Size = new System.Drawing.Size(721, 206);
             // 
             // btnClose
             // 
@@ -87,7 +100,7 @@
             // pnlDetails
             // 
             this.pnlDetails.Controls.Add(this.tbcAudifono);
-            this.pnlDetails.Location = new System.Drawing.Point(12, 234);
+            this.pnlDetails.Location = new System.Drawing.Point(12, 292);
             this.pnlDetails.Size = new System.Drawing.Size(721, 476);
             this.pnlDetails.Controls.SetChildIndex(this.lblDeleteItem, 0);
             this.pnlDetails.Controls.SetChildIndex(this.btnAccept, 0);
@@ -318,14 +331,115 @@
             this.linerFranjaAdaptacion.Size = new System.Drawing.Size(472, 296);
             this.linerFranjaAdaptacion.TabIndex = 8;
             // 
+            // gpbFiltros
+            // 
+            this.gpbFiltros.Controls.Add(this.lblPresionSalidaBuscar);
+            this.gpbFiltros.Controls.Add(this.txtPresionSalidaBuscar);
+            this.gpbFiltros.Controls.Add(this.lblMarcaBuscar);
+            this.gpbFiltros.Controls.Add(this.cmbMarcaBuscar);
+            this.gpbFiltros.Controls.Add(this.btnBuscar);
+            this.gpbFiltros.Controls.Add(this.cmbTipoBuscar);
+            this.gpbFiltros.Controls.Add(this.txtNombreModeloBuscar);
+            this.gpbFiltros.Controls.Add(this.lblTipoBuscar);
+            this.gpbFiltros.Controls.Add(this.lblNombreModeloBuscar);
+            this.gpbFiltros.Location = new System.Drawing.Point(15, 3);
+            this.gpbFiltros.Name = "gpbFiltros";
+            this.gpbFiltros.Size = new System.Drawing.Size(723, 71);
+            this.gpbFiltros.TabIndex = 10;
+            this.gpbFiltros.TabStop = false;
+            this.gpbFiltros.Text = "Filtros";
+            // 
+            // lblMarcaBuscar
+            // 
+            this.lblMarcaBuscar.AutoSize = true;
+            this.lblMarcaBuscar.Location = new System.Drawing.Point(345, 18);
+            this.lblMarcaBuscar.Name = "lblMarcaBuscar";
+            this.lblMarcaBuscar.Size = new System.Drawing.Size(37, 13);
+            this.lblMarcaBuscar.TabIndex = 32;
+            this.lblMarcaBuscar.Text = "Marca";
+            // 
+            // cmbMarcaBuscar
+            // 
+            this.cmbMarcaBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbMarcaBuscar.FormattingEnabled = true;
+            this.cmbMarcaBuscar.Location = new System.Drawing.Point(388, 18);
+            this.cmbMarcaBuscar.Name = "cmbMarcaBuscar";
+            this.cmbMarcaBuscar.Size = new System.Drawing.Size(183, 21);
+            this.cmbMarcaBuscar.TabIndex = 31;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.Location = new System.Drawing.Point(601, 18);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(114, 26);
+            this.btnBuscar.TabIndex = 3;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnBuscar_Click);
+            // 
+            // cmbTipoBuscar
+            // 
+            this.cmbTipoBuscar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipoBuscar.FormattingEnabled = true;
+            this.cmbTipoBuscar.Location = new System.Drawing.Point(110, 42);
+            this.cmbTipoBuscar.Name = "cmbTipoBuscar";
+            this.cmbTipoBuscar.Size = new System.Drawing.Size(201, 21);
+            this.cmbTipoBuscar.TabIndex = 15;
+            // 
+            // txtNombreModeloBuscar
+            // 
+            this.txtNombreModeloBuscar.Location = new System.Drawing.Point(110, 19);
+            this.txtNombreModeloBuscar.Name = "txtNombreModeloBuscar";
+            this.txtNombreModeloBuscar.Size = new System.Drawing.Size(201, 20);
+            this.txtNombreModeloBuscar.TabIndex = 14;
+            // 
+            // lblTipoBuscar
+            // 
+            this.lblTipoBuscar.AutoSize = true;
+            this.lblTipoBuscar.Location = new System.Drawing.Point(76, 50);
+            this.lblTipoBuscar.Name = "lblTipoBuscar";
+            this.lblTipoBuscar.Size = new System.Drawing.Size(28, 13);
+            this.lblTipoBuscar.TabIndex = 13;
+            this.lblTipoBuscar.Text = "Tipo";
+            // 
+            // lblNombreModeloBuscar
+            // 
+            this.lblNombreModeloBuscar.AutoSize = true;
+            this.lblNombreModeloBuscar.Location = new System.Drawing.Point(7, 19);
+            this.lblNombreModeloBuscar.Name = "lblNombreModeloBuscar";
+            this.lblNombreModeloBuscar.Size = new System.Drawing.Size(97, 13);
+            this.lblNombreModeloBuscar.TabIndex = 11;
+            this.lblNombreModeloBuscar.Text = "Nombre de Modelo";
+            // 
+            // lblPresionSalidaBuscar
+            // 
+            this.lblPresionSalidaBuscar.AutoSize = true;
+            this.lblPresionSalidaBuscar.Location = new System.Drawing.Point(345, 50);
+            this.lblPresionSalidaBuscar.Name = "lblPresionSalidaBuscar";
+            this.lblPresionSalidaBuscar.Size = new System.Drawing.Size(113, 13);
+            this.lblPresionSalidaBuscar.TabIndex = 34;
+            this.lblPresionSalidaBuscar.Text = "Presion Maxima Salida";
+            // 
+            // txtPresionSalidaBuscar
+            // 
+            this.txtPresionSalidaBuscar.Location = new System.Drawing.Point(464, 47);
+            this.txtPresionSalidaBuscar.Name = "txtPresionSalidaBuscar";
+            this.txtPresionSalidaBuscar.Size = new System.Drawing.Size(107, 20);
+            this.txtPresionSalidaBuscar.TabIndex = 33;
+            // 
             // frmAudifonos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 723);
+            this.ClientSize = new System.Drawing.Size(745, 781);
+            this.Controls.Add(this.gpbFiltros);
             this.Name = "frmAudifonos";
             this.Text = "frmAudifonos";
             this.Load += new System.EventHandler(this.frmAudifonos_Load);
+            this.Controls.SetChildIndex(this.pnlList, 0);
+            this.Controls.SetChildIndex(this.pnlDetails, 0);
+            this.Controls.SetChildIndex(this.gpbFiltros, 0);
             this.pnlList.ResumeLayout(false);
             this.pnlDetails.ResumeLayout(false);
             this.pnlDetails.PerformLayout();
@@ -333,6 +447,8 @@
             this.tbpDatos.ResumeLayout(false);
             this.tbpDatos.PerformLayout();
             this.tbpFranjaAdaptacion.ResumeLayout(false);
+            this.gpbFiltros.ResumeLayout(false);
+            this.gpbFiltros.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -360,5 +476,15 @@
         private System.Windows.Forms.Label lblNombreModelo;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblPresionSalida;
+        public System.Windows.Forms.GroupBox gpbFiltros;
+        private System.Windows.Forms.Label lblMarcaBuscar;
+        private System.Windows.Forms.ComboBox cmbMarcaBuscar;
+        public Medusa.Biodata.FrontEnd.UserControls.ButtonUC btnBuscar;
+        private System.Windows.Forms.ComboBox cmbTipoBuscar;
+        private System.Windows.Forms.TextBox txtNombreModeloBuscar;
+        private System.Windows.Forms.Label lblTipoBuscar;
+        private System.Windows.Forms.Label lblNombreModeloBuscar;
+        private System.Windows.Forms.Label lblPresionSalidaBuscar;
+        private System.Windows.Forms.TextBox txtPresionSalidaBuscar;
     }
 }

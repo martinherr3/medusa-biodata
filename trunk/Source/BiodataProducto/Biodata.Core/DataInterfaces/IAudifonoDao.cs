@@ -17,6 +17,6 @@ namespace Mds.Biodata.Core.DataInterfaces
     /// </summary>
     public interface IAudifonoDao : IDao<Audifono, System.Int32>
     {
-
+        List<Audifono> GetAudifonosByParameters(String pNombreModelo, Int32? pMarca, Int32? pTipo, Decimal? pPresionSalida);
     }
 }

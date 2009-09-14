@@ -270,6 +270,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptAudifonos.rdlc" />
     <EmbeddedResource Include="Reportes\rptEstudios.rdlc" />
+    <EmbeddedResource Include="Reportes\rptGraficoEstudio.rdlc" />
     <EmbeddedResource Include="Reportes\rptObrasSociales.rdlc" />
     <EmbeddedResource Include="Reportes\rptPacienteDetalle.rdlc" />
     <EmbeddedResource Include="Reportes\rptPacientes.rdlc" />
@@ -334,6 +335,12 @@
     </Compile>
     <Compile Include="Reportes\ReporteBase.Designer.cs">
       <DependentUpon>ReporteBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteGrafico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReporteGrafico.Designer.cs">
+      <DependentUpon>ReporteGrafico.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\ReporteObrasSociales.cs">
       <SubType>Form</SubType>
