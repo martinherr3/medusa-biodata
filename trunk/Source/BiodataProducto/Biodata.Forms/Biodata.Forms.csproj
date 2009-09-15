@@ -171,6 +171,12 @@
     <Compile Include="frmStartForm.Designer.cs">
       <DependentUpon>frmStartForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUsuarioPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarioPassword.Designer.cs">
+      <DependentUpon>frmUsuarioPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="GereralFunctions.cs" />
     <Compile Include="InputBox.cs" />
     <Compile Include="Program.cs" />
@@ -241,6 +247,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmStartForm.resx">
       <DependentUpon>frmStartForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarioPassword.resx">
+      <DependentUpon>frmUsuarioPassword.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

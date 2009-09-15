@@ -114,5 +114,9 @@ namespace Mds.Biodata.Data
         {
             return new AnamnesisListadoPreguntaDao(SessionFactoryConfigPath);
         }
+        public IUsuarioDao GetUsuarioDao()
+        {
+            return new UsuarioDao(SessionFactoryConfigPath);
+        }
     }
 }
