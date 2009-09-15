@@ -63,6 +63,7 @@
     <Compile Include="DataHibernate\MarcaAudifonoDao.cs" />
     <Compile Include="DataHibernate\MoldeAudifonoDao.cs" />
     <Compile Include="DataHibernate\TestLingDao.cs" />
+    <Compile Include="DataHibernate\UsuarioDao.cs" />
     <Compile Include="Factory\NHibernateDaoFactory.cs" />
     <Compile Include="DataHibernate\ObraSocialDao.cs" />
     <Compile Include="DataHibernate\ObraSocialXPacienteDao.cs" />
