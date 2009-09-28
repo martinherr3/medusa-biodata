@@ -8,5 +8,6 @@
     <property name="Apellido" column="Apellido" type="System.String" not-null="true" length="100"/>
     <property name="Nick" column="Nick" type="System.String" not-null="true" length="100"/>
     <property name="Password" column="Password" type="System.String" not-null="true" length="100"/>
+    <property name="TipoUsuario" column="TipoUsuario" type="System.Int32" not-null="false" />
  </class>
 </hibernate-mapping>

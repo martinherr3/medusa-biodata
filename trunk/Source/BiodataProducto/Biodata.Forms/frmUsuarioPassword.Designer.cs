@@ -94,6 +94,7 @@
             this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -119,6 +120,7 @@
             this.Controls.Add(this.lblNick);
             this.Name = "frmUsuarioPassword";
             this.Text = "Cambio de Password";
+            this.Load += new System.EventHandler(this.frmUsuarioPassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

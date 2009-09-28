@@ -61,6 +61,12 @@ namespace Mds.Biodata.Forms
             Analogico=1
         }
 
+        public enum TipoUsuario
+        {
+            Administrador=0,
+            UsuarioComun=1
+        }
+
     }
 
     public class Constantes
