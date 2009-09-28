@@ -16,6 +16,7 @@ namespace Mds.Biodata.Domain
         private System.String _Apellido;
         private System.String _Nick;
         private System.String _Password;
+        private System.Int32? _TipoUsuario;
 
         public Usuario()
         {
@@ -46,6 +47,11 @@ namespace Mds.Biodata.Domain
              set { _Password = value;}
          }
 
+         public virtual System.Int32? TipoUsuario
+         {
+             get { return _TipoUsuario; }
+             set { _TipoUsuario = value; }
+         }
 
         public override int GetHashCode()
         {

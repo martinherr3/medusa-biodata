@@ -75,6 +75,7 @@
             this.tsmAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmObraSocial = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmGestionUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.spcRight.Panel1.SuspendLayout();
             this.spcRight.Panel2.SuspendLayout();
             this.spcRight.SuspendLayout();
@@ -350,7 +351,8 @@
             this.tsmHerramientasSeguridad.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmGestionParametrosSistema,
             this.tsmCambioPasswordUsuario,
-            this.tsmBackUpBaseDatos});
+            this.tsmBackUpBaseDatos,
+            this.tsmGestionUsuarios});
             this.tsmHerramientasSeguridad.Name = "tsmHerramientasSeguridad";
             resources.ApplyResources(this.tsmHerramientasSeguridad, "tsmHerramientasSeguridad");
             // 
@@ -403,6 +405,12 @@
             // 
             this.tsmObraSocial.Name = "tsmObraSocial";
             resources.ApplyResources(this.tsmObraSocial, "tsmObraSocial");
+            // 
+            // tsmGestionUsuarios
+            // 
+            this.tsmGestionUsuarios.Name = "tsmGestionUsuarios";
+            resources.ApplyResources(this.tsmGestionUsuarios, "tsmGestionUsuarios");
+            this.tsmGestionUsuarios.Click += new System.EventHandler(this.tsmGestionUsuarios_Click);
             // 
             // frmPrincipal
             // 
@@ -476,5 +484,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton tsbAyuda;
         public Dotnetrix.Controls.TabControlEX tbcPrincipal;
+        private System.Windows.Forms.ToolStripMenuItem tsmGestionUsuarios;
     }
 }

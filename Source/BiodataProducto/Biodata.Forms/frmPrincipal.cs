@@ -282,6 +282,23 @@ namespace Mds.Biodata.Forms
         {
 
         }
+
+        private void tsmGestionUsuarios_Click(object sender, EventArgs e)
+        {
+            OpenUsuario();
+        }
+
+        private void OpenUsuario()
+        {
+            try
+            {
+                GereralFunctions.AbrirFormulario(new frmUsuario(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Usuarios", DockStyle.Fill);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
         #endregion
 
         #region "--[Ayuda]--"
@@ -300,6 +317,8 @@ namespace Mds.Biodata.Forms
 
         }
         #endregion
+
+        
         #endregion
     }
 }

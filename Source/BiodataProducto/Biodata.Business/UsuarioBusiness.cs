@@ -12,5 +12,10 @@ namespace Mds.Biodata.Business
         {
 
         }
+
+        public Boolean ValidarUsuario(String pNick, String pPassword)
+        {
+            return true;
+        }
     }
 }
