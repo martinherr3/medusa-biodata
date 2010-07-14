@@ -73,9 +73,21 @@ namespace Mds.Biodata.Forms
             set { _EnfocarReporte = value; }
         }
 
+        //Propiedades para la gestion de AudifonoPaciente (Relacion del paciente con N audifonos-moldes)
+        private EstadoForm _EstadoAccionAudifono = EstadoForm.Nuevo;
+        public EstadoForm EstadoAccionAudifono
+        {
+            get { return _EstadoAccionAudifono; }
+            set { _EstadoAccionAudifono = value; }
+        }
 
-        //private Mds.Architecture.HelpersFunctions.Validators.Winforms.Validation.ViewValidator vvtor;
+        private AudifonoPaciente _AudifonoPacienteEntity;
 
+        public AudifonoPaciente AudifonoPacienteEntity
+        {
+            get { return _AudifonoPacienteEntity; }
+            set { _AudifonoPacienteEntity = value; }
+        }
         #endregion
 
         #region "--[Methods]--"
@@ -184,7 +196,11 @@ namespace Mds.Biodata.Forms
             txtAntecedentesPersonales.Text = PacienteEntity.HistoriaClinicas[0].AntecedentesPersonales;
             txtEstadoSalud.Text = PacienteEntity.HistoriaClinicas[0].EstadoSalud;
             //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //Carga las obras sociales del Paciente
             LoadObrasSociales();
+            //Carga los audifonos con sus moldes respectivos del Paciente
+            LoadAudifonoMolde();
+
         }
 
         /// <summary>
@@ -209,6 +225,30 @@ namespace Mds.Biodata.Forms
             }
         }
 
+
+        /// <summary>
+        /// Carga Los audifonos y molde del paciente en cuestión
+        /// </summary>
+        private void LoadAudifonoMolde()
+        {
+            try
+            {
+                //Construimos la vista para la grilla
+                ObjectView AudifonoMoldeObjectView = new ObjectView(typeof(AudifonoPaciente));
+                AudifonoMoldeObjectView.AllowRemove = false;
+                AudifonoMoldeObjectView.Columns.Add("IDAudifonoLookup.NombreModelo", "Audifono");
+                AudifonoMoldeObjectView.Columns.Add("IDMoldeLookup.Nombre", "Molde");
+                AudifonoMoldeObjectView.Columns.Add("NroSerie", "NroSerie");
+                BindingManagerBase AudifonoMoldeManager = dgvAudifonosMoldes.BindingContext[AudifonoMoldeObjectView];
+                AudifonoMoldeObjectView.DataSource = (IList)this.PacienteEntity.AudifonoPacientes;
+                dgvAudifonosMoldes.DataSource = AudifonoMoldeObjectView;
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
         /// <summary>
         /// Valida datos basicos antes de enviar la entidad
         /// </summary>
@@ -225,21 +265,27 @@ namespace Mds.Biodata.Forms
                 ProcesarAdvertencia("Debe ingresar el Apellido del paciente");
                 return false;
             }
-            if (txtNumeroDocumento.Text == "" || txtNumeroDocumento.Text == null)
+            if (txtTelefono.Text == "" || txtTelefono.Text == null)
             {
-                ProcesarAdvertencia("Debe ingresar el Numero de Documento del paciente");
+                ProcesarAdvertencia("Debe ingresar el telefono del paciente");
                 return false;
             }
-            if (txtCiudad.Text == "" || txtCiudad.Text == null)
-            {
-                ProcesarAdvertencia("Debe seleccionar una ciudad para el paciente");
-                return false;
-            }
+            
+            //if (txtNumeroDocumento.Text == "" || txtNumeroDocumento.Text == null)
+            //{
+            //    ProcesarAdvertencia("Debe ingresar el Numero de Documento del paciente");
+            //    return false;
+            //}
+            //if (txtCiudad.Text == "" || txtCiudad.Text == null)
+            //{
+            //    ProcesarAdvertencia("Debe seleccionar una ciudad para el paciente");
+            //    return false;
+            //}
             return true;
         }
 
         /// <summary>
-        /// Carga los combos de Tipo de Documento y Sexo
+        /// Carga los combos de Tipo de Documento, Sexo y Lado Oido
         /// </summary>
         private void LoadCombos()
         {
@@ -249,6 +295,8 @@ namespace Mds.Biodata.Forms
                 cmbTipoDocumento.DataSource = Enum.GetValues(typeof(Enumeraciones.TipoDocumento));
                 //Sexo
                 cmbSexo.DataSource = Enum.GetValues(typeof(Enumeraciones.Sexo));
+                //Lado Oido
+                cmbLadoOido.DataSource = Enum.GetValues(typeof(Enumeraciones.LadoOido));
             }
             catch (Exception ex)
             {
@@ -408,6 +456,16 @@ namespace Mds.Biodata.Forms
             try
             {
                 pnlDetails.Visible = true;
+
+
+                //Limpieza de los controles y grilla de AudifonoPaciente sin importar la accion
+                /////////////////////////////////////////////////////////////////
+                LimpiarControlesAudifono();
+                dgvAudifonosMoldes.DataSource = null;
+                /////////////////////////////////////////////////////////////////
+                //Posicionar sobre la primer solapa sin importar la accion
+                tbcDatos.SelectedTab = tbpDatosPaciente;
+                /////////////////////////////////////////////////////////////////
 
                 switch (Estado)
                 {
@@ -628,6 +686,32 @@ namespace Mds.Biodata.Forms
                                 LoadObrasSociales();
                             }
                             break;
+                        case Enumeraciones.SeleccionDestino.AudifonosSeleccion:
+                            if (((Audifono)this.Seleccion).ID != null || ((Audifono)this.Seleccion).ID > 0)
+                            {
+                                txtAudifono.Tag = ((Audifono)this.Seleccion).ID;
+                                txtAudifono.Text = ((Audifono)this.Seleccion).NombreModelo;
+                                //PacienteEntity.IDCiudadLookup = (Ciudad)this.Seleccion;
+                            }
+                            else
+                            {
+                                txtAudifono.Tag = string.Empty;
+                                txtAudifono.Text = string.Empty;
+                            }
+                            break;
+                        case Enumeraciones.SeleccionDestino.MoldeAudifonoSeleccion:
+                            if (((MoldeAudifono)this.Seleccion).ID != null || ((MoldeAudifono)this.Seleccion).ID > 0)
+                            {
+                                txtMoldeAudifono.Tag = ((MoldeAudifono)this.Seleccion).ID;
+                                txtMoldeAudifono.Text = ((MoldeAudifono)this.Seleccion).Nombre;
+                                //PacienteEntity.IDCiudadLookup = (Ciudad)this.Seleccion;
+                            }
+                            else
+                            {
+                                txtMoldeAudifono.Tag = string.Empty;
+                                txtMoldeAudifono.Text = string.Empty;
+                            }
+                            break;
                     }
                 }
                 this.Seleccion = null;
@@ -664,6 +748,184 @@ namespace Mds.Biodata.Forms
             }
         }
         #endregion
+
+        private void btnSeleccionarAudifono_Click(object sender, EventArgs e)
+        {
+            SeleccionarAudifono();
+        }
+
+        private void SeleccionarAudifono()
+        {
+            try
+            {
+                txtAudifono.Tag = string.Empty;
+                txtAudifono.Text = string.Empty;
+
+                this.SeleccionLlamada = Enumeraciones.SeleccionDestino.AudifonosSeleccion;
+                frmAudifonos frm = new frmAudifonos();
+                frm.Llamador = this;
+                this.Parent.Enabled = false;
+                GereralFunctions.AbrirFormulario(frm, (TabControl)this.Parent.Parent, "Audifonos", DockStyle.Fill, false, true);
+
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+        private void btnSeleccionarMoldeAudifono_Click(object sender, EventArgs e)
+        {
+            SeleccionarMoldeAudifono();
+        }
+
+        private void SeleccionarMoldeAudifono()
+        {
+            try
+            {
+                txtMoldeAudifono.Tag = string.Empty;
+                txtMoldeAudifono.Text = string.Empty;
+
+                this.SeleccionLlamada = Enumeraciones.SeleccionDestino.MoldeAudifonoSeleccion;
+                frmMoldeAudifono frm = new frmMoldeAudifono();
+                frm.Llamador = this;
+                this.Parent.Enabled = false;
+                GereralFunctions.AbrirFormulario(frm, (TabControl)this.Parent.Parent, "Moldes de Audifono", DockStyle.Fill, false, true);
+
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+        private void btnNuevoAudifono_Click(object sender, EventArgs e)
+        {
+            EstadoAccionAudifono = EstadoForm.Nuevo;
+            HabilitarControlesAudifono(true);
+            btnSeleccionarAudifono.Focus();
+            AudifonoPacienteEntity = new AudifonoPaciente();
+            LimpiarControlesAudifono();
+        }
+
+        /// <summary>
+        /// Habilita los botones para la gestion de audifonos
+        /// </summary>
+        /// <param name="pValor"></param>
+        private void HabilitarControlesAudifono(Boolean pValor)
+        {
+            btnAceptarAudifono.Enabled = pValor;
+            btnCancelarAudifono.Enabled = pValor;
+            btnNuevoAudifono.Enabled = !pValor;
+            btnModificarAudifono.Enabled = !pValor;
+            btnEliminarAudifono.Enabled = !pValor;
+            dgvAudifonosMoldes.Enabled = !pValor;
+            //Botones Aceptar y Cancelar del ABM general
+            btnAccept.Enabled = !pValor;
+            btnCancel.Enabled = !pValor;
+            //Habilitacion del contenedor de datos
+            gpbDatosAudifono.Enabled = pValor;
+        }
+
+        /// <summary>
+        /// Limpia los controles que se utilizan para la carga de audifono molde
+        /// </summary>
+        private void LimpiarControlesAudifono()
+        {
+            txtAudifono.Tag = string.Empty;
+            txtAudifono.Text = string.Empty;
+            txtMoldeAudifono.Tag = string.Empty;
+            txtMoldeAudifono.Text = string.Empty;
+            txtNroSerie.Text = string.Empty;
+            cmbLadoOido.SelectedItem = Enumeraciones.LadoOido.Izquierdo;
+            dtpFechaFabricacion.Value = DateTime.Now;
+            dtpProximoService.Value = DateTime.Now;
+            txtObservacionAudifono.Text = string.Empty;
+            txtEstadoAudifono.Text = string.Empty;
+        }
+
+        private void btnAceptarAudifono_Click(object sender, EventArgs e)
+        {
+            CapturaDatosAudifono();
+            switch (this.EstadoAccionAudifono)
+            {
+                case EstadoForm.Nuevo:
+                    PacienteEntity.AudifonoPacientes.Add(AudifonoPacienteEntity);
+                    break;
+                case EstadoForm.Editar:
+
+                    break;
+                case EstadoForm.Eliminar:
+                    PacienteEntity.AudifonoPacientes.Remove(AudifonoPacienteEntity);
+                    break;
+            }
+            HabilitarControlesAudifono(false);
+            LoadAudifonoMolde();
+        }
+
+        /// <summary>
+        /// Captura los datos de ingresados en Audifono en una entidad del tipo AudifonoPaciente
+        /// </summary>
+        private void CapturaDatosAudifono()
+        {
+            AudifonoPacienteEntity.NroSerie = txtNroSerie.Text;
+            AudifonoPacienteEntity.FechaFabricacion = dtpFechaFabricacion.Value;
+            AudifonoPacienteEntity.ProximoService = dtpProximoService.Value;
+            AudifonoPacienteEntity.Observacion = txtObservacionAudifono.Text;
+            AudifonoPacienteEntity.Estado = txtEstadoAudifono.Text;
+            AudifonoPacienteEntity.LadoOido = Convert.ToInt32(cmbLadoOido.SelectedItem);
+            //AudifonoPacienteEntity.IDPaciente = PacienteEntity.ID;
+            AudifonoPacienteEntity.IDPacienteLookup = PacienteEntity;
+            Audifono wAudifono = new Audifono((Int32)txtAudifono.Tag);
+            wAudifono.NombreModelo = txtAudifono.Text;
+            MoldeAudifono wMolde = new MoldeAudifono((Int32)txtMoldeAudifono.Tag);
+            wMolde.Nombre = txtMoldeAudifono.Text;
+            AudifonoPacienteEntity.IDAudifono = wAudifono.ID;
+            AudifonoPacienteEntity.IDAudifonoLookup = wAudifono;
+            AudifonoPacienteEntity.IDMolde = wMolde.ID;
+            AudifonoPacienteEntity.IDMoldeLookup = wMolde;
+        }
+
+        private void btnModificarAudifono_Click(object sender, EventArgs e)
+        {
+            EstadoAccionAudifono = EstadoForm.Editar;
+            HabilitarControlesAudifono(true);
+            btnSeleccionarAudifono.Focus();
+            LoadDataAudifono();
+        }
+
+        /// <summary>
+        /// Carga los datos del audifono y molde seleccionado para el paciente
+        /// </summary>
+        private void LoadDataAudifono()
+        {
+            ObjectViews.ObjectViewRow RowSelected = (ObjectViewRow)dgvAudifonosMoldes.CurrentRow.DataBoundItem;
+            AudifonoPacienteEntity = (AudifonoPaciente)RowSelected.InnerObject;
+
+            //txtID.Text = PacienteEntity.ID.ToString();
+            txtAudifono.Tag = AudifonoPacienteEntity.IDAudifono;
+            txtAudifono.Text = AudifonoPacienteEntity.IDAudifonoLookup.NombreModelo;
+            txtMoldeAudifono.Tag = AudifonoPacienteEntity.IDMolde;
+            txtMoldeAudifono.Text = AudifonoPacienteEntity.IDMoldeLookup.Nombre;
+            txtNroSerie.Text = AudifonoPacienteEntity.NroSerie;
+            cmbLadoOido.SelectedItem = (Enumeraciones.LadoOido)AudifonoPacienteEntity.LadoOido;
+            dtpFechaFabricacion.Value = AudifonoPacienteEntity.FechaFabricacion.Value;
+            dtpProximoService.Value = AudifonoPacienteEntity.ProximoService.Value;
+            txtObservacionAudifono.Text = AudifonoPacienteEntity.Observacion;
+            txtEstadoAudifono.Text = AudifonoPacienteEntity.Estado;
+        }
+
+        private void btnEliminarAudifono_Click(object sender, EventArgs e)
+        {
+            EstadoAccionAudifono = EstadoForm.Eliminar;
+            HabilitarControlesAudifono(true);
+            LoadDataAudifono();
+        }
+
+        private void btnCancelarAudifono_Click(object sender, EventArgs e)
+        {
+            HabilitarControlesAudifono(false);
+        }
 
         
     }

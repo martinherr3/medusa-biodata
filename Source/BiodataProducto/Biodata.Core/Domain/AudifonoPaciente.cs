@@ -20,8 +20,10 @@ namespace Mds.Biodata.Domain
         private System.Int32? _LadoOido;
         private System.Int32? _IDPaciente;
         private System.Int32? _IDAudifono;
+        private System.Int32? _IDMolde;
         private Audifono _IDAudifonoLookup;
         private Paciente _IDPacienteLookup;
+        private MoldeAudifono _IDMoldeLookup;
 
         public AudifonoPaciente()
         {
@@ -72,6 +74,12 @@ namespace Mds.Biodata.Domain
              set { _IDAudifono = value;}
          }
 
+         public virtual System.Int32? IDMolde
+         {
+             get { return _IDMolde; }
+             set { _IDMolde = value; }
+         }
+
          public virtual Audifono IDAudifonoLookup{
              get { return _IDAudifonoLookup; }
              set { _IDAudifonoLookup = value;}
@@ -80,6 +88,12 @@ namespace Mds.Biodata.Domain
          public virtual Paciente IDPacienteLookup{
              get { return _IDPacienteLookup; }
              set { _IDPacienteLookup = value;}
+         }
+
+         public virtual MoldeAudifono IDMoldeLookup
+         {
+             get { return _IDMoldeLookup; }
+             set { _IDMoldeLookup = value; }
          }
 
 

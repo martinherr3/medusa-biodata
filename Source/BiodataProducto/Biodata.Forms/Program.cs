@@ -20,7 +20,12 @@ namespace Mds.Biodata.Forms
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal());
+            Application.Run(new Init());
+        }
+
+        public static void Close()
+        {
+            Application.Exit();
         }
     }
 }

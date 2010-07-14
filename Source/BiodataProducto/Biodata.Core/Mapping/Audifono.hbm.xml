@@ -11,19 +11,20 @@
     <property name="Programable" column="Programable" type="System.Boolean" not-null="false" />
     <property name="FranjaAdaptacion" column="FranjaAdaptacion" type="System.String" not-null="false" />
     <property name="PresionMaximaSalida" column="PresionMaximaSalida" type="System.Decimal" not-null="false" />
+    <property name="Ventilacion" column="Ventilacion" type="System.Boolean" not-null="false" />
     <property name="IDMarca" column="IDMarca" type="System.Int32" not-null="false" />
     <many-to-one name="IDMarcaLookup" column="IDMarca" class="MarcaAudifono"  update="0"  insert="0" />
     <bag name="AudifonoPacientes" table="AudifonoPaciente" inverse="true" lazy="true" cascade="delete">
       <key column="IDAudifono" />
       <one-to-many class="AudifonoPaciente"/>
     </bag>
-    <bag name="MoldeAudifonos" table="MoldeAudifono" inverse="true" lazy="true" cascade="delete">
+    <!--<bag name="MoldeAudifonos" table="MoldeAudifono" inverse="true" lazy="true" cascade="delete">
       <key column="IDAudifono" />
       <one-to-many class="MoldeAudifono"/>
     </bag>
     <bag name="SeleccionAudifonos" table="SeleccionAudifono" inverse="true" lazy="true" cascade="delete">
       <key column="IDAudifono" />
       <one-to-many class="SeleccionAudifono"/>
-    </bag>
+    </bag>-->
  </class>
 </hibernate-mapping>

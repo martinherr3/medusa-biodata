@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPaciente));
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -78,6 +81,31 @@
             this.lblAntecedentesHereditarios = new System.Windows.Forms.Label();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.lblObservaciones = new System.Windows.Forms.Label();
+            this.tbpDatosAudifonos = new System.Windows.Forms.TabPage();
+            this.btnCancelarAudifono = new System.Windows.Forms.Button();
+            this.btnAceptarAudifono = new System.Windows.Forms.Button();
+            this.btnEliminarAudifono = new System.Windows.Forms.Button();
+            this.btnModificarAudifono = new System.Windows.Forms.Button();
+            this.btnNuevoAudifono = new System.Windows.Forms.Button();
+            this.dgvAudifonosMoldes = new Medusa.Biodata.FrontEnd.UserControls.GridView(this.components);
+            this.cmbLadoOido = new System.Windows.Forms.ComboBox();
+            this.lblLadoOido = new System.Windows.Forms.Label();
+            this.txtEstadoAudifono = new System.Windows.Forms.TextBox();
+            this.lblEstadoAudifono = new System.Windows.Forms.Label();
+            this.txtObservacionAudifono = new System.Windows.Forms.TextBox();
+            this.lblObservacionAudifono = new System.Windows.Forms.Label();
+            this.dtpFechaFabricacion = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaFabricacion = new System.Windows.Forms.Label();
+            this.dtpProximoService = new System.Windows.Forms.DateTimePicker();
+            this.lblProximoService = new System.Windows.Forms.Label();
+            this.txtNroSerie = new System.Windows.Forms.TextBox();
+            this.lblNroSerie = new System.Windows.Forms.Label();
+            this.btnSeleccionarAudifono = new System.Windows.Forms.Button();
+            this.txtAudifono = new System.Windows.Forms.TextBox();
+            this.lblAudifono = new System.Windows.Forms.Label();
+            this.btnSeleccionarMoldeAudifono = new System.Windows.Forms.Button();
+            this.txtMoldeAudifono = new System.Windows.Forms.TextBox();
+            this.lblMoldeAudifono = new System.Windows.Forms.Label();
             this.buttonUC1 = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
             this.btnBuscar = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
             this.gpbFiltros = new System.Windows.Forms.GroupBox();
@@ -91,6 +119,7 @@
             this.txtApellidoBuscar = new System.Windows.Forms.TextBox();
             this.lblSexoBuscar = new System.Windows.Forms.Label();
             this.lblApellidoBuscar = new System.Windows.Forms.Label();
+            this.gpbDatosAudifono = new System.Windows.Forms.GroupBox();
             this.pnlList.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -99,18 +128,21 @@
             this.tbcDatos.SuspendLayout();
             this.tbpDatosPaciente.SuspendLayout();
             this.tbpDatosHistorialClinico.SuspendLayout();
+            this.tbpDatosAudifonos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAudifonosMoldes)).BeginInit();
             this.gpbFiltros.SuspendLayout();
+            this.gpbDatosAudifono.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDeleteItem
             // 
-            this.lblDeleteItem.Location = new System.Drawing.Point(605, 451);
+            this.lblDeleteItem.Location = new System.Drawing.Point(605, 463);
             // 
             // pnlList
             // 
             this.pnlList.Controls.Add(this.buttonUC1);
-            this.pnlList.Location = new System.Drawing.Point(12, 88);
-            this.pnlList.Size = new System.Drawing.Size(800, 245);
+            this.pnlList.Location = new System.Drawing.Point(12, 94);
+            this.pnlList.Size = new System.Drawing.Size(800, 235);
             this.pnlList.Controls.SetChildIndex(this.buttonUC1, 0);
             this.pnlList.Controls.SetChildIndex(this.btnSelect, 0);
             this.pnlList.Controls.SetChildIndex(this.btnNew, 0);
@@ -141,7 +173,7 @@
             // pnlDetails
             // 
             this.pnlDetails.Controls.Add(this.tbcDatos);
-            this.pnlDetails.Location = new System.Drawing.Point(12, 339);
+            this.pnlDetails.Location = new System.Drawing.Point(12, 354);
             this.pnlDetails.Size = new System.Drawing.Size(797, 520);
             this.pnlDetails.Controls.SetChildIndex(this.btnCancel, 0);
             this.pnlDetails.Controls.SetChildIndex(this.btnAccept, 0);
@@ -150,11 +182,11 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(692, 481);
+            this.btnCancel.Location = new System.Drawing.Point(692, 486);
             // 
             // btnAccept
             // 
-            this.btnAccept.Location = new System.Drawing.Point(573, 481);
+            this.btnAccept.Location = new System.Drawing.Point(573, 487);
             this.btnAccept.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnAccept_Click);
             // 
             // bgwLoad
@@ -396,31 +428,31 @@
             this.dgvObrasSociales.AllowUserToAddRows = false;
             this.dgvObrasSociales.AllowUserToDeleteRows = false;
             this.dgvObrasSociales.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvObrasSociales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvObrasSociales.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvObrasSociales.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvObrasSociales.BackgroundColor = System.Drawing.Color.White;
             this.dgvObrasSociales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkSalmon;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvObrasSociales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.DarkSalmon;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvObrasSociales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvObrasSociales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvObrasSociales.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvObrasSociales.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvObrasSociales.EnableHeadersVisualStyles = false;
             this.dgvObrasSociales.GridColor = System.Drawing.Color.Silver;
             this.dgvObrasSociales.Location = new System.Drawing.Point(20, 28);
@@ -468,6 +500,7 @@
             // 
             this.tbcDatos.Controls.Add(this.tbpDatosPaciente);
             this.tbcDatos.Controls.Add(this.tbpDatosHistorialClinico);
+            this.tbcDatos.Controls.Add(this.tbpDatosAudifonos);
             this.tbcDatos.Location = new System.Drawing.Point(3, 3);
             this.tbcDatos.Name = "tbcDatos";
             this.tbcDatos.SelectedIndex = 0;
@@ -619,12 +652,277 @@
             this.lblObservaciones.TabIndex = 21;
             this.lblObservaciones.Text = "Observaciones";
             // 
+            // tbpDatosAudifonos
+            // 
+            this.tbpDatosAudifonos.Controls.Add(this.gpbDatosAudifono);
+            this.tbpDatosAudifonos.Controls.Add(this.btnCancelarAudifono);
+            this.tbpDatosAudifonos.Controls.Add(this.btnAceptarAudifono);
+            this.tbpDatosAudifonos.Controls.Add(this.btnEliminarAudifono);
+            this.tbpDatosAudifonos.Controls.Add(this.btnModificarAudifono);
+            this.tbpDatosAudifonos.Controls.Add(this.btnNuevoAudifono);
+            this.tbpDatosAudifonos.Controls.Add(this.dgvAudifonosMoldes);
+            this.tbpDatosAudifonos.Location = new System.Drawing.Point(4, 22);
+            this.tbpDatosAudifonos.Name = "tbpDatosAudifonos";
+            this.tbpDatosAudifonos.Size = new System.Drawing.Size(789, 419);
+            this.tbpDatosAudifonos.TabIndex = 2;
+            this.tbpDatosAudifonos.Text = "Audifonos";
+            this.tbpDatosAudifonos.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelarAudifono
+            // 
+            this.btnCancelarAudifono.Enabled = false;
+            this.btnCancelarAudifono.Location = new System.Drawing.Point(618, 179);
+            this.btnCancelarAudifono.Name = "btnCancelarAudifono";
+            this.btnCancelarAudifono.Size = new System.Drawing.Size(82, 25);
+            this.btnCancelarAudifono.TabIndex = 57;
+            this.btnCancelarAudifono.Text = "Cancelar";
+            this.btnCancelarAudifono.UseVisualStyleBackColor = true;
+            this.btnCancelarAudifono.Click += new System.EventHandler(this.btnCancelarAudifono_Click);
+            // 
+            // btnAceptarAudifono
+            // 
+            this.btnAceptarAudifono.Enabled = false;
+            this.btnAceptarAudifono.Location = new System.Drawing.Point(523, 179);
+            this.btnAceptarAudifono.Name = "btnAceptarAudifono";
+            this.btnAceptarAudifono.Size = new System.Drawing.Size(89, 25);
+            this.btnAceptarAudifono.TabIndex = 56;
+            this.btnAceptarAudifono.Text = "Aceptar";
+            this.btnAceptarAudifono.UseVisualStyleBackColor = true;
+            this.btnAceptarAudifono.Click += new System.EventHandler(this.btnAceptarAudifono_Click);
+            // 
+            // btnEliminarAudifono
+            // 
+            this.btnEliminarAudifono.Location = new System.Drawing.Point(365, 179);
+            this.btnEliminarAudifono.Name = "btnEliminarAudifono";
+            this.btnEliminarAudifono.Size = new System.Drawing.Size(99, 25);
+            this.btnEliminarAudifono.TabIndex = 55;
+            this.btnEliminarAudifono.Text = "Eliminar";
+            this.btnEliminarAudifono.UseVisualStyleBackColor = true;
+            this.btnEliminarAudifono.Click += new System.EventHandler(this.btnEliminarAudifono_Click);
+            // 
+            // btnModificarAudifono
+            // 
+            this.btnModificarAudifono.Location = new System.Drawing.Point(248, 179);
+            this.btnModificarAudifono.Name = "btnModificarAudifono";
+            this.btnModificarAudifono.Size = new System.Drawing.Size(111, 25);
+            this.btnModificarAudifono.TabIndex = 54;
+            this.btnModificarAudifono.Text = "Modificar";
+            this.btnModificarAudifono.UseVisualStyleBackColor = true;
+            this.btnModificarAudifono.Click += new System.EventHandler(this.btnModificarAudifono_Click);
+            // 
+            // btnNuevoAudifono
+            // 
+            this.btnNuevoAudifono.Location = new System.Drawing.Point(128, 179);
+            this.btnNuevoAudifono.Name = "btnNuevoAudifono";
+            this.btnNuevoAudifono.Size = new System.Drawing.Size(114, 25);
+            this.btnNuevoAudifono.TabIndex = 53;
+            this.btnNuevoAudifono.Text = "Nuevo";
+            this.btnNuevoAudifono.UseVisualStyleBackColor = true;
+            this.btnNuevoAudifono.Click += new System.EventHandler(this.btnNuevoAudifono_Click);
+            // 
+            // dgvAudifonosMoldes
+            // 
+            this.dgvAudifonosMoldes.AllowUserToAddRows = false;
+            this.dgvAudifonosMoldes.AllowUserToDeleteRows = false;
+            this.dgvAudifonosMoldes.AllowUserToResizeRows = false;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(244)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvAudifonosMoldes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvAudifonosMoldes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAudifonosMoldes.BackgroundColor = System.Drawing.Color.White;
+            this.dgvAudifonosMoldes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.DarkSalmon;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAudifonosMoldes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvAudifonosMoldes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightBlue;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAudifonosMoldes.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvAudifonosMoldes.EnableHeadersVisualStyles = false;
+            this.dgvAudifonosMoldes.GridColor = System.Drawing.Color.Silver;
+            this.dgvAudifonosMoldes.Location = new System.Drawing.Point(128, 28);
+            this.dgvAudifonosMoldes.MultiSelect = false;
+            this.dgvAudifonosMoldes.Name = "dgvAudifonosMoldes";
+            this.dgvAudifonosMoldes.ReadOnly = true;
+            this.dgvAudifonosMoldes.RowHeadersVisible = false;
+            this.dgvAudifonosMoldes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAudifonosMoldes.Size = new System.Drawing.Size(569, 143);
+            this.dgvAudifonosMoldes.TabIndex = 52;
+            // 
+            // cmbLadoOido
+            // 
+            this.cmbLadoOido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbLadoOido.FormattingEnabled = true;
+            this.cmbLadoOido.Location = new System.Drawing.Point(481, 39);
+            this.cmbLadoOido.Name = "cmbLadoOido";
+            this.cmbLadoOido.Size = new System.Drawing.Size(204, 21);
+            this.cmbLadoOido.TabIndex = 50;
+            // 
+            // lblLadoOido
+            // 
+            this.lblLadoOido.AutoSize = true;
+            this.lblLadoOido.Location = new System.Drawing.Point(419, 43);
+            this.lblLadoOido.Name = "lblLadoOido";
+            this.lblLadoOido.Size = new System.Drawing.Size(58, 13);
+            this.lblLadoOido.TabIndex = 51;
+            this.lblLadoOido.Text = "Lado Oído";
+            // 
+            // txtEstadoAudifono
+            // 
+            this.txtEstadoAudifono.Location = new System.Drawing.Point(116, 148);
+            this.txtEstadoAudifono.Multiline = true;
+            this.txtEstadoAudifono.Name = "txtEstadoAudifono";
+            this.txtEstadoAudifono.Size = new System.Drawing.Size(569, 47);
+            this.txtEstadoAudifono.TabIndex = 48;
+            // 
+            // lblEstadoAudifono
+            // 
+            this.lblEstadoAudifono.AutoSize = true;
+            this.lblEstadoAudifono.Location = new System.Drawing.Point(74, 151);
+            this.lblEstadoAudifono.Name = "lblEstadoAudifono";
+            this.lblEstadoAudifono.Size = new System.Drawing.Size(40, 13);
+            this.lblEstadoAudifono.TabIndex = 49;
+            this.lblEstadoAudifono.Text = "Estado";
+            // 
+            // txtObservacionAudifono
+            // 
+            this.txtObservacionAudifono.Location = new System.Drawing.Point(116, 92);
+            this.txtObservacionAudifono.Multiline = true;
+            this.txtObservacionAudifono.Name = "txtObservacionAudifono";
+            this.txtObservacionAudifono.Size = new System.Drawing.Size(569, 50);
+            this.txtObservacionAudifono.TabIndex = 46;
+            // 
+            // lblObservacionAudifono
+            // 
+            this.lblObservacionAudifono.AutoSize = true;
+            this.lblObservacionAudifono.Location = new System.Drawing.Point(48, 95);
+            this.lblObservacionAudifono.Name = "lblObservacionAudifono";
+            this.lblObservacionAudifono.Size = new System.Drawing.Size(67, 13);
+            this.lblObservacionAudifono.TabIndex = 47;
+            this.lblObservacionAudifono.Text = "Observación";
+            // 
+            // dtpFechaFabricacion
+            // 
+            this.dtpFechaFabricacion.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFechaFabricacion.Location = new System.Drawing.Point(116, 66);
+            this.dtpFechaFabricacion.Name = "dtpFechaFabricacion";
+            this.dtpFechaFabricacion.Size = new System.Drawing.Size(204, 20);
+            this.dtpFechaFabricacion.TabIndex = 44;
+            // 
+            // lblFechaFabricacion
+            // 
+            this.lblFechaFabricacion.AutoSize = true;
+            this.lblFechaFabricacion.Location = new System.Drawing.Point(4, 69);
+            this.lblFechaFabricacion.Name = "lblFechaFabricacion";
+            this.lblFechaFabricacion.Size = new System.Drawing.Size(110, 13);
+            this.lblFechaFabricacion.TabIndex = 45;
+            this.lblFechaFabricacion.Text = "Fecha de Fabricación";
+            // 
+            // dtpProximoService
+            // 
+            this.dtpProximoService.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpProximoService.Location = new System.Drawing.Point(481, 66);
+            this.dtpProximoService.Name = "dtpProximoService";
+            this.dtpProximoService.Size = new System.Drawing.Size(204, 20);
+            this.dtpProximoService.TabIndex = 42;
+            // 
+            // lblProximoService
+            // 
+            this.lblProximoService.AutoSize = true;
+            this.lblProximoService.Location = new System.Drawing.Point(396, 69);
+            this.lblProximoService.Name = "lblProximoService";
+            this.lblProximoService.Size = new System.Drawing.Size(83, 13);
+            this.lblProximoService.TabIndex = 43;
+            this.lblProximoService.Text = "Proximo Service";
+            // 
+            // txtNroSerie
+            // 
+            this.txtNroSerie.Location = new System.Drawing.Point(116, 39);
+            this.txtNroSerie.Name = "txtNroSerie";
+            this.txtNroSerie.Size = new System.Drawing.Size(204, 20);
+            this.txtNroSerie.TabIndex = 39;
+            // 
+            // lblNroSerie
+            // 
+            this.lblNroSerie.AutoSize = true;
+            this.lblNroSerie.Location = new System.Drawing.Point(48, 42);
+            this.lblNroSerie.Name = "lblNroSerie";
+            this.lblNroSerie.Size = new System.Drawing.Size(66, 13);
+            this.lblNroSerie.TabIndex = 41;
+            this.lblNroSerie.Text = "Nro de Serie";
+            // 
+            // btnSeleccionarAudifono
+            // 
+            this.btnSeleccionarAudifono.Location = new System.Drawing.Point(326, 11);
+            this.btnSeleccionarAudifono.Name = "btnSeleccionarAudifono";
+            this.btnSeleccionarAudifono.Size = new System.Drawing.Size(41, 23);
+            this.btnSeleccionarAudifono.TabIndex = 38;
+            this.btnSeleccionarAudifono.Text = "...";
+            this.btnSeleccionarAudifono.UseVisualStyleBackColor = true;
+            this.btnSeleccionarAudifono.Click += new System.EventHandler(this.btnSeleccionarAudifono_Click);
+            // 
+            // txtAudifono
+            // 
+            this.txtAudifono.Enabled = false;
+            this.txtAudifono.Location = new System.Drawing.Point(116, 12);
+            this.txtAudifono.Name = "txtAudifono";
+            this.txtAudifono.Size = new System.Drawing.Size(204, 20);
+            this.txtAudifono.TabIndex = 37;
+            // 
+            // lblAudifono
+            // 
+            this.lblAudifono.AutoSize = true;
+            this.lblAudifono.Location = new System.Drawing.Point(65, 12);
+            this.lblAudifono.Name = "lblAudifono";
+            this.lblAudifono.Size = new System.Drawing.Size(49, 13);
+            this.lblAudifono.TabIndex = 36;
+            this.lblAudifono.Text = "Audifono";
+            // 
+            // btnSeleccionarMoldeAudifono
+            // 
+            this.btnSeleccionarMoldeAudifono.Location = new System.Drawing.Point(691, 12);
+            this.btnSeleccionarMoldeAudifono.Name = "btnSeleccionarMoldeAudifono";
+            this.btnSeleccionarMoldeAudifono.Size = new System.Drawing.Size(41, 23);
+            this.btnSeleccionarMoldeAudifono.TabIndex = 35;
+            this.btnSeleccionarMoldeAudifono.Text = "...";
+            this.btnSeleccionarMoldeAudifono.UseVisualStyleBackColor = true;
+            this.btnSeleccionarMoldeAudifono.Click += new System.EventHandler(this.btnSeleccionarMoldeAudifono_Click);
+            // 
+            // txtMoldeAudifono
+            // 
+            this.txtMoldeAudifono.Enabled = false;
+            this.txtMoldeAudifono.Location = new System.Drawing.Point(481, 13);
+            this.txtMoldeAudifono.Name = "txtMoldeAudifono";
+            this.txtMoldeAudifono.Size = new System.Drawing.Size(204, 20);
+            this.txtMoldeAudifono.TabIndex = 34;
+            // 
+            // lblMoldeAudifono
+            // 
+            this.lblMoldeAudifono.AutoSize = true;
+            this.lblMoldeAudifono.Location = new System.Drawing.Point(384, 16);
+            this.lblMoldeAudifono.Name = "lblMoldeAudifono";
+            this.lblMoldeAudifono.Size = new System.Drawing.Size(95, 13);
+            this.lblMoldeAudifono.TabIndex = 33;
+            this.lblMoldeAudifono.Text = "Molde de audifono";
+            // 
             // buttonUC1
             // 
             this.buttonUC1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonUC1.Image = null;
             this.buttonUC1.ImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.buttonUC1.Location = new System.Drawing.Point(676, 203);
+            this.buttonUC1.Location = new System.Drawing.Point(676, 199);
             this.buttonUC1.Name = "buttonUC1";
             this.buttonUC1.Size = new System.Drawing.Size(121, 34);
             this.buttonUC1.TabIndex = 33;
@@ -655,9 +953,9 @@
             this.gpbFiltros.Controls.Add(this.txtApellidoBuscar);
             this.gpbFiltros.Controls.Add(this.lblSexoBuscar);
             this.gpbFiltros.Controls.Add(this.lblApellidoBuscar);
-            this.gpbFiltros.Location = new System.Drawing.Point(14, 8);
+            this.gpbFiltros.Location = new System.Drawing.Point(14, 3);
             this.gpbFiltros.Name = "gpbFiltros";
-            this.gpbFiltros.Size = new System.Drawing.Size(796, 71);
+            this.gpbFiltros.Size = new System.Drawing.Size(796, 85);
             this.gpbFiltros.TabIndex = 9;
             this.gpbFiltros.TabStop = false;
             this.gpbFiltros.Text = "Filtros";
@@ -746,6 +1044,33 @@
             this.lblApellidoBuscar.TabIndex = 11;
             this.lblApellidoBuscar.Text = "Apellido";
             // 
+            // gpbDatosAudifono
+            // 
+            this.gpbDatosAudifono.Controls.Add(this.cmbLadoOido);
+            this.gpbDatosAudifono.Controls.Add(this.lblLadoOido);
+            this.gpbDatosAudifono.Controls.Add(this.txtEstadoAudifono);
+            this.gpbDatosAudifono.Controls.Add(this.lblEstadoAudifono);
+            this.gpbDatosAudifono.Controls.Add(this.txtObservacionAudifono);
+            this.gpbDatosAudifono.Controls.Add(this.lblObservacionAudifono);
+            this.gpbDatosAudifono.Controls.Add(this.dtpFechaFabricacion);
+            this.gpbDatosAudifono.Controls.Add(this.lblFechaFabricacion);
+            this.gpbDatosAudifono.Controls.Add(this.dtpProximoService);
+            this.gpbDatosAudifono.Controls.Add(this.lblProximoService);
+            this.gpbDatosAudifono.Controls.Add(this.txtNroSerie);
+            this.gpbDatosAudifono.Controls.Add(this.lblNroSerie);
+            this.gpbDatosAudifono.Controls.Add(this.btnSeleccionarAudifono);
+            this.gpbDatosAudifono.Controls.Add(this.txtAudifono);
+            this.gpbDatosAudifono.Controls.Add(this.lblAudifono);
+            this.gpbDatosAudifono.Controls.Add(this.btnSeleccionarMoldeAudifono);
+            this.gpbDatosAudifono.Controls.Add(this.txtMoldeAudifono);
+            this.gpbDatosAudifono.Controls.Add(this.lblMoldeAudifono);
+            this.gpbDatosAudifono.Enabled = false;
+            this.gpbDatosAudifono.Location = new System.Drawing.Point(14, 212);
+            this.gpbDatosAudifono.Name = "gpbDatosAudifono";
+            this.gpbDatosAudifono.Size = new System.Drawing.Size(742, 201);
+            this.gpbDatosAudifono.TabIndex = 58;
+            this.gpbDatosAudifono.TabStop = false;
+            // 
             // frmPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -770,8 +1095,12 @@
             this.tbpDatosPaciente.PerformLayout();
             this.tbpDatosHistorialClinico.ResumeLayout(false);
             this.tbpDatosHistorialClinico.PerformLayout();
+            this.tbpDatosAudifonos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAudifonosMoldes)).EndInit();
             this.gpbFiltros.ResumeLayout(false);
             this.gpbFiltros.PerformLayout();
+            this.gpbDatosAudifono.ResumeLayout(false);
+            this.gpbDatosAudifono.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -836,5 +1165,31 @@
         private System.Windows.Forms.TextBox txtApellidoBuscar;
         private System.Windows.Forms.Label lblSexoBuscar;
         private System.Windows.Forms.Label lblApellidoBuscar;
+        private System.Windows.Forms.TabPage tbpDatosAudifonos;
+        private System.Windows.Forms.Button btnSeleccionarAudifono;
+        private System.Windows.Forms.TextBox txtAudifono;
+        private System.Windows.Forms.Label lblAudifono;
+        private System.Windows.Forms.Button btnSeleccionarMoldeAudifono;
+        private System.Windows.Forms.TextBox txtMoldeAudifono;
+        private System.Windows.Forms.Label lblMoldeAudifono;
+        private System.Windows.Forms.TextBox txtNroSerie;
+        private System.Windows.Forms.Label lblNroSerie;
+        private System.Windows.Forms.DateTimePicker dtpFechaFabricacion;
+        private System.Windows.Forms.Label lblFechaFabricacion;
+        private System.Windows.Forms.DateTimePicker dtpProximoService;
+        private System.Windows.Forms.Label lblProximoService;
+        private System.Windows.Forms.TextBox txtObservacionAudifono;
+        private System.Windows.Forms.Label lblObservacionAudifono;
+        private System.Windows.Forms.TextBox txtEstadoAudifono;
+        private System.Windows.Forms.Label lblEstadoAudifono;
+        private System.Windows.Forms.ComboBox cmbLadoOido;
+        private System.Windows.Forms.Label lblLadoOido;
+        public Medusa.Biodata.FrontEnd.UserControls.GridView dgvAudifonosMoldes;
+        private System.Windows.Forms.Button btnNuevoAudifono;
+        private System.Windows.Forms.Button btnEliminarAudifono;
+        private System.Windows.Forms.Button btnModificarAudifono;
+        private System.Windows.Forms.Button btnCancelarAudifono;
+        private System.Windows.Forms.Button btnAceptarAudifono;
+        private System.Windows.Forms.GroupBox gpbDatosAudifono;
     }
 }

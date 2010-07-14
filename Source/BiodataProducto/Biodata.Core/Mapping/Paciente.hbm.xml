@@ -18,10 +18,14 @@
     <property name="IDCiudad" column="IDCiudad" type="System.Int32" not-null="false" />
     <!--<many-to-one name="IDCiudadLookup" column="IDCiudad" class="Ciudad"  update="0"  insert="0" />-->
     <many-to-one name="IDCiudadLookup" column="IDCiudad" class="Ciudad" update="0"  insert="0"/>
-    <bag name="AudifonoPacientes" table="AudifonoPaciente" inverse="true" lazy="true" cascade="delete">
+    <bag name="AudifonoPacientes" cascade="all-delete-orphan">
       <key column="IDPaciente" />
       <one-to-many class="AudifonoPaciente"/>
     </bag>
+    <!--<bag name="AudifonoPacientes" table="AudifonoPaciente" inverse="true" lazy="true" cascade="delete">
+      <key column="IDPaciente" />
+      <one-to-many class="AudifonoPaciente"/>
+    </bag>-->
     <bag name="HistoriaClinicas" cascade="all-delete-orphan">
       <key column="IDPaciente" />
       <one-to-many class="HistoriaClinica"/>

@@ -23,11 +23,12 @@ namespace Mds.Biodata.Domain
         private System.Boolean? _Programable;
         private System.String _FranjaAdaptacion;
         private System.Decimal? _PresionMaximaSalida;
+        private System.Boolean? _Ventilacion;
         private System.Int32 _IDMarca;
         private MarcaAudifono _IDMarcaLookup;
         private IList<AudifonoPaciente> _AudifonoPacientes = new List<AudifonoPaciente>();
-        private IList<MoldeAudifono> _MoldeAudifonos = new List<MoldeAudifono>();
-        private IList<SeleccionAudifono> _SeleccionAudifonos = new List<SeleccionAudifono>();
+        //private IList<MoldeAudifono> _MoldeAudifonos = new List<MoldeAudifono>();
+        //private IList<SeleccionAudifono> _SeleccionAudifonos = new List<SeleccionAudifono>();
 
         public Audifono()
         {
@@ -83,6 +84,11 @@ namespace Mds.Biodata.Domain
              set { _PresionMaximaSalida = value;}
          }
 
+         public virtual System.Boolean? Ventilacion  {
+             get { return _Ventilacion; }
+             set { _Ventilacion = value; }
+         }
+
          public virtual System.Int32 IDMarca
          {
              get { return _IDMarca; }
@@ -101,17 +107,17 @@ namespace Mds.Biodata.Domain
              set { _AudifonoPacientes = value; }
          }
 
-         public virtual IList<MoldeAudifono> MoldeAudifonos
-         {
-             get { return _MoldeAudifonos; }
-             set { _MoldeAudifonos = value; }
-         }
+         //public virtual IList<MoldeAudifono> MoldeAudifonos
+         //{
+         //    get { return _MoldeAudifonos; }
+         //    set { _MoldeAudifonos = value; }
+         //}
 
-         public virtual IList<SeleccionAudifono> SeleccionAudifonos
-         {
-             get { return _SeleccionAudifonos; }
-             set { _SeleccionAudifonos = value; }
-         }
+         //public virtual IList<SeleccionAudifono> SeleccionAudifonos
+         //{
+         //    get { return _SeleccionAudifonos; }
+         //    set { _SeleccionAudifonos = value; }
+         //}
 
 
         public override int GetHashCode()

@@ -40,6 +40,8 @@
             this.txtPresionSalida = new System.Windows.Forms.TextBox();
             this.tbcAudifono = new Dotnetrix.Controls.TabControlEX();
             this.tbpDatos = new Dotnetrix.Controls.TabPageEX();
+            this.lblVentilacion = new System.Windows.Forms.Label();
+            this.chkVentilacion = new System.Windows.Forms.CheckBox();
             this.lblPresionSalida = new System.Windows.Forms.Label();
             this.lblProgramable = new System.Windows.Forms.Label();
             this.lblSenal = new System.Windows.Forms.Label();
@@ -51,6 +53,8 @@
             this.tbpFranjaAdaptacion = new Dotnetrix.Controls.TabPageEX();
             this.linerFranjaAdaptacion = new Pavr.Drawing.Liner();
             this.gpbFiltros = new System.Windows.Forms.GroupBox();
+            this.lblPresionSalidaBuscar = new System.Windows.Forms.Label();
+            this.txtPresionSalidaBuscar = new System.Windows.Forms.TextBox();
             this.lblMarcaBuscar = new System.Windows.Forms.Label();
             this.cmbMarcaBuscar = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new Medusa.Biodata.FrontEnd.UserControls.ButtonUC();
@@ -58,8 +62,6 @@
             this.txtNombreModeloBuscar = new System.Windows.Forms.TextBox();
             this.lblTipoBuscar = new System.Windows.Forms.Label();
             this.lblNombreModeloBuscar = new System.Windows.Forms.Label();
-            this.lblPresionSalidaBuscar = new System.Windows.Forms.Label();
-            this.txtPresionSalidaBuscar = new System.Windows.Forms.TextBox();
             this.pnlList.SuspendLayout();
             this.pnlDetails.SuspendLayout();
             this.tbcAudifono.SuspendLayout();
@@ -96,6 +98,7 @@
             // btnSelect
             // 
             this.btnSelect.Location = new System.Drawing.Point(597, 3);
+            this.btnSelect.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnSelect_Click);
             // 
             // pnlDetails
             // 
@@ -195,7 +198,7 @@
             // 
             // txtPresionSalida
             // 
-            this.txtPresionSalida.Location = new System.Drawing.Point(152, 343);
+            this.txtPresionSalida.Location = new System.Drawing.Point(152, 338);
             this.txtPresionSalida.Name = "txtPresionSalida";
             this.txtPresionSalida.Size = new System.Drawing.Size(65, 20);
             this.txtPresionSalida.TabIndex = 17;
@@ -214,6 +217,8 @@
             // 
             // tbpDatos
             // 
+            this.tbpDatos.Controls.Add(this.lblVentilacion);
+            this.tbpDatos.Controls.Add(this.chkVentilacion);
             this.tbpDatos.Controls.Add(this.lblPresionSalida);
             this.tbpDatos.Controls.Add(this.lblProgramable);
             this.tbpDatos.Controls.Add(this.lblSenal);
@@ -237,10 +242,28 @@
             this.tbpDatos.TabIndex = 0;
             this.tbpDatos.Text = "Datos";
             // 
+            // lblVentilacion
+            // 
+            this.lblVentilacion.AutoSize = true;
+            this.lblVentilacion.Location = new System.Drawing.Point(80, 368);
+            this.lblVentilacion.Name = "lblVentilacion";
+            this.lblVentilacion.Size = new System.Drawing.Size(59, 13);
+            this.lblVentilacion.TabIndex = 27;
+            this.lblVentilacion.Text = "Ventilación";
+            // 
+            // chkVentilacion
+            // 
+            this.chkVentilacion.AutoSize = true;
+            this.chkVentilacion.Location = new System.Drawing.Point(152, 367);
+            this.chkVentilacion.Name = "chkVentilacion";
+            this.chkVentilacion.Size = new System.Drawing.Size(15, 14);
+            this.chkVentilacion.TabIndex = 26;
+            this.chkVentilacion.UseVisualStyleBackColor = true;
+            // 
             // lblPresionSalida
             // 
             this.lblPresionSalida.AutoSize = true;
-            this.lblPresionSalida.Location = new System.Drawing.Point(26, 346);
+            this.lblPresionSalida.Location = new System.Drawing.Point(26, 341);
             this.lblPresionSalida.Name = "lblPresionSalida";
             this.lblPresionSalida.Size = new System.Drawing.Size(113, 13);
             this.lblPresionSalida.TabIndex = 25;
@@ -330,6 +353,8 @@
             this.linerFranjaAdaptacion.PointColor = System.Drawing.Color.Black;
             this.linerFranjaAdaptacion.Size = new System.Drawing.Size(472, 296);
             this.linerFranjaAdaptacion.TabIndex = 8;
+            this.linerFranjaAdaptacion.XInterval = "250, 8000, 2, *";
+            this.linerFranjaAdaptacion.BeforeSeriesCreation += new Pavr.Drawing.Liner.BeforeSeriesCreationHandler(this.linerFranjaAdaptacion_BeforeSeriesCreation);
             // 
             // gpbFiltros
             // 
@@ -348,6 +373,22 @@
             this.gpbFiltros.TabIndex = 10;
             this.gpbFiltros.TabStop = false;
             this.gpbFiltros.Text = "Filtros";
+            // 
+            // lblPresionSalidaBuscar
+            // 
+            this.lblPresionSalidaBuscar.AutoSize = true;
+            this.lblPresionSalidaBuscar.Location = new System.Drawing.Point(345, 50);
+            this.lblPresionSalidaBuscar.Name = "lblPresionSalidaBuscar";
+            this.lblPresionSalidaBuscar.Size = new System.Drawing.Size(113, 13);
+            this.lblPresionSalidaBuscar.TabIndex = 34;
+            this.lblPresionSalidaBuscar.Text = "Presion Maxima Salida";
+            // 
+            // txtPresionSalidaBuscar
+            // 
+            this.txtPresionSalidaBuscar.Location = new System.Drawing.Point(464, 47);
+            this.txtPresionSalidaBuscar.Name = "txtPresionSalidaBuscar";
+            this.txtPresionSalidaBuscar.Size = new System.Drawing.Size(107, 20);
+            this.txtPresionSalidaBuscar.TabIndex = 33;
             // 
             // lblMarcaBuscar
             // 
@@ -412,22 +453,6 @@
             this.lblNombreModeloBuscar.TabIndex = 11;
             this.lblNombreModeloBuscar.Text = "Nombre de Modelo";
             // 
-            // lblPresionSalidaBuscar
-            // 
-            this.lblPresionSalidaBuscar.AutoSize = true;
-            this.lblPresionSalidaBuscar.Location = new System.Drawing.Point(345, 50);
-            this.lblPresionSalidaBuscar.Name = "lblPresionSalidaBuscar";
-            this.lblPresionSalidaBuscar.Size = new System.Drawing.Size(113, 13);
-            this.lblPresionSalidaBuscar.TabIndex = 34;
-            this.lblPresionSalidaBuscar.Text = "Presion Maxima Salida";
-            // 
-            // txtPresionSalidaBuscar
-            // 
-            this.txtPresionSalidaBuscar.Location = new System.Drawing.Point(464, 47);
-            this.txtPresionSalidaBuscar.Name = "txtPresionSalidaBuscar";
-            this.txtPresionSalidaBuscar.Size = new System.Drawing.Size(107, 20);
-            this.txtPresionSalidaBuscar.TabIndex = 33;
-            // 
             // frmAudifonos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,5 +511,7 @@
         private System.Windows.Forms.Label lblNombreModeloBuscar;
         private System.Windows.Forms.Label lblPresionSalidaBuscar;
         private System.Windows.Forms.TextBox txtPresionSalidaBuscar;
+        private System.Windows.Forms.Label lblVentilacion;
+        private System.Windows.Forms.CheckBox chkVentilacion;
     }
 }

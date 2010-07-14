@@ -60,6 +60,7 @@
             this.linerRight.PointColor = System.Drawing.Color.Black;
             this.linerRight.Size = new System.Drawing.Size(475, 294);
             this.linerRight.TabIndex = 8;
+            this.linerRight.XInterval = "250, 8000, 2, *";
             this.linerRight.BeforeSeriesCreation += new Pavr.Drawing.Liner.BeforeSeriesCreationHandler(this.linerRight_BeforeSeriesCreation);
             // 
             // linerLeft
@@ -74,6 +75,7 @@
             this.linerLeft.PointColor = System.Drawing.Color.Black;
             this.linerLeft.Size = new System.Drawing.Size(472, 296);
             this.linerLeft.TabIndex = 7;
+            this.linerLeft.XInterval = "250, 8000, 2, *";
             this.linerLeft.BeforeSeriesCreation += new Pavr.Drawing.Liner.BeforeSeriesCreationHandler(this.linerLeft_BeforeSeriesCreation);
             // 
             // gpbAudiogramaIzquierdo

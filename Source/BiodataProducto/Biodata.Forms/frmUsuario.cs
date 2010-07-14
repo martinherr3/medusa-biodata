@@ -9,6 +9,7 @@ using Mds.Biodata.Domain;
 using Mds.Biodata.Business;
 using ObjectViews;
 using System.Collections;
+using Mds.Biodata.Helpers;
 
 namespace Mds.Biodata.Forms
 {
@@ -246,7 +247,18 @@ namespace Mds.Biodata.Forms
                     UsuarioEntity.Nombre = txtNombre.Text;
                     UsuarioEntity.Apellido = txtApellido.Text;
                     UsuarioEntity.Nick = txtNick.Text;
-                    UsuarioEntity.Password = txtPassword.Text;
+                    //UsuarioEntity.Password = txtPassword.Text;
+                    if (Estado == EstadoForm.Editar)
+                    {
+                        if (UsuarioEntity.Password != txtPassword.Text)
+                        {
+                            UsuarioEntity.Password = CryptoHelper.HashMD5(txtPassword.Text);
+                        }
+                    }
+                    else
+                    {
+                        UsuarioEntity.Password = CryptoHelper.HashMD5(txtPassword.Text);
+                    }
                     UsuarioEntity.TipoUsuario = Convert.ToInt32(cmbTipoUsuario.SelectedItem);
                     
                     switch (Estado)

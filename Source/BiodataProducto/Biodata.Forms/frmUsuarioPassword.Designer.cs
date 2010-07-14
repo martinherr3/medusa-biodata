@@ -49,6 +49,7 @@
             // 
             // txtNick
             // 
+            this.txtNick.Enabled = false;
             this.txtNick.Location = new System.Drawing.Point(102, 12);
             this.txtNick.Name = "txtNick";
             this.txtNick.Size = new System.Drawing.Size(252, 20);
@@ -58,8 +59,10 @@
             // 
             this.txtPasswordActual.Location = new System.Drawing.Point(102, 45);
             this.txtPasswordActual.Name = "txtPasswordActual";
+            this.txtPasswordActual.PasswordChar = '*';
             this.txtPasswordActual.Size = new System.Drawing.Size(252, 20);
             this.txtPasswordActual.TabIndex = 3;
+            this.txtPasswordActual.UseSystemPasswordChar = true;
             // 
             // lblPasswordActual
             // 
@@ -74,8 +77,10 @@
             // 
             this.txtPasswordNuevo.Location = new System.Drawing.Point(102, 80);
             this.txtPasswordNuevo.Name = "txtPasswordNuevo";
+            this.txtPasswordNuevo.PasswordChar = '*';
             this.txtPasswordNuevo.Size = new System.Drawing.Size(252, 20);
             this.txtPasswordNuevo.TabIndex = 5;
+            this.txtPasswordNuevo.UseSystemPasswordChar = true;
             // 
             // lblPasswordNuevo
             // 
@@ -104,9 +109,11 @@
             this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmUsuarioPassword
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 142);
@@ -119,6 +126,7 @@
             this.Controls.Add(this.txtNick);
             this.Controls.Add(this.lblNick);
             this.Name = "frmUsuarioPassword";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambio de Password";
             this.Load += new System.EventHandler(this.frmUsuarioPassword_Load);
             this.ResumeLayout(false);

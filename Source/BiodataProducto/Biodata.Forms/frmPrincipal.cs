@@ -5,12 +5,20 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Mds.Biodata.Domain;
 
 namespace Mds.Biodata.Forms
 {
     public partial class frmPrincipal : frmBase
     {
         #region "--[Properties]--"
+        private Usuario _UsuarioEntity;
+
+        public Usuario UsuarioEntity
+        {
+            get { return _UsuarioEntity; }
+            set { _UsuarioEntity = value; }
+        }
         #endregion
 
         #region "--[Methods]--"
@@ -36,7 +44,14 @@ namespace Mds.Biodata.Forms
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             GereralFunctions.Principal = this;
+            tsbUsuarioLogueado.Text = tsbUsuarioLogueado.Text + " " + UsuarioSistema.Apellido + ", " + UsuarioSistema.Nombre;
             OpenStartPage();
+        }
+
+        private void frmPrincipal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Program.Close();
+            //SalirAplicacion();
         }
         #endregion
 
@@ -60,7 +75,7 @@ namespace Mds.Biodata.Forms
 
         private void tsmSeleccionAudifono_Click(object sender, EventArgs e)
         {
-
+            OpenSeleccionAudifono();
         }
 
         private void OpenPaciente()
@@ -92,6 +107,18 @@ namespace Mds.Biodata.Forms
             try
             {
                 GereralFunctions.AbrirFormulario(new frmObraSocial(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Obras Sociales", DockStyle.Fill);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+        private void OpenSeleccionAudifono()
+        {
+            try
+            {
+                GereralFunctions.AbrirFormulario(new frmSeleccionAudifono(), (TabControl)this.spcRight.Panel2.Controls[0], "Selección de Audifono", DockStyle.Fill);
             }
             catch (Exception ex)
             {
@@ -150,6 +177,23 @@ namespace Mds.Biodata.Forms
             try
             {
                 GereralFunctions.AbrirFormulario(new frmAudifonos(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Audifonos", DockStyle.Fill);
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
+
+        private void tsmGestionMoldeAudifono_Click(object sender, EventArgs e)
+        {
+            OpenMoldeAudifonos();
+        }
+
+        private void OpenMoldeAudifonos()
+        {
+            try
+            {
+                GereralFunctions.AbrirFormulario(new frmMoldeAudifono(), (TabControl)this.spcRight.Panel2.Controls[0], "Gestión de Moldes de Audifono", DockStyle.Fill);
             }
             catch (Exception ex)
             {
@@ -275,7 +319,14 @@ namespace Mds.Biodata.Forms
 
         private void tsmCambioPasswordUsuario_Click(object sender, EventArgs e)
         {
+            OpenCambioPassword();
+        }
 
+        private void OpenCambioPassword()
+        {
+            frmUsuarioPassword wFrm = new frmUsuarioPassword();
+            wFrm.UsuarioSistema = this.UsuarioSistema;
+            wFrm.ShowDialog();
         }
 
         private void tsmBackUpBaseDatos_Click(object sender, EventArgs e)
@@ -314,11 +365,21 @@ namespace Mds.Biodata.Forms
 
         private void tsmSalir_Click(object sender, EventArgs e)
         {
+            SalirAplicacion();
+        }
 
+        private void SalirAplicacion()
+        {
+            DialogResult Respuesta;
+            Respuesta = ProcesarMensaje("Esta seguro que desea salir?", "Salir del Sistema", MessageBoxButtons.YesNo);
+
+            if (Respuesta.ToString() == "Yes")
+            {
+                Program.Close();
+            }
         }
         #endregion
 
-        
         #endregion
     }
 }

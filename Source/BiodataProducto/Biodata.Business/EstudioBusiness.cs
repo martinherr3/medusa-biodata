@@ -17,5 +17,10 @@ namespace Mds.Biodata.Business
         {
             return Dao.GetEstudiosByNombre(pNombre, pFechaEstudioDesde, pFechaEstudioHasta, pTipoEstudio);
         }
+
+        public List<Estudio> GetEstudiosTipoAndPaciente(Int32? pTipoEstudio, Int32? pIDHistoriaClinica)
+        {
+            return Dao.GetEstudiosByTipo(pTipoEstudio, pIDHistoriaClinica);
+        }
     }
 }
