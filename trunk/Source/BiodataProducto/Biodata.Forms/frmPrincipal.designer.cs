@@ -55,6 +55,7 @@
             this.tsmConsultarEstudio = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAudifono = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmGestionAudifono = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmGestionMoldeAudifono = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAgenda = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmRecordatorio = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmReporte = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,12 +71,12 @@
             this.tsmGestionParametrosSistema = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmCambioPasswordUsuario = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmBackUpBaseDatos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmGestionUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAyuda = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmManualAyuda = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmAcercaDe = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmObraSocial = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmGestionUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.spcRight.Panel1.SuspendLayout();
             this.spcRight.Panel2.SuspendLayout();
             this.spcRight.SuspendLayout();
@@ -261,7 +262,8 @@
             // tsmAudifono
             // 
             this.tsmAudifono.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmGestionAudifono});
+            this.tsmGestionAudifono,
+            this.tsmGestionMoldeAudifono});
             this.tsmAudifono.Name = "tsmAudifono";
             resources.ApplyResources(this.tsmAudifono, "tsmAudifono");
             // 
@@ -270,6 +272,12 @@
             this.tsmGestionAudifono.Name = "tsmGestionAudifono";
             resources.ApplyResources(this.tsmGestionAudifono, "tsmGestionAudifono");
             this.tsmGestionAudifono.Click += new System.EventHandler(this.tsmGestionAudifono_Click);
+            // 
+            // tsmGestionMoldeAudifono
+            // 
+            this.tsmGestionMoldeAudifono.Name = "tsmGestionMoldeAudifono";
+            resources.ApplyResources(this.tsmGestionMoldeAudifono, "tsmGestionMoldeAudifono");
+            this.tsmGestionMoldeAudifono.Click += new System.EventHandler(this.tsmGestionMoldeAudifono_Click);
             // 
             // tsmAgenda
             // 
@@ -374,6 +382,12 @@
             resources.ApplyResources(this.tsmBackUpBaseDatos, "tsmBackUpBaseDatos");
             this.tsmBackUpBaseDatos.Click += new System.EventHandler(this.tsmBackUpBaseDatos_Click);
             // 
+            // tsmGestionUsuarios
+            // 
+            this.tsmGestionUsuarios.Name = "tsmGestionUsuarios";
+            resources.ApplyResources(this.tsmGestionUsuarios, "tsmGestionUsuarios");
+            this.tsmGestionUsuarios.Click += new System.EventHandler(this.tsmGestionUsuarios_Click);
+            // 
             // tsmAyuda
             // 
             this.tsmAyuda.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -406,12 +420,6 @@
             this.tsmObraSocial.Name = "tsmObraSocial";
             resources.ApplyResources(this.tsmObraSocial, "tsmObraSocial");
             // 
-            // tsmGestionUsuarios
-            // 
-            this.tsmGestionUsuarios.Name = "tsmGestionUsuarios";
-            resources.ApplyResources(this.tsmGestionUsuarios, "tsmGestionUsuarios");
-            this.tsmGestionUsuarios.Click += new System.EventHandler(this.tsmGestionUsuarios_Click);
-            // 
             // frmPrincipal
             // 
             resources.ApplyResources(this, "$this");
@@ -423,6 +431,7 @@
             this.Name = "frmPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmPrincipal_FormClosed);
             this.spcRight.Panel1.ResumeLayout(false);
             this.spcRight.Panel2.ResumeLayout(false);
             this.spcRight.ResumeLayout(false);
@@ -485,5 +494,6 @@
         private System.Windows.Forms.ToolStripButton tsbAyuda;
         public Dotnetrix.Controls.TabControlEX tbcPrincipal;
         private System.Windows.Forms.ToolStripMenuItem tsmGestionUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem tsmGestionMoldeAudifono;
     }
 }

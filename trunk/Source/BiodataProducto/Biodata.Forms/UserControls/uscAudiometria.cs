@@ -72,8 +72,8 @@ namespace Mds.Biodata.Forms.UserControls
         #region "--[Events]--"
         private void uscAudiometria_Load(object sender, EventArgs e)
         {
-            linerLeft.XInterval = "250, 8000, 2 , *";
-            linerRight.XInterval = "250, 8000, 2 , *";
+            //linerLeft.XInterval = "250, 8000, 2 , *";
+            //linerRight.XInterval = "250, 8000, 2 , *";
         }
         #endregion
 

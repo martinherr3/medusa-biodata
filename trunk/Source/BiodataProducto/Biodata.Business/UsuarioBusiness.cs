@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Mds.Biodata.Core.DataInterfaces;
 using Mds.Biodata.Domain;
 using Mds.Architecture.Business;
+using Mds.Biodata.Helpers;
 
 namespace Mds.Biodata.Business
 {
@@ -13,9 +14,28 @@ namespace Mds.Biodata.Business
 
         }
 
-        public Boolean ValidarUsuario(String pNick, String pPassword)
+        public Usuario ValidarUsuario(String pNick, String pPassword)
         {
-            return true;
+
+            //pPassword = CryptoHelper.Encrypt(pPassword);
+
+            List<Usuario> wUsuarios = Dao.GetUsuariosForNick(pNick);
+
+            if (wUsuarios.Count > 0)
+            {
+                if (CryptoHelper.ComparePasswordMD5(pPassword, wUsuarios[0].Password))
+                {
+                    return wUsuarios[0];
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

@@ -12,7 +12,9 @@
     <property name="LadoOido" column="LadoOido" type="System.Int32" not-null="false" />
     <property name="IDPaciente" column="IDPaciente" type="System.Int32" not-null="false" />
     <property name="IDAudifono" column="IDAudifono" type="System.Int32" not-null="false" />
+    <property name="IDMolde" column="IDMolde" type="System.Int32" not-null="false" />
     <many-to-one name="IDAudifonoLookup" column="IDAudifono" class="Audifono"  update="0"  insert="0" />
     <many-to-one name="IDPacienteLookup" column="IDPaciente" class="Paciente"  update="0"  insert="0" />
+    <many-to-one name="IDMoldeLookup" column="IDMolde" class="MoldeAudifono"  update="0"  insert="0" />
  </class>
 </hibernate-mapping>

@@ -13,5 +13,6 @@ namespace Mds.Biodata.Core.DataInterfaces
     public interface IEstudioDao : IDao<Estudio, System.Int32>
     {
         List<Estudio> GetEstudiosByNombre(String pNombre, DateTime? pFechaEstudioDesde, DateTime? pFechaEstudioHasta, Int32? pTipoEstudio);
+        List<Estudio> GetEstudiosByTipo(Int32? pTipoEstudio, Int32? pIDHistoriaClinica);
     }
 }

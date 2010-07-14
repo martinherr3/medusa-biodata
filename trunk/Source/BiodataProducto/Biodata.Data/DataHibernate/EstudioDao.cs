@@ -9,7 +9,8 @@ namespace Mds.Biodata.Data
 {
     public class EstudioDao : AbstractNHibernateDao<Estudio, System.Int32>, IEstudioDao
     {
-        public EstudioDao(string sessionFactoryConfigPath) : base(sessionFactoryConfigPath)
+        public EstudioDao(string sessionFactoryConfigPath)
+            : base(sessionFactoryConfigPath)
         {
 
         }
@@ -26,6 +27,36 @@ namespace Mds.Biodata.Data
                 ICriterion[] criterios = { Expression.Like("Nombre", pNombre, MatchMode.Start), Expression.Between("FechaEstudio", pFechaEstudioDesde, pFechaEstudioHasta), Expression.Eq("TipoEstudio", pTipoEstudio) };
                 return this.GetByCriteria(criterios);
             }
+        }
+
+        public List<Estudio> GetEstudiosByTipo(Int32? pTipoEstudio, Int32? pIDHistoriaClinica)
+        {
+            if (pTipoEstudio != null)
+            {
+                if (pIDHistoriaClinica != null)
+                {
+                    ICriterion[] criterios = { Expression.Eq("TipoEstudio", pTipoEstudio), Expression.Eq("IDHistoriaClinica", pIDHistoriaClinica) };
+                    return this.GetByCriteria(criterios);
+                }
+                else
+                {
+                    ICriterion[] criterios = { Expression.Eq("TipoEstudio", pTipoEstudio) };
+                    return this.GetByCriteria(criterios);
+                }
+            }
+            else
+            {
+                if (pIDHistoriaClinica != null)
+                {
+                    ICriterion[] criterios = { Expression.Eq("IDHistoriaClinica", pIDHistoriaClinica) };
+                    return this.GetByCriteria(criterios);
+                }
+                else
+                {
+                    ICriterion[] criterios = { };
+                    return this.GetByCriteria(criterios);
+                }
+            }            
         }
     }
 }

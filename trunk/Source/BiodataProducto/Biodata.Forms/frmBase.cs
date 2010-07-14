@@ -7,11 +7,20 @@ using System.Text;
 using System.Windows.Forms;
 using Mds.Biodata.Core.DataInterfaces;
 using Mds.Architecture.Utils;
+using Mds.Biodata.Domain;
 
 namespace Mds.Biodata.Forms
 {
     public partial class frmBase : Form
     {
+        private Usuario _UsuarioSistema;
+
+        public Usuario UsuarioSistema
+        {
+            get { return _UsuarioSistema; }
+            set { _UsuarioSistema = value; }
+        }
+
         private System.Resources.ResourceManager mdsRM;
 
         public frmBase()

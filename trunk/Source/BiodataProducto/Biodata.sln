@@ -20,6 +20,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biodata.Business", "Biodata
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biodata.UserControls", "Biodata.UserControls\Biodata.UserControls.csproj", "{5FB29ADF-3843-4211-865B-E28680C421D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biodata.Helpers", "Biodata.Helpers\Biodata.Helpers.csproj", "{EE886192-7194-4A36-A220-2E3C49668DD5}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Biodata.Setup", "Biodata.Setup\Biodata.Setup.vdproj", "{2C33AA77-B8AB-4557-AC2D-6732071A8C0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +50,12 @@ Global
 		{5FB29ADF-3843-4211-865B-E28680C421D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FB29ADF-3843-4211-865B-E28680C421D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FB29ADF-3843-4211-865B-E28680C421D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE886192-7194-4A36-A220-2E3C49668DD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE886192-7194-4A36-A220-2E3C49668DD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE886192-7194-4A36-A220-2E3C49668DD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE886192-7194-4A36-A220-2E3C49668DD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C33AA77-B8AB-4557-AC2D-6732071A8C0C}.Debug|Any CPU.ActiveCfg = Debug
+		{2C33AA77-B8AB-4557-AC2D-6732071A8C0C}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,9 +20,11 @@ namespace Mds.Biodata.Domain
         private System.DateTime _ProximaVisita;
         private System.String _NroSerie;
         private System.Int32 _IDAudifono;
-        private System.Int32? _IDMolde;
+        //private System.Int32? _IDMolde;
+        private System.Int32? _IDPaciente;
         private Audifono _IDAudifonoLookup;
-        private MoldeAudifono _IDMoldeLookup;
+        //private MoldeAudifono _IDMoldeLookup;
+        private Paciente _IDPacienteLookup;
 
         public SeleccionAudifono()
         {
@@ -73,9 +75,15 @@ namespace Mds.Biodata.Domain
              set { _IDAudifono = value;}
          }
 
-         public virtual System.Int32? IDMolde {
-             get { return _IDMolde; }
-             set { _IDMolde = value;}
+         //public virtual System.Int32? IDMolde {
+         //    get { return _IDMolde; }
+         //    set { _IDMolde = value;}
+         //}
+
+         public virtual System.Int32? IDPaciente
+         {
+             get { return _IDPaciente; }
+             set { _IDPaciente = value; }
          }
 
          public virtual Audifono IDAudifonoLookup{
@@ -83,9 +91,15 @@ namespace Mds.Biodata.Domain
              set { _IDAudifonoLookup = value;}
          }
 
-         public virtual MoldeAudifono IDMoldeLookup{
-             get { return _IDMoldeLookup; }
-             set { _IDMoldeLookup = value;}
+         //public virtual MoldeAudifono IDMoldeLookup{
+         //    get { return _IDMoldeLookup; }
+         //    set { _IDMoldeLookup = value;}
+         //}
+
+         public virtual Paciente IDPacienteLookup
+         {
+             get { return _IDPacienteLookup; }
+             set { _IDPacienteLookup = value; }
          }
 
 

@@ -4,17 +4,18 @@
     <id name="ID" type="System.Int32" column="IDMolde">
         <generator class="identity"/>
     </id>
+    <property name="Nombre" column="Nombre" type="System.String" not-null="true" length="100"/>
     <property name="Tipo" column="Tipo" type="System.Int32" not-null="true" />
     <property name="Material" column="Material" type="System.Int32" not-null="true" />
     <property name="Ventilacion" column="Ventilacion" type="System.Boolean" not-null="true" />
     <property name="MedidaVentilacion" column="MedidaVentilacion" type="System.Decimal" not-null="false" />
     <property name="FechaRenovacion" column="FechaRenovacion" type="System.DateTime" not-null="false" />
     <property name="FechaFabricacion" column="FechaFabricacion" type="System.DateTime" not-null="false" />
-    <property name="IDAudifono" column="IDAudifono" type="System.Int32" not-null="false" />
+    <!--<property name="IDAudifono" column="IDAudifono" type="System.Int32" not-null="false" />
     <many-to-one name="IDAudifonoLookup" column="IDAudifono" class="Audifono"  update="0"  insert="0" />
     <bag name="SeleccionAudifonos" table="SeleccionAudifono" inverse="true" lazy="true" cascade="delete">
-    <key column="IDMolde" />
-    <one-to-many class="SeleccionAudifono"/>
-    </bag>
+      <key column="IDMolde" />
+      <one-to-many class="SeleccionAudifono"/>
+    </bag>-->
  </class>
 </hibernate-mapping>

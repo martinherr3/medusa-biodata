@@ -50,7 +50,9 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(1128, 37);
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Location = new System.Drawing.Point(741, 36);
+            this.btnCerrar.Size = new System.Drawing.Size(121, 30);
             // 
             // gpbFiltros
             // 
@@ -62,7 +64,6 @@
             this.gpbFiltros.Controls.Add(this.lblTipoEstudio);
             this.gpbFiltros.Controls.Add(this.lblFechaEstudioDesde);
             this.gpbFiltros.Controls.Add(this.lblNombre);
-            this.gpbFiltros.Size = new System.Drawing.Size(837, 83);
             this.gpbFiltros.Controls.SetChildIndex(this.lblNombre, 0);
             this.gpbFiltros.Controls.SetChildIndex(this.btnBuscar, 0);
             this.gpbFiltros.Controls.SetChildIndex(this.lblFechaEstudioDesde, 0);
@@ -75,7 +76,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(717, 24);
+            this.btnBuscar.Location = new System.Drawing.Point(550, 24);
             this.btnBuscar.Click += new Medusa.Biodata.FrontEnd.UserControls.ButtonUC.ClickEventHandler(this.btnBuscar_Click);
             // 
             // sptContenedor

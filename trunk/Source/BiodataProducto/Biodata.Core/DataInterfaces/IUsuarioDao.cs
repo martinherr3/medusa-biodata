@@ -12,6 +12,6 @@ namespace Mds.Biodata.Core.DataInterfaces
     /// </summary>
     public interface IUsuarioDao : IDao<Usuario, System.Int32>
     {
-
+        List<Usuario> GetUsuariosForNick(String pNick);
     }
 }

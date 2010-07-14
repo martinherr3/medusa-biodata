@@ -115,6 +115,7 @@ namespace Mds.Biodata.Forms
             }
             chkProgramable.Checked = AudifonoEntity.Programable.Value;
             txtPresionSalida.Text = AudifonoEntity.PresionMaximaSalida.ToString();
+            chkVentilacion.Checked = AudifonoEntity.Ventilacion.Value;
 
             Liner.Main.Collections.Collection FranjaGrafico;
             FranjaGrafico = (Liner.Main.Collections.Collection)Mds.Architecture.HelpersFunctions.SerializationFunctions.Deserialize(typeof(Liner.Main.Collections.Collection), AudifonoEntity.FranjaAdaptacion);
@@ -158,6 +159,19 @@ namespace Mds.Biodata.Forms
             if (!GereralFunctions.ValidarNumero(txtPresionSalida.Text))
             {
                 ProcesarAdvertencia("La presión debe ser un valor numerico", "Presión");
+                return false;
+            }
+
+            object myLineas;
+            object myLineasSeries;
+
+            linerFranjaAdaptacion.GenerateLinePointsArgs(out myLineas, out myLineasSeries);
+
+            System.Collections.ArrayList lista = (System.Collections.ArrayList)myLineas;
+
+            if (lista.Count != 2)
+            {
+                ProcesarAdvertencia("La franja de adaptación debe tener 2 lineas en el grafico", "Grafico");
                 return false;
             }
 
@@ -212,6 +226,7 @@ namespace Mds.Biodata.Forms
             LoadCombos();
             LoadCombosBusqueda();
             LoadList(false);
+            //linerFranjaAdaptacion.XInterval = "250, 8000, 2 , *";
         }
 
         public override void Accion()
@@ -224,6 +239,7 @@ namespace Mds.Biodata.Forms
                 switch (Estado)
                 {
                     case EstadoForm.Nuevo:
+                        linerFranjaAdaptacion.Controls[3].Enabled = true;
                         txtID.Text = string.Empty;
                         txtID.Enabled = false;
                         txtNombreModelo.Text = string.Empty;
@@ -232,6 +248,7 @@ namespace Mds.Biodata.Forms
                         radDigital.Checked = true;
                         chkProgramable.Checked = false;
                         txtPresionSalida.Text = string.Empty;
+                        chkVentilacion.Checked = false;
                         txtNombreModelo.Focus();
                         AudifonoEntity = new Audifono();
                         break;
@@ -239,6 +256,7 @@ namespace Mds.Biodata.Forms
                     case EstadoForm.Editar:
                         if (dgvList.Rows.Count > 0)
                         {
+                            //linerFranjaAdaptacion.Controls[3].Enabled = false;
                             txtID.Enabled = false;
                             LoadData();
                             txtNombreModelo.Focus();
@@ -249,6 +267,7 @@ namespace Mds.Biodata.Forms
                     case EstadoForm.Eliminar:
                         if (dgvList.Rows.Count > 0)
                         {
+                            //linerFranjaAdaptacion.Controls[3].Enabled = false;
                             txtID.Enabled = false;
                             LoadData();
                         }
@@ -331,6 +350,7 @@ namespace Mds.Biodata.Forms
                     }
                     AudifonoEntity.Programable = chkProgramable.Checked;
                     AudifonoEntity.PresionMaximaSalida = Convert.ToDecimal(txtPresionSalida.Text);
+                    AudifonoEntity.Ventilacion = chkVentilacion.Checked;
 
                     object myLineas;
                     object myLineasSeries;
@@ -369,6 +389,52 @@ namespace Mds.Biodata.Forms
         {
             LoadList(true);
         }
+
+        private void linerFranjaAdaptacion_BeforeSeriesCreation(object sender)
+        {
+            object myLineas;
+            object myLineasSeries;
+
+            linerFranjaAdaptacion.GenerateLinePointsArgs(out myLineas, out myLineasSeries);
+
+            System.Collections.ArrayList lista = (System.Collections.ArrayList)myLineas;
+
+            if (lista.Count >= 1)
+            {
+                ProcesarMensaje("Recuerde que solo 2 lineas se permiten para delimitar");
+                //linerFranjaAdaptacion.Controls[3].Enabled = false;
+            }
+
+
+        }
+
+        private void btnSelect_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvList.Rows.Count > 0)
+                {
+                    if (dgvList.CurrentRow == null)
+                    {
+                        this.Llamador.Seleccion = this.AudifonoEntities[dgvList.Rows[0].Index];
+                    }
+                    else
+                    {
+                        this.Llamador.Seleccion = this.AudifonoEntities[dgvList.CurrentRow.Index];
+                    }
+                }
+                else
+                {
+                    this.Llamador.Seleccion = null;
+                }
+                Cerrar();
+            }
+            catch (Exception ex)
+            {
+                ProcesarExcepcion(ex);
+            }
+        }
         #endregion
+
     }
 }

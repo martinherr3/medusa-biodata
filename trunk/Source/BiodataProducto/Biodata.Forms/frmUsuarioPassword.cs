@@ -7,20 +7,13 @@ using System.Text;
 using System.Windows.Forms;
 using Mds.Biodata.Domain;
 using Mds.Biodata.Business;
+using Mds.Biodata.Helpers;
 
 namespace Mds.Biodata.Forms
 {
     public partial class frmUsuarioPassword : frmBase
     {
         #region "--[Properties]--"
-        private Usuario _UsuarioLogueado;
-
-        public Usuario UsuarioLogueado
-        {
-            get { return _UsuarioLogueado; }
-            set { _UsuarioLogueado = value; }
-        }
-
         private UsuarioBusiness _UsuarioBP;
 
         public UsuarioBusiness UsuarioBP
@@ -39,30 +32,38 @@ namespace Mds.Biodata.Forms
 
         private void CargarDatos()
         {
-            txtNick.Text = UsuarioLogueado.Nick;
-            txtNick.Enabled = false;
+            txtNick.Text = UsuarioSistema.Nick;
+            
             txtPasswordActual.Focus();
         }
 
         private void RegistrarCambioPassword()
         {
-            if (txtPasswordActual.Text != "" && txtPasswordNuevo.Text != "")
+            try
             {
-                if (UsuarioBP.ValidarUsuario(txtNick.Text, txtPasswordActual.Text))
+                if (txtPasswordActual.Text != "" && txtPasswordNuevo.Text != "")
                 {
-                    UsuarioLogueado.Password = txtPasswordNuevo.Text;
+                    if (CryptoHelper.ComparePasswordMD5(txtPasswordActual.Text, UsuarioSistema.Password))
+                    {
+                        UsuarioSistema.Password = CryptoHelper.HashMD5(txtPasswordNuevo.Text);
 
-                    UsuarioBP.Update(UsuarioLogueado);
-                    UsuarioBP.Commit();
+                        UsuarioBP.Update(UsuarioSistema);
+                        UsuarioBP.Commit();
+                        ProcesarMensaje("Se modifico el password exitosamente");
+                    }
+                    else
+                    {
+                        ProcesarMensaje("Datos invalidos, no se puede modificar el Password");
+                    }
                 }
                 else
                 {
-                    ProcesarMensaje("Datos invalidos, no se puede modificar el Password");
+                    ProcesarMensaje("Faltan datos para realizar la modificación");
                 }
             }
-            else
+            catch (Exception ex)
             {
-                ProcesarMensaje("Faltan datos para realizar la modificación");
+                ProcesarExcepcion(ex);
             }
         }
         #endregion
@@ -77,7 +78,13 @@ namespace Mds.Biodata.Forms
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             RegistrarCambioPassword();
+            this.Close();
         }
-        #endregion
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion  
     }
 }

@@ -357,5 +357,7 @@ namespace Mds.Biodata.Forms
             Regex ExpresionRegular = new Regex(Patron);
             return ExpresionRegular.IsMatch(NumeroaValidar);
         }
+
+
     }
 }

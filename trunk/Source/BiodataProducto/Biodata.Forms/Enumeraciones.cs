@@ -30,8 +30,10 @@ namespace Mds.Biodata.Forms
         //Esta enum indica a que formulario llamo para realizar una "Seleccion"
         public enum SeleccionDestino
         {
-            CiudadSeleccion,        //frmCiudad
-            ObraSocialSeleccion     //frmObraSocial
+            CiudadSeleccion=0,        //frmCiudad
+            ObraSocialSeleccion=1,    //frmObraSocial
+            AudifonosSeleccion=2,               //frmAudifono
+            MoldeAudifonoSeleccion=3           //frmMoldeAudifono
         }
 
         public enum TipoEstudio
@@ -65,6 +67,27 @@ namespace Mds.Biodata.Forms
         {
             Administrador=0,
             UsuarioComun=1
+        }
+
+        public enum TipoMolde
+        {
+            FullShell=0,
+            Shell=1,
+            Canal=2,
+            Skeleton=3
+        }
+
+        public enum MaterialMolde
+        {
+            Siliconado=0, 
+            Blando=1,
+            Acrilico=2
+        }
+
+        public enum LadoOido
+        {
+            Izquierdo = 0,
+            Derecho = 1
         }
 
     }
